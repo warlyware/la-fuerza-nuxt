@@ -7,9 +7,11 @@
 //   const id = getYouTubeId(url)
 //   return (<YouTube videoId={id} />)
 // }
+import MovieIcon from 'react-icons/lib/md/local-movies'
 
 export default {
   type: 'document',
+  icon: MovieIcon,
   name: 'video',
   title: 'Video',
   fields: [
@@ -46,7 +48,8 @@ export default {
   ],
   preview: {
     select: {
-      title: 'name'
+      title: 'name',
+      media: '🎬'
     }
   }
   // preview: {

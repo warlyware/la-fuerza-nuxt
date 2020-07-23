@@ -1,22 +1,22 @@
 export default {
-  name: 'codeOfConduct',
+  name: 'disclaimer',
   type: 'document',
-  title: 'Code of Conduct',
+  title: 'Disclaimer',
   __experimental_actions: ['update', /* 'create', 'delete', */ 'publish'],
   fields: [
     {
       name: 'body',
       description:
-        'A code of conduct is one of several things that helps you to make sure that all participants will have a great time!',
+        'The Disclaimer text to be displayed at /disclaimer',
       type: 'bodyPortableText',
-      title: 'Code of Conduct'
+      title: 'Disclaimer'
     }
   ],
   preview: {
     select: {
       body: 'body'
     },
-    prepare ({ body = [] }) {
+    prepare({ body = [] }) {
       const block = body.find(block => block._type === 'block')
       return {
         title: block

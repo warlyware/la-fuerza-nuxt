@@ -10,6 +10,7 @@ import person from './documents/person'
 import codeOfConduct from './documents/codeOfConduct'
 import session from './documents/session'
 import program from './documents/program'
+import disclaimer from './documents/disclaimer'
 import video from './documents/video'
 
 // Object types
@@ -37,6 +38,7 @@ export default createSchema({
     person,
     venue,
     session,
+    disclaimer,
     video,
 
     // When added to this list, object types can be used as

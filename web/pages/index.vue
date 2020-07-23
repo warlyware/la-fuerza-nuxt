@@ -1,6 +1,9 @@
 <template>
   <section class="container">
-    <header class="header">
+    <div v-for="video in videos" :key="video.name">
+      {{ video }}
+    </div>
+    <!-- <header class="header">
       <h1 class="title">{{ info.name }}</h1>
       <p class="subtitle">{{ info.description }}</p>
       <div class="dates">
@@ -9,9 +12,9 @@
         {{ new Date(info.schedule.to) | dateFilter('ha') }}
       </div>
       <div class="venue">{{ info.venue.name }}, {{ info.venue.city }}</div>
-    </header>
+    </header> -->
 
-    <figure :v-if="info.image">
+    <!-- <figure :v-if="info.image">
       <SanityImage
         :image="info.image"
         :width="1800"
@@ -19,65 +22,32 @@
         class="mainImage"
       />
       <figcaption>{{ info.image.caption }}</figcaption>
-    </figure>
+    </figure> -->
 
-    <div class="sessionListContainer">
+    <!-- <div class="sessionListContainer">
       <h2 class="sessionListTitle">Schedule</h2>
       <SessionList :program="program" :info="info" />
-    </div>
+    </div> -->
   </section>
 </template>
 
 <script>
-import { dateFilter } from 'vue-date-fns'
+import groq from 'groq'
+import sanityClient from '~/sanityClient'
+// import SanityImage from '~/components/SanityImage'
 
-import sanityClient from '../sanityClient'
-import SanityImage from '~/components/SanityImage'
-import SessionList from '~/components/SessionList'
-
-const query = `
+const query = groq`
   {
-    "info": *[_id == "eventInformation"] {
-      ..., image { ..., asset->}
-    }[0]
+    "videos": *[_type == "video"]
   }
 `
 
 export default {
   components: {
-    SanityImage,
-    SessionList
-  },
-  filters: {
-    dateFilter
-  },
-  data() {
-    return {
-      program: this.$store.getters.getProgram
-    }
+    // SanityImage
   },
   async asyncData() {
     return await sanityClient.fetch(query)
-  },
-  head() {
-    if (!this || !this.info) {
-      return
-    }
-    return {
-      title: this.info.name,
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: this.info.description
-        },
-        {
-          hid: 'keywords',
-          name: 'keywords',
-          content: this.info.keywords.join(',')
-        }
-      ]
-    }
   }
 }
 </script>

@@ -35,11 +35,11 @@ export default {
       title: 'Session type',
       options: {
         list: [
-          {value: 'keynote', title: 'Keynote'},
-          {value: 'talk', title: 'Talk'},
-          {value: 'break', title: 'Break'},
-          {value: 'firesideChat', title: 'Fireside Chat'},
-          {value: 'panel', title: 'Panel'}
+          { value: 'keynote', title: 'Keynote' },
+          { value: 'talk', title: 'Talk' },
+          { value: 'break', title: 'Break' },
+          { value: 'firesideChat', title: 'Fireside Chat' },
+          { value: 'panel', title: 'Panel' }
         ]
       }
     },
@@ -62,7 +62,7 @@ export default {
       person: 'person.name',
       media: 'image'
     },
-    prepare ({title, media, sessionType, person}) {
+    prepare ({ title, media, sessionType, person }) {
       return {
         title,
         media,
