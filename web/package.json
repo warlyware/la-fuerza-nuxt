@@ -17,11 +17,13 @@
     "@sanity/client": "^1.149.16",
     "@sanity/image-url": "^0.140.19",
     "cross-env": "^5.2.0",
+    "get-youtube-id": "^1.0.1",
     "groq": "^0.140.0",
     "normalize.css": "^8.0.1",
     "nuxt": "^2.6.2",
     "sanity-blocks-vue-component": "^0.1.0",
-    "vue-date-fns": "^1.0.0"
+    "vue-date-fns": "^1.0.0",
+    "vue-youtube-embed": "^2.2.2"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^0.0.1",

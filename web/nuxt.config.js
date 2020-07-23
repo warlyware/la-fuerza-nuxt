@@ -37,7 +37,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/eventInformation'],
+  plugins: ['~/plugins/vue-youtube', '~/plugins/eventInformation'],
 
   /*
    ** Nuxt.js modules

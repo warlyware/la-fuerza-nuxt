@@ -10,6 +10,7 @@ import person from './documents/person'
 import codeOfConduct from './documents/codeOfConduct'
 import session from './documents/session'
 import program from './documents/program'
+import video from './documents/video'
 
 // Object types
 import mainImage from './objects/mainImage'
@@ -36,6 +37,7 @@ export default createSchema({
     person,
     venue,
     session,
+    video,
 
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
