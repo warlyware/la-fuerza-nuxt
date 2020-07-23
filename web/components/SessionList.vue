@@ -34,12 +34,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-@import '../styles/custom-properties.css';
-
-.sessionList {
-  margin: 0;
-  padding: 0;
-}
-</style>

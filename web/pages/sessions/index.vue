@@ -31,25 +31,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-@import '../../styles/custom-properties.css';
-
-.container {
-  padding: 1.5rem 0;
-  box-sizing: border-box;
-  min-height: calc(100% - 72px - 216px);
-}
-
-.title {
-  text-align: center;
-  margin-bottom: 4rem;
-}
-
-.sessionGridContainer {
-  max-width: var(--width-medium);
-  padding: 0 1.5rem;
-  margin: 0 auto;
-  box-sizing: border-box;
-}
-</style>

@@ -30,33 +30,3 @@ export default {
   }
 }
 </script>
-<style scoped>
-@import '../styles/custom-properties.css';
-
-.session .persons {
-  margin: 1rem 0 0;
-  padding: 0;
-  font-size: var(--font-small-size);
-  line-height: var(--font-small-line-height);
-}
-
-.session .persons .person {
-  display: flex;
-  margin: 0.5rem 0 0;
-  padding: 0;
-  align-items: center;
-}
-
-.session .persons .person a {
-  display: contents;
-  color: inherit;
-  text-decoration: inherit;
-  line-height: 1.75;
-}
-
-.personImage {
-  height: 1.75rem;
-  margin-right: 0.5rem;
-  border-radius: 50%;
-}
-</style>
