@@ -19,6 +19,7 @@ import mainImage from './objects/mainImage'
 import venue from './objects/venue'
 import schedule from './objects/schedule'
 import scheduleItem from './objects/scheduleItem'
+import videoItem from './objects/videoItem'
 import bioPortableText from './objects/bioPortableText'
 import bodyPortableText from './objects/bodyPortableText'
 import eventReference from './objects/eventReference'
@@ -49,6 +50,7 @@ export default createSchema({
     schedule,
     program,
     scheduleItem,
+    videoItem,
     mainImage,
     bioPortableText,
     bodyPortableText,
