@@ -15,6 +15,7 @@ export default {
   methods: {
     getVideoImage(url) {
       const id = getYoutubeId(url)
+      debugger
       return `https://img.youtube.com/vi/${id}/hqdefault.jpg`
     }
   }

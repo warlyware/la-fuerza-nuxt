@@ -18,9 +18,9 @@
       </button>
     </div>
 
-    <div v-for="video in filteredVideos" :key="video.name"
-    class="flex w-full flex-wrap">
-      <div class="w-1/3" @click="goToVideo(video.slug.current)">
+    <div class="flex w-full flex-wrap">
+      <div v-for="video in filteredVideos" :key="video.name"
+      class="w-1/3" @click="goToVideo(video.slug.current)">
         <VideoThumbnail class="p-4 cursor-pointer" :video="video"/>
       </div>
     </div>

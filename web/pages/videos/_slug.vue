@@ -1,19 +1,18 @@
 <template>
   <section class="py-8 max-w-4xl mx-auto">
-    <!-- <SanityImage
-      :v-if="image.asset"
-      :image="image"
-      :height="1200"
-      :width="1200"
-      class="image"
-    /> -->
     <div class="flex justify-center">
       <youtube :video-id="getYoutubeId(url)" />
     </div>
     <h1 class="text-2xl text-center">{{ name }}</h1>
-    <div class="bio" :v-if="description.length > 0">
+    <div :v-if="description.length > 0">
       <BlockContent v-if="description" :blocks="description" />
     </div>
+    <!-- <div v-if="relatedVideos.length">
+      <div v-for="video in relatedVideos"
+      :key="video.url" :video="video">
+      {{video}}</div>
+    </div> -->
+
   </section>
 </template>
 
@@ -24,6 +23,7 @@ import sanityClient from '~/sanityClient'
 // import SanityImage from '~/components/SanityImage'
 // import SessionItem from '~/components/SessionItem'
 import BlockContent from 'sanity-blocks-vue-component'
+// import VideoThumbnail from '~/components/VideoThumbnail'
 import blocksToText from '~/lib/blocksToText'
 
 
@@ -35,12 +35,14 @@ export default {
   components: {
     // SanityImage,
     BlockContent,
+    // VideoThumbnail
     // SessionItem
   },
   data() {
     return {
       name: undefined,
       description: [],
+      relatedVideos: [],
       program: this.$store.getters.getProgram,
       plainTextBio: blocksToText(this.bio)
     }
@@ -66,9 +68,8 @@ export default {
     return await sanityClient.fetch(query, params)
   },
   head() {
-    const { name } = this.$store.getters.eventInformation
     return {
-      title: `Sessions | ${name}`,
+      title: `Videos | ${this.name}`,
       meta: [
         {
           hid: 'description',
