@@ -1,4 +1,4 @@
-# La Fuerza
+# La Fuerza prototype
 
 _Data-driven conference website in Vue.js. Speakers, sessions, and scheduling._
 
