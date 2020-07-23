@@ -85,6 +85,12 @@ export default {
       name: 'description',
       type: 'bodyPortableText',
       title: 'Long description'
+    },
+    {
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      validation: Rule => Rule.error('You must add a slug.').required()
     }
   ],
   preview: {
