@@ -22,6 +22,7 @@ import bioPortableText from './objects/bioPortableText'
 import bodyPortableText from './objects/bodyPortableText'
 import eventReference from './objects/eventReference'
 import personReference from './objects/personReference'
+import videoReference from './objects/videoReference'
 import social from './objects/social'
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -51,6 +52,7 @@ export default createSchema({
     bodyPortableText,
     eventReference,
     personReference,
+    videoReference,
     social
   ])
 })

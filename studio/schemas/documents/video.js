@@ -31,6 +31,47 @@ export default {
       type: 'url'
     },
     {
+      name: 'category',
+      type: 'string',
+      title: 'Category',
+      options: {
+        list: [
+          { value: 'videos', title: 'Videos' },
+          { value: 'talleres', title: 'Talleres' },
+          { value: 'librosEnEspanol', title: 'Libros en Español' }
+        ]
+      }
+    },
+    {
+      name: 'subCategory',
+      type: 'string',
+      title: 'Sub Category',
+      options: {
+        list: [
+          { value: 'familiasLatinas', title: 'Familias Latinas: Juntas en Casa' },
+          { value: 'momentosDeConexion', title: 'Momentos de Conexión' },
+          { value: 'laFuerzaDeCreer', title: 'La Fuerza de Creer' },
+          { value: 'meetTheCharacters', title: 'Meet the Characters' },
+          { value: 'tallersEnAccion', title: 'Talleres en Acción' },
+          { value: 'tallersDigitales', title: 'Talleres Digitales' },
+          { value: 'librosEnEspanolVideos', title: 'Libros en Español Videos' }
+        ]
+      }
+    },
+    {
+      name: 'relatedVideos',
+      type: 'array',
+      title: 'Related Videos',
+      description: 'Videos to display in the "Related Videos" section',
+      of: [
+        {
+          name: 'video',
+          type: 'videoReference',
+          title: 'Video'
+        }
+      ]
+    },
+    {
       name: 'length',
       title: 'Length (in minutes)',
       type: 'number'
