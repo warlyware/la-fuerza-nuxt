@@ -1,12 +1,6 @@
 export default {
   widgets: [
-    {
-      name: 'sanity-tutorials',
-      options: {
-        templateRepoId: 'sanity-io/sanity-template-nuxt-events'
-      }
-    },
-    {name: 'structure-menu'},
+    { name: 'structure-menu' },
     {
       name: 'project-info',
       options: {
@@ -39,15 +33,10 @@ export default {
             value: 'https://github.com/warlyware/la-fuerza-nuxt',
             category: 'Code'
           },
-          {title: 'Frontend', value: '', category: 'apps'}
+          { title: 'Frontend', value: '', category: 'apps' }
         ]
       }
     },
-    {name: 'project-users', layout: {height: 'auto'}},
-    {
-      name: 'document-list',
-      options: {title: 'Recently created sessions', order: '_createdAt desc', types: ['session']},
-      layout: {width: 'medium'}
-    }
+    { name: 'project-users', layout: { height: 'auto' } }
   ]
 }
