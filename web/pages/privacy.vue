@@ -9,7 +9,7 @@ import sanityClient from '~/sanityClient'
 import BlockContent from 'sanity-blocks-vue-component'
 
 const query = `
-  *[_id == "privacy"][0] {
+  *[_id == "privacyPolicy"][0] {
     body[] {
       ...,
       children[] {

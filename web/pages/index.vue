@@ -7,8 +7,8 @@
         Videos
       </button>
       <button class="p-4 text-xl uppercase"
-      :class="{ active: selectedCategory === 'tallers'}"
-      @click="selectedCategory = 'tallers'">
+      :class="{ active: selectedCategory === 'talleres'}"
+      @click="selectedCategory = 'talleres'">
         Talleres
       </button>
       <button class="p-4 text-xl uppercase"
@@ -20,8 +20,8 @@
 
     <div v-for="video in filteredVideos" :key="video.name"
     class="flex w-full flex-wrap">
-      <div class="w-1/3">
-        <VideoThumbnail class="p-4 cursor-pointer" :video="video" />
+      <div class="w-1/3" @click="goToVideo(video.slug.current)">
+        <VideoThumbnail class="p-4 cursor-pointer" :video="video"/>
       </div>
     </div>
   </section>
@@ -56,7 +56,12 @@ export default {
   },
   async asyncData() {
     return await sanityClient.fetch(query)
-  }
+  },
+  methods: {
+    goToVideo(slug) {
+      this.$router.push(`/videos/${slug}`)
+    }
+  },
 }
 </script>
 

@@ -1,7 +1,7 @@
 <template>
   <header class="flex max-w-4xl mx-auto justify-between p-4">
-    <nuxt-link to="/" class="items-start">
-      <img src="images/logo.png" alt="La Fuerza logo" width="200px" />
+    <nuxt-link to="/" class="items-start text-2xl">
+      La Fuerza de Familias Latinas
     </nuxt-link>
     <nav class="text-lg flex items-center">
       <nuxt-link class="px-4" to="/">HOME</nuxt-link>
