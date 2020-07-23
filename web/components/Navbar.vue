@@ -1,10 +1,16 @@
 <template>
   <header class="header">
-    <nuxt-link to="/" class="home">{{ title }}</nuxt-link>
+    <nuxt-link to="/" class="home">
+      <img src="images/logo.png" alt="La Fuerza logo" height="40px" />
+    </nuxt-link>
     <nav>
-      <nuxt-link to="/sessions">Sessions</nuxt-link>
-      <nuxt-link to="/speakers">Speakers</nuxt-link>
-      <a v-if="ticketLink" :href="ticketLink">Tickets</a>
+      <nuxt-link to="/">HOME</nuxt-link>
+      <a href="https://literacypartners.org/get-involved/donate" target="_blank">
+        DONATE
+      </a>
+      <a href="https://literacypartners.org" target="_blank">
+        LITERACY PARTNERS
+      </a>
     </nav>
   </header>
 </template>
