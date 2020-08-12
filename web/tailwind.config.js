@@ -12,7 +12,9 @@ module.exports = {
       aqua: '#61ccc8',
       orange: 'ec5d2a',
       white: '#fff',
-      black: '#000'
+      black: '#000',
+      'light-gray': '#f6f6f6',
+      gray: '#CDCDCD'
     }
   },
   variants: {},

@@ -2,10 +2,14 @@ export const state = () => ({
   eventInformation: {
     title: 'This is the test title'
   },
-  program: {}
+  program: {},
+  navIsOpen: false
 })
 
 export const getters = {
+  navIsOpen(state) {
+    return state.navIsOpen
+  },
   eventInformation(state) {
     return state.eventInformation
   },
@@ -15,6 +19,9 @@ export const getters = {
 }
 
 export const mutations = {
+  toggleNav(state) {
+    state.navIsOpen = !state.navIsOpen
+  },
   setEventInformation(state, info) {
     state.eventInformation = info
   },

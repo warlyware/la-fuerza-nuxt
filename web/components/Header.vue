@@ -12,7 +12,8 @@
           </span>
         </button>
         <img src="/images/la-fuerza-logo-top.png" class="h-8 -ml-16 mb-1" />
-        <button class="self-center text-3xl text-blue mb-2 font-bold">
+        <button class="self-center text-3xl text-blue mb-2 font-bold"
+        @click="toggleNav">
           MENÚ
         </button>
       </div>
@@ -34,6 +35,9 @@ export default {
   methods: {
     toggleLanguage() {
       this.language = this.language === 'SPANISH' ? 'ENGLISH' : 'SPANISH'
+    },
+    toggleNav() {
+      this.$store.commit('toggleNav')
     }
   }
 }

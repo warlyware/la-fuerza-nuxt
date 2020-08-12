@@ -30,7 +30,11 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/vue-youtube', '~/plugins/eventInformation'],
+  plugins: [
+    '~/plugins/vue-youtube',
+    '~/plugins/vue-sidebar-menu',
+    '~/plugins/eventInformation'
+  ],
 
   /*
    ** Nuxt.js modules
