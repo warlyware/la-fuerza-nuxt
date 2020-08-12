@@ -1,13 +1,6 @@
 import pkg from './package'
 import sanityClient from './sanityClient'
 
-const routesQuery = `
-  {
-    "sessions": *[_type == "session"],
-    "speakers": *[_type == "person" && defined(slug.current)]
-  }
-`
-
 export default {
   mode: 'spa',
 
@@ -15,7 +8,7 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: pkg.name,
+    title: 'La Fuerza de Familias Latinas',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -49,21 +42,6 @@ export default {
    */
   eventInformation: () => {
     return sanityClient.fetch('*[_id == "eventInformation"]').then(res => res)
-  },
-
-  /*
-   ** Generate dynamic routes from data from sanity.
-   ** Used only for generating static served HTML files
-   */
-  generate: {
-    routes: () => {
-      return sanityClient.fetch(routesQuery).then(res => {
-        return [
-          ...res.sessions.map(item => `/sessions/${item._id}`),
-          ...res.speakers.map(item => `/speakers/${item.slug.current}`)
-        ]
-      })
-    }
   },
 
   /*
@@ -102,6 +80,19 @@ export default {
           exclude: /(node_modules)/
         })
       }
+
+      const svgRule = config.module.rules.find(rule => rule.test.test('.svg'));
+
+      svgRule.test = /\.(png|jpe?g|gif|webp)$/;
+
+      config.module.rules.push({
+        test: /\.svg$/,
+        use: [
+          'babel-loader',
+          'vue-svg-loader',
+        ],
+      });
+
     }
   }
 }
