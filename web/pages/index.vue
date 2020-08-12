@@ -67,7 +67,7 @@ export default {
 
 <style scoped>
   .active {
-    @apply .bg-blue-600 .text-white .rounded;
+    @apply .bg-blue .text-white .rounded;
   }
 
 </style>

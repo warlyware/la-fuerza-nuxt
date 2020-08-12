@@ -1,7 +1,6 @@
 <template>
   <div>
-    <Header :title="$store.state.eventInformation.name"
-    :ticket-link="$store.state.eventInformation.ticket" />
+    <Header />
     <nuxt />
     <Footer />
   </div>
