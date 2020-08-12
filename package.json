@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^2.1.0",
-    "@sanity/cli": "^1.149.16",
+    "@sanity/cli": "^1.149.19",
     "lerna": "^3.13.1"
   },
   "dependencies": {}
