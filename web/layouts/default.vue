@@ -2,7 +2,7 @@
   <div>
     <Header />
     <Sidebar />
-    <nuxt />
+    <nuxt class="pt-32" />
     <Footer />
   </div>
 </template>

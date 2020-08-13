@@ -28,26 +28,26 @@ export default {
           child: [
             {
               href: '/videos/moc',
-              title: 'MOC',
+              title: 'MOC -',
               hiddenOnCollapse: true,
               exactPath: true,
             },
             {
               href: '/videos/juntas-en-casa',
-              title: 'JUNTAS EN CASA',
+              title: 'JUNTAS EN CASA -',
               hiddenOnCollapse: true,
               exactPath: true,
             },
             {
               href: '/videos/lfdc2',
-              title: 'LFDC 2',
+              title: 'LFDC 2 -',
               hiddenOnCollapse: true,
               exactPath: true,
             }
           ]
         },
         {
-          href: '/programs',
+          href: '/resources',
           title: 'RECURSOS •',
           hiddenOnCollapse: true
         },
@@ -75,10 +75,6 @@ export default {
       this.$store.commit('toggleNav')
     },
     handleItemClicked(_, item) {
-      console.log(_, item, this.$refs)
-      if (!item.child) {
-        // this.$refs.menu.mobileItem = null
-      }
       if (item.title !== 'VIDEOS •') {
         this.$store.commit('toggleNav')
       }
@@ -113,7 +109,7 @@ export default {
     @apply bg-light-gray !important;
   }
   .v-sidebar-menu .vsm--dropdown>.vsm--list .vsm--title {
-    @apply mr-6 !important;
+    @apply mr-4 !important;
   }
   .v-sidebar-menu .vsm--link:hover {
     @apply bg-gray !important;
