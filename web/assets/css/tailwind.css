@@ -2,5 +2,12 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-html { height: 100%; }
-body { min-height: 100%; padding:0; margin:0; position:relative; }
+html, body, #__nuxt, #__layout {
+  height: 100%;
+}
+body {
+  @apply flex flex-col;
+}
+.content {
+  flex: 1 0 auto;
+}
