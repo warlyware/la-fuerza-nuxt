@@ -12,7 +12,7 @@
               SPANISH
             </span>
           </button>
-          <img src="/images/la-fuerza-logo-top.png" class="h-6 md:h-12 -ml-24 md:-ml-16 mb-1"
+          <img src="/images/la-fuerza-logo-top.png" class="h-6 md:h-8 -ml-24 md:-ml-16 mb-1"
           @click="$router.push('/')" />
           <button class="self-center text-lg md:text-3xl text-blue mb-2 font-bold"
           @click="toggleNav">
@@ -21,7 +21,7 @@
         </div>
         <div class="bg-pink h-1 w-full"></div>
         <div class="flex w-full justify-center h-half border-r-4 border-pink">
-          <img src="/images/la-fuerza-logo-bottom.png" class="h-4 md:h-8 -mr-16 mt-1" />
+          <img src="/images/la-fuerza-logo-bottom.png" class="h-4 md:h-6 -mr-16 mt-1" />
         </div>
       </div>
     </div>
