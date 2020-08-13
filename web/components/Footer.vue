@@ -1,6 +1,6 @@
 <template>
   <footer class="py-4 bottom-0 bg-aqua w-full flex-shrink-0 mt-auto">
-    <div class="flex flex-wrap max-w-4xl mx-auto justify-center">
+    <div class="flex flex-wrap max-w-6xl mx-auto justify-center">
       <div class="flex flex-wrap text-white justify-between w-full text-3xl uppercase">
         <div class="flex flex-col w-full md:w-auto px-4 italic mb-8 md:mb-0">
           <nuxt-link class="mb-2 block self-start" to="/join">Únete</nuxt-link>

@@ -1,5 +1,5 @@
 <template>
-  <section class="py-8 max-w-4xl mx-auto">
+  <section class="py-8 max-w-6xl mx-auto">
     <div class="flex justify-center">
       <youtube :video-id="getYoutubeId(url)" />
     </div>

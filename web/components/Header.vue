@@ -1,9 +1,8 @@
 <template>
   <header class="top-0 p-4 fixed w-screen bg-white">
-    <div class="flex justify-center max-w-4xl mx-auto">
+    <div class="flex justify-center max-w-6xl mx-auto">
       <div class="flex-col w-full justify-center">
         <div class="flex w-full justify-between items-end h-half border-l-4 border-pink">
-          <!-- <div class="md:hidden"></div> -->
           <button class="self-center p-2 py-1 md:py-2 bg-aqua rounded ml-1 mb-2 text-white font-bold md:w-24 text-sm md:text-base"
           @click="toggleLanguage">
             <span v-if="language === 'SPANISH'">
@@ -13,7 +12,8 @@
               SPANISH
             </span>
           </button>
-          <img src="/images/la-fuerza-logo-top.png" class="h-4 md:h-8 -ml-16 mb-1" />
+          <img src="/images/la-fuerza-logo-top.png" class="h-6 md:h-12 -ml-24 md:-ml-16 mb-1"
+          @click="$router.push('/')" />
           <button class="self-center text-lg md:text-3xl text-blue mb-2 font-bold"
           @click="toggleNav">
             MENÚ

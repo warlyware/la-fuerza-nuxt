@@ -1,11 +1,11 @@
 <template>
-  <div class="max-w-4xl mx-auto justify-between p-4">
+  <div class="max-w-6xl mx-auto justify-between p-4">
     <h1 class="text-2xl text-center">
       Home Page
     </h1>
   </div>
 
-  <!-- <section class="max-w-4xl mx-auto justify-between p-4">
+  <!-- <section class="max-w-6xl mx-auto justify-between p-4">
     <div class="flex w-full justify-center py-4">
       <button class="p-4 text-xl uppercase"
       :class="{ active: selectedCategory === 'videos'}"
