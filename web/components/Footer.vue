@@ -6,7 +6,7 @@
           <nuxt-link class="mb-2 block self-start" to="join">Únete</nuxt-link>
           <nuxt-link class="mb-2 block self-start" to="resources">Talleres</nuxt-link>
           <nuxt-link class="mb-2 block self-start" to="contact">Contacto</nuxt-link>
-          <nuxt-link class="block self-start" to="sobre-nosotros">About Us</nuxt-link>
+          <nuxt-link class="block self-start" to="about-us">Sobre Nosotros</nuxt-link>
         </div>
         <div class="flex w-full md:w-auto items-end justify-center md:justify-end px-4">
           <a href="//literacypartners.org" target="_blank"
