@@ -1,5 +1,11 @@
 <template>
-  <section class="max-w-4xl mx-auto justify-between p-4">
+  <div class="max-w-4xl mx-auto justify-between p-4">
+    <h1 class="text-2xl text-center">
+      Home Page
+    </h1>
+  </div>
+
+  <!-- <section class="max-w-4xl mx-auto justify-between p-4">
     <div class="flex w-full justify-center py-4">
       <button class="p-4 text-xl uppercase"
       :class="{ active: selectedCategory === 'videos'}"
@@ -24,13 +30,13 @@
         <VideoThumbnail class="p-4 cursor-pointer" :video="video"/>
       </div>
     </div>
-  </section>
+  </section> -->
 </template>
 
 <script>
 import groq from 'groq'
 import sanityClient from '~/sanityClient'
-import VideoThumbnail from '~/components/VideoThumbnail'
+// import VideoThumbnail from '~/components/VideoThumbnail'
 // import SanityImage from '~/components/SanityImage'
 
 const query = groq`
@@ -41,7 +47,7 @@ const query = groq`
 
 export default {
   components: {
-    VideoThumbnail
+    // VideoThumbnail
     // SanityImage
   },
   data() {

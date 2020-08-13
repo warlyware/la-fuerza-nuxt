@@ -42,8 +42,10 @@
     "eslint-plugin-promise": ">=4.1.1",
     "eslint-plugin-standard": ">=4.0.0",
     "eslint-plugin-vue": "^5.2.2",
+    "node-sass": "^4.14.1",
     "nodemon": "^1.18.10",
     "prettier": "^1.16.4",
+    "sass-loader": "^9.0.3",
     "vue-svg-loader": "^0.16.0",
     "vue-template-compiler": "^2.6.11"
   }

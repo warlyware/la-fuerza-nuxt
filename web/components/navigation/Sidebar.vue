@@ -1,5 +1,5 @@
 <template>
-  <sidebar-menu :menu="menu" width="250px"
+  <sidebar-menu :menu="menu" width="250px" theme="white-theme"
   width-collapsed="0" :collapsed="!navIsOpen" :rtl="true"
   :disable-hover="true" :class="navIsOpen ? '' : '-mr-4'"
   @toggle-collapse="handleToggleCollapse"
@@ -24,21 +24,25 @@ export default {
         {
           title: 'VIDEOS •',
           hiddenOnCollapse: true,
+          exactPath: true,
           child: [
             {
-              href: '/moc',
-              title: 'MOC -',
-              hiddenOnCollapse: true
+              href: '/videos/moc',
+              title: 'MOC',
+              hiddenOnCollapse: true,
+              exactPath: true,
             },
             {
-              href: '/juntas-en-casa',
-              title: 'JUNTAS EN CASA -',
-              hiddenOnCollapse: true
+              href: '/videos/juntas-en-casa',
+              title: 'JUNTAS EN CASA',
+              hiddenOnCollapse: true,
+              exactPath: true,
             },
             {
-              href: '/lfdc2',
-              title: 'LFDC 2 -',
-              hiddenOnCollapse: true
+              href: '/videos/lfdc2',
+              title: 'LFDC 2',
+              hiddenOnCollapse: true,
+              exactPath: true,
             }
           ]
         },
@@ -103,18 +107,21 @@ export default {
     @apply text-blue font-bold text-xl;
   }
   .v-sidebar-menu.vsm_expanded .vsm--item_open .vsm--link_level-1 {
-    @apply bg-light-gray !important;
+    @apply bg-light-gray text-blue !important;
   }
   .v-sidebar-menu .vsm--dropdown>.vsm--list {
-    @apply bg-light-gray pr-4 !important;
+    @apply bg-light-gray !important;
+  }
+  .v-sidebar-menu .vsm--dropdown>.vsm--list .vsm--title {
+    @apply mr-6 !important;
   }
   .v-sidebar-menu .vsm--link:hover {
     @apply bg-gray !important;
   }
-  .v-sidebar-menu .vsm--link.vsm--link_active {
-    @apply bg-blue text-white !important;
+  .v-sidebar-menu .vsm--link.vsm--link_exact-active {
+    @apply bg-blue !important;
   }
-  .v-sidebar-menu .vsm--link.vsm--link_active .vsm--title {
+  .v-sidebar-menu .vsm--link.vsm--link_exact-active .vsm--title {
     @apply text-white !important;
   }
 </style>
