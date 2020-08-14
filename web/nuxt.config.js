@@ -36,6 +36,7 @@ export default {
   plugins: [
     '~/plugins/vue-youtube',
     '~/plugins/vue-sidebar-menu',
+    '~/plugins/vue-fragment',
     '~/plugins/eventInformation'
   ],
 

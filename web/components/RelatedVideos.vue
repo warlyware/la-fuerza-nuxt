@@ -1,0 +1,34 @@
+<template>
+  <fragment>
+    <h2 class="text-2xl text-center">
+      Related Videos
+    </h2>
+    <div v-if="relatedVideos.length"
+    class="flex flex-wrap justify-start ">
+      <VideoThumbnail v-for="video in relatedVideos"
+      :key="video.url" :video="video"
+      class="px-4 cursor-pointer md:w-1/3" />
+    </div>
+  </fragment>
+
+</template>
+
+<script>
+import VideoThumbnail from '~/components/VideoThumbnail'
+
+export default {
+  components: {
+    VideoThumbnail
+  },
+  props: {
+    relatedVideos: {
+      required: true,
+      type: Array
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+
+</style>

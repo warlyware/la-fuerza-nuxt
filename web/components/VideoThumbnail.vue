@@ -1,10 +1,11 @@
 <template>
-  <div>
-    <img :src="getVideoImage(video.url)" alt="">
-    <span class="text-lg">
+  <nuxt-link :to="`/videos/${video.slug.current}`" class="h-full w-full px-4">
+    <div class="bg-contain bg-center bg-no-repeat h-90 mb-4 min-h-150 max-w-sm"
+    :style="`background-image: url(${getVideoImage(video.url)})`" />
+    <div class="text-lg text-center">
       {{ video.name }}
-    </span>
-  </div>
+    </div>
+  </nuxt-link>
 </template>
 
 <script>
@@ -20,3 +21,17 @@ export default {
   }
 }
 </script>
+
+<style>
+  .h-90 {
+    height: 90%;
+    max-height: 90%;
+  }
+  .h-20 {
+    height: 20%;
+    max-height: 20%;
+  }
+  .min-h-150 {
+    min-height: 150px;
+  }
+</style>
