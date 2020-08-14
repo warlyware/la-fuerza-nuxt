@@ -8,5 +8,8 @@ body {
   flex: 1 0 auto;
 }
 h1 {
-  @apply text-3xl mb-2;
+  @apply text-3xl mb-6 font-MissionGothicBold;
+}
+p {
+  @apply mb-2;
 }

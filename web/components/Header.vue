@@ -3,7 +3,7 @@
     <div class="flex justify-center max-w-6xl mx-auto">
       <div class="flex-col w-full justify-center">
         <div class="flex w-full justify-between items-end h-half border-l-4 border-pink">
-          <button class="bg-aqua rounded-full self-center p-4 py-0 ml-1 mb-2 md:w-32 text-lg md:text-2xl font-MissionGothicBlackItalic text-white font-bold"
+          <button class="bg-aqua rounded-full self-center p-4 py-0 ml-1 mb-2 md:w-32 text-sm md:text-2xl font-MissionGothicBlackItalic text-white font-bold"
           @click="toggleLanguage">
             <span v-if="language === 'SPANISH'" class="text-pink-shadow">
               ENGLISH
@@ -12,7 +12,7 @@
               SPANISH
             </span>
           </button>
-          <img src="/images/la-fuerza-logo-top.png" class="h-6 md:h-8 -ml-24 mb-1"
+          <img src="/images/la-fuerza-logo-top.png" class="h-6 md:h-8 -ml-16 md:-ml-24 mb-1 cursor-pointer"
           @click="$router.push('/')" />
           <button class="self-center text-lg md:text-3xl text-blue mb-2 font-bold font-MissionGothicBlack"
           @click="toggleNav">
@@ -21,7 +21,7 @@
         </div>
         <div class="bg-pink h-1 w-full"></div>
         <div class="flex w-full justify-center h-half border-r-4 border-pink">
-          <img src="/images/la-fuerza-logo-bottom.png" class="h-4 md:h-6 -mr-16 mt-1" />
+          <img src="/images/la-fuerza-logo-bottom.png" class="h-4 md:h-6 -mr-16 mt-1 cursor-pointer" />
         </div>
       </div>
     </div>

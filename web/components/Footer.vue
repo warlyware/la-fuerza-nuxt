@@ -29,7 +29,7 @@
               <img class="h-16 w-auto px-2" src="/images/lp-logo.svg">
             </a>
             <a href="//univision.com" target="_blank" class="block">
-              <p class="text-xs text-dark-gray text-center font-bold mb-1 italic">
+              <p class="text-xs text-dark-gray text-center font-bold mb-1 italic font-MissionGothicBlackItalic">
                 "La Fuerza de Creer"<br>
                 Visita en:
               </p>
@@ -37,7 +37,7 @@
             </a>
           </div>
         </div>
-        <div class="flex flex-wrap justify-center w-full text-sm text-white pt-6">
+        <div class="flex flex-wrap justify-center w-full text-sm text-white pt-6 font-MissionGothicItalic">
           <nuxt-link class="px-2 inline-block" to="/privacy">PRIVACY POLICY</nuxt-link>
           <nuxt-link class="px-2 inline-block" to="/disclaimer">DISCLAIMER</nuxt-link>
           <span class="inline-block px-2 uppercase">
