@@ -6,11 +6,18 @@
 */
 module.exports = {
   theme: {
+    fontFamily: {
+      MissionGothic: ["MissionGothic"],
+      MissionGothicBold: ["MissionGothicBold"],
+      MissionGothicBlack: ["MissionGothicBlack"],
+      MissionGothicItalic: ["MissionGothicItalic"],
+      MissionGothicBlackItalic: ["MissionGothicBlackItalic"]
+    },
     colors: {
       pink: '#ea3cad',
       blue: '#251c5f',
       aqua: '#61ccc8',
-      orange: 'ec5d2a',
+      orange: '#ec5d2a',
       white: '#fff',
       black: '#000',
       'light-gray': '#f6f6f6',

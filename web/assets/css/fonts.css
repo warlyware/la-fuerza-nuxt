@@ -1,0 +1,48 @@
+@font-face {
+    font-family: MissionGothic;
+    font-weight: normal;
+    src: url('~assets/fonts/MissionGothicRegular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: MissionGothicBold;
+    /* font-weight: bold; */
+    src: url('~assets/fonts/MissionGothicBold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: MissionGothicBlack;
+    /* font-weight: bold; */
+    src: url('~assets/fonts/MissionGothicBlack.otf') format('opentype');
+}
+
+@font-face {
+  font-family: MissionGothicItalic;
+    /* font-weight: normal;
+    font-style: italic; */
+    src: url('~assets/fonts/MissionGothicRegularItalic.otf') format('opentype');
+}
+
+@font-face {
+    font-family: MissionGothicBlackItalic;
+    /* font-style: italic;
+    font-weight: bolder; */
+    src: url('~assets/fonts/MissionGothicBlackItalic.otf') format('opentype');
+}
+
+
+.font-mission-gothic {
+  font-family: MissionGothic;
+}
+.font-mission-gothic-bold {
+  font-family: MissionGothicBold;
+}
+.font-mission-gothic-black {
+  font-family: MissionGothicBlack;
+}
+.font-mission-gothic-regular-italic {
+  font-family: MissionGothicItalic;
+}
+.font-mission-gothic-black-italic {
+  font-family: MissionGothicBlackItalic;
+}

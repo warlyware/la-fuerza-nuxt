@@ -3,18 +3,18 @@
     <div class="flex justify-center max-w-6xl mx-auto">
       <div class="flex-col w-full justify-center">
         <div class="flex w-full justify-between items-end h-half border-l-4 border-pink">
-          <button class="self-center p-2 py-1 md:py-2 bg-aqua rounded ml-1 mb-2 text-white font-bold md:w-24 text-sm md:text-base"
+          <button class="bg-aqua rounded-full self-center p-4 py-0 ml-1 mb-2 md:w-32 text-lg md:text-2xl font-MissionGothicBlackItalic text-white font-bold"
           @click="toggleLanguage">
-            <span v-if="language === 'SPANISH'">
+            <span v-if="language === 'SPANISH'" class="text-pink-shadow">
               ENGLISH
             </span>
-            <span v-if="language === 'ENGLISH'">
+            <span v-if="language === 'ENGLISH'" class="text-pink-shadow">
               SPANISH
             </span>
           </button>
-          <img src="/images/la-fuerza-logo-top.png" class="h-6 md:h-8 -ml-24 md:-ml-16 mb-1"
+          <img src="/images/la-fuerza-logo-top.png" class="h-6 md:h-8 -ml-24 mb-1"
           @click="$router.push('/')" />
-          <button class="self-center text-lg md:text-3xl text-blue mb-2 font-bold"
+          <button class="self-center text-lg md:text-3xl text-blue mb-2 font-bold font-MissionGothicBlack"
           @click="toggleNav">
             MENÚ
           </button>
@@ -49,5 +49,8 @@ export default {
 <style scoped>
   .h-half {
     height: 50%
+  }
+  .text-pink-shadow {
+    text-shadow: 2px 2px #ea3cad;
   }
 </style>

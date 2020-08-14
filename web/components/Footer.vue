@@ -2,14 +2,14 @@
   <footer class="py-4 bottom-0 bg-aqua w-full flex-shrink-0 mt-auto">
     <div class="flex flex-wrap max-w-6xl mx-auto justify-center">
       <div class="flex flex-wrap text-white justify-between w-full text-3xl uppercase">
-        <div class="flex flex-col w-full md:w-auto px-4 italic mb-8 md:mb-0">
-          <nuxt-link class="mb-2 block self-start" to="/join">Únete</nuxt-link>
-          <nuxt-link class="mb-2 block self-start" to="/workshops">Talleres</nuxt-link>
-          <nuxt-link class="mb-2 block self-start" to="/contact">Contacto</nuxt-link>
+        <div class="flex flex-col w-full md:w-auto px-4 italic mb-8 md:mb-0 font-MissionGothicRegularItalic text-4xl leading-tight">
+          <nuxt-link class="block self-start" to="/join">Únete</nuxt-link>
+          <nuxt-link class="block self-start" to="/workshops">Talleres</nuxt-link>
+          <nuxt-link class="block self-start" to="/contact">Contacto</nuxt-link>
           <nuxt-link class="block self-start" to="/about-us">Sobre Nosotros</nuxt-link>
         </div>
         <div class="flex flex-col w-full md:w-auto items-end justify-center md:justify-between px-4">
-          <div class="flex">
+          <div class="flex justify-center md:justify-end w-full mb-8">
             <a href="/" target="_blank" class="hover:shadow-lg rounded-full">
               <img src="/images/instagram-logo.svg" class="h-10 w-10 mx-1">
             </a>
@@ -23,7 +23,7 @@
               <img src="/images/youtube-logo.svg" class="h-10 w-10 mx-1">
             </a>
           </div>
-          <div class="flex items-end">
+          <div class="flex justify-center md:justify-end items-end w-full">
             <a href="//literacypartners.org" target="_blank"
             class="block">
               <img class="h-16 w-auto px-2" src="/images/lp-logo.svg">

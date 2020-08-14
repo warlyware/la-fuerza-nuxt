@@ -1,5 +1,5 @@
 <template>
-  <sidebar-menu :menu="menu" width="250px" theme="white-theme"
+  <sidebar-menu :menu="menu" width="300px" theme="white-theme"
   width-collapsed="0" :collapsed="!navIsOpen" :rtl="true"
   :disable-hover="true" :class="navIsOpen ? '' : '-mr-4'"
   @toggle-collapse="handleToggleCollapse"
@@ -99,8 +99,11 @@ export default {
     border: none;
     -moz-outline-style: none;
   }
+  .vsm--link {
+    @apply py-2 !important;
+  }
   .vsm--title {
-    @apply text-blue font-bold text-xl;
+    @apply text-blue font-bold text-4xl font-MissionGothicBold;
   }
   .v-sidebar-menu.vsm_expanded .vsm--item_open .vsm--link_level-1 {
     @apply bg-light-gray text-blue !important;
@@ -108,8 +111,11 @@ export default {
   .v-sidebar-menu .vsm--dropdown>.vsm--list {
     @apply bg-light-gray !important;
   }
+  .v-sidebar-menu .vsm--dropdown>.vsm--list .vsm--link {
+    @apply py-1 !important;
+  }
   .v-sidebar-menu .vsm--dropdown>.vsm--list .vsm--title {
-    @apply mr-4 !important;
+    @apply mr-4 font-MissionGothic text-orange !important;
   }
   .v-sidebar-menu .vsm--link:hover {
     @apply bg-gray !important;
