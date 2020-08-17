@@ -42,7 +42,8 @@ export default {
     '~/plugins/vue-sidebar-menu',
     '~/plugins/vue-fragment',
     '~/plugins/vue-popover',
-    '~/plugins/eventInformation'
+    '~/plugins/i18n.js'
+    // '~/plugins/eventInformation'
   ],
 
   /*
@@ -55,6 +56,7 @@ export default {
     [
       'nuxt-i18n',
       {
+        // locales: ['en', 'es'],
         locales: [
           {
             code: 'en',
@@ -66,10 +68,11 @@ export default {
             code: 'es',
             file: 'es.js',
             iso: 'es-ES',
-            name: 'Spanish'
+            name: 'English'
           }
         ],
-        defaultLocale: 'en',
+        strategy: 'no_prefix',
+        defaultLocale: 'es',
         lazy: true,
         langDir: 'lang/',
         vuex: {

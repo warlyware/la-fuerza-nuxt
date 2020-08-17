@@ -5,10 +5,10 @@
         <div class="flex w-full justify-between items-end h-half border-l-4 border-pink">
           <button class="bg-aqua rounded-full self-center p-4 py-0 ml-1 mb-2 md:w-32 text-sm md:text-2xl font-MissionGothicBlackItalic text-white font-bold"
           @click="toggleLanguage">
-            <span v-if="language === 'SPANISH'" class="text-pink-shadow">
+            <span v-if="language === 'es'" class="text-pink-shadow">
               ENGLISH
             </span>
-            <span v-if="language === 'ENGLISH'" class="text-pink-shadow">
+            <span v-if="language === 'en'" class="text-pink-shadow">
               SPANISH
             </span>
           </button>
@@ -29,19 +29,22 @@
 </template>
 
 <script>
+// import { mapGetters } from 'vuex'
+
 export default {
-  data() {
-    return {
-      language: 'SPANISH'
-    }
+  computed: {
+    language() { return this.$i18n.locale }
   },
   methods: {
-    toggleLanguage() {
-      this.language = this.language === 'SPANISH' ? 'ENGLISH' : 'SPANISH'
-    },
     toggleNav() {
       this.$store.commit('toggleNav')
+    },
+    toggleLanguage() {
+      this.$i18n.setLocale(this.language === 'en' ? 'es' : 'en')
     }
+  },
+  mounted() {
+    console.log('$i18n', this.$i18n.locale)
   }
 }
 </script>
