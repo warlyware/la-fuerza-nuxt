@@ -8,6 +8,11 @@
       <h1 class="text-2xl text-center m-0">{{ name }}</h1>
       <ShareMenu :url="currentUrl" />
     </div>
+
+    {{shortDescription}}
+    <!-- <div :v-if="description.length > 0" class="mb-8">
+      <BlockContent v-if="description" :blocks="description" />
+    </div> -->
     <div :v-if="description.length > 0" class="mb-8">
       <BlockContent v-if="description" :blocks="description" />
     </div>
@@ -28,7 +33,7 @@ import ShareMenu from '~/components/ShareMenu'
 
 const query = groq`
   *[_type == "video" && slug.current == $slug][0] {
-    "id": _id, url, name, description,
+    "id": _id, url, name, description, shortDescription,
     "relatedVideos": relatedVideos[].video->{
       ...
     }

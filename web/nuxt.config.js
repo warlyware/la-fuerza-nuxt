@@ -51,7 +51,35 @@ export default {
   modules: [
     '@nuxtjs/pwa',
     '@nuxtjs/tailwindcss',
-    'vue-social-sharing/nuxt'
+    'vue-social-sharing/nuxt',
+    [
+      'nuxt-i18n',
+      {
+        locales: [
+          {
+            code: 'en',
+            file: 'en.js',
+            iso: 'en-US',
+            name: 'English'
+          },
+          {
+            code: 'es',
+            file: 'es.js',
+            iso: 'es-ES',
+            name: 'Spanish'
+          }
+        ],
+        defaultLocale: 'en',
+        lazy: true,
+        langDir: 'lang/',
+        vuex: {
+          moduleName: 'i18n',
+          syncLocale: true,
+          syncMessages: true,
+          syncRouteParams: true
+        }
+      }
+    ]
   ],
 
   /*

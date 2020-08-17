@@ -78,7 +78,7 @@ export default {
     },
     {
       name: 'shortDescription',
-      type: 'string',
+      type: 'localeString',
       title: 'Short Description'
     },
     {

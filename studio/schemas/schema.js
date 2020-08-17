@@ -26,6 +26,7 @@ import eventReference from './objects/eventReference'
 import personReference from './objects/personReference'
 import videoReference from './objects/videoReference'
 import social from './objects/social'
+import localeString from './objects/localeString'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -57,6 +58,7 @@ export default createSchema({
     eventReference,
     personReference,
     videoReference,
-    social
+    social,
+    localeString
   ])
 })
