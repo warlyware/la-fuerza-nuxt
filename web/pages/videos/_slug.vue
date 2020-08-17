@@ -3,7 +3,11 @@
     <div class="flex justify-center mb-8">
       <youtube :video-id="getYoutubeId(url)" />
     </div>
-    <h1 class="text-2xl text-center">{{ name }}</h1>
+    <div class="flex justify-between items-center mb-6">
+      <div class="p-2"></div>
+      <h1 class="text-2xl text-center m-0">{{ name }}</h1>
+      <ShareMenu :url="currentUrl" />
+    </div>
     <div :v-if="description.length > 0" class="mb-8">
       <BlockContent v-if="description" :blocks="description" />
     </div>
@@ -19,6 +23,7 @@ import sanityClient from '~/sanityClient'
 // import SessionItem from '~/components/SessionItem'
 import BlockContent from 'sanity-blocks-vue-component'
 import RelatedVideos from '~/components/RelatedVideos'
+import ShareMenu from '~/components/ShareMenu'
 
 
 const query = groq`
@@ -34,7 +39,8 @@ export default {
   components: {
     // SanityImage,
     BlockContent,
-    RelatedVideos
+    RelatedVideos,
+    ShareMenu
     // SessionItem
   },
   data() {
@@ -43,8 +49,11 @@ export default {
       name: null,
       relatedVideos: [],
       url: null,
-      videoRaw: {},
+      videoRaw: {}
     }
+  },
+  computed: {
+    currentUrl() { return process.env.BASE_URL + this.$route.fullPath }
   },
   async asyncData({ params }) {
     const videoRaw = await sanityClient.fetch(query, params)
@@ -54,9 +63,6 @@ export default {
     getYoutubeId(url) {
       return getYoutubeId(url)
     }
-  },
-  mounted() {
-    // console.log(this)
   },
   head() {
     return {

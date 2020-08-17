@@ -24,7 +24,9 @@
     "sanity-blocks-vue-component": "^0.1.0",
     "vue-date-fns": "^1.0.0",
     "vue-fragment": "^1.5.1",
+    "vue-js-popover": "^1.2.1",
     "vue-sidebar-menu": "^4.6.2",
+    "vue-social-sharing": "^3.0.0-beta.11",
     "vue-youtube-embed": "^2.2.2"
   },
   "devDependencies": {

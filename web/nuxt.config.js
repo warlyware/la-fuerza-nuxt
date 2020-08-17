@@ -17,6 +17,10 @@ export default {
     //link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
 
+  env: {
+    BASE_URL: process.env.BASE_URL || 'http://localhost:3000'
+  },
+
   /*
    ** Customize the progress-bar color
    */
@@ -37,13 +41,18 @@ export default {
     '~/plugins/vue-youtube',
     '~/plugins/vue-sidebar-menu',
     '~/plugins/vue-fragment',
+    '~/plugins/vue-popover',
     '~/plugins/eventInformation'
   ],
 
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/pwa', '@nuxtjs/tailwindcss'],
+  modules: [
+    '@nuxtjs/pwa',
+    '@nuxtjs/tailwindcss',
+    'vue-social-sharing/nuxt'
+  ],
 
   /*
    ** Set global info from sanity document
