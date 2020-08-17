@@ -1,15 +1,15 @@
 <template>
   <div class="flex">
-    <button class="text-lg border border-blue text-blue rounded px-2 font-MissionGothic hover:bg-blue hover:text-white self-center"
-    v-popover:myname>
+    <button v-popover:share-menu
+    class="text-lg border border-blue text-blue rounded px-2 font-MissionGothic hover:bg-blue hover:text-white self-center">
       Share
     </button>
-    <popover ref="popoverRef" name="myname">
+    <popover ref="popoverRef" name="share-menu">
       <ShareNetwork network="facebook" :url="url"
-      title="Say hi to Vite! A brand new, extremely fast development setup for Vue."
-      description="This week, I’d like to introduce you to 'Vite', which means 'Fast'. It’s a brand new development setup created by Evan You."
-      quote="The hot reload is so fast it\'s near instant. - Evan You"
-      hashtags="vuejs,vite">
+      title="La Fuerza de Familia."
+      description="This is the description of the item being shared."
+      quote="A quote from them item being shared."
+      hashtags="literacy,literacypartners">
         <span class="cursor-pointer" @click="closePopover">
           Share on Facebook
         </span>
