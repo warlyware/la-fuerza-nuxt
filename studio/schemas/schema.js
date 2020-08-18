@@ -14,6 +14,11 @@ import disclaimer from './documents/disclaimer'
 import privacyPolicy from './documents/privacyPolicy'
 import video from './documents/video'
 
+// translations
+import resources from './i18n/pages/resources'
+import workshops from './i18n/pages/workshops'
+import messages from './i18n/messages'
+
 // Object types
 import mainImage from './objects/mainImage'
 import venue from './objects/venue'
@@ -45,6 +50,10 @@ export default createSchema({
     disclaimer,
     privacyPolicy,
     video,
+
+    workshops,
+    resources,
+    messages,
 
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas

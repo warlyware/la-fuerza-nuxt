@@ -29,7 +29,7 @@ export const actions = {
   async getVideo({ commit }, params) {
     const query = groq`
       *[_type == "video" && slug.current == $slug][0] {
-        "id": _id, url, name, description, shortDescription,
+        "id": _id, url, name, descriptionSpanish, descriptionEnglish, shortDescription,
         "relatedVideos": relatedVideos[].video->{
           ...
         }

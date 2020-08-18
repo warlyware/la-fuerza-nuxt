@@ -68,7 +68,7 @@ export default {
             code: 'es',
             file: 'es.js',
             iso: 'es-ES',
-            name: 'English'
+            name: 'Spanish'
           }
         ],
         strategy: 'no_prefix',

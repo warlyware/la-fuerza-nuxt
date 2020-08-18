@@ -1,7 +1,7 @@
 <template>
   <div class="max-w-5xl mx-auto justify-between p-4">
     <h1 class="text-2xl text-center">
-      Workshops Page
+      {{ $t('workshops.title') }}
     </h1>
   </div>
 </template>

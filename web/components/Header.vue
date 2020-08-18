@@ -42,9 +42,6 @@ export default {
     toggleLanguage() {
       this.$i18n.setLocale(this.language === 'en' ? 'es' : 'en')
     }
-  },
-  mounted() {
-    console.log('$i18n', this.$i18n.locale)
   }
 }
 </script>

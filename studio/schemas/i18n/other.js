@@ -1,6 +1,6 @@
 export default {
   name: 'message',
-  title: 'Translation Messages',
+  title: 'Other Translation Text',
   type: 'document',
   fields: [
     {

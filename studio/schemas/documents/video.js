@@ -82,9 +82,14 @@ export default {
       title: 'Short Description'
     },
     {
-      name: 'description',
+      name: 'descriptionEnglish',
       type: 'bodyPortableText',
-      title: 'Long description'
+      title: 'Long description: English'
+    },
+    {
+      name: 'descriptionSpanish',
+      type: 'bodyPortableText',
+      title: 'Long description: Spanish'
     },
     {
       name: 'slug',
