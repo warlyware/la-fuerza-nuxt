@@ -1,6 +1,6 @@
 <template>
   <fragment>
-    <h2 class="text-2xl text-center">
+    <h2 class="text-center">
       {{ $t('header.related-videos') }}
     </h2>
     <div v-if="relatedVideos.length"

@@ -10,14 +10,14 @@ export default {
       type: 'string'
     },
     {
-      name: 'key',
-      title: 'System Key',
-      type: 'string'
-    },
-    {
       name: 'value',
       title: 'Value',
       type: 'localeString'
+    },
+    {
+      name: 'key',
+      title: 'System Key',
+      type: 'string'
     }
   ],
   preview: {

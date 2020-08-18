@@ -5,7 +5,7 @@
     </div>
     <div class="flex justify-between items-center mb-6">
       <div class="p-2"></div>
-      <h1 class="text-2xl text-center m-0">{{ video.name }}</h1>
+      <h1 class="text-center m-0">{{ video.name }}</h1>
       <ShareMenu :url="currentUrl" />
     </div>
     <!-- <div :v-if="description.length > 0" class="mb-8">

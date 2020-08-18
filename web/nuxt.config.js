@@ -18,6 +18,7 @@ export default {
   },
 
   env: {
+    MAPQUEST_KEY: process.env.MAPQUEST_KEY,
     BASE_URL: process.env.BASE_URL || 'http://localhost:3000'
   },
 

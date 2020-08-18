@@ -7,8 +7,11 @@ body {
 .content {
   flex: 1 0 auto;
 }
-h1, h2, h3, h4, h5, h6 {
-  @apply mb-4 font-MissionGothicBold;
+h1, h2 {
+  @apply mb-4 font-MissionGothicBold text-blue;
+}
+h3, h4, h5, h6 {
+  @apply mb-2 font-MissionGothicBold text-blue;
 }
 h1 {
   @apply text-3xl;
