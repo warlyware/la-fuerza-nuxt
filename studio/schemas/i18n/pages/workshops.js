@@ -1,6 +1,6 @@
 export default {
-  name: 'workshops-page',
-  title: 'Workshops Page',
+  name: 'translation-workshops',
+  title: 'Page: Workshops',
   type: 'document',
   fields: [
     {

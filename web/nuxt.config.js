@@ -72,7 +72,7 @@ export default {
           }
         ],
         strategy: 'no_prefix',
-        defaultLocale: 'es',
+        defaultLocale: 'en',
         lazy: true,
         langDir: 'lang/',
         vuex: {

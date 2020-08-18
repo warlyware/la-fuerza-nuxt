@@ -1,6 +1,6 @@
 export default {
-  name: 'join-us-page',
-  title: 'Resources Page',
+  name: 'translation-contact',
+  title: 'Page: Contact',
   type: 'document',
   fields: [
     {

@@ -2,7 +2,11 @@ import sanityClient from '~/sanityClient'
 
 export default async (lang) => {
   const result = await sanityClient.fetch(`
-    *[_type == 'message']{
+    *[_type in [
+      "translation", "translation-about", "translation-collaborators",
+      "translation-contact", "translation-join",
+      "translation-resources", "translation-workshops"
+    ] ]{
       key, 'value': value['${lang}']
     }
   `)

@@ -1,6 +1,6 @@
 export default {
-  name: 'message',
-  title: 'Translation Text',
+  name: 'translation-join',
+  title: 'Page: Join Us',
   type: 'document',
   fields: [
     {

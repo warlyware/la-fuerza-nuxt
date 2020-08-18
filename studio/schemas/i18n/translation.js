@@ -1,5 +1,5 @@
 export default {
-  name: 'message',
+  name: 'translation',
   title: 'Other Translation Text',
   type: 'document',
   fields: [

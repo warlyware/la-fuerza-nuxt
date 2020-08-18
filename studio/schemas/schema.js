@@ -15,9 +15,13 @@ import privacyPolicy from './documents/privacyPolicy'
 import video from './documents/video'
 
 // translations
+import about from './i18n/pages/about'
+import collaborators from './i18n/pages/collaborators'
+import contact from './i18n/pages/contact'
+import join from './i18n/pages/join'
 import resources from './i18n/pages/resources'
 import workshops from './i18n/pages/workshops'
-import messages from './i18n/messages'
+import translation from './i18n/translation'
 
 // Object types
 import mainImage from './objects/mainImage'
@@ -51,9 +55,13 @@ export default createSchema({
     privacyPolicy,
     video,
 
-    workshops,
+    about,
+    collaborators,
+    contact,
+    join,
     resources,
-    messages,
+    workshops,
+    translation,
 
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas

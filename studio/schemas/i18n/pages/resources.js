@@ -1,6 +1,6 @@
 export default {
-  name: 'resources-page',
-  title: 'Resources Page',
+  name: 'translation-resources',
+  title: 'Page: Resources',
   type: 'document',
   fields: [
     {
