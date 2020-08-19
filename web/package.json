@@ -13,6 +13,7 @@
     "precommit": "yarn run lint"
   },
   "dependencies": {
+    "@nuxtjs/axios": "^5.12.1",
     "@nuxtjs/pwa": "^2.6.0",
     "@sanity/client": "^1.149.16",
     "@sanity/image-url": "^0.140.19",
@@ -27,7 +28,8 @@
     "vue-js-popover": "^1.2.1",
     "vue-sidebar-menu": "^4.6.2",
     "vue-social-sharing": "^3.0.0-beta.11",
-    "vue-youtube-embed": "^2.2.2"
+    "vue-youtube-embed": "^2.2.2",
+    "youtube-api": "^3.0.1"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^0.0.1",

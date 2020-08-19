@@ -21,6 +21,7 @@ import contact from './i18n/pages/contact'
 import join from './i18n/pages/join'
 import resources from './i18n/pages/resources'
 import workshops from './i18n/pages/workshops'
+import videos from './i18n/pages/videos'
 import translation from './i18n/translation'
 
 // Object types
@@ -60,6 +61,7 @@ export default createSchema({
     contact,
     join,
     resources,
+    videos,
     workshops,
     translation,
 

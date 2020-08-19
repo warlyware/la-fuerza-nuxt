@@ -5,7 +5,7 @@ export default async (lang) => {
     *[_type in [
       "translation", "translation-about", "translation-collaborators",
       "translation-contact", "translation-join",
-      "translation-resources", "translation-workshops"
+      "translation-resources", "translation-videos", "translation-workshops"
     ] ]{
       key, 'value': value['${lang}']
     }

@@ -52,6 +52,7 @@ export default {
    */
   modules: [
     '@nuxtjs/pwa',
+    '@nuxtjs/axios',
     '@nuxtjs/tailwindcss',
     'vue-social-sharing/nuxt',
     [
