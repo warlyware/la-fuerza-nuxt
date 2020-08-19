@@ -85,6 +85,9 @@ export default {
       }
     ]
   ],
+  serverMiddleware: [
+    { path: '/youtube', handler: '~/api/youtube' },
+  ],
 
   /*
    ** Set global info from sanity document

@@ -1,7 +1,8 @@
 <template>
   <section class="pt-8 max-w-5xl mx-auto">
     <div class="flex justify-center mb-8">
-      <youtube :video-id="getYoutubeId(video.url)" />
+      <youtube :video-id="getYoutubeId(video.url)"
+      @ready="ready" />
     </div>
     <div class="flex justify-between items-center mb-6">
       <div class="p-2"></div>
@@ -21,7 +22,7 @@
 <script>
 import { mapGetters } from 'vuex'
 
-import getYoutubeId from 'get-youtube-id'
+// import getYoutubeId from 'get-youtube-id'
 // import sanityClient from '~/sanityClient'
 // import SanityImage from '~/components/SanityImage'
 // import SessionItem from '~/components/SessionItem'
@@ -37,6 +38,12 @@ export default {
     ShareMenu
     // SessionItem
   },
+  data() {
+    return {
+      currentTime: null,
+      player: null
+    }
+  },
   computed: {
     language() { return this.$i18n.locale },
     description() { return this.language === 'en' ? this.video.descriptionEnglish : this.video.descriptionSpanish },
@@ -47,8 +54,13 @@ export default {
     await store.dispatch('getVideo', params)
   },
   methods: {
-    getYoutubeId(url) {
-      return getYoutubeId(url)
+    getYoutubeId() {
+      return 'PLRXlgtNPU7wJ0jdbPGylii5TvjNH0CQyG'
+      // return getYoutubeId(url)
+    },
+    ready(player) {
+      this.player = player.target
+      console.log(this.player.getPlaylist())
     }
   },
   head() {
