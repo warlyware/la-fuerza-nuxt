@@ -3,7 +3,6 @@
     <h1 class="text-center">
       Home Page
     </h1>
-    <iframe width="750" height="425" src="https://www.youtube.com/embed/videoseries?list=PLAXKIS0jXy64fre2EuL12XU7rBHJH16oN" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
   </div>
 
   <!-- <section class="max-w-5xl mx-auto justify-between p-4">
