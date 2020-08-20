@@ -23,8 +23,8 @@ app.get('/playlist/full', async (req, res) => {
   const { data } = await axios.get(
     `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet%2C+id&playlistId=${id}&key=${key}&maxResults=50`
   )
-
-  const playlist = data.items.map(i => i.snippet)
+  console.log(data)
+  const playlist = data.items.map(i => ({ ...i.snippet, id: i.snippet.resourceId.videoId }))
   res.send(200, {
     pageInfo: data.pageInfo,
     playlist

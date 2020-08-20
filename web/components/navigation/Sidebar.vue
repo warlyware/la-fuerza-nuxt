@@ -22,29 +22,9 @@ export default {
           hiddenOnCollapse: true
         },
         {
+          href: '/videos',
           title: 'VIDEOS •',
-          hiddenOnCollapse: true,
-          exactPath: true,
-          child: [
-            {
-              href: '/videos/moc',
-              title: 'MOC -',
-              hiddenOnCollapse: true,
-              exactPath: true,
-            },
-            {
-              href: '/videos/juntas-en-casa',
-              title: 'JUNTAS EN CASA -',
-              hiddenOnCollapse: true,
-              exactPath: true,
-            },
-            {
-              href: '/videos/lfdc2',
-              title: 'LFDC 2 -',
-              hiddenOnCollapse: true,
-              exactPath: true,
-            }
-          ]
+          hiddenOnCollapse: true
         },
         {
           href: '/resources',

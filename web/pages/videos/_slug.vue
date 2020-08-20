@@ -22,7 +22,7 @@
 <script>
 import { mapGetters } from 'vuex'
 
-// import getYoutubeId from 'get-youtube-id'
+import getYoutubeId from 'get-youtube-id'
 // import sanityClient from '~/sanityClient'
 // import SanityImage from '~/components/SanityImage'
 // import SessionItem from '~/components/SessionItem'
@@ -54,9 +54,8 @@ export default {
     await store.dispatch('getVideo', params)
   },
   methods: {
-    getYoutubeId() {
-      return 'PLRXlgtNPU7wJ0jdbPGylii5TvjNH0CQyG'
-      // return getYoutubeId(url)
+    getYoutubeId(url) {
+      return getYoutubeId(url)
     },
     ready(player) {
       this.player = player.target
