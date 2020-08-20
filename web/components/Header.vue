@@ -1,5 +1,5 @@
 <template>
-  <header class="top-0 p-4 fixed w-screen bg-white">
+  <header class="top-0 p-4 fixed w-screen bg-white z-10">
     <div class="flex justify-center mx-auto">
       <div class="flex-col w-full justify-center">
         <div class="flex w-full justify-between items-end h-half border-l-4 border-pink">
