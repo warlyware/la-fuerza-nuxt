@@ -1,5 +1,5 @@
 <template>
-  <section class="pt-8 max-w-5xl mx-auto">
+  <section class="pt-8">
     <h1 class="text-5xl text-center italic">
       {{ $t('videos.title') }}
     </h1>
@@ -7,7 +7,7 @@
     <h2>
       {{ name }}
     </h2>
-    <YoutubePlayer :playlist="playlist" />
+    <YoutubePlayer v-if="playlists[0]" :raw-playlist="playlists[0]" />
   </section>
 
 
@@ -23,14 +23,15 @@ export default {
   data() {
     return {
       name: '',
-      playlist: []
+      playlists: []
     }
   },
   async mounted() {
-    // console.log(getYtPlaylist)
-    const { pageInfo, playlist } = await getYtPlaylist('PLRXlgtNPU7wJ0jdbPGylii5TvjNH0CQyG')
-    this.playlist = playlist
-    this.pageInfo = pageInfo
+    const playlistIds = ['PLRXlgtNPU7wJ0jdbPGylii5TvjNH0CQyG']
+    playlistIds.forEach(async id => {
+      const { playlist } = await getYtPlaylist(id)
+      this.playlists.push(playlist)
+    })
   }
 }
 </script>
