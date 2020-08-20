@@ -1,6 +1,6 @@
 <template>
   <header class="top-0 p-4 fixed w-screen bg-white">
-    <div class="flex justify-center max-w-5xl mx-auto">
+    <div class="flex justify-center mx-auto">
       <div class="flex-col w-full justify-center">
         <div class="flex w-full justify-between items-end h-half border-l-4 border-pink">
           <button class="bg-aqua rounded-full self-center p-4 py-0 ml-1 mb-2 md:w-32 text-sm md:text-2xl font-MissionGothicBlackItalic text-white font-bold"
