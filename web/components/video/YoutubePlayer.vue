@@ -1,16 +1,14 @@
 <template>
-  <div class="flex flex-wrap max-w-video-player m-auto items-center">
+  <div class="flex flex-wrap max-w-video-player m-auto items-center container">
     <div class="flex items-center w-full md:w-3/4">
       <youtube v-if="currentVideo" player-width="100%" player-height="100%"
       class="video-responsive flex-grow"
       :video-id="currentVideo.id" />
     </div>
 
-    <div class="w-full md:w-1/4 overflow-scroll h-64">
-      <div class="inner-container">
-        <YoutubePlaylist :playlist="playlist" />
-      </div>
-    </div>
+    <YoutubePlaylist class="w-full md:w-1/4 playlist-wrapper" :playlist="playlist" />
+    <!-- <div class="w-full md:w-1/4 video-wrapper">
+    </div> -->
 
     {{currentVideo.description}}
   </div>
@@ -49,6 +47,20 @@ export default {
 </script>
 
 <style lang="scss">
+.container {
+  // width: 500px;
+  border: 3px solid red;
+  margin: 0 auto;
+  position: relative;
+}
+.playlist-wrapper {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  background-color: yellow;
+  overflow-y: scroll;
+}
 .max-w-video-player {
   max-width: 1200px;
 }
