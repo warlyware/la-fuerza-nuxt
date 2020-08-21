@@ -1,0 +1,18 @@
+{
+  "name": "playlist-full",
+  "version": "1.0.0",
+  "description": "Get youtube playlist",
+  "main": "playlist-full.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "netlify",
+    "serverless",
+    "js"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.20.0"
+  }
+}

@@ -19,7 +19,7 @@ export default {
 
   env: {
     MAPQUEST_KEY: process.env.MAPQUEST_KEY,
-    BASE_URL: process.env.BASE_URL
+    API_BASE_URL: process.env.API_BASE_URL
   },
 
   /*
@@ -85,9 +85,6 @@ export default {
         }
       }
     ]
-  ],
-  serverMiddleware: [
-    { path: '/youtube', handler: '~/api/youtube' },
   ],
 
   /*
