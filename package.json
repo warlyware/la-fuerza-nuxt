@@ -21,6 +21,7 @@
   "dependencies": {
     "dot-prop": "^5.1.1",
     "nuxt-i18n": "^6.13.9",
+    "vue-screen-size": "^1.0.1",
     "vue-template-compiler": "^2.6.11",
     "youtube-playlist": "^1.0.4"
   }

@@ -86,10 +86,10 @@ export default {
     @apply text-blue font-bold text-4xl font-MissionGothicBold;
   }
   .v-sidebar-menu.vsm_expanded .vsm--item_open .vsm--link_level-1 {
-    @apply bg-light-gray text-blue !important;
+    @apply bg-gray-light text-blue !important;
   }
   .v-sidebar-menu .vsm--dropdown>.vsm--list {
-    @apply bg-light-gray !important;
+    @apply bg-gray-light !important;
   }
   .v-sidebar-menu .vsm--dropdown>.vsm--list .vsm--link {
     @apply py-1 !important;

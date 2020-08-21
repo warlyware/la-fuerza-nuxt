@@ -20,9 +20,9 @@ module.exports = {
       orange: '#ff5000',
       white: '#fff',
       black: '#000',
-      'light-gray': '#f6f6f6',
+      'gray-light': '#f6f6f6',
       gray: '#CDCDCD',
-      'dark-gray': '#616469'
+      'gray-dark': '#616469'
     }
   },
   variants: {},

@@ -37,7 +37,7 @@
               <img class="h-16 w-auto px-2" src="/images/lp-logo.svg">
             </a>
             <a href="//univision.com" target="_blank" class="block">
-              <p class="text-xs text-dark-gray text-center font-bold mb-1 italic font-MissionGothicBlackItalic">
+              <p class="text-xs text-gray-dark text-center font-bold mb-1 italic font-MissionGothicBlackItalic">
                 "La Fuerza de Creer"<br>
                 Visita en:
               </p>

@@ -4,12 +4,22 @@
     <div class="flex items-center w-full md:w-3/4">
       <youtube v-if="currentVideo" player-width="100%" player-height="100%"
       class="video-responsive flex-grow"
-      :video-id="currentVideo.id" />
+      :video-id="currentVideo.id"
+      @ready="playerReady" />
     </div>
 
-    <YoutubePlaylist class="hidden md:block w-1/4 playlist-wrapper" :playlist="playlist" />
+    <YoutubePlaylist v-if="$vssWidth >= 768 "
+    class="hidden md:block w-1/4 playlist-wrapper"
+    :current-index="currentIndex"
+    :playlist="playlist"
+    @set-current-index="(i) => setCurrentIndex(i)" />
   </div>
-  <YoutubePlaylist class="w-full md:hidden h-64 overflow-y-auto" :playlist="playlist" />
+  <YoutubePlaylist v-if="$vssWidth < 768"
+  class="w-full md:hidden h-64 overflow-y-auto"
+  :current-index="currentIndex"
+  :playlist="playlist"
+  @set-current-index="(i) => setCurrentIndex(i)" />
+
   <div class="w-full py-4">
     {{currentVideo.description}}
   </div>
@@ -17,6 +27,7 @@
 </template>
 
 <script>
+import VueScreenSize from 'vue-screen-size'
 import YoutubePlaylist from '~/components/video/YoutubePlaylist'
 import getYoutubeId from 'get-youtube-id'
 
@@ -24,34 +35,41 @@ export default {
   components: {
     YoutubePlaylist
   },
+  mixins: [VueScreenSize.VueScreenSizeMixin],
   props: {
     rawPlaylist: {
       type: Array,
       required: true
-    }
+    },
   },
   data() {
     return {
-      currentVideo: {},
-      formattedPlaylist: []
+      ytPlayer: null,
+      currentIndex: 0
     }
   },
   computed: {
-    playlist() { return this.rawPlaylist.map(video => ({ ...video, id: video.resourceId.videoId })) }
-  },
-  mounted() {
-    this.currentVideo = this.playlist[0]
+    playlist() { return this.rawPlaylist.map(video => ({ ...video, id: video.resourceId.videoId })) },
+    currentVideo() { return this.playlist[this.currentIndex]}
   },
   methods: {
-    getYoutubeId
+    playerReady({ target }) {
+      this.ytPlayer = target
+    },
+    getYoutubeId,
+    setCurrentIndex(i) {
+      this.currentIndex = i
+      // if (this.ytPlayer) { this.ytPlayer.playVideo() }
+      this.$nextTick(() => this.ytPlayer.playVideo())
+      // this.ytPlayer.playVideo()
+      console.log(this.ytPlayer)
+    }
   }
 }
 </script>
 
 <style lang="scss">
 .player-container {
-  // width: 500px;
-  border: 3px solid red;
   margin: 0 auto;
   position: relative;
 }
@@ -60,7 +78,6 @@ export default {
   right: 0;
   top: 0;
   height: 100%;
-  background-color: yellow;
   overflow-y: scroll;
 }
 .max-w-video-player {
@@ -70,7 +87,6 @@ export default {
   margin-top: -2px;
   margin-bottom: -2px;
   position: relative;
-  // padding-bottom: 56%;
   padding-bottom: calc(var(--aspect-ratio, .5625) * 100%);
   height: 0;
 }
