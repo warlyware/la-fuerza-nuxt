@@ -1,29 +1,29 @@
 <template>
-<div class="max-w-video-player m-auto">
-  <div class="flex flex-wrap items-center player-container">
-    <div class="flex items-center w-full md:w-3/4">
-      <youtube v-if="currentVideo" player-width="100%" player-height="100%"
-      class="video-responsive flex-grow"
-      :video-id="currentVideo.id"
-      @ready="playerReady" />
-    </div>
+  <div>
+    <div class="flex flex-wrap items-center player-container">
+      <div class="flex items-center w-full md:w-3/4">
+        <youtube v-if="currentVideo" player-width="100%" player-height="100%"
+        class="video-responsive flex-grow"
+        :video-id="currentVideo.id"
+        @ready="playerReady" />
+      </div>
 
-    <YoutubePlaylist v-if="$vssWidth >= 768 "
-    class="hidden md:block w-1/4 playlist-wrapper"
+      <YoutubePlaylist v-if="$vssWidth >= 768 "
+      class="hidden md:block w-1/4 playlist-wrapper"
+      :current-index="currentIndex"
+      :playlist="playlist"
+      @set-current-index="(i) => setCurrentIndex(i)" />
+    </div>
+    <YoutubePlaylist v-if="$vssWidth < 768"
+    class="w-full md:hidden h-64 overflow-y-auto"
     :current-index="currentIndex"
     :playlist="playlist"
     @set-current-index="(i) => setCurrentIndex(i)" />
-  </div>
-  <YoutubePlaylist v-if="$vssWidth < 768"
-  class="w-full md:hidden h-64 overflow-y-auto"
-  :current-index="currentIndex"
-  :playlist="playlist"
-  @set-current-index="(i) => setCurrentIndex(i)" />
 
-  <div class="w-full py-4">
-    {{currentVideo.description}}
+    <div class="w-full py-4 break-words">
+      {{currentVideo.description}}
+    </div>
   </div>
-</div>
 </template>
 
 <script>
@@ -80,9 +80,6 @@ export default {
   height: 100%;
   overflow-y: scroll;
 }
-.max-w-video-player {
-  max-width: 1200px;
-}
 .video-responsive{
   margin-top: -2px;
   margin-bottom: -2px;
@@ -91,7 +88,6 @@ export default {
   height: 0;
 }
 .video-responsive iframe {
-  max-height: 500px;
   position: absolute;
   margin:auto;
   top: 0;
