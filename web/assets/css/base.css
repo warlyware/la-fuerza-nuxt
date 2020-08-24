@@ -22,6 +22,9 @@ h2 {
 p {
   @apply mb-2;
 }
+p, div {
+  @apply font-MissionGothic;
+}
 
 .player-container {
   margin: 0 auto;
@@ -53,15 +56,15 @@ p {
 }
 
 
-.text-pink-shadow {
+.text-shadow-pink {
   text-shadow: 2px 2px #ea3cad;
 }
-.text-pink-shadow-side {
+.text-shadow-pink-side {
   text-shadow: 2px 0px #ea3cad;
 }
-.text-aqua-shadow {
+.text-shadow-aqua {
   text-shadow: 2px 2px #1bcfc9;
 }
-.text-aqua-shadow-side {
+.text-shadow-aqua-side {
   text-shadow: 2px 0px #1bcfc9;
 }

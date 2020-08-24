@@ -12,20 +12,20 @@
       </div>
     </div>
     <div class="font-MissionGothicBlackItalic">
-      <h1 class="text-aqua text-pink-shadow-side text-3xl uppercase w-full text-center pt-8">
+      <h1 class="text-aqua text-shadow-pink-side text-3xl uppercase w-full text-center pt-8">
         Recursos Para las Familias Latinas
       </h1>
       <div class="flex w-full flex-wrap items-center justify-around pb-12">
-        <button class="w-full md:w-auto bg-pink text-white text-aqua-shadow text-2xl rounded px-2 uppercase mx-4 mb-2">
+        <button class="w-full md:w-auto bg-pink text-white text-shadow-aqua text-2xl rounded px-2 uppercase mx-4 mb-2">
           Videos
         </button>
-        <button class="w-full md:w-auto bg-aqua text-white text-pink-shadow text-2xl rounded px-2 uppercase mx-4 mb-2">
+        <button class="w-full md:w-auto bg-aqua text-white text-shadow-pink text-2xl rounded px-2 uppercase mx-4 mb-2">
           Talleres
         </button>
-        <button class="w-full md:w-auto bg-pink text-white text-aqua-shadow text-2xl rounded px-2 uppercase mx-4 mb-2">
+        <button class="w-full md:w-auto bg-pink text-white text-shadow-aqua text-2xl rounded px-2 uppercase mx-4 mb-2">
           Cuentos
         </button>
-        <button class="w-full md:w-auto bg-aqua text-white text-pink-shadow text-2xl rounded px-2 uppercase mx-4 mb-2">
+        <button class="w-full md:w-auto bg-aqua text-white text-shadow-pink text-2xl rounded px-2 uppercase mx-4 mb-2">
           Consejos
         </button>
       </div>
@@ -52,7 +52,7 @@
           Móvil
           <input type="text" class="bg-blue border-b w-2/3">
         </div>
-        <button class="w-full md:w-auto bg-aqua text-white text-pink-shadow text-2xl rounded px-2 uppercase mx-4 mb-2p mt-4">
+        <button class="w-full md:w-auto bg-aqua text-white text-shadow-pink text-2xl rounded px-2 uppercase mx-4 mb-2p mt-4">
           Submit
         </button>
       </div>
