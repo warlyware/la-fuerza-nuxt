@@ -3,6 +3,7 @@
     <div class="w-full flex flex-wrap">
       <div class="w-full md:w-2/3 my-1/2">
         <youtube player-width="100%" player-height="100%"
+        :player-vars="{ autoplay: 1 }"
         class="video-responsive flex-grow"
         video-id="EBRsKQkuZN8" />
       </div>
