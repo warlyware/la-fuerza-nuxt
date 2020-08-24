@@ -7,7 +7,7 @@
         video-id="EBRsKQkuZN8" />
       </div>
       <div class="w-full md:w-1/3 bg-pink text-white flex justify-center items-center leading-tight p-8">
-        <span class="uppercase text-3xl font-MissionGothicBlackItalic">Cómo Reconoces tu Poder?</span>
+        <span class="uppercase text-4xl font-MissionGothicBlackItalic">Cómo Reconoces tu Poder?</span>
       </div>
     </div>
     <div class="font-MissionGothicBlackItalic">
@@ -32,7 +32,7 @@
 
     <div class="w-full flex flex-wrap pb-8">
       <div class="w-full order-1 md:w-1/3 bg-blue text-white flex flex-col justify-center items-center leading-tight p-8 italic">
-        <div class="uppercase text-3xl font-MissionGothicBlackItalic text-aqua pb-4">
+        <div class="uppercase text-4xl font-MissionGothicBlackItalic text-aqua pb-4">
           únete a Nosotros!
         </div>
         <div class="w-full">
