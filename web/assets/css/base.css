@@ -22,3 +22,46 @@ h2 {
 p {
   @apply mb-2;
 }
+
+.player-container {
+  margin: 0 auto;
+  position: relative;
+}
+.playlist-wrapper {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  overflow-y: scroll;
+}
+.video-responsive{
+  margin-top: -2px;
+  margin-bottom: -2px;
+  position: relative;
+  padding-bottom: calc(var(--aspect-ratio, .5625) * 100%);
+  height: 0;
+}
+.video-responsive iframe {
+  position: absolute;
+  margin:auto;
+  top: 0;
+  bottom:0;
+  right:0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+
+.text-pink-shadow {
+  text-shadow: 2px 2px #ea3cad;
+}
+.text-pink-shadow-side {
+  text-shadow: 2px 0px #ea3cad;
+}
+.text-aqua-shadow {
+  text-shadow: 2px 2px #1bcfc9;
+}
+.text-aqua-shadow-side {
+  text-shadow: 2px 0px #1bcfc9;
+}

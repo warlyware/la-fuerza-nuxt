@@ -50,7 +50,4 @@ export default {
   .h-half {
     height: 50%
   }
-  .text-pink-shadow {
-    text-shadow: 2px 2px #ea3cad;
-  }
 </style>

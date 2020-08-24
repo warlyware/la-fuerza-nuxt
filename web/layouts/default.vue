@@ -2,7 +2,7 @@
   <div class="flex flex-col h-full">
     <Header />
     <Sidebar />
-    <nuxt class="pt-24 md:pt-32 mb-8 content px-8 md:px-0" />
+    <nuxt class="pt-24 md:pt-32 mb-8" />
     <Footer />
   </div>
 </template>
