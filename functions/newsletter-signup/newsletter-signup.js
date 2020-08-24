@@ -1,4 +1,4 @@
-const axios = require('axios')
+// const axios = require('axios')
 const ConstantContact = require('node-constantcontact');
 const apiKey = process.env.CONSTANT_CONTACT_API_KEY
 const accessToken = process.env.CONSTANT_CONTACT_ACCESS_TOKEN
