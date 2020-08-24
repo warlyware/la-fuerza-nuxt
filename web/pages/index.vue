@@ -1,12 +1,12 @@
 <template>
   <div class="mx-auto justify-between pt-4 w-full">
-    <div class="w-full flex">
-      <div class="w-2/3 my-1/2">
+    <div class="w-full flex flex-wrap">
+      <div class="w-full md:w-2/3 my-1/2">
         <youtube player-width="100%" player-height="100%"
         class="video-responsive flex-grow"
         video-id="EBRsKQkuZN8" />
       </div>
-      <div class="w-1/3 bg-pink text-white flex justify-center items-center leading-tight p-8">
+      <div class="w-full md:w-1/3 bg-pink text-white flex justify-center items-center leading-tight p-8">
         <span class="uppercase text-3xl font-MissionGothicBlackItalic">Cómo Reconoces tu Poder?</span>
       </div>
     </div>
@@ -15,44 +15,63 @@
         Recursos Para las Familias Latinas
       </h1>
       <div class="flex w-full flex-wrap items-center justify-around pb-12">
-        <button class="bg-pink text-white text-aqua-shadow text-2xl rounded px-2 uppercase">
+        <button class="w-full md:w-auto bg-pink text-white text-aqua-shadow text-2xl rounded px-2 uppercase mx-4 mb-2">
           Videos
         </button>
-        <button class="bg-aqua text-white text-pink-shadow text-2xl rounded px-2 uppercase">
+        <button class="w-full md:w-auto bg-aqua text-white text-pink-shadow text-2xl rounded px-2 uppercase mx-4 mb-2">
           Talleres
         </button>
-        <button class="bg-pink text-white text-aqua-shadow text-2xl rounded px-2 uppercase">
+        <button class="w-full md:w-auto bg-pink text-white text-aqua-shadow text-2xl rounded px-2 uppercase mx-4 mb-2">
           Cuentos
         </button>
-        <button class="bg-aqua text-white text-pink-shadow text-2xl rounded px-2 uppercase">
+        <button class="w-full md:w-auto bg-aqua text-white text-pink-shadow text-2xl rounded px-2 uppercase mx-4 mb-2">
           Consejos
         </button>
       </div>
     </div>
 
-    <div class="w-full flex pb-8">
-      <div class="w-1/3 bg-blue text-white flex justify-center items-center leading-tight p-8">
-        <span class="uppercase text-3xl font-MissionGothicBlackItalic text-aqua">
+    <div class="w-full flex flex-wrap pb-8">
+      <div class="w-full order-1 md:w-1/3 bg-blue text-white flex flex-col justify-center items-center leading-tight p-8 italic">
+        <div class="uppercase text-3xl font-MissionGothicBlackItalic text-aqua pb-4">
           únete a Nosotros!
-        </span>
+        </div>
+        <div class="w-full">
+          Nombre
+          <input type="text" class="bg-blue border-b w-2/3">
+        </div>
+        <div class="w-full">
+          E-mail
+          <input type="text" class="bg-blue border-b w-2/3">
+        </div>
+        <div class="w-full">
+          Estado
+          <input type="text" class="bg-blue border-b w-2/3">
+        </div>
+        <div class="w-full">
+          Móvil
+          <input type="text" class="bg-blue border-b w-2/3">
+        </div>
+        <button class="w-full md:w-auto bg-aqua text-white text-pink-shadow text-2xl rounded px-2 uppercase mx-4 mb-2p mt-4">
+          Submit
+        </button>
       </div>
-      <div class="w-2/3 my-1/2">
+      <div class="w-full order-first md:order-last md:w-2/3 my-1/2">
         <youtube player-width="100%" player-height="100%"
         class="video-responsive flex-grow"
-        video-id="EBRsKQkuZN8" />
+        video-id="qREKP9oijWI" />
       </div>
     </div>
 
-    <div class="w-full flex">
-      <div class="w-1/2">
+    <div class="w-full flex flex-wrap">
+      <div class="w-full md:w-1/2">
         <youtube player-width="100%" player-height="100%"
         class="video-responsive flex-grow"
         video-id="BHACKCNDMW8" />
       </div>
-      <div class="w-1/2">
+      <div class="w-full md:w-1/2">
         <youtube player-width="100%" player-height="100%"
         class="video-responsive flex-grow"
-        video-id="w-ec_xGmM_tJc" />
+        video-id="buqt6_CjtuI" />
       </div>
     </div>
   </div>
