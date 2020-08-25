@@ -20,10 +20,10 @@
         <nuxt-link to="/resources/books/title-of-book" class="w-1/2 md:w-1/5">
           <img class="p-2 cursor-pointer" src="//placehold.it/300" alt="">
         </nuxt-link>
-        <div class="w-full md:w-1/5 flex items-center justify-center md:justify-start">
-          <div class="mt-4 m-0 py-0 md:ml-4">
+        <div class="w-full md:w-1/5 flex items-center justify-center md:justify-start flex-shrink">
+          <div class="md-4 md:mt-0 m-0 py-0 md:ml-4">
             <nuxt-link to="/resources/books"
-            class="bg-aqua text-white text-shadow-pink px-4 rounded-lg font-MissionGothicItalic uppercase text-2xl md:text-base">
+            class="bg-aqua text-white text-shadow-pink px-4 rounded-lg font-MissionGothicItalic uppercase text-2xl">
               Ver Mas
             </nuxt-link>
           </div>
@@ -50,10 +50,13 @@
         <div class="w-1/2 md:w-1/5">
           <img class="p-2 cursor-pointer" src="//placehold.it/300" alt="">
         </div>
-        <div class="w-full h-full md:w-1/5 flex items-center">
-          <button class="bg-aqua text-white text-shadow-pink p-4 py-0 rounded-lg font-MissionGothicItalic uppercase ml-4">
-            Ver Mas
-          </button>
+        <div class="w-full md:w-1/5 flex items-center justify-center md:justify-start flex-shrink">
+          <div class="md-4 md:mt-0 m-0 py-0 md:ml-4">
+            <nuxt-link to="/resources/books"
+            class="bg-aqua text-white text-shadow-pink px-4 rounded-lg font-MissionGothicItalic uppercase text-2xl">
+              Ver Mas
+            </nuxt-link>
+          </div>
         </div>
       </div>
     </div>
