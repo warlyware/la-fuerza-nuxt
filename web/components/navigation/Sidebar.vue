@@ -54,10 +54,8 @@ export default {
     handleToggleCollapse() {
       this.$store.commit('toggleNav')
     },
-    handleItemClicked(_, item) {
-      if (item.title !== 'VIDEOS •') {
-        this.$store.commit('toggleNav')
-      }
+    handleItemClicked() {
+      this.$store.commit('toggleNav')
     }
   }
 }
