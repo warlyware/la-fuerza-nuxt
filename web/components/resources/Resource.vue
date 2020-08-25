@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full lg:w-1/2 flex">
+  <div class="w-full lg:w-1/2 flex cursor-pointer" @click="$router.push('/resources/books/title-of-book')">
     <img class="p-2 w-32"
     src="//placehold.it/300" alt="">
     <div class="flex flex-col h-full p-2 justify-around">

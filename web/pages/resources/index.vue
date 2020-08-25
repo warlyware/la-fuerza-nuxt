@@ -8,30 +8,31 @@
         Duis nisl eros, pharetra eget bibendum sit amet, convallis a est.
       </p>
       <div class="w-full flex flex-wrap">
-        <nuxt-link to="/resources/test" class="w-1/2 md:w-1/5">
+        <nuxt-link to="/resources/books/title-of-book" class="w-1/2 md:w-1/5">
           <img class="p-2 cursor-pointer" src="//placehold.it/300" alt="">
         </nuxt-link>
-        <div class="w-1/2 md:w-1/5">
+        <nuxt-link to="/resources/books/title-of-book" class="w-1/2 md:w-1/5">
           <img class="p-2 cursor-pointer" src="//placehold.it/300" alt="">
-        </div>
-        <div class="w-1/2 md:w-1/5">
+        </nuxt-link>
+        <nuxt-link to="/resources/books/title-of-book" class="w-1/2 md:w-1/5">
           <img class="p-2 cursor-pointer" src="//placehold.it/300" alt="">
-        </div>
-        <div class="w-1/2 md:w-1/5">
+        </nuxt-link>
+        <nuxt-link to="/resources/books/title-of-book" class="w-1/2 md:w-1/5">
           <img class="p-2 cursor-pointer" src="//placehold.it/300" alt="">
-        </div>
+        </nuxt-link>
         <div class="w-full md:w-1/5 flex items-center justify-center md:justify-start">
           <div class="mt-4 m-0 py-0 md:ml-4">
-            <button class="bg-aqua text-white text-shadow-pink px-4 rounded-lg font-MissionGothicItalic uppercase text-2xl md:text-base">
+            <nuxt-link to="/resources/books"
+            class="bg-aqua text-white text-shadow-pink px-4 rounded-lg font-MissionGothicItalic uppercase text-2xl md:text-base">
               Ver Mas
-            </button>
+            </nuxt-link>
           </div>
         </div>
       </div>
     </div>
     <div class="flex flex-wrap w-full uppercase mb-8">
       <h2 class="w-full mb-0 font-MissionGothicBlack leading-tight">
-        Recursos
+        Consejos
       </h2>
       <p class="italic">
         Duis nisl eros, pharetra eget bibendum sit amet, convallis a est.
@@ -56,7 +57,7 @@
         </div>
       </div>
     </div>
-    <div class="flex flex-wrap w-full uppercase mb-8">
+    <!-- <div class="flex flex-wrap w-full uppercase mb-8">
       <h2 class="w-full mb-0 font-MissionGothicBlack leading-tight">
         Kit de Herramientas
       </h2>
@@ -82,6 +83,6 @@
           </button>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
