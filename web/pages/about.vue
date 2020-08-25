@@ -7,6 +7,7 @@
         Aenean ut neque ac massa mollis tincidunt. Donec nec urna pellentesque, consequat risus malesuada, eleifend lectus. Etiam ullamcorper erat id ante blandit vulputate. Nulla et arcu at turpis luctus aliquam a id lacus. Suspendisse facilisis, massa sit amet placerat placerat, elit magna accumsan lorem, aliquam mattis ex orci vitae leo. Etiam consectetur tempor dignissim. Nunc pulvinar tellus id ipsum eleifend, a molestie odio pulvinar. In iaculis ligula ut aliquet consectetur. Integer gravida faucibus tortor ac placerat. Fusce sed velit eu justo porta venenatis. Vestibulum luctus gravida mauris. Proin et nisi quis nibh posuere porta. Ut libero mauris, suscipit vel nulla at, convallis imperdiet nisi. Aenean sollicitudin quam et nunc malesuada cursus.
       </p>
     </div>
+
     <OurAllies class="mb-16" />
 
     <div class="max-w-4xl mx-auto w-full flex flex-wrap mb-8">

@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class="font-MissionGothicBlackItalic">
-      <h1 class="text-aqua text-shadow-pink-side text-3xl uppercase w-full text-center pt-8">
+      <h1 class="text-aqua text-3xl uppercase w-full text-center pt-8">
         Recursos Para las Familias Latinas
       </h1>
       <div class="flex w-full flex-wrap items-center justify-around pb-12">
@@ -36,24 +36,8 @@
         <div class="uppercase text-4xl font-MissionGothicBlackItalic text-aqua pb-4">
           únete a Nosotros!
         </div>
-        <div class="w-full">
-          Nombre
-          <input type="text" class="bg-blue border-b w-2/3">
-        </div>
-        <div class="w-full">
-          E-mail
-          <input type="text" class="bg-blue border-b w-2/3">
-        </div>
-        <div class="w-full">
-          Estado
-          <input type="text" class="bg-blue border-b w-2/3">
-        </div>
-        <div class="w-full">
-          Móvil
-          <input type="text" class="bg-blue border-b w-2/3">
-        </div>
         <button class="w-full md:w-auto bg-aqua text-white text-shadow-pink text-2xl rounded px-2 uppercase mx-4 mb-2p mt-4">
-          Submit
+          CLIC AQUI
         </button>
       </div>
       <div class="w-full order-first md:order-last md:w-2/3 my-1/2">
