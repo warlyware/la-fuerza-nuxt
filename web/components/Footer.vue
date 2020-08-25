@@ -12,7 +12,7 @@
           <nuxt-link class="block self-start" to="/contact">
             {{ $t('contact.title') }}
           </nuxt-link>
-          <nuxt-link class="block self-start" to="/about-us">
+          <nuxt-link class="block self-start" to="/about">
             {{ $t('about.title') }}
           </nuxt-link>
         </div>
