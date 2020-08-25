@@ -1,7 +1,7 @@
 <template>
   <div class="h-64 bg-blue w-full">
     <div :class="`flex h-full w-full justify-${xAxisLocation} items-end`">
-      <div class="text-white text-6xl uppercase italic px-8 font-MissionGothicBlackItalic">
+      <div class="text-white text-5xl uppercase italic px-8 font-MissionGothicBlackItalic">
         {{ title }}
       </div>
     </div>
