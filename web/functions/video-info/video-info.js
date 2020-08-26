@@ -7,7 +7,7 @@ const headers = process.env.IS_LOCAL_DEV ? {
     'Origin, X-Requested-With, Content-Type, Accept',
 } : {}
 
-exports.handler = async function (event, context) {
+exports.handler = async function (event) {
   try {
     const { id } = event.queryStringParameters
 
