@@ -20,7 +20,7 @@
     <div class="w-full bg-blue p-8 mb-8">
       <p class="w-full text-center text-2xl text-white font-MissionGothicBold">
         Learn more about our
-        <nuxt-link to="/talleres" class="text-pink italic">
+        <nuxt-link to="/workshops" class="text-pink italic">
           workshops for parents</nuxt-link>.
       </p>
     </div>
