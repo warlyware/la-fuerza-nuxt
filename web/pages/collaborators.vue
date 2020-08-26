@@ -36,44 +36,46 @@
         </div>
       </div>
     </div>
-    <div class="max-w-5xl m-auto mb-12">
-      <h2 class="text-5xl uppercase font-MissionGothicBlackItalic text-center mb-0">
+    <div class="max-w-5xl m-auto mb-12 px-8 md:px-0">
+      <h2 class="text-5xl uppercase font-MissionGothicBlackItalic text-center mb-2 md:mb-0">
         How to Collaborate
       </h2>
-      <div class="flex flex-wrap md:flex-no-wrap w-full">
-        <div class="h-48 w-48 flex items-center justify-center border border-pink rounded-full shadow-pink-side flex-shrink-0 mx-8">
-          <h3 class="text-4xl mb-0 uppercase font-MissionGothicBlack">Host</h3>
+      <div class="flex flex-wrap md:flex-no-wrap w-full justify-center md:justify-start mb-8 md:mb-0">
+        <div class="h-48 w-48 flex items-center justify-center border border-pink rounded-full shadow-pink-side flex-shrink-0 mx-8 mb-4 md:mb-0">
+          <h3 class="text-4xl mb-0 uppercase font-MissionGothicBlack">
+            Host
+          </h3>
         </div>
-        <p class="text-pink text-lg font-MissionGothicBold leading-5 flex items-center">
+        <p class="text-pink text-lg font-MissionGothicBold leading-5 flex items-center mb-0">
           Mauris ullamcorper porttitor pretium. Curabitur quis ex varius, auctor lorem vel, cursus velit.
           Ut eget nunc a nibh sollicitudin luctus ac eget ante. Vivamus nec pharetra dui, et condimentum sapien.
           Etiam eu pretium metus. Vivamus pellentesque ex nec lacus euismod, sit amet ultrices ante efficitur.
         </p>
       </div>
-      <div class="flex flex-wrap md:flex-no-wrap w-full">
+      <div class="flex flex-wrap md:flex-no-wrap justify-center w-full mb-8 md:mb-0">
         <p class="text-aqua text-lg font-MissionGothicBold leading-5 flex items-center text-right">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam elementum auctor quam,
           nec ornare lorem maximus non. Quisque aliquet enim sed molestie rutrum. Duis id enim quis enim
           condimentum lacinia. Quisque imperdiet sed erat vitae lobortis. Aenean tempus est nec
           consectetur condimentum.
         </p>
-        <div class="h-48 w-48 flex items-center justify-center border border-aqua rounded-full shadow-aqua-side flex-shrink-0 mx-8">
+        <div class="h-48 w-48 flex items-center justify-center border border-aqua rounded-full shadow-aqua-side flex-shrink-0 mx-8 mb-4 md:mb-0 order-first md:order-last">
           <h3 class="text-4xl mb-0 uppercase font-MissionGothicBlack">Sponsor</h3>
         </div>
       </div>
     </div>
     <div class="max-w-3xl m-auto flex flex-wrap mb-12">
-      <div class="w-full md:w-1/3 bg-blue flex items-center rounded-lg uppercase tracking-wider">
+      <div class="w-full mx-4 md:mx-0 md:w-1/3 bg-blue flex items-center rounded-lg uppercase tracking-wider">
         <h2 class="font-MissionGothicBlackItalic text-white text-4xl mb-0 leading-tight p-4">
           Free Membership
         </h2>
       </div>
-      <div class="w-full md:w-2/3 border border-blue rounded p-8">
+      <div class="w-full md:w-2/3 mx-4 md:mx-0 border border-blue rounded p-8">
         <p class="p-4 font-MissionGothicBold text-lg text-center mb-0">
           <span class="font-MissionGothicBlackItalic">Subscribe</span> to our membersip to become a member
           of our community and Practice. It includes
           <span class="font-MissionGothicBlackItalic">
-            montly access to new content, family engagment lessons, and invitations for our upcoming worshop. It's free!
+            montly access to new content, family engagment lessons, and invitations for our upcoming workshop. It's free!
           </span>
         </p>
         <div class="w-full flex justify-center mb-8">
@@ -105,17 +107,32 @@
       </div>
     </div>
 
-    <div class="w-full bg-blue p-8 mb-8 font-MissionGothicBlack text-white text-center text-2xl tracking-wide">
+    <div class="w-full bg-blue p-8 mb-8 font-MissionGothicBlack text-white text-center text-2xl tracking-wider">
       Join leaders in your city to learn more about how our programs and educational media can benefit your community:
     </div>
+
+    <div class="w-full flex flex-wrap px-4">
+      <div class="mb-2 w-full">
+        <EventsAccordion heading="Miami + -" />
+      </div>
+      <div class="mb-2 w-full">
+        <EventsAccordion heading="New York + -" />
+      </div>
+      <div class="mb-2 w-full">
+        <EventsAccordion heading="Philadelphia + -" />
+      </div>
+
+    </div>
+
   </div>
 </template>
 
 <script>
 import Hero from '~/components/blocks/Hero'
+import EventsAccordion from '~/components/blocks/EventsAccordion'
 
 export default {
-  components: { Hero }
+  components: { Hero, EventsAccordion }
 }
 </script>
 

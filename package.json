@@ -29,6 +29,7 @@
     "oauth": "^0.9.15",
     "randomcolor": "^0.6.2",
     "vue-screen-size": "^1.0.1",
+    "vue-simple-accordion": "0.0.5",
     "vue-template-compiler": "^2.6.11",
     "youtube-playlist": "^1.0.4"
   }

@@ -44,6 +44,7 @@ export default {
     '~/plugins/vue-fragment',
     '~/plugins/vue-popover',
     '~/plugins/vue-image-lightbox',
+    '~/plugins/vue-simple-accordion',
     '~/plugins/i18n.js'
     // '~/plugins/eventInformation'
   ],
