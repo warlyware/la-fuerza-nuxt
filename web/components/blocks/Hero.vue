@@ -1,7 +1,8 @@
 <template>
-  <div class="h-64 bg-blue w-full">
+  <div :class="`h-64 bg-${bgColor} w-full`">
     <div :class="`flex h-full w-full justify-${xAxisLocation} items-end`">
-      <div class="text-white text-5xl uppercase italic px-8 font-MissionGothicBlackItalic">
+      <div class="text-white text-5xl uppercase italic px-8 font-MissionGothicBlackItalic tracking-wider"
+      :class="bgColor === 'aqua' ? 'text-shadow-blue-side' : ''">
         {{ title }}
       </div>
     </div>
@@ -11,6 +12,10 @@
 <script>
 export default {
   props: {
+    bgColor: {
+      type: String,
+      default: 'blue'
+    },
     title: {
       type: String,
       default: ''

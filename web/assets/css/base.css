@@ -70,6 +70,12 @@ p, div {
 .text-shadow-aqua-side {
   text-shadow: 2px 0px #1bcfc9;
 }
+.text-shadow-blue {
+  text-shadow: 2px 2px #19105e;
+}
+.text-shadow-blue-side {
+  text-shadow: 6px 0px #19105e;
+}
 
 .my-1\/2 {
   margin-top: 2px;

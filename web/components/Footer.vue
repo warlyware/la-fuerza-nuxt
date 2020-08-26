@@ -51,6 +51,10 @@
           <span class="inline-block px-2 uppercase">
             © 2020. All rights reserved.
           </span>
+          <span v-if="$route.name === 'join'"
+          class="w-full inline-block px-2 uppercase text-center mt-2 text-xs">
+            Some icons made by <a href="https://www.freepik.com/" target="_blank">freepik</a>.
+          </span>
         </div>
       </div>
     </div>
