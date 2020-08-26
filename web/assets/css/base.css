@@ -68,3 +68,8 @@ p, div {
 .text-shadow-aqua-side {
   text-shadow: 2px 0px #1bcfc9;
 }
+
+.my-1\/2 {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}

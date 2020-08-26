@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="flex flex-wrap items-center player-container">
-      <div class="flex items-center w-full md:w-3/4">
+      <div class="flex items-center w-full md:w-2/3 my-1/2">
         <youtube v-if="currentVideo" player-width="100%" player-height="100%"
         class="video-responsive flex-grow"
         :video-id="currentVideo.id"
@@ -9,7 +9,7 @@
       </div>
 
       <YoutubePlaylist v-if="$vssWidth >= 768 "
-      class="hidden md:block w-1/4 playlist-wrapper"
+      class="hidden md:block w-1/3 playlist-wrapper"
       :current-index="currentIndex"
       :playlist="playlist"
       @set-current-index="(i) => setCurrentIndex(i)" />

@@ -10,12 +10,12 @@
             {{ i + 1 }}
           </span>
         </div>
-        <div class="w-24 h-16 bg-yellow flex-shrink-0">
-          <div class="w-full h-full bg-cover"
+        <div class="w-32 h-20 bg-yellow flex-shrink-0">
+          <div class="w-full h-full bg-cover bg-center"
           :style="`background-image: url(${video.thumbnails.high.url})`"></div>
         </div>
-        <div class="ml-2 flex flex-col">
-          <span class="font-bold text-sm w-32 line-clamp overflow-hidden">
+        <div class="ml-2 flex flex-col w-full">
+          <span class="font-bold text-md w-32 line-clamp overflow-hidden w-full">
             {{ video.title }}
           </span>
           <span class="text-xs">

@@ -132,9 +132,4 @@ export default {
   .active {
     @apply .bg-blue .text-white .rounded;
   }
-  .my-1\/2 {
-    margin-top: 2px;
-    margin-bottom: 2px;
-  }
-
 </style>
