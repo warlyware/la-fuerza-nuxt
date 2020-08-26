@@ -7,7 +7,7 @@
 3. `npm run dev` to start the studio and frontend locally
    - Your studio should be running on [http://localhost:3333](http://localhost:3333)
    - Your frontend should be running on [http://localhost:3000](http://localhost:3000)
-4. `npm run build` to build to production locally
+4. `npm run build` to build to production locally.
 
 ## Deploy changes
 
