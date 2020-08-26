@@ -43,6 +43,7 @@ export default {
     '~/plugins/vue-sidebar-menu',
     '~/plugins/vue-fragment',
     '~/plugins/vue-popover',
+    '~/plugins/vue-image-lightbox',
     '~/plugins/i18n.js'
     // '~/plugins/eventInformation'
   ],

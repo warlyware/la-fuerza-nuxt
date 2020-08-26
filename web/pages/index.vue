@@ -3,7 +3,7 @@
     <div class="w-full flex flex-wrap">
       <div class="w-full md:w-2/3 my-1/2">
         <youtube player-width="100%" player-height="100%"
-        :player-vars="{ autoplay: 1 }"
+        :player-vars="playerVars"
         class="video-responsive flex-grow"
         video-id="EBRsKQkuZN8" />
       </div>
@@ -16,18 +16,22 @@
         Recursos Para las Familias Latinas
       </h1>
       <div class="flex w-full flex-wrap items-center justify-around pb-12">
-        <button class="w-full md:w-auto bg-pink text-white text-shadow-aqua text-2xl rounded px-2 uppercase mx-4 mb-2">
+        <nuxt-link to="/videos"
+        class="w-full md:w-auto bg-pink text-white text-shadow-aqua text-2xl rounded px-2 uppercase mx-4 mb-2">
           Videos
-        </button>
-        <button class="w-full md:w-auto bg-aqua text-white text-shadow-pink text-2xl rounded px-2 uppercase mx-4 mb-2">
+        </nuxt-link>
+        <nuxt-link to="/workshops"
+        class="w-full md:w-auto bg-aqua text-white text-shadow-pink text-2xl rounded px-2 uppercase mx-4 mb-2">
           Talleres
-        </button>
-        <button class="w-full md:w-auto bg-pink text-white text-shadow-aqua text-2xl rounded px-2 uppercase mx-4 mb-2">
+        </nuxt-link>
+        <nuxt-link to="/resources/books"
+        class="w-full md:w-auto bg-pink text-white text-shadow-aqua text-2xl rounded px-2 uppercase mx-4 mb-2">
           Cuentos
-        </button>
-        <button class="w-full md:w-auto bg-aqua text-white text-shadow-pink text-2xl rounded px-2 uppercase mx-4 mb-2">
+        </nuxt-link>
+        <nuxt-link to="/resources/tips"
+        class="w-full md:w-auto bg-aqua text-white text-shadow-pink text-2xl rounded px-2 uppercase mx-4 mb-2">
           Consejos
-        </button>
+        </nuxt-link>
       </div>
     </div>
 
@@ -109,6 +113,13 @@ export default {
   },
   data() {
     return {
+      playerVars: {
+        autoplay: 1,
+        controls: 1,
+        disablekb: 0,
+        iv_load_policy: 3,
+        modestbranding: 1
+      },
       selectedCategory: 'videos'
     }
   },

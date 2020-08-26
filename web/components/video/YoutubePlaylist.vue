@@ -15,14 +15,13 @@
           :style="`background-image: url(${video.thumbnails.high.url})`"></div>
         </div>
         <div class="ml-2 flex flex-col w-full">
-          <span class="font-bold text-md w-32 line-clamp overflow-hidden w-full">
+          <span class="font-bold text-md line-clamp overflow-hidden w-full">
             {{ video.title }}
           </span>
           <span class="text-xs">
             {{ video.channelTitle }}
           </span>
         </div>
-        <!-- {{ video }} -->
       </div>
     </template>
 

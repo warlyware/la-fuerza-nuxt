@@ -27,6 +27,7 @@
     "node-constantcontact": "^1.0.0",
     "nuxt-i18n": "^6.13.9",
     "oauth": "^0.9.15",
+    "randomcolor": "^0.6.2",
     "vue-screen-size": "^1.0.1",
     "vue-template-compiler": "^2.6.11",
     "youtube-playlist": "^1.0.4"

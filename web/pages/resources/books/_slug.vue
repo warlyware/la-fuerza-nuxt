@@ -22,7 +22,7 @@
         <img class="p-2 self-end" src="//placehold.it/400" alt="">
       </div>
     </div>
-    <div class="w-full max-w-5xl m-auto flex flex-wrap">
+    <div class="w-full max-w-5xl m-auto flex flex-wrap px-8 md:px-4 lg:px-0">
       <p>
         Duis tempor, magna sed interdum luctus, magna turpis tempor tortor, sed convallis sem leo eu elit. Sed congue purus augue, et ornare purus vulputate a. Donec vestibulum fringilla lacus, quis lacinia dui lacinia non. Nunc vitae porta sem. Nam commodo ligula vel lectus ultricies, nec cursus massa convallis. Vivamus ligula magna, fringilla facilisis nisl eget, gravida tristique dolor. Maecenas hendrerit tellus vitae consequat fermentum.
       </p>

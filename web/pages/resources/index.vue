@@ -23,7 +23,7 @@
         <div class="w-full md:w-1/5 flex items-center justify-center md:justify-start flex-shrink">
           <div class="md-4 md:mt-0 m-0 py-0 md:ml-4">
             <nuxt-link to="/resources/books"
-            class="bg-aqua text-white text-shadow-pink px-4 rounded-lg font-MissionGothicItalic uppercase text-2xl">
+            class="bg-aqua text-white text-shadow-pink px-4 rounded-lg font-MissionGothicItalic uppercase text-2xl md:text-lg">
               Ver Mas
             </nuxt-link>
           </div>
@@ -52,8 +52,8 @@
         </div>
         <div class="w-full md:w-1/5 flex items-center justify-center md:justify-start flex-shrink">
           <div class="md-4 md:mt-0 m-0 py-0 md:ml-4">
-            <nuxt-link to="/resources/books"
-            class="bg-aqua text-white text-shadow-pink px-4 rounded-lg font-MissionGothicItalic uppercase text-2xl">
+            <nuxt-link to="/resources/tips"
+            class="bg-aqua text-white text-shadow-pink px-4 rounded-lg font-MissionGothicItalic uppercase text-2xl md:text-lg">
               Ver Mas
             </nuxt-link>
           </div>
