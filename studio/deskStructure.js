@@ -14,7 +14,15 @@ const hiddenDocTypes = listItem =>
     'codeOfConduct',
     'disclaimer',
     'privacyPolicy',
-    'page-about'
+    'page-about',
+    'page-collaborators',
+    'page-contact',
+    'page-home',
+    'page-join',
+    'page-resources',
+    'page-tips',
+    'page-videos',
+    'page-workshops'
   ].includes(listItem.getId())
 
 export default () =>
@@ -28,6 +36,70 @@ export default () =>
             .id('page-about')
             .schemaType('page-about')
             .documentId('page-about')
+        ),
+      S.listItem()
+        .title('Page: Collaborators')
+        .child(
+          S.editor()
+            .id('page-collaborators')
+            .schemaType('page-collaborators')
+            .documentId('page-collaborators')
+        ),
+      S.listItem()
+        .title('Page: Contact')
+        .child(
+          S.editor()
+            .id('page-contact')
+            .schemaType('page-contact')
+            .documentId('page-contact')
+        ),
+      S.listItem()
+        .title('Page: Home')
+        .child(
+          S.editor()
+            .id('page-home')
+            .schemaType('page-home')
+            .documentId('page-home')
+        ),
+      S.listItem()
+        .title('Page: Join')
+        .child(
+          S.editor()
+            .id('page-join')
+            .schemaType('page-join')
+            .documentId('page-join')
+        ),
+      S.listItem()
+        .title('Page: Resources')
+        .child(
+          S.editor()
+            .id('page-resources')
+            .schemaType('page-resources')
+            .documentId('page-resources')
+        ),
+      S.listItem()
+        .title('Page: Tips')
+        .child(
+          S.editor()
+            .id('page-tips')
+            .schemaType('page-tips')
+            .documentId('page-tips')
+        ),
+      S.listItem()
+        .title('Page: Videos')
+        .child(
+          S.editor()
+            .id('page-videos')
+            .schemaType('page-videos')
+            .documentId('page-videos')
+        ),
+      S.listItem()
+        .title('Page: Workshops')
+        .child(
+          S.editor()
+            .id('page-workshops')
+            .schemaType('page-workshops')
+            .documentId('page-workshops')
         ),
       S.listItem()
         .title('Disclaimer')

@@ -7,22 +7,19 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 // document types
 import eventInformation from './documents/eventInformation'
 import about from './documents/page-about'
-import person from './documents/person'
-import codeOfConduct from './documents/codeOfConduct'
+import collaborators from './documents/page-collaborators'
+import contact from './documents/page-contact'
+import join from './documents/page-join'
+import resources from './documents/page-resources'
+import videos from './documents/page-videos'
+import workshops from './documents/page-workshops'
 import session from './documents/session'
 import program from './documents/program'
 import disclaimer from './documents/disclaimer'
-import privacyPolicy from './documents/privacyPolicy'
 import video from './documents/video'
-
-// translations
-import collaborators from './i18n/pages/collaborators'
-import contact from './i18n/pages/contact'
-import join from './i18n/pages/join'
-import resources from './i18n/pages/resources'
-import workshops from './i18n/pages/workshops'
-import videos from './i18n/pages/videos'
-import translation from './i18n/translation'
+import privacyPolicy from './documents/privacyPolicy'
+import codeOfConduct from './documents/codeOfConduct'
+import person from './documents/person'
 
 // Object types
 import mainImage from './objects/mainImage'
@@ -62,7 +59,7 @@ export default createSchema({
     resources,
     videos,
     workshops,
-    translation,
+    // translation,
 
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas

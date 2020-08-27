@@ -2,7 +2,7 @@ export default {
   name: 'page-about',
   type: 'document',
   title: 'Page: About',
-  __experimental_actions: ['update', 'create', /* 'delete', */ 'publish'],
+  __experimental_actions: ['update', /* 'create', 'delete', */ 'publish'],
   fields: [
     {
       name: 'title',
@@ -36,40 +36,8 @@ export default {
       type: 'localeString',
       title: 'Block 1 button text'
     }
-    // {
-    //   name: 'image',
-    //   type: 'mainImage',
-    //   title: 'Event image'
-    // },
-    // {
-    //   name: 'schedule',
-    //   type: 'schedule',
-    //   title: 'Schedule',
-    //   description: 'From when to when will the event last?'
-    // },
-    // {
-    //   name: 'venue',
-    //   type: 'venue',
-    //   title: 'Venue',
-    //   description: 'Where will the event take place?'
-    // },
-    // {
-    //   name: 'ticket',
-    //   type: 'url',
-    //   title: 'Ticket link'
-    // },
-    // {
-    //   name: 'keywords',
-    //   type: 'array',
-    //   title: 'Keywords',
-    //   description: 'Add keywords that describes your event.',
-    //   of: [{ type: 'string' }],
-    //   options: {
-    //     layout: 'tags'
-    //   }
-    // }
   ],
   preview: {
-    prepare: () => ({ title: 'Page: About!' })
+    prepare: () => ({ title: 'Page: About' })
   }
 }
