@@ -2,10 +2,10 @@
   <div class="max-w-5xl mx-auto justify-between p-4 md:p-0">
     <div class="flex flex-wrap w-full uppercase mb-8">
       <h2 class="w-full mb-0 font-MissionGothicBlack leading-tight">
-        Libros
+        {{bookSectionTitle[locale]}}
       </h2>
       <p class="italic">
-        Duis nisl eros, pharetra eget bibendum sit amet, convallis a est.
+        {{bookSectionDescription[locale]}}
       </p>
       <div class="w-full flex flex-wrap">
         <nuxt-link to="/resources/books/title-of-book" class="w-1/2 md:w-1/5">
@@ -32,10 +32,10 @@
     </div>
     <div class="flex flex-wrap w-full uppercase mb-8">
       <h2 class="w-full mb-0 font-MissionGothicBlack leading-tight">
-        Consejos
+        {{tipSectionTitle[locale]}}
       </h2>
       <p class="italic">
-        Duis nisl eros, pharetra eget bibendum sit amet, convallis a est.
+        {{tipSectionDescription[locale]}}
       </p>
       <div class="w-full flex flex-wrap">
         <div class="w-1/2 md:w-1/5">
@@ -89,3 +89,23 @@
     </div> -->
   </div>
 </template>
+
+<script>
+import groq from 'groq'
+import sanityClient from '~/sanityClient'
+
+const query = groq`
+  *[_id == "page-resources"][0] {
+    ...
+  }
+`
+
+export default {
+  computed: {
+    locale() { return this.$i18n.locale }
+  },
+  async asyncData() {
+    return await sanityClient.fetch(query)
+  }
+}
+</script>

@@ -1,10 +1,9 @@
 <template>
   <div class="w-full">
-    <Hero :title="$t('collaborators.title')" x-axis-location="start" bg-color="aqua" class="mb-8" />
+    <Hero :title="title[locale]" x-axis-location="start" bg-color="aqua" class="mb-8" />
     <div class="w-full flex flex-wrap mb-8">
       <div class="w-full md:w-1/2 my-1/2 md:pr-2">
         <youtube player-width="100%" player-height="100%"
-        :player-vars="playerVars"
         class="video-responsive flex-grow"
         video-id="EBRsKQkuZN8" />
       </div>
@@ -113,13 +112,13 @@
 
     <div class="w-full flex flex-wrap px-4">
       <div class="mb-2 w-full">
-        <EventsAccordion heading="Miami + -" />
+        <EventsAccordion heading="Miami" />
       </div>
       <div class="mb-2 w-full">
-        <EventsAccordion heading="New York + -" />
+        <EventsAccordion heading="New York" />
       </div>
       <div class="mb-2 w-full">
-        <EventsAccordion heading="Philadelphia + -" />
+        <EventsAccordion heading="Philadelphia" />
       </div>
 
     </div>
@@ -128,11 +127,25 @@
 </template>
 
 <script>
+import groq from 'groq'
+import sanityClient from '~/sanityClient'
 import Hero from '~/components/blocks/Hero'
 import EventsAccordion from '~/components/blocks/EventsAccordion'
 
+const query = groq`
+  *[_id == "page-collaborators"][0] {
+    ...
+  }
+`
+
 export default {
-  components: { Hero, EventsAccordion }
+  components: { Hero, EventsAccordion },
+  computed: {
+    locale() { return this.$i18n.locale }
+  },
+  async asyncData() {
+    return await sanityClient.fetch(query)
+  },
 }
 </script>
 

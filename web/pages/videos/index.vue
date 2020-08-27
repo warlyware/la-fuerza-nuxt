@@ -1,7 +1,7 @@
 <template>
   <section class="pt-8">
     <h1 class="text-5xl text-center italic">
-      {{ $t('videos.title') }}
+      {{ title[locale] }}
     </h1>
 
     <template v-if="playlists.length">
@@ -21,8 +21,17 @@
 </template>
 
 <script>
+import groq from 'groq'
+import sanityClient from '~/sanityClient'
 import YoutubePlayer from '~/components/video/YoutubePlayer'
 import { getYtPlaylist } from '~/lib/api'
+
+const query = groq`
+  *[_id == "page-videos"][0] {
+    ...
+  }
+`
+
 export default {
   components: {
     YoutubePlayer
@@ -31,6 +40,12 @@ export default {
     return {
       playlists: []
     }
+  },
+  computed: {
+    locale() { return this.$i18n.locale }
+  },
+  async asyncData() {
+    return await sanityClient.fetch(query)
   },
   async mounted() {
     const videoCategories = [

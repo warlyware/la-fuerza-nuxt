@@ -2,9 +2,9 @@
 <template>
   <div class="pt-8 w-full">
     <h1 class="font-MissionGothicBlack text-6xl uppercase text-center">
-      Consejos
+      {{title[locale]}}
     </h1>
-    <div class="w-full border border-blue flex items-center mb-16">
+    <!-- <div class="w-full border border-blue flex items-center mb-16">
       <div class="w-1/4">
         <span class="text-6xl px-4 cursor-pointer" @click="prevImage">
           &lt;
@@ -18,7 +18,7 @@
           >
         </span>
       </div>
-    </div>
+    </div> -->
     <LightBox ref="lightbox"
     :media="images" :show-caption="true"
     :show-light-box="false" />
@@ -33,8 +33,16 @@
 </template>
 
 <script>
+import groq from 'groq'
+import sanityClient from '~/sanityClient'
 import LightBox from 'vue-image-lightbox'
 import randomColor from 'randomcolor'
+
+const query = groq`
+  *[_id == "page-tips"][0] {
+    ...
+  }
+`
 
 export default {
   components: { LightBox },
@@ -52,7 +60,11 @@ export default {
         src: `//placehold.it/800x600/${color}`,
         caption: `${i + 1} - caption to display.`
       }
-    })}
+    })},
+    locale() { return this.$i18n.locale },
+  },
+  async asyncData() {
+    return await sanityClient.fetch(query)
   },
   methods: {
     showImage(i) {

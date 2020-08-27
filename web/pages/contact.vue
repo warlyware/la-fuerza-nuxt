@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Hero :title="$t('contact.title')" />
+    <Hero :title="title[locale]" />
     <div class="p-4">
       <div class="flex flex-col items-center w-full uppercase p-4 text-xl leading-tight">
         <div class="text-2xl text-aqua font-MissionGothicBlackItalic">
@@ -119,25 +119,31 @@
         </div>
       </div>
     </div>
-
-    <!-- <img :src="mapUrl" alt=""> -->
   </div>
 </template>
 
 <script>
+import groq from 'groq'
+import sanityClient from '~/sanityClient'
 import Divider from '~/components/blocks/Divider'
 import Hero from '~/components/blocks/Hero'
+
+const query = groq`
+  *[_id == "page-contact"][0] {
+    ...
+  }
+`
 
 export default {
   components: {
     Divider,
     Hero
   },
-  data() {
-    return {
-      // mapUrl: `https://open.mapquestapi.com/staticmap/v4/getmap?key=${process.env.MAPQUEST_KEY}&size=600,400&zoom=13&center=47.6062,-122.3321&pois=1,40.0986,-76.3988,-20,-20`
-
-    }
+  computed: {
+    locale() { return this.$i18n.locale }
+  },
+  async asyncData() {
+    return await sanityClient.fetch(query)
   }
 }
 </script>

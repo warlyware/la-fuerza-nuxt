@@ -5,9 +5,24 @@ export default {
   __experimental_actions: ['update', 'create', /* 'delete', */ 'publish'],
   fields: [
     {
-      name: 'title',
+      name: 'bookSectionTitle',
       type: 'localeString',
-      title: 'Title'
+      title: 'Book Section title'
+    },
+    {
+      name: 'bookSectionDescription',
+      type: 'localeString',
+      title: 'Book Section description'
+    },
+    {
+      name: 'tipSectionTitle',
+      type: 'localeString',
+      title: 'Tip Section title'
+    },
+    {
+      name: 'tipSectionDescription',
+      type: 'localeString',
+      title: 'Tip Section description'
     }
   ],
   preview: {

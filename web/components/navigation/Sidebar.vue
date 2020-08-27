@@ -13,43 +13,42 @@
 import { mapState } from 'vuex'
 
 export default {
-  data() {
-    return {
-      menu: [
-        {
-          href: '/',
-          title: 'HOME •',
-          hiddenOnCollapse: true
-        },
-        {
-          href: '/videos',
-          title: 'VIDEOS •',
-          hiddenOnCollapse: true
-        },
-        {
-          href: '/resources',
-          title: 'RECURSOS •',
-          hiddenOnCollapse: true
-        },
-        {
-          href: '/workshops',
-          title: 'TALLERES •',
-          hiddenOnCollapse: true
-        },
-        {
-          href: '/collaborators',
-          title: 'COLABORADORES •',
-          hiddenOnCollapse: true
-        },
-        {
-          href: '/join',
-          title: 'ÚNETE •',
-          hiddenOnCollapse: true
-        }
-      ]
-    }
+  computed: {
+    menu() { return [
+      {
+        href: '/',
+        title: this.locale === 'en' ? 'HOME' : 'INCIO',
+        hiddenOnCollapse: true
+      },
+      {
+        href: '/videos',
+        title: this.locale === 'en' ? 'VIDEOS' : 'VIDEOS',
+        hiddenOnCollapse: true
+      },
+      {
+        href: '/resources',
+        title: this.locale === 'en' ? 'RESOURCES' : 'RECURSOS',
+        hiddenOnCollapse: true
+      },
+      {
+        href: '/workshops',
+        title: this.locale === 'en' ? 'WORKSHOPS' : 'TALLERES',
+        hiddenOnCollapse: true
+      },
+      {
+        href: '/collaborators',
+        title: this.locale === 'en' ? 'COLLABORATORS' : 'COLABORADORES',
+        hiddenOnCollapse: true
+      },
+      {
+        href: '/join',
+        title: this.locale === 'en' ? 'JOIN US' : 'ÚNETE',
+        hiddenOnCollapse: true
+      }
+    ]},
+    ...mapState([ 'navIsOpen' ]),
+    locale() { return this.$i18n.locale }
   },
-  computed: mapState([ 'navIsOpen' ]),
   methods: {
     handleToggleCollapse() {
       this.$store.commit('toggleNav')

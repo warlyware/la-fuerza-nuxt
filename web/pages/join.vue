@@ -1,6 +1,6 @@
 <template>
   <div class="w-full">
-    <Hero :title="$t('join.title')" x-axis-location="start" class="mb-8" />
+    <Hero :title="title[locale]" x-axis-location="start" class="mb-8" />
 
     <div class="flex flex-wrap px-4 max-w-5xl m-auto mb-4">
       <div class="w-full md:w-1/2 px-8 flex flex-col items-center md:-ml-4 mb-16">
@@ -93,10 +93,23 @@
 </template>
 
 <script>
-
+import groq from 'groq'
+import sanityClient from '~/sanityClient'
 import Hero from '~/components/blocks/Hero'
 
+const query = groq`
+  *[_id == "page-join"][0] {
+    ...
+  }
+`
+
 export default {
-  components: { Hero }
+  components: { Hero },
+  computed: {
+    locale() { return this.$i18n.locale }
+  },
+  async asyncData() {
+    return await sanityClient.fetch(query)
+  }
 }
 </script>

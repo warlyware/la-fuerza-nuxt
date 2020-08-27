@@ -1,13 +1,13 @@
 export default {
-  name: 'page-collaborators',
+  name: 'page-home',
   type: 'document',
   title: 'Page: Home',
   __experimental_actions: ['update', 'create', /* 'delete', */ 'publish'],
   fields: [
     {
-      name: 'title',
+      name: 'blockOneText',
       type: 'localeString',
-      title: 'Title'
+      title: 'Block 1 Text'
     }
   ],
   preview: {

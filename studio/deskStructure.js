@@ -22,7 +22,8 @@ const hiddenDocTypes = listItem =>
     'page-resources',
     'page-tips',
     'page-videos',
-    'page-workshops'
+    'page-workshops',
+    'navigation'
   ].includes(listItem.getId())
 
 export default () =>
@@ -120,31 +121,12 @@ export default () =>
             .documentId('privacyPolicy')
         ),
       // S.listItem()
-      //   .title('Sessions')
-      //   .schemaType('session')
-      //   .child(S.documentTypeList('session').title('Sessions')),
-      // S.listItem()
-      //   .title('Program')
-      //   .icon(MdEventNote)
+      //   .title('Navigation')
       //   .child(
       //     S.editor()
-      //       .id('program')
-      //       .schemaType('program')
-      //       .documentId('program')
-      //   ),
-      // S.listItem()
-      //   .title('Persons')
-      //   .icon(MdPerson)
-      //   .schemaType('person')
-      //   .child(S.documentTypeList('person').title('Persons')),
-      // S.listItem()
-      //   .title('Code of Conduct')
-      //   .icon(MdGavel)
-      //   .child(
-      //     S.editor()
-      //       .id('codeOfConduct')
-      //       .schemaType('codeOfConduct')
-      //       .documentId('codeOfConduct')
+      //       .id('navigation')
+      //       .schemaType('navigation')
+      //       .documentId('navigation')
       //   ),
       // This returns an array of all the document types
       // defined in schema.js. We filter out those that we have
