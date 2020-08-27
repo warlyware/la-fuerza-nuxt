@@ -1,7 +1,7 @@
 <template>
   <div class="max-w-3xl mx-auto">
     <h2 class="font-MissionGothicBlackItalic uppercase text-4xl text-center">
-      Nuestros Aliados
+      {{title}}
     </h2>
     <div class="flex flex-wrap">
       <div class="w-1/2 md:w-1/6">
@@ -61,3 +61,14 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    title: {
+      required: true,
+      type: String
+    }
+  }
+}
+</script>

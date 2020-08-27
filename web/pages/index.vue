@@ -5,7 +5,8 @@
         <youtube player-width="100%" player-height="100%"
         :player-vars="playerVars"
         class="video-responsive flex-grow"
-        video-id="EBRsKQkuZN8" />
+        video-id="EBRsKQkuZN8"
+        @ready="topVideoReady" />
       </div>
       <div class="w-full md:w-1/3 bg-pink text-white flex justify-center items-center leading-tight p-8">
         <span class="uppercase text-4xl font-MissionGothicBlackItalic">Cómo Reconoces tu Poder?</span>
@@ -114,6 +115,7 @@ export default {
   data() {
     return {
       playerVars: {
+        muted: 1,
         autoplay: 1,
         controls: 1,
         disablekb: 0,
@@ -134,6 +136,9 @@ export default {
   methods: {
     goToVideo(slug) {
       this.$router.push(`/videos/${slug}`)
+    },
+    topVideoReady({ target }) {
+      target.mute()
     }
   },
 }

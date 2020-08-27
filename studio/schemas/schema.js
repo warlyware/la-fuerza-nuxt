@@ -6,6 +6,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // document types
 import eventInformation from './documents/eventInformation'
+import about from './documents/page-about'
 import person from './documents/person'
 import codeOfConduct from './documents/codeOfConduct'
 import session from './documents/session'
@@ -15,7 +16,6 @@ import privacyPolicy from './documents/privacyPolicy'
 import video from './documents/video'
 
 // translations
-import about from './i18n/pages/about'
 import collaborators from './i18n/pages/collaborators'
 import contact from './i18n/pages/contact'
 import join from './i18n/pages/join'
@@ -32,7 +32,6 @@ import scheduleItem from './objects/scheduleItem'
 import videoItem from './objects/videoItem'
 import bioPortableText from './objects/bioPortableText'
 import bodyPortableText from './objects/bodyPortableText'
-import eventReference from './objects/eventReference'
 import personReference from './objects/personReference'
 import videoReference from './objects/videoReference'
 import social from './objects/social'
@@ -74,7 +73,6 @@ export default createSchema({
     mainImage,
     bioPortableText,
     bodyPortableText,
-    eventReference,
     personReference,
     videoReference,
     social,

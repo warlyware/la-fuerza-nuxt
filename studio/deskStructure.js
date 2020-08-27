@@ -6,12 +6,29 @@ import MdWarning from 'react-icons/lib/md/warning'
 import MdInfo from 'react-icons/lib/md/info-outline'
 
 const hiddenDocTypes = listItem =>
-  !['program', 'session', 'person', 'eventInformation', 'codeOfConduct', 'disclaimer', 'privacyPolicy'].includes(listItem.getId())
+  ![
+    'program',
+    'session',
+    'person',
+    'eventInformation',
+    'codeOfConduct',
+    'disclaimer',
+    'privacyPolicy',
+    'page-about'
+  ].includes(listItem.getId())
 
 export default () =>
   S.list()
     .title('Content')
     .items([
+      S.listItem()
+        .title('Page: About')
+        .child(
+          S.editor()
+            .id('page-about')
+            .schemaType('page-about')
+            .documentId('page-about')
+        ),
       S.listItem()
         .title('Disclaimer')
         .icon(MdWarning)
