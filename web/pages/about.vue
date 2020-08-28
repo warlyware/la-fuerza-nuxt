@@ -36,13 +36,13 @@ import OurAllies from '~/components/about/OurAllies'
 
 const query = groq`
   *[_id == "page-about"][0] {
-    aboutTextEn[] {
+    enAboutText[] {
       ...,
       children[] {
         ...
       }
     },
-    aboutTextEs[] {
+    esAboutText[] {
       ...,
       children[] {
         ...
@@ -60,7 +60,7 @@ export default {
   },
   computed: {
     locale() { return this.$i18n.locale },
-    aboutText() { return this.locale === 'en' ? this.aboutTextEn : this.aboutTextEs }
+    aboutText() { return this.locale === 'en' ? this.enAboutText : this.esAboutText }
   },
   async asyncData() {
     return await sanityClient.fetch(query)

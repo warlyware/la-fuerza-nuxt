@@ -8,6 +8,16 @@ export default {
       name: 'title',
       type: 'localeString',
       title: 'Title'
+    },
+    {
+      name: 'enBannerText',
+      type: 'bodyPortableText',
+      title: 'Banner Text: English'
+    },
+    {
+      name: 'esBannerText',
+      type: 'bodyPortableText',
+      title: 'Banner Text: Spanish'
     }
   ],
   preview: {

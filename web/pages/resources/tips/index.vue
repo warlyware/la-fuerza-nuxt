@@ -4,6 +4,7 @@
     <h1 class="font-MissionGothicBlack text-6xl uppercase text-center">
       {{title[locale]}}
     </h1>
+    <!-- Carousel -->
     <!-- <div class="w-full border border-blue flex items-center mb-16">
       <div class="w-1/4">
         <span class="text-6xl px-4 cursor-pointer" @click="prevImage">
@@ -19,6 +20,12 @@
         </span>
       </div>
     </div> -->
+
+    <div v-if="bannerText && bannerText.length"
+    class="py-8 flex justify-center w-full bg-blue text-white mb-8 text-4xl">
+      <BlockContent :blocks="bannerText" />
+    </div>
+
     <LightBox ref="lightbox"
     :media="images" :show-caption="true"
     :show-light-box="false" />
@@ -33,6 +40,7 @@
 </template>
 
 <script>
+import BlockContent from 'sanity-blocks-vue-component'
 import groq from 'groq'
 import sanityClient from '~/sanityClient'
 import LightBox from 'vue-image-lightbox'
@@ -40,12 +48,24 @@ import randomColor from 'randomcolor'
 
 const query = groq`
   *[_id == "page-tips"][0] {
+    enBannerText[] {
+      ...,
+      children[] {
+        ...
+      }
+    },
+    esBannerText[] {
+      ...,
+      children[] {
+        ...
+      }
+    },
     ...
   }
 `
 
 export default {
-  components: { LightBox },
+  components: { BlockContent, LightBox },
   data() {
     return {
       showLightBox: false,
@@ -62,6 +82,7 @@ export default {
       }
     })},
     locale() { return this.$i18n.locale },
+    bannerText() { return this.locale === 'en' ? this.enBannerText : this.esBannerText }
   },
   async asyncData() {
     return await sanityClient.fetch(query)

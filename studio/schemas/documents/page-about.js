@@ -10,13 +10,13 @@ export default {
       title: 'Title'
     },
     {
-      name: 'aboutTextEn',
+      name: 'enAboutText',
       type: 'bodyPortableText',
       title: 'Description: English',
       description: 'About text'
     },
     {
-      name: 'aboutTextEs',
+      name: 'esAboutText',
       type: 'bodyPortableText',
       title: 'Description: Spanish',
       description: 'About text'
