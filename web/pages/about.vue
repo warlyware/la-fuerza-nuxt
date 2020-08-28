@@ -12,11 +12,11 @@
       </div>
       <div class="w-1/3 h-64 text-blue border border-blue flex flex-col justify-center items-center p-8 md:p-12">
         <div class="text-4xl font-MissionGothicBlackItalic leading-tight text-center uppercase mb-2">
-          {{blockOneText[locale]}}
+          {{block1Text[locale]}}
         </div>
         <div>
           <button class="bg-aqua p-2 py-0 rounded text-white text-shadow-pink">
-            {{blockOneButtonText[locale]}}
+            {{block1ButtonText[locale]}}
           </button>
         </div>
       </div>

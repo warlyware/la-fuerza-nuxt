@@ -27,12 +27,12 @@ export default {
       title: 'Title: Our Allies section'
     },
     {
-      name: 'blockOneText',
+      name: 'block1Text',
       type: 'localeString',
       title: 'Block 1 text'
     },
     {
-      name: 'blockOneButtonText',
+      name: 'block1ButtonText',
       type: 'localeString',
       title: 'Block 1 button text'
     }
