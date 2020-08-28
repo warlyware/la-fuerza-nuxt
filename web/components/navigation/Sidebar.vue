@@ -80,7 +80,7 @@ export default {
     @apply py-2 !important;
   }
   .vsm--title {
-    @apply text-blue font-bold text-4xl font-MissionGothicBold;
+    @apply text-blue font-bold text-4xl;
   }
   .v-sidebar-menu.vsm_expanded .vsm--item_open .vsm--link_level-1 {
     @apply bg-gray-light text-blue !important;

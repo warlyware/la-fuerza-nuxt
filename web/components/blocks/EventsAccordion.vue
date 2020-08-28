@@ -49,7 +49,7 @@ export default {
   @apply p-2 leading-5 text-blue;
 }
 .vsa-item__trigger__content {
-  @apply text-5xl font-MissionGothicBlackItalic uppercase;
+  @apply text-5xl uppercase;
 }
 
 </style>

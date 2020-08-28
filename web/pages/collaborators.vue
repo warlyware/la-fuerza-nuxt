@@ -5,39 +5,36 @@
       <div class="w-full md:w-1/2 my-1/2 md:pr-2">
         <youtube player-width="100%" player-height="100%"
         class="video-responsive flex-grow"
-        video-id="EBRsKQkuZN8" />
+        :video-id="getYoutubeId(videoUrl)"  />
       </div>
       <div class="w-full md:w-1/2 text-white leading-tight md:pl-2">
         <div class="text-2xl font-MissionGothicBold p-8 bg-blue h-full flex justify-center items-center">
-          <p>
-            We collaborate with organizations and institutions serving Hispanic families of children 0-7
-            years of age, to help support parents as their child's first and most important teachers.
-          </p>
+          <BlockContent :blocks="this[`${locale}Block1Text`]" />
         </div>
       </div>
     </div>
     <div class="w-full bg-blue p-8 mb-8">
-      <p class="w-full text-center text-2xl text-white font-MissionGothicBold">
-        Learn more about our
-        <nuxt-link to="/workshops" class="text-pink italic">
-          workshops for parents</nuxt-link>.
+      <p class="w-full text-center text-2xl text-white font-MissionGothicBold mb-0">
+        {{banner1Text[locale]}}
+        <nuxt-link to="/workshops" class="">
+          {{banner1LinkText[locale]}}</nuxt-link>.
       </p>
     </div>
     <div class="max-w-3xl m-auto flex flex-wrap px-8 md:px-16 text-xl uppercase mb-12 tracking-wide">
       <div class="p-4 w-full md:w-1/2">
         <div class="border rounded-lg w-full flex justify-center items-center h-auto p-16 font-MissionGothicBlackItalic shadow-black">
-          Text Why
+          <BlockContent :blocks="this[`${locale}Block2Text`]" />
         </div>
       </div>
       <div class="p-4 w-full md:w-1/2">
         <div class="border rounded-lg w-full flex justify-center items-center h-auto p-16 font-MissionGothicBlackItalic shadow-black">
-          Text What
+          <BlockContent :blocks="this[`${locale}Block3Text`]" />
         </div>
       </div>
     </div>
     <div class="max-w-5xl m-auto mb-12 px-8 md:px-0">
       <h2 class="text-5xl uppercase font-MissionGothicBlackItalic text-center mb-2 md:mb-0">
-        How to Collaborate
+        {{section1Title[locale]}}
       </h2>
       <div class="flex flex-wrap md:flex-no-wrap w-full justify-center md:justify-start mb-8 md:mb-0">
         <div class="h-48 w-48 flex items-center justify-center border border-pink rounded-full shadow-pink-side flex-shrink-0 mx-8 mb-4 md:mb-0">
@@ -66,20 +63,16 @@
     <div class="max-w-3xl m-auto flex flex-wrap mb-12">
       <div class="w-full mx-4 md:mx-0 md:w-1/3 bg-blue flex items-center rounded-lg uppercase tracking-wider">
         <h2 class="font-MissionGothicBlackItalic text-white text-4xl mb-0 leading-tight p-4">
-          Free Membership
+          {{block3Text[locale]}}
         </h2>
       </div>
       <div class="w-full md:w-2/3 mx-4 md:mx-0 border border-blue rounded p-8">
         <p class="p-4 font-MissionGothicBold text-lg text-center mb-0">
-          <span class="font-MissionGothicBlackItalic">Subscribe</span> to our membersip to become a member
-          of our community and Practice. It includes
-          <span class="font-MissionGothicBlackItalic">
-            montly access to new content, family engagment lessons, and invitations for our upcoming workshop. It's free!
-          </span>
+          <BlockContent :blocks="this[`${locale}Block4Text`]" />
         </p>
         <div class="w-full flex justify-center mb-8">
           <button class="p-2 py-1 font-MissionGothicBlackItalic text-3xl text-white bg-pink rounded-lg tracking-wide uppercase">
-            Become a Member
+            {{block4ButtonText[locale]}}
           </button>
         </div>
       </div>
@@ -127,8 +120,10 @@
 </template>
 
 <script>
+import BlockContent from 'sanity-blocks-vue-component'
 import groq from 'groq'
 import sanityClient from '~/sanityClient'
+import getYoutubeId from 'get-youtube-id'
 import Hero from '~/components/blocks/Hero'
 import EventsAccordion from '~/components/blocks/EventsAccordion'
 
@@ -139,17 +134,19 @@ const query = groq`
 `
 
 export default {
-  components: { Hero, EventsAccordion },
+  components: { BlockContent, Hero, EventsAccordion },
   computed: {
-    locale() { return this.$i18n.locale }
+    locale() { return this.$i18n.locale },
+    block1Text() { return this[`${this.locale}Block1Text`]}
   },
   async asyncData() {
     return await sanityClient.fetch(query)
   },
+  methods: { getYoutubeId }
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .shadow-black {
   -webkit-box-shadow: 8px 8px 0px -1px rgba(0,0,0,1);
   -moz-box-shadow: 8px 8px 0px -1px rgba(0,0,0,1);
@@ -165,5 +162,12 @@ export default {
   -webkit-box-shadow: 14px 0px 0px -1px #1bcfc9;
   -moz-box-shadow: 14px 0px 0px -1px #1bcfc9;
   box-shadow: 14px 0px 0px -1px #1bcfc9;
+}
+
+a {
+  @apply text-pink italic;
+}
+.font-MissionGothicBlackItalic p {
+
 }
 </style>

@@ -8,10 +8,10 @@ module.exports = {
   theme: {
     fontFamily: {
       MissionGothic: ["MissionGothic"],
-      MissionGothicBold: ["MissionGothicBold"],
-      MissionGothicBlack: ["MissionGothicBlack"],
-      MissionGothicItalic: ["MissionGothicItalic"],
-      MissionGothicBlackItalic: ["MissionGothicBlackItalic"]
+      // MissionGothicBold: ["MissionGothicBold"],
+      // MissionGothicBlack: ["MissionGothicBlack"],
+      // MissionGothicItalic: ["MissionGothicItalic"],
+      // MissionGothicBlackItalic: ["MissionGothicBlackItalic"]
     },
     colors: {
       pink: '#ff15b1',

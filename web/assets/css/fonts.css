@@ -1,48 +1,51 @@
 @font-face {
-    font-family: MissionGothic;
-    font-weight: normal;
-    src: url('~assets/fonts/MissionGothicRegular.otf') format('opentype');
+  font-family: 'MissionGothic';
+  font-weight: normal;
+  font-style: normal;
+  src: url('~assets/fonts/MissionGothicRegular.otf') format('opentype');
 }
 
 @font-face {
-    font-family: MissionGothicBold;
-    /* font-weight: bold; */
+    font-family: 'MissionGothic';
+    font-weight: bold;
+    font-style: normal;
     src: url('~assets/fonts/MissionGothicBold.otf') format('opentype');
 }
 
 @font-face {
-    font-family: MissionGothicBlack;
-    /* font-weight: bold; */
+    font-family: 'MissionGothic';
+    font-weight: 900;
+    font-style: normal;
     src: url('~assets/fonts/MissionGothicBlack.otf') format('opentype');
 }
 
 @font-face {
-  font-family: MissionGothicItalic;
-    /* font-weight: normal;
-    font-style: italic; */
+  font-family: 'MissionGothic';
+    font-weight: normal;
+    font-style: italic;
     src: url('~assets/fonts/MissionGothicRegularItalic.otf') format('opentype');
 }
 
 @font-face {
-    font-family: MissionGothicBlackItalic;
-    /* font-style: italic;
-    font-weight: bolder; */
+    font-family: 'MissionGothic';
+    font-style: italic;
+    font-weight: 900;
     src: url('~assets/fonts/MissionGothicBlackItalic.otf') format('opentype');
 }
 
 
 .font-mission-gothic {
-  font-family: MissionGothic;
+  /* font-family: MissionGothic; */
 }
 .font-mission-gothic-bold {
-  font-family: MissionGothicBold;
+  /* font-family: MissionGothicBold; */
 }
 .font-mission-gothic-black {
-  font-family: MissionGothicBlack;
+  /* font-family: MissionGothicBlack; */
 }
 .font-mission-gothic-regular-italic {
-  font-family: MissionGothicItalic;
+  /* font-family: MissionGothicItalic; */
 }
 .font-mission-gothic-black-italic {
-  font-family: MissionGothicBlackItalic;
+  /* font-family: MissionGothicBlackItalic; */
 }

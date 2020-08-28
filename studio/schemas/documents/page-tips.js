@@ -12,12 +12,12 @@ export default {
     {
       name: 'enBannerText',
       type: 'bodyPortableText',
-      title: 'Banner Text: English'
+      title: 'Banner Text [English]'
     },
     {
       name: 'esBannerText',
       type: 'bodyPortableText',
-      title: 'Banner Text: Spanish'
+      title: 'Banner Text [Spanish]'
     }
   ],
   preview: {

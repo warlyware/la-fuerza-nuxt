@@ -12,13 +12,13 @@ export default {
     {
       name: 'enAboutText',
       type: 'bodyPortableText',
-      title: 'Description: English',
+      title: 'Description [English]',
       description: 'About text'
     },
     {
       name: 'esAboutText',
       type: 'bodyPortableText',
-      title: 'Description: Spanish',
+      title: 'Description [Spanish]',
       description: 'About text'
     },
     {
