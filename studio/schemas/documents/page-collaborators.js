@@ -79,6 +79,36 @@ export default {
       type: 'localeString',
       title: 'Block 4 Button Text'
     },
+    {
+      name: 'enBlock5Text',
+      type: 'bodyPortableText',
+      title: 'Block 5 Text [English]'
+    },
+    {
+      name: 'esBlock5Text',
+      type: 'bodyPortableText',
+      title: 'Block 5 Text [Spanish]'
+    },
+    {
+      name: 'block5ButtonText',
+      type: 'localeString',
+      title: 'Block 5 Button Text'
+    },
+    {
+      name: 'enBlock6Text',
+      type: 'bodyPortableText',
+      title: 'Block 6 Text [English]'
+    },
+    {
+      name: 'esBlock6Text',
+      type: 'bodyPortableText',
+      title: 'Block 6 Text [Spanish]'
+    },
+    {
+      name: 'banner2Text',
+      type: 'localeString',
+      title: 'Banner 2 Text'
+    },
   ],
   preview: {
     prepare: () => ({ title: 'Page: Collaborators' })

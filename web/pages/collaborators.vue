@@ -79,28 +79,18 @@
     </div>
     <div class="max-w-5xl flex flex-wrap m-auto mb-12">
       <div class="w-full md:w-1/2 p-4 px-8 bg-pink text-white text-center leading-5">
-        <p class="mb-4">
-          Child care providers can be part of our Coaching Program.
-          We'll provide coaching to implement our family engagment materials with parents
-          in <span class="font-MissionGothicBlack font-bold">your</span> community.
-        </p>
-        <p class="mb-4">
-          Recieve free access to the workshop toolkit. Limited scolarships available.
-        </p>
+        <BlockContent :blocks="this[`${locale}Block5Text`]" />
         <button class="p-2 font-MissionGothicBlackItalic text-2xl text-white bg-aqua rounded-lg tracking-wide uppercase text-shadow-pink">
-          Enroll now
+          {{block5ButtonText[locale]}}
         </button>
       </div>
       <div class="w-full md:w-1/2 p-4 px-8 bg-aqua text-blue text-center leading-relaxed flex flex-col justify-center">
-        <p class="font-MissionGothicBold">Family Engagement Toolkits include:</p>
-        <p class="font-MissionGothicBold">- Video toolkits</p>
-        <p class="font-MissionGothicBold">- Facilitation guidance</p>
-        <p class="font-MissionGothicBold">- Access to resources to share with families</p>
+        <BlockContent :blocks="this[`${locale}Block6Text`]" />
       </div>
     </div>
 
     <div class="w-full bg-blue p-8 mb-8 font-MissionGothicBlack text-white text-center text-2xl tracking-wider">
-      Join leaders in your city to learn more about how our programs and educational media can benefit your community:
+      {{banner2Text[locale]}}
     </div>
 
     <div class="w-full flex flex-wrap px-4">
