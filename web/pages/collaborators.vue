@@ -80,7 +80,7 @@
     <div class="max-w-5xl flex flex-wrap m-auto mb-12">
       <div class="w-full md:w-1/2 p-4 px-8 bg-pink text-white text-center leading-5">
         <BlockContent :blocks="this[`${locale}Block5Text`]" />
-        <button class="p-2 font-MissionGothicBlackItalic text-2xl text-white bg-aqua rounded-lg tracking-wide uppercase text-shadow-pink">
+        <button class="mt-2 p-2 font-MissionGothicBlackItalic text-2xl text-white bg-aqua rounded-lg tracking-wide uppercase text-shadow-pink">
           {{block5ButtonText[locale]}}
         </button>
       </div>
@@ -103,7 +103,6 @@
       <div class="mb-2 w-full">
         <EventsAccordion heading="Philadelphia" />
       </div>
-
     </div>
 
   </div>

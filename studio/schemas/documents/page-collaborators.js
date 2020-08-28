@@ -108,7 +108,7 @@ export default {
       name: 'banner2Text',
       type: 'localeString',
       title: 'Banner 2 Text'
-    },
+    }
   ],
   preview: {
     prepare: () => ({ title: 'Page: Collaborators' })
