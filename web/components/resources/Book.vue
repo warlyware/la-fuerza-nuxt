@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full lg:w-1/2 flex cursor-pointer" @click="$router.push('/resources/books/title-of-book')">
+  <div class="w-full lg:w-1/2 flex cursor-pointer">
     <nuxt-link :to="`/resources/books/${book.slug.current}`"
     class="p-2 w-32 flex-shrink-0">
       <SanityImage
@@ -15,7 +15,7 @@
         by {{book.author}}
       </div>
       <div class="w-full">
-        <button class="bg-aqua text-white text-shadow-pink px-2 py-0 rounded uppercase text-sm font-MissionGothicItalic">
+        <button class="bg-aqua text-white text-shadow-pink px-2 py-0 rounded uppercase text-sm italic">
           {{readMore}}
         </button>
       </div>
