@@ -13,8 +13,8 @@ ul {
   list-style-type: disc;
   list-style-position: inside;
 }
-h1, h2 {
-  @apply mb-4 text-blue;
+h1 {
+  @apply mb-4 text-blue font-bold italic uppercase;
 }
 h3, h4, h5, h6 {
   @apply mb-2 text-blue;

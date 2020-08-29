@@ -8,6 +8,15 @@ export default {
       name: 'title',
       type: 'localeString',
       title: 'Title'
+    },
+    {
+      name: 'playlists',
+      type: 'array',
+      description: 'Playlists to display on the Video page',
+      of: [{
+        type: 'reference',
+        to: [{ type: 'playlist' }]
+      }]
     }
   ],
   preview: {

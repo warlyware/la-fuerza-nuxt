@@ -3,14 +3,16 @@
     <h1 class="text-5xl text-center italic">
       {{ title[locale] }}
     </h1>
-
-    <template v-if="playlists.length">
-      <div v-for="{ playlist, title, description } in playlists" :key="playlist.id"
-      class="max-w-video-player m-auto mb-8">
+    <template v-if="formattedPlaylists.length">
+      <div v-for="{ playlist, title, description } in formattedPlaylists" :key="playlist.id"
+      class="max-w-video-player m-auto mb-8 px-8">
         <h2 class="mb-0 uppercase text-4xl">
           {{title}}
         </h2>
-        <p class="mb-8 font-bold">{{description}}</p>
+        <p class="mb-8 font-bold">
+          <!-- {{description}} -->
+          <BlockContent :blocks="description" />
+        </p>
         <YoutubePlayer
         :raw-playlist="playlist" />
       </div>
@@ -21,6 +23,8 @@
 </template>
 
 <script>
+import BlockContent from 'sanity-blocks-vue-component'
+import qs from 'query-string'
 import groq from 'groq'
 import sanityClient from '~/sanityClient'
 import YoutubePlayer from '~/components/video/YoutubePlayer'
@@ -28,17 +32,21 @@ import { getYtPlaylist } from '~/lib/api'
 
 const query = groq`
   *[_id == "page-videos"][0] {
+    playlists[]->{
+      ...
+    },
     ...
   }
 `
 
 export default {
   components: {
+    BlockContent,
     YoutubePlayer
   },
   data() {
     return {
-      playlists: []
+      formattedPlaylists: []
     }
   },
   computed: {
@@ -47,25 +55,30 @@ export default {
   async asyncData() {
     return await sanityClient.fetch(query)
   },
+  watch: {
+    locale() {
+      this.getPlaylists()
+    }
+  },
   async mounted() {
-    const videoCategories = [
-      {
-        playlistId: 'PLRXlgtNPU7wJ0jdbPGylii5TvjNH0CQyG',
-        title: 'Momentos de Connexion',
-        description: 'This is a description of the category.'
-      },
-      {
-        playlistId: 'PLAXKIS0jXy64fre2EuL12XU7rBHJH16oN',
-        title: 'Juntas en Casa',
-        description: 'This is a description of the category.'
-      },
-    ]
-    // const playlistIds = ['PLRXlgtNPU7wJ0jdbPGylii5TvjNH0CQyG', 'PLAXKIS0jXy64fre2EuL12XU7rBHJH16oN']
-    videoCategories.forEach(async ({ playlistId, title, description }) => {
-      const { playlist } = await getYtPlaylist(playlistId)
-      this.playlists.push({ title, playlist, description })
-    })
-  }
+    this.getPlaylists()
+  },
+   methods: {
+     getPlaylists() {
+      this.formattedPlaylists = []
+      this.playlists.forEach(async i => {
+        const url = i[`${this.locale}PlaylistUrl`]
+        const queryString = url.split('?')[1]
+        const { list: playlistId } = qs.parse(queryString)
+        const { playlist } = await getYtPlaylist(playlistId)
+        this.formattedPlaylists.push({
+          playlist,
+          title: i.title[this.locale],
+          description: i[`${this.locale}Description`]
+        })
+      })
+     }
+  },
 }
 </script>
 

@@ -23,6 +23,7 @@ import video from './documents/video'
 import privacyPolicy from './documents/privacyPolicy'
 import codeOfConduct from './documents/codeOfConduct'
 import person from './documents/person'
+import playlist from './documents/playlist'
 
 // Object types
 import mainImage from './objects/mainImage'
@@ -73,6 +74,7 @@ export default createSchema({
     scheduleItem,
     videoItem,
     mainImage,
+    playlist,
     bioPortableText,
     bodyPortableText,
     personReference,
