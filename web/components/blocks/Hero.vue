@@ -44,7 +44,6 @@ export default {
   computed: {
     wrapperClass() {
       let height = this.fullHeight ? 'h-64' : 'h-20'
-      debugger
       return `${height} bg-${this.bgColor} w-full`
     }
   }

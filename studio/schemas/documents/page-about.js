@@ -32,6 +32,19 @@ export default {
       title: 'Title: Our Allies section'
     },
     {
+      name: 'allies',
+      type: 'array',
+      of: [{ type: 'ally' }]
+    },
+    {
+      name: 'image1',
+      type: 'image',
+      title: 'Image 1',
+      options: {
+        hotspot: true
+      }
+    },
+    {
       name: 'block1Text',
       type: 'localeString',
       title: 'Block 1 text'
@@ -40,6 +53,14 @@ export default {
       name: 'block1ButtonText',
       type: 'localeString',
       title: 'Block 1 button text'
+    },
+    {
+      name: 'image2',
+      type: 'image',
+      title: 'Image 2',
+      options: {
+        hotspot: true
+      }
     }
   ],
   preview: {
