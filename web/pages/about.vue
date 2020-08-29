@@ -1,6 +1,8 @@
 <template>
   <div class="w-full">
-    <Hero :title="title[locale]" x-axis-location="start" class="mb-8" />
+    <Hero :image="hero.image" :full-height="hero.fullHeight" :title="title[locale]"
+    x-axis-location="start" class="mb-8" />
+    {{hero.fullHeight}}
     <div class="max-w-4xl mx-auto justify-between p-4 mb-4 text-center">
       <BlockContent :blocks="aboutText" />
     </div>

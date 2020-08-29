@@ -10,6 +10,11 @@ export default {
       title: 'Title'
     },
     {
+      name: 'hero',
+      type: 'hero',
+      title: 'Hero'
+    },
+    {
       name: 'enAboutText',
       type: 'bodyPortableText',
       title: 'Description [English]',
