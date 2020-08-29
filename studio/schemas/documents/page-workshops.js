@@ -2,7 +2,7 @@ export default {
   name: 'page-workshops',
   type: 'document',
   title: 'Page: Workshops',
-  __experimental_actions: ['update', 'create', /* 'delete', */ 'publish'],
+  __experimental_actions: ['update', /* 'create', /* 'delete', */ 'publish'],
   fields: [
     {
       name: 'title',

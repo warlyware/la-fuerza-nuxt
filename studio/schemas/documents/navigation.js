@@ -2,7 +2,7 @@ export default {
   name: 'navigation',
   type: 'document',
   title: 'Navigation',
-  __experimental_actions: ['update', 'create', /* 'delete', */ 'publish'],
+  __experimental_actions: ['update', /* 'create', 'delete', */ 'publish'],
   fields: [
     {
       name: 'slotOne',

@@ -2,7 +2,7 @@ export default {
   name: 'page-resources',
   type: 'document',
   title: 'Page: Resources',
-  __experimental_actions: ['update', 'create', /* 'delete', */ 'publish'],
+  __experimental_actions: ['update', /* 'create', 'delete', */ 'publish'],
   fields: [
     {
       name: 'bookSectionTitle',
@@ -13,6 +13,15 @@ export default {
       name: 'bookSectionDescription',
       type: 'localeString',
       title: 'Book Section description'
+    },
+    {
+      name: 'books',
+      type: 'array',
+      description: 'Books to display',
+      of: [{
+        type: 'reference',
+        to: [{ type: 'book' }]
+      }]
     },
     {
       name: 'tipSectionTitle',

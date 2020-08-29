@@ -1,7 +1,7 @@
 export default {
   name: 'privacyPolicy',
   type: 'document',
-  title: 'Privacy Policy',
+  title: 'Page: Privacy Policy',
   __experimental_actions: ['update', /* 'create', 'delete', */ 'publish'],
   fields: [
     {

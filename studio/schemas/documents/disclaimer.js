@@ -1,7 +1,7 @@
 export default {
   name: 'disclaimer',
   type: 'document',
-  title: 'Disclaimer',
+  title: 'Page: Disclaimer',
   __experimental_actions: ['update', /* 'create', 'delete', */ 'publish'],
   fields: [
     {

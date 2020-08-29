@@ -2,7 +2,7 @@ export default {
   name: 'page-home',
   type: 'document',
   title: 'Page: Home',
-  __experimental_actions: ['update', 'create', /* 'delete', */ 'publish'],
+  __experimental_actions: ['update', /* 'create', 'delete', */ 'publish'],
   fields: [
     {
       name: 'video1Url',

@@ -67,9 +67,4 @@ export default {
 .16-9 {
   padding-bottom: calc(var(--aspect-ratio, .5625) * 100%);
 }
-.line-clamp {
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-}
 </style>
