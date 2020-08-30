@@ -40,6 +40,7 @@ import social from './objects/social'
 import localeString from './objects/localeString'
 import hero from './objects/hero'
 import ally from './objects/ally'
+import tip from './objects/tip'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -86,6 +87,7 @@ export default createSchema({
     localeString,
     hero,
     ally,
-    book
+    book,
+    tip
   ])
 })

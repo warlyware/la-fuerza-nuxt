@@ -24,7 +24,6 @@
             </nuxt-link>
           </div>
         </div>
-          <!-- <img class="p-2 cursor-pointer" src="//placehold.it/300" alt=""> -->
       </div>
     </div>
     <div class="flex flex-wrap w-full uppercase mb-8">

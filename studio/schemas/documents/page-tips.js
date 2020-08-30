@@ -18,6 +18,11 @@ export default {
       name: 'esBannerText',
       type: 'bodyPortableText',
       title: 'Banner Text [Spanish]'
+    },
+    {
+      name: 'tips',
+      type: 'array',
+      of: [{ type: 'tip' }]
     }
   ],
   preview: {

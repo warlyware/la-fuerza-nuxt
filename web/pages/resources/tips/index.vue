@@ -21,20 +21,21 @@
       </div>
     </div> -->
 
-    <div v-if="bannerText && bannerText.length"
-    class="py-8 flex justify-center w-full bg-blue text-white mb-8 text-4xl">
-      <BlockContent :blocks="bannerText" />
+    <LightBox ref="lightbox"
+    :media="formattedTips" :show-caption="true"
+    :show-light-box="false" />
+    <div class="flex flex-wrap justify-start w-full max-w-5xl m-auto px-4 mb-8">
+      <div v-for="(tip, i) in formattedTips" :key="tip.caption"
+      class="pb-1/6 h-0 w-1/6 mx-2">
+        <div :style="`background-image: url(${tip.thumb})`"
+        class="cursor-pointer bg-cover bg-center h-40"
+        @click="showImage(i)" />
+      </div>
     </div>
 
-    <LightBox ref="lightbox"
-    :media="images" :show-caption="true"
-    :show-light-box="false" />
-    <div class="flex flex-wrap w-full max-w-5xl m-auto px-4">
-      <div v-for="(image, i) in images" :key="image.caption"
-      class="p-2 w-1/2 md:w-1/4 lg:w-1/6 cursor-pointer relative"
-      @click="showImage(i)">
-        <img :src="image.thumb" width="100%" height="100%">
-      </div>
+    <div v-if="bannerText && bannerText.length"
+    class="py-8 flex justify-center w-full bg-blue text-white text-4xl">
+      <BlockContent :blocks="bannerText" />
     </div>
   </div>
 </template>
@@ -42,9 +43,10 @@
 <script>
 import BlockContent from 'sanity-blocks-vue-component'
 import groq from 'groq'
+import imageUrlBuilder from '@sanity/image-url'
 import sanityClient from '~/sanityClient'
+const builder = imageUrlBuilder(sanityClient)
 import LightBox from 'vue-image-lightbox'
-import randomColor from 'randomcolor'
 
 const query = groq`
   *[_id == "page-tips"][0] {
@@ -60,6 +62,9 @@ const query = groq`
         ...
       }
     },
+    tips[] {
+      ...
+    },
     ...
   }
 `
@@ -68,30 +73,30 @@ export default {
   components: { BlockContent, LightBox },
   data() {
     return {
-      showLightBox: false,
       currentImageIndex: 0
     }
   },
   computed: {
-    images() { return Array(66).fill({}).map((_, i) => {
-      const color = randomColor().slice(1, 7)
-      return {
-        thumb: `//placehold.it/150/${color}`,
-        src: `//placehold.it/800x600/${color}`,
-        caption: `${i + 1} - caption to display.`
-      }
-    })},
     locale() { return this.$i18n.locale },
-    bannerText() { return this.locale === 'en' ? this.enBannerText : this.esBannerText }
+    bannerText() { return this.locale === 'en' ? this.enBannerText : this.esBannerText },
+    formattedTips() {
+      return this.tips.map(({ image, caption }) => {
+        return {
+          src: builder.image(image).url(),
+          thumb: builder.image(image).width(200).url(),
+          caption: caption ? caption[this.locale] : ''
+        }
+      })
+    }
   },
   async asyncData() {
     return await sanityClient.fetch(query)
   },
+  mounted() { console.log(this) },
   methods: {
     showImage(i) {
       this.$refs.lightbox.showImage(i)
       this.currentImageIndex = i
-      this.showLightBox = true
     },
     nextImage() {
       this.currentImageIndex === this.images.length - 1
@@ -110,5 +115,8 @@ export default {
 <style lang="scss" scoped>
   .h-image-carousel {
     height: 350px;
+  }
+  .pb-1\/6 {
+    padding-bottom: 16.7%;
   }
 </style>
