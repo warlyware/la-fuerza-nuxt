@@ -6,8 +6,7 @@ export default {
     {
       title: 'Name',
       name: 'name',
-      type: 'string',
-      default: true
+      type: 'string'
     },
     {
       title: 'Logo Image',

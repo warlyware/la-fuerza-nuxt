@@ -13,6 +13,11 @@ export default {
       name: 'hero',
       type: 'hero',
       title: 'Hero'
+    },
+    {
+      name: 'joinBlocks',
+      type: 'array',
+      of: [{ type: 'joinBlock' }]
     }
   ],
   preview: {

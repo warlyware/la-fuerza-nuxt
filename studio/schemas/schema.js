@@ -42,6 +42,8 @@ import hero from './objects/hero'
 import ally from './objects/ally'
 import tip from './objects/tip'
 import contact from './objects/contact'
+import button from './objects/button'
+import joinBlock from './objects/joinBlock'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -90,6 +92,8 @@ export default createSchema({
     ally,
     book,
     tip,
-    contact
+    contact,
+    button,
+    joinBlock
   ])
 })
