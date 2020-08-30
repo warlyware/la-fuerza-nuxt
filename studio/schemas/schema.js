@@ -8,7 +8,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 import eventInformation from './documents/eventInformation'
 import about from './documents/page-about'
 import collaborators from './documents/page-collaborators'
-import contact from './documents/page-contact'
+import contactPage from './documents/page-contact'
 import home from './documents/page-home'
 import join from './documents/page-join'
 import resources from './documents/page-resources'
@@ -41,6 +41,7 @@ import localeString from './objects/localeString'
 import hero from './objects/hero'
 import ally from './objects/ally'
 import tip from './objects/tip'
+import contact from './objects/contact'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -62,7 +63,7 @@ export default createSchema({
 
     about,
     collaborators,
-    contact,
+    contactPage,
     home,
     join,
     resources,
@@ -88,6 +89,7 @@ export default createSchema({
     hero,
     ally,
     book,
-    tip
+    tip,
+    contact
   ])
 })

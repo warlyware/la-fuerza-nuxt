@@ -76,19 +76,7 @@
       </div>
     </div>
 
-    <div class="w-full p-6 flex flex-wrap bg-blue text-aqua">
-      <h2 class="w-full text-center text-aqua font-MissionGothicBlackItalic text-4xl uppercase mb-0">
-        Subscríbete
-      </h2>
-      <p class="m-auto max-w-md text-center leading-5 mb-8 font-MissionGothicBold">
-        Entrérate de las oportunidades, actividades, y noticias que tenemos para nuestras Familias Laintas.
-      </p>
-      <div class="w-full flex justify-center mb-2">
-        <button class="bg-pink rounded-lg p-2 py-1 text-2xl uppercase font-MissionGothicBlackItalic tracking-wide text-white">
-          Subscríbete
-        </button>
-      </div>
-    </div>
+    <NewsletterSubscription />
   </div>
 </template>
 
@@ -96,6 +84,7 @@
 import groq from 'groq'
 import sanityClient from '~/sanityClient'
 import Hero from '~/components/blocks/Hero'
+import NewsletterSubscription from '~/components/blocks/NewsletterSubscription'
 
 const query = groq`
   *[_id == "page-join"][0] {
@@ -104,7 +93,7 @@ const query = groq`
 `
 
 export default {
-  components: { Hero },
+  components: { Hero, NewsletterSubscription },
   computed: {
     locale() { return this.$i18n.locale }
   },

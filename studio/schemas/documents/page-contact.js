@@ -13,6 +13,11 @@ export default {
       name: 'hero',
       type: 'hero',
       title: 'Hero'
+    },
+    {
+      name: 'contacts',
+      type: 'array',
+      of: [{ type: 'contact' }]
     }
   ],
   preview: {

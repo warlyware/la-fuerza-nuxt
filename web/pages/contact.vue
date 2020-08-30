@@ -4,130 +4,99 @@
     x-axis-location="end" class="mb-8" />
     <div class="p-4">
       <div class="flex flex-col items-center w-full uppercase p-4 text-xl leading-tight">
-        <div class="text-2xl text-aqua font-MissionGothicBlackItalic">
-          Literacy Partners
+        <div class="text-2xl text-aqua font-bold italic mb-2">
+          {{contacts[0].name[locale]}}
         </div>
-        <div>
-          75 Maiden Lane, Suite 11102
+        <div v-if="contacts[0].address" class="address">
+          <BlockContent :blocks="contacts[0].address" />
         </div>
-        <div>
-          New York, NY 10038
+        <div v-if="contacts[0].email">
+          <span class="font-bold">
+            Email:
+          </span> {{ contacts[0].email }}
+        </div>
+        <div v-if="contacts[0].phone">
+          <span class="font-bold">
+            Call:
+          </span> {{ contacts[0].phone }}
+        </div>
+        <div v-if="contacts[0].fax">
+          <span class="font-bold">
+            Fax:
+          </span> {{ contacts[0].fax }}
         </div>
       </div>
 
       <div class="flex flex-col items-center w-full uppercase p-4 text-xl leading-tight">
-        <div class="text-2xl text-pink font-MissionGothicBlackItalic">
-          General Information
+        <div class="text-2xl text-pink font-bold italic mb-2">
+          {{contacts[1].name[locale]}}
         </div>
-        <div>
-          Call
+        <div v-if="contacts[1].address" class="address mb-1">
+          <BlockContent :blocks="contacts[1].address" />
         </div>
-        <div>
-          Fax
+        <div v-if="contacts[1].email">
+          <span class="font-bold">
+            Email:
+          </span> {{ contacts[1].email }}
         </div>
-        <div>
-          Email
+        <div v-if="contacts[1].phone">
+          <span class="font-bold">
+            Call:
+          </span> {{ contacts[1].phone }}
+        </div>
+        <div v-if="contacts[1].fax">
+          <span class="font-bold">
+            Fax:
+          </span> {{ contacts[1].fax }}
         </div>
       </div>
 
-      <div class="flex flex-wrap md:justify-between w-full pb-8 max-w-6xl mx-auto">
-        <div class="flex flex-col items-center md:items-start w-full md:w-1/3 flex-grow uppercase p-4 text-xl leading-tight">
-          <div class="text-2xl font-MissionGothicBlackItalic">
-            General Inquiries
+      <div v-if="secondaryContacts.length"
+      class="flex flex-wrap md:justify-between w-full pb-8 max-w-6xl mx-auto">
+        <div v-for="contact in secondaryContacts" :key="contact._id"
+        class="flex flex-col items-center w-full md:w-1/3 flex-grow uppercase p-4 text-xl leading-tight">
+          <div class="text-2xl font-bold italic">
+            {{contact.name[locale]}}
           </div>
-          <div>
-            Call
+          <div v-if="contact.address" class="address">
+            <BlockContent :blocks="contact.address" />
           </div>
-          <div>
-            Fax
+          <div v-if="contact.email">
+            <span class="font-bold">
+              Email:
+            </span> {{ contact.email }}
           </div>
-          <div>
-            Email
+          <div v-if="contact.phone">
+            <span class="font-bold">
+              Call:
+            </span> {{ contact.phone }}
           </div>
-        </div>
-        <div class="flex flex-col items-center md:w-1/3 flex-grow w-full uppercase p-4 text-xl leading-tight">
-          <div class="text-2xl font-MissionGothicBlackItalic">
-            General Inquiries
-          </div>
-          <div>
-            Call
-          </div>
-          <div>
-            Fax
-          </div>
-          <div>
-            Email
-          </div>
-        </div>
-        <div class="flex flex-col items-center md:items-end md:w-1/3 flex-grow w-full uppercase p-4 text-xl leading-tight">
-          <div class="text-2xl font-MissionGothicBlackItalic">
-            General Inquiries
-          </div>
-          <div>
-            Call
-          </div>
-          <div>
-            Fax
-          </div>
-          <div>
-            Email
+          <div v-if="contact.fax">
+            <span class="font-bold">
+              Fax:
+            </span> {{ contact.fax }}
           </div>
         </div>
       </div>
 
-      <div class="w-full flex justify-center pb-8">
-        <button class="bg-aqua text-white text-shadow-pink text-3xl uppercase font-MissionGothicBlackItalic p-2 rounded py-1">
+      <div class="w-full flex justify-center pb-8 pt-4">
+        <button class="bg-aqua text-white text-shadow-pink text-3xl uppercase font-bold italic p-2 rounded py-1">
           Trabaja Con Nosotros
         </button>
       </div>
-      <Divider />
-      <div class="flex flex-wrap justify-between w-full pb-8 max-w-6xl mx-auto">
-        <h2 class="text-sm font-normal uppercase w-full mb-16">
-          Subscribe to our newsletter to receive notifications and exclusive invitations to our events
-        </h2>
-
-        <label for="first-name" class="flex flex-col w-full md:w-1/2 mb-4 rounded">
-          <span class="flex-shrink-0">
-            First Name
-          </span>
-          <div class="pr-4 w-full">
-            <input class="w-full bg-gray-light border border-gray rounded p-2"
-            type="text" name="first-name">
-          </div>
-        </label>
-        <label for="last-name" class="flex flex-col w-full md:w-1/2 mb-4 rounded">
-          <span class="flex-shrink-0">
-            Last Name
-          </span>
-          <div class="pr-4 w-full">
-            <input class="w-full bg-gray-light border border-gray rounded p-2"
-            type="text" name="last-name">
-          </div>
-        </label>
-        <label for="email" class="flex flex-col w-full md:w-1/2 mb-4 rounded">
-          <span class="flex-shrink-0">
-            Email *
-          </span>
-          <div class="pr-4 w-full">
-            <input class="w-full bg-gray-light border border-gray rounded p-2"
-            type="text" name="email">
-          </div>
-        </label>
-        <div class="flex w-full">
-          <button class="p-4 py-1 bg-pink text-white rounded uppercase font-MissionGothic">
-            Submit
-          </button>
-        </div>
-      </div>
     </div>
+    <NewsletterSubscription class="-mb-8" />
   </div>
 </template>
 
 <script>
+import BlockContent from 'sanity-blocks-vue-component'
+
 import groq from 'groq'
 import sanityClient from '~/sanityClient'
-import Divider from '~/components/blocks/Divider'
 import Hero from '~/components/blocks/Hero'
+import NewsletterSubscription from '~/components/blocks/NewsletterSubscription'
+
 
 const query = groq`
   *[_id == "page-contact"][0] {
@@ -137,11 +106,13 @@ const query = groq`
 
 export default {
   components: {
-    Divider,
-    Hero
+    BlockContent,
+    Hero,
+    NewsletterSubscription
   },
   computed: {
-    locale() { return this.$i18n.locale }
+    locale() { return this.$i18n.locale },
+    secondaryContacts() { return this.contacts.slice(2, this.contacts.length) }
   },
   async asyncData() {
     return await sanityClient.fetch(query)
@@ -154,5 +125,8 @@ export default {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+  }
+  .address p {
+    @apply leading-5 text-center;
   }
 </style>
