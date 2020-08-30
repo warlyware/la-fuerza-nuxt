@@ -8,6 +8,11 @@ export default {
       name: 'title',
       type: 'localeString',
       title: 'Title'
+    },
+    {
+      name: 'hero',
+      type: 'hero',
+      title: 'Hero'
     }
   ],
   preview: {

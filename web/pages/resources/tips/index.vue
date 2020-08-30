@@ -26,7 +26,7 @@
     :show-light-box="false" />
     <div class="flex flex-wrap justify-start w-full max-w-5xl m-auto px-4 mb-8">
       <div v-for="(tip, i) in formattedTips" :key="tip.caption"
-      class="pb-1/6 h-0 w-1/6 mx-2">
+      class="pb-1/6 h-0 w-1/6 mx-2 flex-shrink-0">
         <div :style="`background-image: url(${tip.thumb})`"
         class="cursor-pointer bg-cover bg-center h-40"
         @click="showImage(i)" />

@@ -1,7 +1,7 @@
 <template>
   <div class="w-full">
-    <Hero :title="title[locale]" x-axis-location="start" class="mb-8" />
-
+    <Hero :image="hero.image" :full-height="hero.fullHeight" :title="title[locale]"
+    x-axis-location="start" class="mb-8" />
     <div class="flex flex-wrap px-4 max-w-5xl m-auto mb-4">
       <div class="w-full md:w-1/2 px-8 flex flex-col items-center md:-ml-4 mb-16">
         <img src="/images/portfolio.png" alt="" class="w-24 mb-4">

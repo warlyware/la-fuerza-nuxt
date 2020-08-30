@@ -1,10 +1,8 @@
 <template>
   <div :class="wrapperClass">
     <div :class="`flex h-full w-full justify-${xAxisLocation} items-end relative`">
-      <SanityImage :image="image"
-      class="w-screen top-0"
-      :width="1800"
-      :height="1000" />
+      <SanityImageResponsive :image="image"
+      class="w-full min-w-screen top-0 flex-shrink-0 absolute h-64" />
       <div class="text-white text-5xl uppercase italic px-8 font-MissionGothicBlackItalic tracking-wider absolute"
       :class="bgColor === 'aqua' ? 'text-shadow-blue-side' : ''">
         {{ title }}
@@ -14,11 +12,11 @@
 </template>
 
 <script>
-import SanityImage from '~/components/SanityImage'
+import SanityImageResponsive from '~/components/SanityImageResponsive'
 
 export default {
   components: {
-    SanityImage
+    SanityImageResponsive
   },
   props: {
     bgColor: {

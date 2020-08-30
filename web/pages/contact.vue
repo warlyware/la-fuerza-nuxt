@@ -1,6 +1,7 @@
 <template>
   <div>
-    <Hero :title="title[locale]" />
+    <Hero :image="hero.image" :full-height="hero.fullHeight" :title="title[locale]"
+    x-axis-location="end" class="mb-8" />
     <div class="p-4">
       <div class="flex flex-col items-center w-full uppercase p-4 text-xl leading-tight">
         <div class="text-2xl text-aqua font-MissionGothicBlackItalic">

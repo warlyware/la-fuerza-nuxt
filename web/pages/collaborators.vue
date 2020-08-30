@@ -1,6 +1,7 @@
 <template>
   <div class="w-full">
-    <Hero :title="title[locale]" x-axis-location="start" bg-color="aqua" class="mb-8" />
+    <Hero :image="hero.image" :full-height="hero.fullHeight" :title="title[locale]"
+    x-axis-location="start" class="mb-8" />
     <div class="w-full flex flex-wrap mb-8">
       <div class="w-full md:w-1/2 my-1/2 md:pr-2">
         <youtube player-width="100%" player-height="100%"
