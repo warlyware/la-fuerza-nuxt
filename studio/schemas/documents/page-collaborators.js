@@ -60,9 +60,14 @@ export default {
       title: 'Block 3 Text [Spanish]'
     },
     {
-      name: 'section1Title',
+      name: 'collaboratorsSectionTitle',
       type: 'localeString',
-      title: 'Section 1 Title'
+      title: 'How To Collaborate Section Title'
+    },
+    {
+      name: 'collaboratorBlocks',
+      type: 'array',
+      of: [{ type: 'collaboratorBlock' }]
     },
     {
       name: 'block3Text',

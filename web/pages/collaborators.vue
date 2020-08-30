@@ -23,47 +23,39 @@
     </div>
     <div class="max-w-3xl m-auto flex flex-wrap px-8 md:px-16 text-xl uppercase mb-12 tracking-wide">
       <div class="p-4 w-full md:w-1/2">
-        <div class="border rounded-lg w-full flex justify-center items-center h-auto p-16 font-MissionGothicBlackItalic shadow-black">
+        <div class="border rounded-lg w-full flex justify-center items-center h-auto p-16 font-bold italic shadow-black">
           <BlockContent :blocks="this[`${locale}Block2Text`]" />
         </div>
       </div>
       <div class="p-4 w-full md:w-1/2">
-        <div class="border rounded-lg w-full flex justify-center items-center h-auto p-16 font-MissionGothicBlackItalic shadow-black">
+        <div class="border rounded-lg w-full flex justify-center items-center h-auto p-16 font-bold italic shadow-black">
           <BlockContent :blocks="this[`${locale}Block3Text`]" />
         </div>
       </div>
     </div>
+
     <div class="max-w-5xl m-auto mb-12 px-8 md:px-0">
-      <h2 class="text-5xl uppercase font-MissionGothicBlackItalic text-center mb-2 md:mb-0">
-        {{section1Title[locale]}}
+      <h2 class="text-5xl uppercase font-bold italic text-center mb-2 md:mb-0">
+        {{collaboratorsSectionTitle[locale]}}
       </h2>
-      <div class="flex flex-wrap md:flex-no-wrap w-full justify-center md:justify-start mb-8 md:mb-0">
-        <div class="h-48 w-48 flex items-center justify-center border border-pink rounded-full shadow-pink-side flex-shrink-0 mx-8 mb-4 md:mb-0">
-          <h3 class="text-4xl mb-0 uppercase font-MissionGothicBlack">
-            Host
+      <div v-for="(block, i) in collaboratorBlocks" :key="block._id"
+      class="flex flex-col flex-wrap md:flex-no-wrap w-full justify-center mb-8 md:mb-4">
+        <div class="w-full md:w-1/2"
+        :class="i % 2 !== 1 ? collabBlockOddStyle : collabBlockEvenStyle">
+          <h3 class="text-5xl mb-0 uppercase font-bold"
+          :class="i % 2 !== 1 ? 'text-pink' : 'text-aqua'">
+            {{block.title[locale]}}
           </h3>
-        </div>
-        <p class="text-pink text-lg font-MissionGothicBold leading-5 flex items-center mb-0">
-          Mauris ullamcorper porttitor pretium. Curabitur quis ex varius, auctor lorem vel, cursus velit.
-          Ut eget nunc a nibh sollicitudin luctus ac eget ante. Vivamus nec pharetra dui, et condimentum sapien.
-          Etiam eu pretium metus. Vivamus pellentesque ex nec lacus euismod, sit amet ultrices ante efficitur.
-        </p>
-      </div>
-      <div class="flex flex-wrap md:flex-no-wrap justify-center w-full mb-8 md:mb-0">
-        <p class="text-aqua text-lg font-MissionGothicBold leading-5 flex items-center text-right">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam elementum auctor quam,
-          nec ornare lorem maximus non. Quisque aliquet enim sed molestie rutrum. Duis id enim quis enim
-          condimentum lacinia. Quisque imperdiet sed erat vitae lobortis. Aenean tempus est nec
-          consectetur condimentum.
-        </p>
-        <div class="h-48 w-48 flex items-center justify-center border border-aqua rounded-full shadow-aqua-side flex-shrink-0 mx-8 mb-4 md:mb-0 order-first md:order-last">
-          <h3 class="text-4xl mb-0 uppercase font-MissionGothicBlack">Sponsor</h3>
+          <div class="text-lg font-MissionGothicBold leading-5 flex items-center mb-0">
+            <BlockContent :blocks="block[`${locale}Text`]" />
+          </div>
         </div>
       </div>
     </div>
+
     <div class="max-w-3xl m-auto flex flex-wrap mb-12">
       <div class="w-full mx-4 md:mx-0 md:w-1/3 bg-blue flex items-center rounded-lg uppercase tracking-wider">
-        <h2 class="font-MissionGothicBlackItalic text-white text-4xl mb-0 leading-tight p-4">
+        <h2 class="font-bold italic text-white text-4xl mb-0 leading-tight p-4">
           {{block3Text[locale]}}
         </h2>
       </div>
@@ -72,7 +64,7 @@
           <BlockContent :blocks="this[`${locale}Block4Text`]" />
         </p>
         <div class="w-full flex justify-center mb-8">
-          <button class="p-2 py-1 font-MissionGothicBlackItalic text-3xl text-white bg-pink rounded-lg tracking-wide uppercase">
+          <button class="p-2 py-1 font-bold italic text-3xl text-white bg-pink rounded-lg tracking-wide uppercase">
             {{block4ButtonText[locale]}}
           </button>
         </div>
@@ -81,7 +73,7 @@
     <div class="max-w-5xl flex flex-wrap m-auto mb-12">
       <div class="w-full md:w-1/2 p-4 px-8 bg-pink text-white text-center leading-5">
         <BlockContent :blocks="this[`${locale}Block5Text`]" />
-        <button class="mt-2 p-2 font-MissionGothicBlackItalic text-2xl text-white bg-aqua rounded-lg tracking-wide uppercase text-shadow-pink">
+        <button class="mt-2 p-2 font-bold italic text-2xl text-white bg-aqua rounded-lg tracking-wide uppercase text-shadow-pink">
           {{block5ButtonText[locale]}}
         </button>
       </div>
@@ -94,7 +86,7 @@
       {{banner2Text[locale]}}
     </div>
 
-    <div class="w-full flex flex-wrap px-4">
+    <div class="max-w-5xl m-auto flex flex-wrap px-4">
       <div class="mb-2 w-full">
         <EventsAccordion heading="Miami" />
       </div>
@@ -125,6 +117,12 @@ const query = groq`
 
 export default {
   components: { BlockContent, Hero, EventsAccordion },
+  data() {
+    return {
+      collabBlockOddStyle: '',
+      collabBlockEvenStyle: 'self-end',
+    }
+  },
   computed: {
     locale() { return this.$i18n.locale },
     block1Text() { return this[`${this.locale}Block1Text`]}
@@ -157,7 +155,8 @@ export default {
 a {
   @apply text-pink italic;
 }
-.font-MissionGothicBlackItalic p {
-
+.font-bold .italic p {
+  @apply font-bold italic;
 }
 </style>
+#__layout > div > div.w-full.pt-24.md\:pt-32.mb-8 > div.max-w-5xl.m-auto.mb-12.px-8.md\:px-0 > div:nth-child(2) > p

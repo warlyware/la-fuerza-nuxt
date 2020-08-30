@@ -44,6 +44,7 @@ import tip from './objects/tip'
 import contact from './objects/contact'
 import button from './objects/button'
 import joinBlock from './objects/joinBlock'
+import collaboratorBlock from './objects/collaboratorBlock'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -94,6 +95,7 @@ export default createSchema({
     tip,
     contact,
     button,
-    joinBlock
+    joinBlock,
+    collaboratorBlock
   ])
 })
