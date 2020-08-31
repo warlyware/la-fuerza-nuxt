@@ -1,6 +1,9 @@
+import MdBook from 'react-icons/lib/md/book'
+
 export default {
   name: 'book',
   type: 'document',
+  icon: MdBook,
   title: 'Book',
   fields: [
     {

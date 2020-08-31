@@ -70,24 +70,9 @@ export default {
       of: [{ type: 'collaboratorBlock' }]
     },
     {
-      name: 'block3Text',
+      name: 'block4Text',
       type: 'localeString',
-      title: 'Block 3 Text'
-    },
-    {
-      name: 'enBlock4Text',
-      type: 'bodyPortableText',
-      title: 'Block 4 Text [English]'
-    },
-    {
-      name: 'esBlock4Text',
-      type: 'bodyPortableText',
-      title: 'Block 4 Text [Spanish]'
-    },
-    {
-      name: 'block4ButtonText',
-      type: 'localeString',
-      title: 'Block 4 Button Text'
+      title: 'Block 4 Text'
     },
     {
       name: 'enBlock5Text',
@@ -113,6 +98,26 @@ export default {
       name: 'esBlock6Text',
       type: 'bodyPortableText',
       title: 'Block 6 Text [Spanish]'
+    },
+    {
+      name: 'block6ButtonText',
+      type: 'localeString',
+      title: 'Block 6 Button Text'
+    },
+    {
+      name: 'enBlock7Text',
+      type: 'bodyPortableText',
+      title: 'Block 7 Text [English]'
+    },
+    {
+      name: 'esBlock7Text',
+      type: 'bodyPortableText',
+      title: 'Block 7 Text [Spanish]'
+    },
+    {
+      name: 'block7ButtonText',
+      type: 'localeString',
+      title: 'Block 7 Button Text'
     },
     {
       name: 'banner2Text',

@@ -22,7 +22,10 @@ export default {
     {
       name: 'tips',
       type: 'array',
-      of: [{ type: 'tip' }]
+      of: [{
+        type: 'reference',
+        to: [{ type: 'tip' }]
+      }]
     }
   ],
   preview: {

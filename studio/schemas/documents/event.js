@@ -1,6 +1,9 @@
+import MdEvent from 'react-icons/lib/md/event-note'
+
 export default {
   name: 'event',
   type: 'document',
+  icon: MdEvent,
   title: 'Event',
   fields: [
     {

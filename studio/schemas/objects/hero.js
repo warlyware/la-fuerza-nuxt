@@ -17,6 +17,19 @@ export default {
       options: {
         hotspot: true
       }
+    },
+    {
+      title: 'Background Color',
+      name: 'bgColor',
+      type: 'string',
+      description: 'Color to use if no image is selected.',
+      options: {
+        list: [
+          { value: 'pink', title: 'Pink' },
+          { value: 'blue', title: 'Blue' },
+          { value: 'aqua', title: 'Aqua' }
+        ]
+      }
     }
   ],
   preview: {

@@ -17,7 +17,7 @@
       :video-id="getYoutubeId(videoUrl)"  />
     </div>
     <div class="w-full max-w-5xl m-auto flex flex-wrap mb-8">
-      <div class="w-full md:w-1/2 flex justify-center md:justify-start h-64 mb-2 mb:mb-0 md:h-image"
+      <div class="w-full md:w-1/2 flex justify-center md:justify-start h-64 mb-2 mb:mb-0 md:h-image cursor-pointer"
       @click="showImage(0)">
         <SanityImageResponsive
         class="w-full bg-blue flex justify-center items-center md:mr-2"
@@ -25,8 +25,8 @@
         :width="400"
         fit="crop" />
       </div>
-      <div class="w-full md:w-1/2 flex justify-center md:justify-start h-64 md:h-image"
-      @click="showImage(0)">
+      <div class="w-full md:w-1/2 flex justify-center md:justify-start h-64 md:h-image cursor-pointer"
+      @click="showImage(1)">
         <SanityImageResponsive
         class="w-full bg-blue flex justify-center items-center md:ml-2"
         :image="image2"

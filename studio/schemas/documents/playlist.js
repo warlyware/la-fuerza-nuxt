@@ -1,7 +1,10 @@
+import MdPlaylist from 'react-icons/lib/md/playlist-play'
+
 export default {
   name: 'playlist',
   type: 'document',
   title: 'Playlist',
+  icon: MdPlaylist,
   fields: [
     {
       name: 'title',

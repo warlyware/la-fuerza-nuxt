@@ -86,6 +86,12 @@ strong em {
 .text-shadow-blue-side {
   text-shadow: 6px 0px #19105e;
 }
+.text-shadow-white {
+  text-shadow: 2px 2px #fff;
+}
+.text-shadow-white-side {
+  text-shadow: 2px 0px #fff;
+}
 
 .my-1\/2 {
   margin-top: 2px;

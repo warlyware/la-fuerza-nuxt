@@ -1,7 +1,10 @@
+import MdTip from 'react-icons/lib/md/thumb-up'
+
 export default {
   name: 'tip',
   title: 'Tip',
-  type: 'object',
+  icon: MdTip,
+  type: 'document',
   fields: [
     {
       title: 'Name',

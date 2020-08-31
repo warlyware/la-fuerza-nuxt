@@ -5,7 +5,6 @@ import createSchema from 'part:@sanity/base/schema-creator'
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // document types
-import eventInformation from './documents/eventInformation'
 import about from './documents/page-about'
 import collaborators from './documents/page-collaborators'
 import contactPage from './documents/page-contact'
@@ -16,32 +15,24 @@ import tips from './documents/page-tips'
 import videos from './documents/page-videos'
 import workshops from './documents/page-workshops'
 // import navigation from './documents/navigation'
-import session from './documents/session'
-import program from './documents/program'
 import disclaimer from './documents/disclaimer'
-import video from './documents/video'
+// import video from './documents/video'
 import privacyPolicy from './documents/privacyPolicy'
 import codeOfConduct from './documents/codeOfConduct'
-import person from './documents/person'
 import playlist from './documents/playlist'
 import book from './documents/book'
 import event from './documents/event'
+import tip from './documents/tip'
 
 // Object types
 import mainImage from './objects/mainImage'
 import venue from './objects/venue'
-import schedule from './objects/schedule'
-import scheduleItem from './objects/scheduleItem'
-import videoItem from './objects/videoItem'
 import bioPortableText from './objects/bioPortableText'
 import bodyPortableText from './objects/bodyPortableText'
-import personReference from './objects/personReference'
-import videoReference from './objects/videoReference'
 import social from './objects/social'
 import localeString from './objects/localeString'
 import hero from './objects/hero'
 import ally from './objects/ally'
-import tip from './objects/tip'
 import contact from './objects/contact'
 import button from './objects/button'
 import joinBlock from './objects/joinBlock'
@@ -57,13 +48,13 @@ export default createSchema({
     // The following are document types which will appear
     // in the studio.
     codeOfConduct,
-    eventInformation,
-    person,
+    // eventInformation,
+    // person,
     venue,
-    session,
+    // session,
     disclaimer,
     privacyPolicy,
-    video,
+    // video,
 
     about,
     collaborators,
@@ -78,16 +69,16 @@ export default createSchema({
 
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
-    schedule,
-    program,
-    scheduleItem,
-    videoItem,
+    // schedule,
+    // program,
+    // scheduleItem,
+    // videoItem,
     mainImage,
     playlist,
     bioPortableText,
     bodyPortableText,
-    personReference,
-    videoReference,
+    // personReference,
+    // videoReference,
     social,
     localeString,
     hero,

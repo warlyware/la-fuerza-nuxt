@@ -9,13 +9,13 @@
         :video-id="getYoutubeId(videoUrl)"  />
       </div>
       <div class="w-full md:w-1/2 text-white leading-tight md:pl-2">
-        <div class="text-2xl font-MissionGothicBold p-8 bg-blue h-full flex justify-center items-center">
+        <div class="text-2xl font-bold p-8 bg-blue h-full flex justify-center items-center">
           <BlockContent :blocks="this[`${locale}Block1Text`]" />
         </div>
       </div>
     </div>
     <div class="w-full bg-blue p-8 mb-8">
-      <p class="w-full text-center text-2xl text-white font-MissionGothicBold mb-0">
+      <p class="w-full text-center text-2xl text-white font-bold mb-0">
         {{banner1Text[locale]}}
         <nuxt-link to="/workshops" class="">
           {{banner1LinkText[locale]}}</nuxt-link>.
@@ -23,62 +23,69 @@
     </div>
     <div class="max-w-3xl m-auto flex flex-wrap px-8 md:px-16 text-xl uppercase mb-12 tracking-wide">
       <div class="p-4 w-full md:w-1/2">
-        <div class="border rounded-lg w-full flex justify-center items-center h-auto p-16 font-bold italic shadow-black">
+        <div class="border rounded-lg w-full flex justify-center items-center h-auto p-8 font-bold italic shadow-black">
           <BlockContent :blocks="this[`${locale}Block2Text`]" />
         </div>
       </div>
       <div class="p-4 w-full md:w-1/2">
-        <div class="border rounded-lg w-full flex justify-center items-center h-auto p-16 font-bold italic shadow-black">
+        <div class="border rounded-lg w-full flex justify-center items-center h-auto p-8 font-bold italic shadow-black">
           <BlockContent :blocks="this[`${locale}Block3Text`]" />
         </div>
       </div>
     </div>
 
-    <div class="max-w-5xl m-auto mb-12 px-8 md:px-0">
-      <h2 class="text-5xl uppercase font-bold italic text-center mb-2 md:mb-0">
+    <div v-for="(block, i) in collaboratorBlocks" :key="block._id"
+    class="px-8 md:px-0 md:mb-0">
+      <h2 v-if="i === 0" class="text-5xl uppercase font-bold italic text-center mb-2 md:mb-0">
         {{collaboratorsSectionTitle[locale]}}
       </h2>
-      <div v-for="(block, i) in collaboratorBlocks" :key="block._id"
-      class="flex flex-col flex-wrap md:flex-no-wrap w-full justify-center mb-8 md:mb-4">
-        <div class="w-full md:w-1/2"
+      <div
+      class="max-w-4xl m-auto flex flex-col flex-wrap md:flex-no-wrap w-full justify-center mb-4">
+        <div class="w-full md:w-1/2 px-4"
         :class="i % 2 !== 1 ? collabBlockOddStyle : collabBlockEvenStyle">
           <h3 class="text-5xl mb-0 uppercase font-bold"
           :class="i % 2 !== 1 ? 'text-pink' : 'text-aqua'">
             {{block.title[locale]}}
           </h3>
-          <div class="text-lg font-MissionGothicBold leading-5 flex items-center mb-0">
+          <div class="text-lg font-bold leading-5 flex items-center mb-0">
             <BlockContent :blocks="block[`${locale}Text`]" />
           </div>
         </div>
       </div>
+      <Divider v-if="i < collaboratorBlocks.length - 1" class="max-w-5xl m-auto -my-8" />
     </div>
 
-    <div class="max-w-3xl m-auto flex flex-wrap mb-12">
+    <div class="max-w-3xl m-auto flex flex-wrap my-12">
       <div class="w-full mx-4 md:mx-0 md:w-1/3 bg-blue flex items-center rounded-lg uppercase tracking-wider">
         <h2 class="font-bold italic text-white text-4xl mb-0 leading-tight p-4">
-          {{block3Text[locale]}}
+          {{block4Text[locale]}}
         </h2>
       </div>
       <div class="w-full md:w-2/3 mx-4 md:mx-0 border border-blue rounded p-8">
-        <p class="p-4 font-MissionGothicBold text-lg text-center mb-0">
-          <BlockContent :blocks="this[`${locale}Block4Text`]" />
+        <p class="p-4 text-lg text-center mb-0">
+          <BlockContent :blocks="this[`${locale}Block5Text`]" />
         </p>
         <div class="w-full flex justify-center mb-8">
           <button class="p-2 py-1 font-bold italic text-3xl text-white bg-pink rounded-lg tracking-wide uppercase">
-            {{block4ButtonText[locale]}}
+            {{block5ButtonText[locale]}}
           </button>
         </div>
       </div>
     </div>
     <div class="max-w-5xl flex flex-wrap m-auto mb-12">
       <div class="w-full md:w-1/2 p-4 px-8 bg-pink text-white text-center leading-5">
-        <BlockContent :blocks="this[`${locale}Block5Text`]" />
-        <button class="mt-2 p-2 font-bold italic text-2xl text-white bg-aqua rounded-lg tracking-wide uppercase text-shadow-pink">
-          {{block5ButtonText[locale]}}
+        <BlockContent :blocks="this[`${locale}Block6Text`]" />
+        <button class="mt-2 my-1 p-2 font-bold italic text-2xl text-white bg-aqua rounded-lg tracking-wide uppercase text-shadow-pink">
+          {{block6ButtonText[locale]}}
         </button>
       </div>
-      <div class="w-full md:w-1/2 p-4 px-8 bg-aqua text-blue text-center leading-relaxed flex flex-col justify-center">
-        <BlockContent :blocks="this[`${locale}Block6Text`]" />
+      <div class="w-full md:w-1/2 p-4 px-8 bg-aqua text-blue text-center leading-relaxed flex flex-col justify-between">
+        <BlockContent :blocks="this[`${locale}Block7Text`]" />
+        <div class="w-full flex justify-center">
+          <button class="mt-2 p-2 py-1 font-bold italic text-2xl text-white bg-blue rounded-lg tracking-wide uppercase text-shadow-pink">
+            {{block7ButtonText[locale]}}
+          </button>
+        </div>
       </div>
     </div>
 
@@ -101,6 +108,7 @@ import groq from 'groq'
 import sanityClient from '~/sanityClient'
 import getYoutubeId from 'get-youtube-id'
 import Hero from '~/components/blocks/Hero'
+import Divider from '~/components/blocks/Divider'
 import EventsAccordion from '~/components/blocks/EventsAccordion'
 
 const query = groq`
@@ -115,6 +123,7 @@ const query = groq`
 export default {
   components: {
     BlockContent,
+    Divider,
     EventsAccordion,
     Hero
   },
@@ -174,4 +183,3 @@ a {
   @apply font-bold italic;
 }
 </style>
-#__layout > div > div.w-full.pt-24.md\:pt-32.mb-8 > div.max-w-5xl.m-auto.mb-12.px-8.md\:px-0 > div:nth-child(2) > p

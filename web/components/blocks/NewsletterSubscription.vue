@@ -3,7 +3,7 @@
     <h2 class="w-full text-center text-aqua font-bold italic text-4xl uppercase mb-0">
       Subscríbete
     </h2>
-    <p class="m-auto max-w-md text-center leading-5 mb-8 font-bold">
+    <p class="m-auto max-w-lg text-center leading-5 mb-8 font-bold text-lg tracking-wide">
       Entrérate de las oportunidades, actividades, y noticias que tenemos para nuestras Familias Laintas.
     </p>
     <div class="w-full flex justify-center mb-2">

@@ -1,16 +1,19 @@
 import S from '@sanity/desk-tool/structure-builder'
-// import MdPerson from 'react-icons/lib/md/person'
-// import MdEventNote from 'react-icons/lib/md/event'
-// import MdGavel from 'react-icons/lib/md/gavel'
+import MdBook from 'react-icons/lib/md/book'
+import MdTip from 'react-icons/lib/md/thumb-up'
+import MdPlaylist from 'react-icons/lib/md/playlist-play'
+import MdEvent from 'react-icons/lib/md/event-note'
 // import MdWarning from 'react-icons/lib/md/warning'
 // import MdInfo from 'react-icons/lib/md/info-outline'
 
 const hiddenDocTypes = listItem =>
   ![
-    'program',
+    'event',
+    'book',
+    'tip',
+    'playlist',
     'session',
     'person',
-    'eventInformation',
     'codeOfConduct',
     'disclaimer',
     'privacyPolicy',
@@ -30,6 +33,27 @@ export default () =>
   S.list()
     .title('Content')
     .items([
+      S.listItem()
+        .title('Books')
+        .icon(MdBook)
+        .schemaType('book')
+        .child(S.documentTypeList('book').title('Books')),
+      S.listItem()
+        .title('Events')
+        .icon(MdEvent)
+        .schemaType('event')
+        .child(S.documentTypeList('event').title('Events')),
+      S.listItem()
+        .title('Playlists')
+        .icon(MdPlaylist)
+        .schemaType('playlist')
+        .child(S.documentTypeList('playlist').title('Playlists')),
+      S.listItem()
+        .title('Tips')
+        .icon(MdTip)
+        .schemaType('tip')
+        .child(S.documentTypeList('tip').title('Tips')),
+      S.divider(),
       S.listItem()
         .title('Page: About')
         .child(
@@ -102,6 +126,7 @@ export default () =>
             .schemaType('page-workshops')
             .documentId('page-workshops')
         ),
+      S.divider(),
       S.listItem()
         .title('Page: Disclaimer')
         .child(
@@ -118,16 +143,5 @@ export default () =>
             .schemaType('privacyPolicy')
             .documentId('privacyPolicy')
         ),
-      // S.listItem()
-      //   .title('Navigation')
-      //   .child(
-      //     S.editor()
-      //       .id('navigation')
-      //       .schemaType('navigation')
-      //       .documentId('navigation')
-      //   ),
-      // This returns an array of all the document types
-      // defined in schema.js. We filter out those that we have
-      // defined the structure above
       ...S.documentTypeListItems().filter(hiddenDocTypes)
     ])
