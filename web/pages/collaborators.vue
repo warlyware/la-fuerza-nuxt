@@ -73,11 +73,13 @@
       </div>
     </div>
     <div class="max-w-5xl flex flex-wrap m-auto mb-12">
-      <div class="w-full md:w-1/2 p-4 px-8 bg-pink text-white text-center leading-5">
+      <div class="w-full md:w-1/2 p-4 px-8 bg-pink text-white text-center leading-5 flex flex-col justify-between">
         <BlockContent :blocks="this[`${locale}Block6Text`]" />
-        <button class="mt-2 my-1 p-2 font-bold italic text-2xl text-white bg-aqua rounded-lg tracking-wide uppercase text-shadow-pink">
-          {{block6ButtonText[locale]}}
-        </button>
+        <div class="w-full flex justify-center">
+          <button class="mt-2 p-2 py-3 font-bold italic text-2xl text-white bg-aqua rounded-lg tracking-wide uppercase text-shadow-pink">
+            {{block6ButtonText[locale]}}
+          </button>
+        </div>
       </div>
       <div class="w-full md:w-1/2 p-4 px-8 bg-aqua text-blue text-center leading-relaxed flex flex-col justify-between">
         <BlockContent :blocks="this[`${locale}Block7Text`]" />

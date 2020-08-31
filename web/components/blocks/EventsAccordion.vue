@@ -8,7 +8,7 @@
       <vsa-content>
         <div class="flex flex-wrap">
           <div v-for="event in events" :key="event._id"
-          class="text-xl leading-6 w-full lg:w-1/2 my-2 lg:my-0">
+          class="text-xl leading-7 w-full lg:w-1/2 my-2 lg:my-0">
             <div class="flex flex-col border border-blue rounded p-4 mx-2 h-full">
               <h1 class="font-normal uppercase not-italic mb-2">
                 {{event.name[locale]}}
@@ -20,10 +20,10 @@
               <div class="text-base">
                 {{event.venue}}
               </div>
-              <div class="mb-4 text-base">
+              <div class="mb-2 text-base">
                 Price: {{ event.price === '0' ? 'Free' : `$${event.price}`}}
               </div>
-              <hr class="inline-block mb-4" />
+              <hr class="inline-block mb-2" />
               <div class="font-normal text-base flex-1 mb-2">
                 <BlockContent :blocks="event[`${locale}Description`]" />
               </div>
