@@ -52,6 +52,9 @@ export default {
   /*
    ** Nuxt.js modules
    */
+  buildModules: [
+    '@nuxtjs/moment'
+  ],
   modules: [
     '@nuxtjs/pwa',
     '@nuxtjs/axios',

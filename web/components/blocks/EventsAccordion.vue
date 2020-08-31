@@ -1,41 +1,62 @@
 <template>
   <vsa-list>
-  <!-- Here you can use v-for to loop through items  -->
     <vsa-item>
       <vsa-heading>
-        {{ heading }}
+        {{ location }}
       </vsa-heading>
 
       <vsa-content>
-        <ul class="font-MissionGothicBold uppercase text-xl leading-6">
-          <li>
-            - Description and Eventbrite/FB Event Link
-          </li>
-          <li>
-            - Description and Eventbrite/FB Event Link
-          </li>
-          <li>
-            - Description and Eventbrite/FB Event Link
-          </li>
-          <li>
-            - Description and Eventbrite/FB Event Link
-          </li>
-          <li>
-            - Description and Eventbrite/FB Event Link
-          </li>
-        </ul>
+        <div class="flex flex-wrap">
+          <div v-for="event in events" :key="event._id"
+          class="font-bold text-xl leading-6 w-full lg:w-1/2 my-2 lg:my-0">
+            <div class="flex flex-col border border-blue rounded p-4 mx-2 h-full">
+              <h1 class="font-normal uppercase not-italic mb-2">
+                {{event.name[locale]}}
+              </h1>
+              <div class="mb-2">
+                {{ $moment(event.startDate).format('MMMM Do') }} -
+                {{ $moment(event.endDate).format('MMMM Do') }}
+              </div>
+              <div class="mb-4">
+                {{event.venue}}
+              </div>
+              <hr class="inline-block mb-4" />
+              <div class="font-normal text-base flex-1 mb-2">
+                <BlockContent :blocks="event[`${locale}Description`]" />
+              </div>
+              <div class="w-full flex justify-center items-end">
+                <a class="p-4 py-2 inline-block bg-pink rounded-lg text-white" :href="event.link"
+                target="_blank">
+                  {{ locale === 'en' ? 'Register' : 'Registrarse'}}
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </vsa-content>
     </vsa-item>
   </vsa-list>
 </template>
 
 <script>
+import BlockContent from 'sanity-blocks-vue-component'
+
 export default {
+  components: {
+    BlockContent
+  },
   props: {
-    heading: {
+    events: {
+      type: Array,
+      required: true
+    },
+    location: {
       type: String,
-      default: 'HEADING + -'
+      required: true
     }
+  },
+  computed: {
+    locale() { return this.$i18n.locale }
   }
 }
 </script>

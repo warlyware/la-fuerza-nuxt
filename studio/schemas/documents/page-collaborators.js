@@ -118,6 +118,15 @@ export default {
       name: 'banner2Text',
       type: 'localeString',
       title: 'Banner 2 Text'
+    },
+    {
+      name: 'events',
+      type: 'array',
+      description: 'Events',
+      of: [{
+        type: 'reference',
+        to: [{ type: 'event' }]
+      }]
     }
   ],
   preview: {

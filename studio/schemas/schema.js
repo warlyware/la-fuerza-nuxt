@@ -25,6 +25,7 @@ import codeOfConduct from './documents/codeOfConduct'
 import person from './documents/person'
 import playlist from './documents/playlist'
 import book from './documents/book'
+import event from './documents/event'
 
 // Object types
 import mainImage from './objects/mainImage'
@@ -92,6 +93,7 @@ export default createSchema({
     hero,
     ally,
     book,
+    event,
     tip,
     contact,
     button,

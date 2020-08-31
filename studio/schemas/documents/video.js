@@ -99,11 +99,4 @@ export default {
       media: '🎬'
     }
   }
-  // preview: {
-  //   select: {
-  //     name: 'name',
-  //     url: 'url'
-  //   },
-  //   component: Preview
-  // }
 }

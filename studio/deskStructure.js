@@ -2,8 +2,8 @@ import S from '@sanity/desk-tool/structure-builder'
 // import MdPerson from 'react-icons/lib/md/person'
 // import MdEventNote from 'react-icons/lib/md/event'
 // import MdGavel from 'react-icons/lib/md/gavel'
-import MdWarning from 'react-icons/lib/md/warning'
-import MdInfo from 'react-icons/lib/md/info-outline'
+// import MdWarning from 'react-icons/lib/md/warning'
+// import MdInfo from 'react-icons/lib/md/info-outline'
 
 const hiddenDocTypes = listItem =>
   ![
@@ -103,8 +103,7 @@ export default () =>
             .documentId('page-workshops')
         ),
       S.listItem()
-        .title('Disclaimer')
-        .icon(MdWarning)
+        .title('Page: Disclaimer')
         .child(
           S.editor()
             .id('disclaimer')
@@ -112,8 +111,7 @@ export default () =>
             .documentId('disclaimer')
         ),
       S.listItem()
-        .title('Privacy Policy')
-        .icon(MdInfo)
+        .title('Page: Privacy Policy')
         .child(
           S.editor()
             .id('privacyPolicy')

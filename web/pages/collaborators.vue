@@ -87,14 +87,8 @@
     </div>
 
     <div class="max-w-5xl m-auto flex flex-wrap px-4">
-      <div class="mb-2 w-full">
-        <EventsAccordion heading="Miami" />
-      </div>
-      <div class="mb-2 w-full">
-        <EventsAccordion heading="New York" />
-      </div>
-      <div class="mb-2 w-full">
-        <EventsAccordion heading="Philadelphia" />
+      <div v-for="(events, location, i) in formattedEvents" :key="i" class="mb-2 w-full">
+        <EventsAccordion :location="location" :events="events" />
       </div>
     </div>
 
@@ -111,12 +105,19 @@ import EventsAccordion from '~/components/blocks/EventsAccordion'
 
 const query = groq`
   *[_id == "page-collaborators"][0] {
+    events[]->{
+      ...
+    },
     ...
   }
 `
 
 export default {
-  components: { BlockContent, Hero, EventsAccordion },
+  components: {
+    BlockContent,
+    EventsAccordion,
+    Hero
+  },
   data() {
     return {
       collabBlockOddStyle: '',
@@ -125,7 +126,21 @@ export default {
   },
   computed: {
     locale() { return this.$i18n.locale },
-    block1Text() { return this[`${this.locale}Block1Text`]}
+    block1Text() { return this[`${this.locale}Block1Text`]},
+    formattedEvents() {
+      let formattedEvents = {}
+      this.events.forEach(event => {
+        if (!formattedEvents[event.location]) {
+          formattedEvents[event.location] = []
+        }
+        formattedEvents[event.location].push(event)
+      })
+
+      return formattedEvents
+    },
+    eventLocations() {
+      return Object.keys(this.formattedEvents).length
+    }
   },
   async asyncData() {
     return await sanityClient.fetch(query)
