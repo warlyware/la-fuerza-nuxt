@@ -85,9 +85,9 @@ export default {
       title: 'Block 5 Text [Spanish]'
     },
     {
-      name: 'block5ButtonText',
-      type: 'localeString',
-      title: 'Block 5 Button Text'
+      name: 'block5Button',
+      type: 'button',
+      title: 'Block 5 Button'
     },
     {
       name: 'enBlock6Text',
@@ -100,9 +100,14 @@ export default {
       title: 'Block 6 Text [Spanish]'
     },
     {
-      name: 'block6ButtonText',
-      type: 'localeString',
-      title: 'Block 6 Button Text'
+      name: 'block6Button',
+      type: 'button',
+      title: 'Block 6 Button'
+    },
+    {
+      name: 'block7Button',
+      type: 'button',
+      title: 'Block 7 Button'
     },
     {
       name: 'enBlock7Text',
@@ -113,11 +118,6 @@ export default {
       name: 'esBlock7Text',
       type: 'bodyPortableText',
       title: 'Block 7 Text [Spanish]'
-    },
-    {
-      name: 'block7ButtonText',
-      type: 'localeString',
-      title: 'Block 7 Button Text'
     },
     {
       name: 'banner2Text',

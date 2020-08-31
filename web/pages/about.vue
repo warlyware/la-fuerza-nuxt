@@ -17,9 +17,8 @@
           {{block1Text[locale]}}
         </div>
         <div>
-          <button class="bg-aqua p-2 py-0 rounded text-white text-shadow-pink">
-            {{block1ButtonText[locale]}}
-          </button>
+          <CustomButton :button="block1Button"
+          class="bg-aqua p-2 py-0 rounded text-white text-shadow-pink" />
         </div>
       </div>
       <SanityImageResponsive :image="image2"
@@ -31,6 +30,7 @@
 </template>
 
 <script>
+import CustomButton from '~/components/blocks/CustomButton'
 import SanityImageResponsive from '~/components/SanityImageResponsive'
 import BlockContent from 'sanity-blocks-vue-component'
 import groq from 'groq'
@@ -59,6 +59,7 @@ const query = groq`
 export default {
   components: {
     BlockContent,
+    CustomButton,
     Hero,
     OurAllies,
     SanityImageResponsive

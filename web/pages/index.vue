@@ -9,12 +9,13 @@
         @ready="topVideoReady" />
       </div>
       <div class="w-full md:w-1/3 bg-pink text-white flex justify-center items-center leading-tight p-8">
-        <span class="uppercase text-4xl font-MissionGothicBlackItalic">
+        <span class="uppercase text-4xl font-bold italic">
           {{block1Text[locale]}}
         </span>
       </div>
     </div>
-    <div class="font-MissionGothicBlackItalic">
+
+    <div class="font-bold italic">
       <h1 class="text-aqua text-3xl uppercase w-full text-center pt-8">
         {{block2Title[locale]}}
       </h1>
@@ -32,12 +33,11 @@
 
     <div class="w-full flex flex-wrap pb-8">
       <div class="w-full order-1 md:w-1/3 bg-blue text-white flex flex-col justify-center items-center leading-tight p-8 italic">
-        <div class="uppercase text-4xl font-MissionGothicBlackItalic text-aqua pb-4">
+        <div class="uppercase text-4xl font-bold italic text-aqua pb-4">
           {{block3Text[locale]}}
         </div>
-        <button class="w-full md:w-auto bg-aqua text-white text-shadow-pink text-2xl rounded px-2 uppercase mx-4 mb-2p mt-4">
-          {{block3ButtonText[locale]}}
-        </button>
+        <CustomButton :button="block3Button"
+        class="w-full md:w-auto bg-aqua text-white text-shadow-pink text-2xl rounded px-2 uppercase mx-4 mb-2p mt-4" />
       </div>
       <div class="w-full order-first md:order-last md:w-2/3 my-1/2">
         <youtube player-width="100%" player-height="100%"

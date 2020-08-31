@@ -50,9 +50,9 @@ export default {
       title: 'Block 1 text'
     },
     {
-      name: 'block1ButtonText',
-      type: 'localeString',
-      title: 'Block 1 button text'
+      name: 'block1Button',
+      type: 'button',
+      title: 'Block 1 Button'
     },
     {
       name: 'image2',

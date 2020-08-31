@@ -65,6 +65,16 @@ export default {
       title: 'Banner 2 Button'
     },
     {
+      name: 'workshopImageSectionTitle',
+      type: 'localeString',
+      title: 'Workshop Image Section Title'
+    },
+    {
+      name: 'workshopImageBlocks',
+      type: 'array',
+      of: [{ type: 'workshopImageBlock' }]
+    },
+    {
       name: 'enBlock3Text',
       type: 'bodyPortableText',
       title: 'Block 3 Text [English]'

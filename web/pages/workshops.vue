@@ -46,6 +46,22 @@
       </div>
     </div>
 
+    <div class="max-w-5xl m-auto mb-12 px-8 md:px-0">
+      <div v-for="block in workshopImageBlocks" :key="block._id"
+      class="flex flex-wrap md:flex-no-wrap w-full justify-center md:justify-start mb-8 md:mb-4">
+        <div class="h-64 w-64 flex items-center justify-center border-2 rounded-full flex-shrink-0 mx-8 mb-4 md:mb-0 overflow-hidden"
+        :class="getImageWrapperClass(block)">
+          <SanityImage :image="block.image"
+          class="h-full bg-blue text-white flex justify-center items-center"
+          :height="500"
+          fit="crop" />
+        </div>
+        <div :class="`text-2xl font-bold leading-7 flex items-center mb-0 text-${block.borderColor} text-center md:text-left`">
+          <BlockContent :blocks="block[`${locale}Text`]" />
+        </div>
+      </div>
+    </div>
+
     <div class="max-w-4xl m-auto flex flex-wrap mb-12">
       <div class="w-full mx-4 md:mx-0 md:w-2/3 bg-blue flex items-center rounded-lg uppercase tracking-wider">
         <div class="text-white text-xl mb-0 leading-tight p-4">
@@ -162,6 +178,7 @@
 
 <script>
 import BlockContent from 'sanity-blocks-vue-component'
+import SanityImage from '~/components/SanityImage'
 import groq from 'groq'
 import sanityClient from '~/sanityClient'
 import getYoutubeId from 'get-youtube-id'
@@ -186,7 +203,8 @@ export default {
     BlockContent,
     Hero,
     NewsletterSubscription,
-    EventsAccordion
+    EventsAccordion,
+    SanityImage
   },
   data() {
     return {
@@ -214,7 +232,14 @@ export default {
   async asyncData() {
     return await sanityClient.fetch(query)
   },
-  methods: { getYoutubeId }
+  methods: {
+    getYoutubeId,
+    getImageWrapperClass({ borderColor }) {
+      return `
+         border-${borderColor || 'blue'} shadow-${borderColor}-side
+      `
+    }
+  }
 }
 </script>
 
@@ -234,6 +259,16 @@ export default {
   -moz-box-shadow: 14px 0px 0px -1px #1bcfc9;
   box-shadow: 14px 0px 0px -1px #1bcfc9;
 }
+.shadow-orange-side {
+  -webkit-box-shadow: 14px 0px 0px -1px #ff5000;
+  -moz-box-shadow: 14px 0px 0px -1px #ff5000;
+  box-shadow: 14px 0px 0px -1px #ff5000;
+}
+.shadow-blue-side {
+  -webkit-box-shadow: 14px 0px 0px -1px #19105e;
+  -moz-box-shadow: 14px 0px 0px -1px #19105e;
+  box-shadow: 14px 0px 0px -1px #19105e;
+}
 
 a {
   @apply text-pink italic;
@@ -250,4 +285,5 @@ a {
 #block2 strong, #block2 a {
   @apply text-aqua;
 }
+
 </style>

@@ -66,9 +66,8 @@
           <BlockContent :blocks="this[`${locale}Block5Text`]" />
         </p>
         <div class="w-full flex justify-center mb-8">
-          <button class="p-2 py-1 font-bold italic text-3xl text-white bg-pink rounded-lg tracking-wide uppercase">
-            {{block5ButtonText[locale]}}
-          </button>
+          <CustomButton :button="block5Button"
+          class="p-2 py-1 font-bold italic text-3xl text-white bg-pink rounded-lg tracking-wide uppercase" />
         </div>
       </div>
     </div>
@@ -76,17 +75,15 @@
       <div class="w-full md:w-1/2 p-4 px-8 bg-pink text-white text-center leading-5 flex flex-col justify-between">
         <BlockContent :blocks="this[`${locale}Block6Text`]" />
         <div class="w-full flex justify-center">
-          <button class="mt-2 p-2 py-3 font-bold italic text-2xl text-white bg-aqua rounded-lg tracking-wide uppercase text-shadow-pink">
-            {{block6ButtonText[locale]}}
-          </button>
+          <CustomButton :button="block6Button"
+          class="mt-2 p-2 py-3 font-bold italic text-2xl text-white bg-aqua rounded-lg tracking-wide uppercase text-shadow-pink" />
         </div>
       </div>
       <div class="w-full md:w-1/2 p-4 px-8 bg-aqua text-blue text-center leading-relaxed flex flex-col justify-between">
         <BlockContent :blocks="this[`${locale}Block7Text`]" />
         <div class="w-full flex justify-center">
-          <button class="mt-2 p-2 py-1 font-bold italic text-2xl text-white bg-blue rounded-lg tracking-wide uppercase text-shadow-pink">
-            {{block7ButtonText[locale]}}
-          </button>
+          <CustomButton :button="block7Button"
+          class="mt-2 p-2 py-1 font-bold italic text-2xl text-white bg-blue rounded-lg tracking-wide uppercase text-shadow-pink" />
         </div>
       </div>
     </div>
@@ -105,6 +102,7 @@
 </template>
 
 <script>
+import CustomButton from '~/components/blocks/CustomButton'
 import BlockContent from 'sanity-blocks-vue-component'
 import groq from 'groq'
 import sanityClient from '~/sanityClient'
@@ -125,6 +123,7 @@ const query = groq`
 export default {
   components: {
     BlockContent,
+    CustomButton,
     Divider,
     EventsAccordion,
     Hero

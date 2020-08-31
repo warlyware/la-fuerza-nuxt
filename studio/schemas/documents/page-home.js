@@ -65,9 +65,9 @@ export default {
       title: 'Block 3: Text'
     },
     {
-      name: 'block3ButtonText',
-      type: 'localeString',
-      title: 'Block 3: Button text'
+      name: 'block3Button',
+      type: 'button',
+      title: 'Block 3: Button'
     },
     {
       name: 'video2Url',
