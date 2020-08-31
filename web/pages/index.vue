@@ -19,22 +19,14 @@
         {{block2Title[locale]}}
       </h1>
       <div class="flex w-full flex-wrap items-center justify-around pb-12">
-        <nuxt-link to="/videos"
-        class="w-full md:w-auto bg-pink text-white text-shadow-aqua text-2xl rounded px-2 uppercase mx-4 mb-2">
-          {{block2Button1Text[locale]}}
-        </nuxt-link>
-        <nuxt-link to="/workshops"
-        class="w-full md:w-auto bg-aqua text-white text-shadow-pink text-2xl rounded px-2 uppercase mx-4 mb-2">
-          {{block2Button2Text[locale]}}
-        </nuxt-link>
-        <nuxt-link to="/resources/books"
-        class="w-full md:w-auto bg-pink text-white text-shadow-aqua text-2xl rounded px-2 uppercase mx-4 mb-2">
-          {{block2Button3Text[locale]}}
-        </nuxt-link>
-        <nuxt-link to="/resources/tips"
-        class="w-full md:w-auto bg-aqua text-white text-shadow-pink text-2xl rounded px-2 uppercase mx-4 mb-2">
-          {{block2Button4Text[locale]}}
-        </nuxt-link>
+        <CustomButton :button="block2Button1"
+        class="w-full md:w-auto bg-pink text-white text-shadow-aqua text-2xl rounded px-2 uppercase mx-4 mb-2" />
+        <CustomButton :button="block2Button2"
+        class="w-full md:w-auto bg-aqua text-white text-shadow-pink text-2xl rounded px-2 uppercase mx-4 mb-2" />
+        <CustomButton :button="block2Button3"
+        class="w-full md:w-auto bg-pink text-white text-shadow-aqua text-2xl rounded px-2 uppercase mx-4 mb-2" />
+        <CustomButton :button="block2Button4"
+        class="w-full md:w-auto bg-aqua text-white text-shadow-pink text-2xl rounded px-2 uppercase mx-4 mb-2" />
       </div>
     </div>
 
@@ -73,6 +65,7 @@
 import getYoutubeId from 'get-youtube-id'
 import groq from 'groq'
 import sanityClient from '~/sanityClient'
+import CustomButton from '~/components/blocks/CustomButton'
 
 const query = groq`
   *[_id == "page-home"][0] {
@@ -82,6 +75,7 @@ const query = groq`
 
 export default {
   components: {
+    CustomButton
     // VideoThumbnail
     // SanityImage
   },

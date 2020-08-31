@@ -20,6 +20,26 @@ export default {
       title: 'Block 2: Title'
     },
     {
+      name: 'block2Button1',
+      type: 'button',
+      title: 'Block 2: Button 1'
+    },
+    {
+      name: 'block2Button2',
+      type: 'button',
+      title: 'Block 2: Button 2'
+    },
+    {
+      name: 'block2Button3',
+      type: 'button',
+      title: 'Block 2: Button 3'
+    },
+    {
+      name: 'block2Button4',
+      type: 'button',
+      title: 'Block 2: Button 4'
+    },
+    {
       name: 'block2Button1Text',
       type: 'localeString',
       title: 'Block 2: Button 1 text'

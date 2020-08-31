@@ -1,0 +1,35 @@
+<template>
+  <div>
+    <nuxt-link v-if="button.internalLink"
+    :to="button.internalLink">
+      {{button.text[locale]}}
+    </nuxt-link>
+    <a v-else :href="sanitizeLink(button.externalLink)"
+    :target="button.newWindow ? '_blank': ''">
+      {{button.text[locale]}}
+    </a>
+  </div>
+</template>
+
+<script>
+export default {
+  props: {
+    button: {
+      required: true,
+      type: Object
+    }
+  },
+  computed: {
+    locale() { return this.$i18n.locale },
+  },
+  methods: {
+    sanitizeLink(link) {
+      return `//${link.replace(/^(?:https?:\/\/)?(?:www\.)?/i, "").split('/')[0]}`;
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+
+</style>

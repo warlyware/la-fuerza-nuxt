@@ -1,5 +1,5 @@
 <template>
-  <section class="pt-8 h-full w-full relative">
+  <section class="pt-8">
     <h1 class="text-5xl text-center italic">
       {{ title[locale] }}
     </h1>
@@ -10,13 +10,13 @@
           {{title}}
         </h2>
         <p class="mb-8 font-bold">
+          <!-- {{description}} -->
           <BlockContent :blocks="description" />
         </p>
         <YoutubePlayer
         :raw-playlist="playlist" />
       </div>
     </template>
-    <Loader v-else />
   </section>
 
 
@@ -24,11 +24,10 @@
 
 <script>
 import BlockContent from 'sanity-blocks-vue-component'
-import YoutubePlayer from '~/components/video/YoutubePlayer'
-import Loader from '~/components/blocks/Loader'
 import qs from 'query-string'
 import groq from 'groq'
 import sanityClient from '~/sanityClient'
+import YoutubePlayer from '~/components/video/YoutubePlayer'
 import { getYtPlaylist } from '~/lib/api'
 
 const query = groq`
@@ -42,7 +41,6 @@ const query = groq`
 
 export default {
   components: {
-    Loader,
     BlockContent,
     YoutubePlayer
   },
@@ -52,8 +50,7 @@ export default {
     }
   },
   computed: {
-    locale() { return this.$i18n.locale },
-    loading() { return this.formattedPlaylists === 0 }
+    locale() { return this.$i18n.locale }
   },
   async asyncData() {
     return await sanityClient.fetch(query)
