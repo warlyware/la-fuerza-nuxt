@@ -1,4 +1,4 @@
-# La Fuerza prototype
+# La Fuerza
 
 ## Quick start
 
