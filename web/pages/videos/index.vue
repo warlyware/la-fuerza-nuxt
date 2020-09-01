@@ -3,6 +3,10 @@
     <h1 class="text-5xl text-center italic">
       {{ title[locale] }}
     </h1>
+    <div v-if="shareMenu"
+    class="h-screen w-screen fixed flex items-center top-0 left-0 -mt-16 z-10">
+      <ShareMenu :share-menu="shareMenu" />
+    </div>
     <template v-if="formattedPlaylists.length">
       <div v-for="{ playlist, title, description } in formattedPlaylists" :key="playlist.id"
       class="max-w-video-player m-auto mb-8 px-8">
@@ -10,7 +14,6 @@
           {{title}}
         </h2>
         <p class="mb-8 font-bold">
-          <!-- {{description}} -->
           <BlockContent :blocks="description" />
         </p>
         <YoutubePlayer
@@ -23,6 +26,8 @@
 </template>
 
 <script>
+import ShareMenu from '~/components/ShareMenu'
+
 import BlockContent from 'sanity-blocks-vue-component'
 import qs from 'query-string'
 import groq from 'groq'
@@ -42,6 +47,7 @@ const query = groq`
 export default {
   components: {
     BlockContent,
+    ShareMenu,
     YoutubePlayer
   },
   data() {
@@ -50,7 +56,8 @@ export default {
     }
   },
   computed: {
-    locale() { return this.$i18n.locale }
+    locale() { return this.$i18n.locale },
+    shareMenu() { return { url: `http://localhost:3000${this.$route.fullPath}` } }
   },
   async asyncData() {
     return await sanityClient.fetch(query)
