@@ -20,7 +20,7 @@ export default {
     {
       name: 'caption',
       type: 'localeString',
-      title: 'Caption [English]'
+      title: 'Caption'
     }
   ],
   preview: {
