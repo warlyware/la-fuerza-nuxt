@@ -19,7 +19,8 @@ export default {
 
   env: {
     MAPQUEST_KEY: process.env.MAPQUEST_KEY,
-    API_BASE_URL: process.env.API_BASE_URL
+    API_BASE_URL: process.env.API_BASE_URL,
+    BASE_URL: process.env.BASE_URL
   },
 
   /*

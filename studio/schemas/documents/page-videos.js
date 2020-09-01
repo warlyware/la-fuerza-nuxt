@@ -17,6 +17,11 @@ export default {
         type: 'reference',
         to: [{ type: 'playlist' }]
       }]
+    },
+    {
+      name: 'shareMenu',
+      type: 'shareMenu',
+      title: 'Social Media Share Menu'
     }
   ],
   preview: {

@@ -1,5 +1,9 @@
 <template>
   <div class="pt-8 mx-auto md:pt-32 mb-8 content w-full">
+    <div class="h-screen fixed flex items-center top-0 left-0 -mt-16 z-10 pointer-events-none">
+      <!-- {{shareMenu}} -->
+      <ShareMenu class="pointer-events-auto" :share-menu="shareMenu" />
+    </div>
     <LightBox ref="lightbox" :show-thumbs="false"
     :media="lightboxImages" :show-light-box="false" />
     <h1 class="font-bold text-4xl uppercase text-center max-w-2xl m-auto leading-10 mb-4">
@@ -45,6 +49,7 @@ import imageUrlBuilder from '@sanity/image-url'
 import sanityClient from '~/sanityClient'
 const builder = imageUrlBuilder(sanityClient)
 import LightBox from 'vue-image-lightbox'
+import ShareMenu from '~/components/ShareMenu'
 import SanityImageResponsive from '~/components/SanityImageResponsive'
 import getYoutubeId from 'get-youtube-id'
 import BlockContent from 'sanity-blocks-vue-component'
@@ -58,7 +63,8 @@ export default {
   components: {
     BlockContent,
     LightBox,
-    SanityImageResponsive
+    SanityImageResponsive,
+    ShareMenu
   },
   computed: {
     locale() { return this.$i18n.locale },

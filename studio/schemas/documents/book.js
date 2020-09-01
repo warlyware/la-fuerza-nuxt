@@ -82,6 +82,11 @@ export default {
         maxLength: 96
       },
       validation: Rule => Rule.error('You must add a slug.').required()
+    },
+    {
+      name: 'shareMenu',
+      type: 'shareMenu',
+      title: 'Social Media Share Menu'
     }
   ],
   preview: {

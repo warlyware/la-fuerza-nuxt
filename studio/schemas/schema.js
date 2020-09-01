@@ -39,6 +39,7 @@ import button from './objects/button'
 import joinBlock from './objects/joinBlock'
 import collaboratorBlock from './objects/collaboratorBlock'
 import workshopImageBlock from './objects/workshopImageBlock'
+import shareMenu from './objects/shareMenu'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -93,6 +94,7 @@ export default createSchema({
     joinBlock,
     collaboratorBlock,
     workshopImageBlock,
-    newsletterSubscription
+    newsletterSubscription,
+    shareMenu
   ])
 })

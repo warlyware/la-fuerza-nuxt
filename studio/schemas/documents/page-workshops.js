@@ -147,6 +147,11 @@ export default {
       name: 'newsletterSubscription',
       type: 'newsletterSubscription',
       title: 'Newsletter Subscription'
+    },
+    {
+      name: 'shareMenu',
+      type: 'shareMenu',
+      title: 'Social Media Share Menu'
     }
   ],
   preview: {

@@ -28,7 +28,7 @@ import SanityImage from '~/components/SanityImage'
 
 export default {
   components: {
-    SanityImage
+    SanityImage,
   },
   props: {
     book: {

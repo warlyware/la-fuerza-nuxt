@@ -4,14 +4,38 @@ export default {
   type: 'object',
   fields: [
     {
-      name: 'text',
+      name: 'title',
       type: 'localeString',
-      title: 'Button Text'
+      title: 'Title'
+    },
+    {
+      name: 'description',
+      type: 'localeString',
+      title: 'Description'
+    },
+    {
+      name: 'quote',
+      type: 'localeString',
+      title: 'Quote'
+    },
+    {
+      title: 'Hashtags [English]',
+      name: 'enHashtags',
+      type: 'array',
+      of: [{ type: 'string' }],
+      validation: Rule => Rule.unique()
+    },
+    {
+      title: 'Hashtags [Spanish]',
+      name: 'esHashtags',
+      type: 'array',
+      of: [{ type: 'string' }],
+      validation: Rule => Rule.unique()
     }
   ],
   preview: {
-    select: {
-      title: 'name'
+    preview: {
+      prepare: () => ({ title: 'Share Menu' })
     }
   }
 }

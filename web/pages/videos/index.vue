@@ -4,8 +4,8 @@
       {{ title[locale] }}
     </h1>
     <div v-if="shareMenu"
-    class="h-screen w-screen fixed flex items-center top-0 left-0 -mt-16 z-10">
-      <ShareMenu :share-menu="shareMenu" />
+    class="h-screen fixed flex items-center top-0 left-0 -mt-16 z-10 pointer-events-none">
+      <ShareMenu class="pointer-events-auto" :share-menu="shareMenu" />
     </div>
     <template v-if="formattedPlaylists.length">
       <div v-for="{ playlist, title, description } in formattedPlaylists" :key="playlist.id"
@@ -27,7 +27,6 @@
 
 <script>
 import ShareMenu from '~/components/ShareMenu'
-
 import BlockContent from 'sanity-blocks-vue-component'
 import qs from 'query-string'
 import groq from 'groq'
@@ -56,8 +55,7 @@ export default {
     }
   },
   computed: {
-    locale() { return this.$i18n.locale },
-    shareMenu() { return { url: `http://localhost:3000${this.$route.fullPath}` } }
+    locale() { return this.$i18n.locale }
   },
   async asyncData() {
     return await sanityClient.fetch(query)
