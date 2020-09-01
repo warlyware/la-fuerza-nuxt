@@ -18,6 +18,11 @@ export default {
       name: 'contacts',
       type: 'array',
       of: [{ type: 'contact' }]
+    },
+    {
+      name: 'newsletterSubscription',
+      type: 'newsletterSubscription',
+      title: 'Newsletter Subscription'
     }
   ],
   preview: {

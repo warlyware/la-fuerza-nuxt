@@ -142,6 +142,11 @@ export default {
         type: 'reference',
         to: [{ type: 'event' }]
       }]
+    },
+    {
+      name: 'newsletterSubscription',
+      type: 'newsletterSubscription',
+      title: 'Newsletter Subscription'
     }
   ],
   preview: {

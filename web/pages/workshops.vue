@@ -109,7 +109,7 @@
       </div>
     </div>
 
-    <NewsletterSubscription class="-mb-8" />
+    <NewsletterSubscription :newsletter-info="newsletterSubscription" class="-mb-8" />
   </div>
 </template>
 
@@ -122,7 +122,6 @@ import getYoutubeId from 'get-youtube-id'
 import Hero from '~/components/blocks/Hero'
 import NewsletterSubscription from '~/components/blocks/NewsletterSubscription'
 import EventsAccordion from '~/components/blocks/EventsAccordion'
-
 
 // import EventsAccordion from '~/components/blocks/EventsAccordion'
 
