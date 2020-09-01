@@ -110,69 +110,6 @@
     </div>
 
     <NewsletterSubscription class="-mb-8" />
-    <!-- <div class="max-w-5xl m-auto mb-12 px-8 md:px-0">
-      <h2 class="text-5xl uppercase font-bold italic text-center mb-2 md:mb-0">
-        {{collaboratorsSectionTitle[locale]}}
-      </h2>
-      <div v-for="(block, i) in collaboratorBlocks" :key="block._id"
-      class="flex flex-wrap md:flex-no-wrap w-full justify-center md:justify-start mb-8 md:mb-4">
-        <div class="h-48 w-48 flex items-center justify-center border rounded-full flex-shrink-0 mx-8 mb-4 md:mb-0"
-        :class="i % 2 !== 1 ? collabBlockTitleOddStyle : collabBlockTitleEvenStyle">
-          <h3 class="text-4xl mb-0 uppercase font-bold italic">
-            {{block.title[locale]}}
-          </h3>
-        </div>
-        <div class="text-lg font-bold leading-5 flex items-center mb-0"
-        :class="i % 2 !== 1 ? collabBlockTextOddStyle : collabBlockTextEvenStyle">
-          <BlockContent :blocks="block[`${locale}Text`]" />
-        </div>
-      </div>
-    </div>
-    <div class="max-w-3xl m-auto flex flex-wrap mb-12">
-      <div class="w-full mx-4 md:mx-0 md:w-1/3 bg-blue flex items-center rounded-lg uppercase tracking-wider">
-        <h2 class="font-bold italic text-white text-4xl mb-0 leading-tight p-4">
-          {{block3Text[locale]}}
-        </h2>
-      </div>
-      <div class="w-full md:w-2/3 mx-4 md:mx-0 border border-blue rounded p-8">
-        <p class="p-4 font-bold text-lg text-center mb-0">
-          <BlockContent :blocks="this[`${locale}Block4Text`]" />
-        </p>
-        <div class="w-full flex justify-center mb-8">
-          <button class="p-2 py-1 font-bold italic text-3xl text-white bg-pink rounded-lg tracking-wide uppercase">
-            {{block4ButtonText[locale]}}
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="max-w-5xl flex flex-wrap m-auto mb-12">
-      <div class="w-full md:w-1/2 p-4 px-8 bg-pink text-white text-center leading-5">
-        <BlockContent :blocks="this[`${locale}Block5Text`]" />
-        <button class="mt-2 p-2 font-bold italic text-2xl text-white bg-aqua rounded-lg tracking-wide uppercase text-shadow-pink">
-          {{block5ButtonText[locale]}}
-        </button>
-      </div>
-      <div class="w-full md:w-1/2 p-4 px-8 bg-aqua text-blue text-center leading-relaxed flex flex-col justify-center">
-        <BlockContent :blocks="this[`${locale}Block6Text`]" />
-      </div>
-    </div>
-
-    <div class="w-full bg-blue p-8 mb-8 font-MissionGothicBlack text-white text-center text-2xl tracking-wider">
-      {{banner2Text[locale]}}
-    </div>
-
-    <div class="w-full flex flex-wrap px-4">
-      <div class="mb-2 w-full">
-        <EventsAccordion heading="Miami" />
-      </div>
-      <div class="mb-2 w-full">
-        <EventsAccordion heading="New York" />
-      </div>
-      <div class="mb-2 w-full">
-        <EventsAccordion heading="Philadelphia" />
-      </div>
-    </div> -->
-
   </div>
 </template>
 
