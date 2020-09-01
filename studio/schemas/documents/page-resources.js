@@ -32,6 +32,14 @@ export default {
       name: 'tipSectionDescription',
       type: 'localeString',
       title: 'Tip Section description'
+    },
+    {
+      name: 'tips',
+      type: 'array',
+      of: [{
+        type: 'reference',
+        to: [{ type: 'tip' }]
+      }]
     }
   ],
   preview: {

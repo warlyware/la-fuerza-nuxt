@@ -22,13 +22,14 @@
     </div> -->
 
     <LightBox ref="lightbox"
-    :media="formattedTips" :show-caption="true"
+    :media="formattedTips"
     :show-light-box="false" />
     <div class="flex flex-wrap justify-start w-full max-w-5xl m-auto px-4 mb-8">
       <div v-for="(tip, i) in formattedTips" :key="tip.caption"
-      class="pb-1/6 h-0 w-1/6 mx-2 flex-shrink-0">
+      class="h-0 w-full lg:w-1/6 flex-shrink-0"
+      :class="paddingBottomClass">
         <div :style="`background-image: url(${tip.thumb})`"
-        class="cursor-pointer bg-cover bg-center h-40"
+        class="cursor-pointer bg-cover bg-center h-40 m-2"
         @click="showImage(i)" />
       </div>
     </div>
@@ -48,8 +49,8 @@ import sanityClient from '~/sanityClient'
 const builder = imageUrlBuilder(sanityClient)
 import LightBox from 'vue-image-lightbox'
 
-const query = groq`
-  *[_id == "page-tips"][0] {
+const query1 = groq`
+  *[_id == "page-resources"][0] {
     enBannerText[] {
       ...,
       children[] {
@@ -62,9 +63,14 @@ const query = groq`
         ...
       }
     },
-    tips[] {
+    tips[]->{
       ...
     },
+    ...
+  }
+`
+const query2 = groq`
+  *[_id == "page-tips"][0] {
     ...
   }
 `
@@ -73,10 +79,14 @@ export default {
   components: { BlockContent, LightBox },
   data() {
     return {
-      currentImageIndex: 0
+      currentImageIndex: 0,
+      windowWidth: 0
     }
   },
   computed: {
+    paddingBottomClass() {
+      return this.windowWidth >= 1024 ? 'pb-1/6' : 'pb-full'
+    },
     locale() { return this.$i18n.locale },
     bannerText() { return this.locale === 'en' ? this.enBannerText : this.esBannerText },
     formattedTips() {
@@ -90,10 +100,24 @@ export default {
     }
   },
   async asyncData() {
-    return await sanityClient.fetch(query)
+    let res1 = await sanityClient.fetch(query1)
+    let res2 = await sanityClient.fetch(query2)
+    return {...res1, ...res2}
   },
-  mounted() { console.log(this) },
+  mounted() {
+    console.log(this)
+    this.onResize()
+    this.$nextTick(() => {
+      window.addEventListener('resize', this.onResize);
+    })
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.onResize);
+  },
   methods: {
+    onResize() {
+      this.windowWidth = window.innerWidth
+    },
     showImage(i) {
       this.$refs.lightbox.showImage(i)
       this.currentImageIndex = i
@@ -118,5 +142,8 @@ export default {
   }
   .pb-1\/6 {
     padding-bottom: 16.7%;
+  }
+  .pb-full {
+    padding-bottom: 100%;
   }
 </style>
