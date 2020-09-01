@@ -53,7 +53,6 @@ export default () =>
         .icon(MdTip)
         .schemaType('tip')
         .child(S.documentTypeList('tip').title('Tips')),
-      S.divider(),
       S.listItem()
         .title('Page: About')
         .child(
@@ -126,7 +125,6 @@ export default () =>
             .schemaType('page-workshops')
             .documentId('page-workshops')
         ),
-      S.divider(),
       S.listItem()
         .title('Page: Disclaimer')
         .child(

@@ -25,6 +25,7 @@ import event from './documents/event'
 import tip from './documents/tip'
 
 // Object types
+import newsletterSubscription from './objects/newsletterSubscription'
 import mainImage from './objects/mainImage'
 import venue from './objects/venue'
 import bioPortableText from './objects/bioPortableText'
@@ -91,6 +92,7 @@ export default createSchema({
     button,
     joinBlock,
     collaboratorBlock,
-    workshopImageBlock
+    workshopImageBlock,
+    newsletterSubscription
   ])
 })

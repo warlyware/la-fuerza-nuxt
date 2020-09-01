@@ -80,7 +80,7 @@
       </div> -->
     </div>
 
-    <NewsletterSubscription class="-mb-8" />
+    <NewsletterSubscription :newsletter-info="newsletterSubscription" class="-mb-8" />
   </div>
 </template>
 

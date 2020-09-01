@@ -18,6 +18,11 @@ export default {
       name: 'joinBlocks',
       type: 'array',
       of: [{ type: 'joinBlock' }]
+    },
+    {
+      name: 'newsletterSubscription',
+      type: 'newsletterSubscription',
+      title: 'Newsletter Subscription'
     }
   ],
   preview: {
