@@ -114,6 +114,15 @@ export default {
     this.$nextTick(() => {
       window.addEventListener('resize', this.onResize);
     })
+    console.log({route: this.$route})
+    const { slug } = this.$route.params
+    if (slug && this.formattedTips[slug]) {
+      try {
+        this.showImage(slug)
+      } catch (error) {
+        console.error('not a valid image')
+      }
+    }
   },
   beforeDestroy() {
     window.removeEventListener('resize', this.onResize);
@@ -150,25 +159,13 @@ export default {
   .pb-full {
     padding-bottom: 100%;
   }
-  * {
-  box-sizing: border-box;
-}
-img {
-  width: 100%;
-}
-.list-item {
-	display: flex;
-  padding: 0.5em;
-	width: 100%;
-}
-.list-content {
-	background-color: #fff;
-  display: flex;
-  flex-direction: column;
-  padding: 1em;
-	width: 100%;
-}
-.list-content div {
-	flex: 1 0 auto;
-}
+  .list-content {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    width: 100%;
+  }
+  .list-content div {
+    flex: 1 0 auto;
+  }
 </style>
