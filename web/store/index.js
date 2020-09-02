@@ -5,7 +5,10 @@ import sanityClient from '~/sanityClient'
 
 export const state = () => ({
   video: {},
-  navIsOpen: false
+  navIsOpen: false,
+  i18n: {
+    locale: 'es'
+  }
 })
 
 export const getters = {

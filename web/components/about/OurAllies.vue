@@ -1,25 +1,26 @@
 <template>
-  <div class="max-w-3xl mx-auto">
-    <h2 class="font-MissionGothicBlackItalic uppercase text-4xl text-center">
+  <fragment>
+    <h2 class="font-MissionGothicBlackItalic uppercase text-4xl text-center -mb-4">
       {{title}}
     </h2>
-    <div class="flex flex-wrap items-center justify-center">
-      <div v-for="ally in allies" :key="ally._id"
-      :class="`w-1/2 md:w-1/6 flex justify-center h-full`">
-        <SanityImage :image="ally.image"
-        :height="100"
-        fit="clip"
-        class="p-2" />
-      </div>
-    </div>
-  </div>
+    <ul class="flex flex-wrap justify-center max-w-3xl m-auto px-4">
+      <li v-for="ally in allies" :key="ally._id"
+      class="flex w-1/2 md:w-1/6">
+        <div class="list-content items-center">
+          <div :style="`background-image: url(${ getImageUrl(ally.image) })`"
+          class="bg-contain bg-no-repeat bg-center w-full h-32" />
+        </div>
+      </li>
+    </ul>
+  </fragment>
 </template>
 
 <script>
-import SanityImage from '~/components/SanityImage'
+import imageUrlBuilder from '@sanity/image-url'
+import sanityClient from '~/sanityClient'
+const builder = imageUrlBuilder(sanityClient)
 
 export default {
-  components: { SanityImage },
   props: {
     title: {
       required: true,
@@ -29,6 +30,23 @@ export default {
       required: true,
       type: Array
     }
+  },
+  methods: {
+    getImageUrl(image) {
+      return builder.image(image).url()
+    },
   }
 }
 </script>
+
+<style>
+  .list-content {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    width: 100%;
+  }
+  .list-content div {
+    flex: 1 0 auto;
+  }
+</style>

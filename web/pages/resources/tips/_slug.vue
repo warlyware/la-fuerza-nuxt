@@ -30,7 +30,7 @@
       class="flex w-full md:w-1/3 lg:w-1/4">
         <div class="list-content items-center">
           <div :style="`background-image: url(${tip.thumb})`"
-          class="cursor-pointer bg-contain bg-no-repeat bg-center w-full h-128 md:h-48"
+          class="cursor-pointer bg-contain bg-no-repeat bg-center w-full h-96 md:h-48"
           @click="showImage(i)" />
         </div>
       </li>
@@ -109,7 +109,6 @@ export default {
     return {...res1, ...res2}
   },
   mounted() {
-    console.log(this)
     this.onResize()
     this.$nextTick(() => {
       window.addEventListener('resize', this.onResize);

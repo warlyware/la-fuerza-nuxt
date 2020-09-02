@@ -64,7 +64,8 @@ export default {
     [
       'nuxt-i18n',
       {
-        // locales: ['en', 'es'],
+        locale: 'es',
+        fallbackLocale: 'es',
         locales: [
           {
             code: 'en',
@@ -80,7 +81,7 @@ export default {
           }
         ],
         strategy: 'no_prefix',
-        defaultLocale: 'en',
+        defaultLocale: 'es',
         lazy: true,
         langDir: 'lang/',
         vuex: {
