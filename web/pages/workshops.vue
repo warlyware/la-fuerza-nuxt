@@ -41,12 +41,9 @@
         <BlockContent :blocks="this[`${locale}Banner2Text`]" />
       </div>
       <div class="w-full flex justify-center">
-        <a :href="banner2Button.link" :target="banner2Button.newWindow ? '_blank' : ''"
-        class="bg-aqua text-blue rounded-lg p-2 py-1 text-2xl uppercase font-bold italic tracking-wide">
-        <span class="text-blue text-shadow-white-side">
-          {{banner2Button.text[locale]}}
-        </span>
-        </a>
+        <CustomButton :button="banner3Button"
+        class="bg-aqua text-blue rounded-lg p-2 py-1 text-2xl uppercase font-bold italic tracking-wide text-shadow-white-side"
+        />
       </div>
     </div>
 
@@ -93,12 +90,8 @@
         <BlockContent :blocks="this[`${locale}Banner3Text`]" />
       </div>
       <div class="w-full flex justify-center">
-        <a :href="banner3Button.link" :target="banner3Button.newWindow ? '_blank' : ''"
-        class="bg-aqua text-blue rounded-lg p-2 py-1 text-2xl uppercase font-bold italic tracking-wide">
-        <span class="text-blue text-shadow-white-side">
-          {{banner3Button.text[locale]}}
-        </span>
-        </a>
+        <CustomButton :button="banner3Button"
+        class="bg-aqua text-blue rounded-lg p-2 py-1 text-2xl uppercase font-bold italic tracking-wide text-shadow-white-side" />
       </div>
     </div>
     <div class="w-full bg-aqua p-8 mb-8">
@@ -118,6 +111,7 @@
 </template>
 
 <script>
+import CustomButton from '~/components/blocks/CustomButton'
 import ShareMenu from '~/components/ShareMenu'
 import BlockContent from 'sanity-blocks-vue-component'
 import SanityImage from '~/components/SanityImage'
@@ -127,8 +121,6 @@ import getYoutubeId from 'get-youtube-id'
 import Hero from '~/components/blocks/Hero'
 import NewsletterSubscription from '~/components/blocks/NewsletterSubscription'
 import EventsAccordion from '~/components/blocks/EventsAccordion'
-
-// import EventsAccordion from '~/components/blocks/EventsAccordion'
 
 const query = groq`
   *[_id == "page-workshops"][0] {
@@ -142,6 +134,7 @@ const query = groq`
 export default {
   components: {
     BlockContent,
+    CustomButton,
     Hero,
     NewsletterSubscription,
     EventsAccordion,

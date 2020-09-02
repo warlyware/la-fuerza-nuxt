@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nuxt-link v-if="button.internalLink"
+    <nuxt-link v-if="button.internalLink && button.internalLink.length"
     :to="button.internalLink">
       {{button.text[locale]}}
     </nuxt-link>
