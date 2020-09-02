@@ -9,14 +9,19 @@
               ENGLISH
             </span>
             <span v-if="language === 'en'" class="text-shadow-pink">
-              SPANISH
+              ESPAÑOL
             </span>
           </button>
           <img src="/images/la-fuerza-logo-top.png" class="h-6 md:h-8 -ml-16 md:-ml-24 mb-1 cursor-pointer"
           @click="$router.push('/')" />
           <button class="self-center text-lg md:text-3xl text-blue mb-2 font-bold font-MissionGothicBlack"
           @click="toggleNav">
-            MENÚ
+            <span v-if="language === 'es'">
+              MENU
+            </span>
+            <span v-if="language === 'en'">
+              MENÚ
+            </span>
           </button>
         </div>
         <div class="bg-pink h-1 w-full"></div>

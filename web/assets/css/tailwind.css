@@ -2,3 +2,8 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 @import '~assets/css/fonts';
+
+
+.h-128 {
+  height: 32rem;
+}

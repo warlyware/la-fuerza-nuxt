@@ -1,7 +1,7 @@
 /* eslint-disable vue/no-parsing-error */
 <template>
   <div class="pt-8 w-full">
-    <h1 class="font-MissionGothicBlack text-6xl uppercase text-center">
+    <h1 class="font-MissionGothicBlack text-6xl uppercase text-center mb-0">
       {{title[locale]}}
     </h1>
     <!-- Carousel -->
@@ -24,24 +24,27 @@
     <LightBox ref="lightbox"
     :media="formattedTips"
     :show-light-box="false" />
-    <div class="flex flex-wrap justify-start w-full max-w-5xl m-auto px-4 mb-8">
-      <div v-for="(tip, i) in formattedTips" :key="tip.caption"
-      class="h-0 w-full lg:w-1/6 flex-shrink-0"
-      :class="paddingBottomClass">
-        <div :style="`background-image: url(${tip.thumb})`"
-        class="cursor-pointer bg-cover bg-center h-40 m-2"
-        @click="showImage(i)" />
-      </div>
-    </div>
+
+    <ul class="flex flex-wrap max-w-3xl m-auto">
+      <li v-for="(tip, i) in formattedTips" :key="tip._id"
+      class="flex w-full md:w-1/3 lg:w-1/4">
+        <div class="list-content items-center">
+          <div :style="`background-image: url(${tip.thumb})`"
+          class="cursor-pointer bg-contain bg-no-repeat bg-center w-full h-128 md:h-48"
+          @click="showImage(i)" />
+        </div>
+      </li>
+    </ul>
 
     <div v-if="bannerText && bannerText.length"
-    class="py-8 flex justify-center w-full bg-blue text-white text-4xl">
+    class="mt-8 py-8 -mb-8 flex justify-center w-full bg-blue text-white text-4xl">
       <BlockContent :blocks="bannerText" />
     </div>
   </div>
 </template>
 
 <script>
+// import SanityImage from '~/components/SanityImage'
 import BlockContent from 'sanity-blocks-vue-component'
 import groq from 'groq'
 import imageUrlBuilder from '@sanity/image-url'
@@ -92,6 +95,7 @@ export default {
     formattedTips() {
       return this.tips.map(({ image, caption }) => {
         return {
+          image,
           src: builder.image(image).url(),
           thumb: builder.image(image).width(200).url(),
           caption: caption ? caption[this.locale] : ''
@@ -146,4 +150,25 @@ export default {
   .pb-full {
     padding-bottom: 100%;
   }
+  * {
+  box-sizing: border-box;
+}
+img {
+  width: 100%;
+}
+.list-item {
+	display: flex;
+  padding: 0.5em;
+	width: 100%;
+}
+.list-content {
+	background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+	width: 100%;
+}
+.list-content div {
+	flex: 1 0 auto;
+}
 </style>
