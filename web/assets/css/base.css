@@ -14,13 +14,10 @@ ul {
   list-style-position: inside;
 }
 h1 {
-  @apply mb-4 text-blue font-bold italic uppercase;
+  @apply mb-4 text-blue font-bold italic uppercase text-3xl;
 }
-h3, h4, h5, h6 {
-  @apply mb-2 text-blue;
-}
-h1 {
-  @apply text-3xl;
+h2, h3, h4, h5, h6 {
+  @apply mb-2 text-blue uppercase;
 }
 h2 {
   @apply text-2xl;

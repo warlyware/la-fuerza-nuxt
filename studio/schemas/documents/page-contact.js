@@ -20,6 +20,11 @@ export default {
       of: [{ type: 'contact' }]
     },
     {
+      name: 'button',
+      type: 'button',
+      title: 'Button'
+    },
+    {
       name: 'newsletterSubscription',
       type: 'newsletterSubscription',
       title: 'Newsletter Subscription'

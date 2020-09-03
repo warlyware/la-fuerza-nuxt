@@ -23,12 +23,12 @@
     </div>
     <div class="max-w-3xl m-auto flex flex-wrap px-8 md:px-16 text-xl uppercase mb-12 tracking-wide">
       <div class="p-4 w-full md:w-1/2">
-        <div class="border rounded-lg w-full flex justify-center items-center h-auto p-8 font-bold italic shadow-black">
+        <div class="border border-blue text-blue rounded-lg w-full flex justify-center items-center h-auto p-8 font-bold italic shadow-blue">
           <BlockContent :blocks="this[`${locale}Block2Text`]" />
         </div>
       </div>
       <div class="p-4 w-full md:w-1/2">
-        <div class="border rounded-lg w-full flex justify-center items-center h-auto p-8 font-bold italic shadow-black">
+        <div class="border border-blue text-blue rounded-lg w-full flex justify-center items-center h-auto p-8 font-bold italic shadow-blue">
           <BlockContent :blocks="this[`${locale}Block3Text`]" />
         </div>
       </div>
@@ -36,12 +36,12 @@
 
     <div v-for="(block, i) in collaboratorBlocks" :key="block._id"
     class="px-8 md:px-0 md:mb-0">
-      <h2 v-if="i === 0" class="text-5xl uppercase font-bold italic text-center mb-2 md:mb-0">
+      <h2 v-if="i === 0" class="text-5xl uppercase font-bold italic text-center mb-2 md:mb-0 text-blue">
         {{collaboratorsSectionTitle[locale]}}
       </h2>
       <div
       class="max-w-4xl m-auto flex flex-col flex-wrap md:flex-no-wrap w-full justify-center mb-4">
-        <div class="w-full md:w-1/2 px-4"
+        <div class="w-full md:w-1/2 px-4 text-blue"
         :class="i % 2 !== 1 ? collabBlockOddStyle : collabBlockEvenStyle">
           <h3 class="text-5xl mb-0 uppercase font-bold"
           :class="i % 2 !== 1 ? 'text-pink' : 'text-aqua'">
@@ -61,7 +61,7 @@
           {{block4Text[locale]}}
         </h2>
       </div>
-      <div class="w-full md:w-2/3 mx-4 md:mx-0 border border-blue rounded p-8">
+      <div class="w-full md:w-2/3 mx-4 md:mx-0 border border-blue text-blue rounded p-8">
         <p class="p-4 text-lg text-center mb-0">
           <BlockContent :blocks="this[`${locale}Block5Text`]" />
         </p>
@@ -88,7 +88,7 @@
       </div>
     </div>
 
-    <div class="w-full bg-blue p-8 mb-8 font-MissionGothicBlack text-white text-center text-2xl tracking-wider">
+    <div class="w-full bg-blue p-8 mb-8 font-bold italic text-white text-center text-2xl tracking-wider">
       {{banner2Text[locale]}}
     </div>
 
@@ -160,10 +160,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.shadow-black {
-  -webkit-box-shadow: 8px 8px 0px -1px rgba(0,0,0,1);
-  -moz-box-shadow: 8px 8px 0px -1px rgba(0,0,0,1);
-  box-shadow: 8px 8px 0px -1px rgba(0,0,0,1);
+.shadow-blue {
+  -webkit-box-shadow: 8px 8px 0px -1px #19105e;
+  -moz-box-shadow: 8px 8px 0px -1px #19105e;
+  box-shadow: 8px 8px 0px -1px #19105e;
 }
 
 .shadow-pink-side {

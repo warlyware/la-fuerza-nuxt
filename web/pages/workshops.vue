@@ -70,7 +70,7 @@
         </div>
       </div>
       <div class="w-full md:w-1/3 mx-4 md:mx-0 border border-blue rounded flex-shrink-0">
-        <div class="text-5xl justify-center items-center flex flex-col h-full italic">
+        <div class="text-5xl justify-center items-center flex flex-col h-full italic text-blue">
           <div>
             {{block5Word1[locale]}}
           </div>

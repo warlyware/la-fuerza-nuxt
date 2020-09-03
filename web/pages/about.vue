@@ -2,7 +2,7 @@
   <div class="w-full">
     <Hero :image="hero.image" :full-height="hero.fullHeight" :title="title[locale]"
     x-axis-location="start" class="mb-8" />
-    <div class="max-w-4xl mx-auto justify-between p-4 mb-4 text-center">
+    <div class="max-w-4xl mx-auto justify-between p-4 mb-4 text-center text-blue">
       <BlockContent :blocks="aboutText" />
     </div>
 
@@ -14,7 +14,7 @@
       :height="500"
       fit="crop" />
       <div class="w-full md:w-1/3 h-64 text-blue border border-blue flex flex-col justify-center items-center p-8 md:p-12">
-        <div class="text-4xl font-MissionGothicBlackItalic leading-tight text-center uppercase mb-2">
+        <div class="text-4xl font-bold italic leading-tight text-center uppercase mb-2">
           {{block1Text[locale]}}
         </div>
         <div>

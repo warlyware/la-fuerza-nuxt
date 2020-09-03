@@ -4,17 +4,15 @@
     x-axis-location="start" class="mb-8" />
     <div class="flex flex-wrap px-4 max-w-5xl m-auto mb-4">
 
-      <!-- {{ joinBlocks[0] }} -->
       <template v-for="(block, i) in joinBlocks">
         <div :key="block._id"
         class="w-full md:w-1/2 px-8 flex flex-col items-center md:-ml-4 mb-16">
-          <!-- {{block.button}} -->
           <SanityImage
           :image="block.icon"
           :width="100"
           :height="100" fit="crop"
           class="mb-4" />
-          <div class="w-full text-lg mb-4 text-center font-bold">
+          <div class="w-full text-lg mb-4 text-center font-bold text-blue">
             <BlockContent :blocks="block[`${locale}Text`]" />
           </div>
           <div class="w-full flex justify-center">

@@ -3,7 +3,7 @@
     <Hero :image="hero.image" :full-height="hero.fullHeight" :title="title[locale]"
     x-axis-location="end" class="mb-8" />
     <div class="p-4">
-      <div class="flex flex-col items-center w-full uppercase p-4 text-xl leading-tight">
+      <div class="flex flex-col items-center w-full uppercase p-4 text-xl leading-tight text-blue">
         <div class="text-2xl text-aqua font-bold italic mb-2">
           {{contacts[0].name[locale]}}
         </div>
@@ -27,7 +27,7 @@
         </div>
       </div>
 
-      <div class="flex flex-col items-center w-full uppercase p-4 text-xl leading-tight">
+      <div class="flex flex-col items-center w-full uppercase p-4 text-xl leading-tight text-blue">
         <div class="text-2xl text-pink font-bold italic mb-2">
           {{contacts[1].name[locale]}}
         </div>
@@ -52,7 +52,7 @@
       </div>
 
       <div v-if="secondaryContacts.length"
-      class="flex flex-wrap md:justify-between w-full pb-8 max-w-6xl mx-auto">
+      class="flex flex-wrap md:justify-between w-full pb-8 max-w-6xl mx-auto text-blue">
         <div v-for="contact in secondaryContacts" :key="contact._id"
         class="flex flex-col items-center w-full md:w-1/3 flex-grow uppercase p-4 text-xl leading-tight">
           <div class="text-2xl font-bold italic">
@@ -80,6 +80,7 @@
       </div>
 
       <div class="w-full flex justify-center pb-8 pt-4">
+        <CustomButton :button="button" />
         <button class="bg-aqua text-white text-shadow-pink text-3xl uppercase font-bold italic p-2 rounded py-1">
           Trabaja Con Nosotros
         </button>

@@ -11,7 +11,6 @@ module.exports = {
       // MissionGothicBold: ["MissionGothicBold"],
       // MissionGothicBlack: ["MissionGothicBlack"],
       // MissionGothicItalic: ["MissionGothicItalic"],
-      // MissionGothicBlackItalic: ["MissionGothicBlackItalic"]
     },
     colors: {
       pink: '#ff15b1',

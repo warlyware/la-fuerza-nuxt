@@ -1,5 +1,5 @@
 <template>
-  <section class="max-w-5xl mx-auto">
+  <section class="max-w-5xl mx-auto text-blue">
     <BlockContent v-if="body" :blocks="body" />
   </section>
 </template>

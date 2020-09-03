@@ -3,24 +3,24 @@
     <div class="flex justify-center mx-auto">
       <div class="w-full justify-center">
         <div class="flex w-full justify-between items-end h-half border-l-4 border-pink">
-          <button class="bg-aqua rounded-full self-center p-4 py-0 ml-1 mb-2 md:w-32 text-sm md:text-2xl font-MissionGothicBlackItalic text-white font-bold"
+          <button class="bg-aqua rounded-full self-center p-4 py-0 ml-1 mb-2 md:w-32 text-sm md:text-2xl font-bold italic"
           @click="toggleLanguage">
-            <span v-if="language === 'es'" class="text-shadow-pink">
+            <span v-if="language === 'es'" class="text-shadow-pink text-white">
               ENGLISH
             </span>
-            <span v-if="language === 'en'" class="text-shadow-pink">
+            <span v-if="language === 'en'" class="text-shadow-pink text-white">
               ESPAÑOL
             </span>
           </button>
           <img src="/images/la-fuerza-logo-top.png" class="h-6 md:h-8 -ml-16 md:-ml-24 mb-1 cursor-pointer"
           @click="$router.push('/')" />
-          <button class="self-center text-lg md:text-3xl text-blue mb-2 font-bold font-MissionGothicBlack"
+          <button class="self-center text-lg md:text-3xl text-blue mb-2 font-bold"
           @click="toggleNav">
             <span v-if="language === 'es'">
-              MENU
+              MENÚ
             </span>
             <span v-if="language === 'en'">
-              MENÚ
+              MENU
             </span>
           </button>
         </div>
