@@ -3,9 +3,12 @@
     <Hero :image="hero.image" :full-height="hero.fullHeight" :title="title[locale]"
     x-axis-location="start" class="mb-8" />
     <div class="flex flex-wrap px-4 max-w-5xl m-auto mb-4">
+
+      <!-- {{ joinBlocks[0] }} -->
       <template v-for="(block, i) in joinBlocks">
         <div :key="block._id"
         class="w-full md:w-1/2 px-8 flex flex-col items-center md:-ml-4 mb-16">
+          <!-- {{block.button}} -->
           <SanityImage
           :image="block.icon"
           :width="100"
@@ -15,10 +18,8 @@
             <BlockContent :blocks="block[`${locale}Text`]" />
           </div>
           <div class="w-full flex justify-center">
-            <a :href="block.button.link" :target="block.button.newWindow ? '_blank' : ''"
-            class="bg-pink rounded-lg p-2 py-1 text-2xl uppercase font-bold italic tracking-wide text-white">
-              {{block.button.text[locale]}}
-            </a>
+            <CustomButton :button="block.button"
+            class="bg-pink rounded-lg p-2 py-1 text-2xl uppercase font-bold italic tracking-wide text-white" />
           </div>
         </div>
 
@@ -91,6 +92,7 @@ import Hero from '~/components/blocks/Hero'
 import SanityImage from '~/components/SanityImage'
 import BlockContent from 'sanity-blocks-vue-component'
 import NewsletterSubscription from '~/components/blocks/NewsletterSubscription'
+import CustomButton from '~/components/blocks/CustomButton'
 import VerticalDivider from '~/components/blocks/VerticalDivider'
 
 const query = groq`
@@ -100,12 +102,22 @@ const query = groq`
 `
 
 export default {
-  components: { Hero, BlockContent, NewsletterSubscription, SanityImage, VerticalDivider },
+  components: {
+    CustomButton,
+    Hero,
+    BlockContent,
+    NewsletterSubscription,
+    SanityImage,
+    VerticalDivider
+  },
   computed: {
     locale() { return this.$i18n.locale }
   },
   async asyncData() {
     return await sanityClient.fetch(query)
+  },
+  mounted() {
+    console.log(this)
   }
 }
 </script>
