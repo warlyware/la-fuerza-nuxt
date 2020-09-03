@@ -8,7 +8,7 @@
     </p>
     <div class="w-full flex justify-center mb-2">
       <CustomButton :button="newsletterInfo.button"
-      class="bg-pink rounded-lg p-2 py-1 text-2xl uppercase font-bold italic tracking-wide text-white" />
+      class="bg-pink rounded-lg p-2 py-1 text-2xl font-bold italic tracking-wide text-white" />
     </div>
   </div>
 </template>

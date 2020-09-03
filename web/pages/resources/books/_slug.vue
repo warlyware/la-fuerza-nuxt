@@ -6,11 +6,11 @@
     </div>
     <LightBox ref="lightbox" :show-thumbs="false"
     :media="lightboxImages" :show-light-box="false" />
-    <h1 class="font-bold text-4xl uppercase text-center max-w-2xl m-auto leading-10 mb-4">
+    <h1 class="font-bold text-4xl text-center max-w-2xl m-auto leading-10 mb-4">
       {{title[locale]}}
     </h1>
     <div class="flex max-w-5xl m-auto px-8 lg:px-0 justify-center mb-4">
-      <p class="border border-gray-dark p-6 uppercase italic text-center w-full text-sm">
+      <p class="p-6 text-center w-full text-sm">
         <BlockContent v-if="this[`${locale}Description`]" :blocks="this[`${locale}Description`]" />
         {{author}} / {{illustrator}} / {{publisher}}
       </p>

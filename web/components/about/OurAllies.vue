@@ -1,6 +1,6 @@
 <template>
   <fragment>
-    <h2 class="font-bold italic uppercase text-4xl text-center -mb-4">
+    <h2 class="font-bold italic text-4xl text-center -mb-4">
       {{title}}
     </h2>
     <ul class="flex flex-wrap justify-center max-w-3xl m-auto px-4">

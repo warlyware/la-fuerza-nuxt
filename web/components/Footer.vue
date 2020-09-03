@@ -1,8 +1,8 @@
 <template>
   <footer class="py-4 bottom-0 bg-aqua w-full flex-shrink-0 mt-auto">
     <div class="flex flex-wrap px-4 mx-auto justify-center">
-      <div class="flex flex-wrap text-white justify-between w-full text-3xl uppercase">
-        <div class="flex flex-col w-full md:w-auto px-4 italic mb-8 md:mb-0 font-MissionGothicItalic text-4xl leading-tight">
+      <div class="flex flex-wrap text-white justify-between w-full text-3xl">
+        <div class="flex flex-col w-full md:w-auto px-4 italic mb-8 md:mb-0 font-italic text-4xl leading-tight">
           <nuxt-link class="block self-start" to="/join">
             {{ $t('join.title') }}
           </nuxt-link>
@@ -45,7 +45,7 @@
             </a>
           </div>
         </div>
-        <div class="flex flex-wrap justify-center w-full text-sm text-white pt-6 font-MissionGothicItalic">
+        <div class="flex flex-wrap justify-center w-full text-sm text-white pt-6 italic">
           <nuxt-link class="px-2 inline-block" to="/privacy">PRIVACY POLICY</nuxt-link>
           <nuxt-link class="px-2 inline-block" to="/disclaimer">DISCLAIMER</nuxt-link>
           <span class="inline-block px-2 uppercase">

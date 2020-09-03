@@ -92,7 +92,7 @@ export default {
     @apply py-1 !important;
   }
   .v-sidebar-menu .vsm--dropdown>.vsm--list .vsm--title {
-    @apply mr-4 font-MissionGothic text-orange !important;
+    @apply mr-4 text-orange !important;
   }
   .v-sidebar-menu .vsm--link:hover {
     @apply bg-gray !important;

@@ -10,7 +10,7 @@
     <template v-if="formattedPlaylists.length">
       <div v-for="{ playlist, title, description } in formattedPlaylists" :key="playlist.id"
       class="max-w-video-player m-auto mb-8 px-8 text-blue">
-        <h2 class="mb-0 uppercase text-4xl">
+        <h2 class="mb-0 text-4xl">
           {{title}}
         </h2>
         <p class="mb-8 font-bold">

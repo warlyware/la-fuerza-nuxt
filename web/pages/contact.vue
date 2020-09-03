@@ -3,10 +3,10 @@
     <Hero :image="hero.image" :full-height="hero.fullHeight" :title="title[locale]"
     x-axis-location="end" class="mb-8" />
     <div class="p-4">
-      <div class="flex flex-col items-center w-full uppercase p-4 text-xl leading-tight text-blue">
-        <div class="text-2xl text-aqua font-bold italic mb-2">
+      <div class="flex flex-col items-center w-full p-4 text-xl leading-tight text-blue">
+        <h2 class="text-2xl text-aqua font-bold italic mb-2">
           {{contacts[0].name[locale]}}
-        </div>
+        </h2>
         <div v-if="contacts[0].address" class="address">
           <BlockContent :blocks="contacts[0].address" />
         </div>
@@ -27,10 +27,10 @@
         </div>
       </div>
 
-      <div class="flex flex-col items-center w-full uppercase p-4 text-xl leading-tight text-blue">
-        <div class="text-2xl text-pink font-bold italic mb-2">
+      <div class="flex flex-col items-center w-full p-4 text-xl leading-tight text-blue">
+        <h2 class="text-2xl text-pink font-bold italic mb-2">
           {{contacts[1].name[locale]}}
-        </div>
+        </h2>
         <div v-if="contacts[1].address" class="address mb-1">
           <BlockContent :blocks="contacts[1].address" />
         </div>
@@ -54,10 +54,10 @@
       <div v-if="secondaryContacts.length"
       class="flex flex-wrap md:justify-between w-full pb-8 max-w-6xl mx-auto text-blue">
         <div v-for="contact in secondaryContacts" :key="contact._id"
-        class="flex flex-col items-center w-full md:w-1/3 flex-grow uppercase p-4 text-xl leading-tight">
-          <div class="text-2xl font-bold italic">
+        class="flex flex-col items-center w-full md:w-1/3 flex-grow p-4 text-xl leading-tight">
+          <h2 class="text-2xl font-bold italic">
             {{contact.name[locale]}}
-          </div>
+          </h2>
           <div v-if="contact.address" class="address">
             <BlockContent :blocks="contact.address" />
           </div>
@@ -80,10 +80,8 @@
       </div>
 
       <div class="w-full flex justify-center pb-8 pt-4">
-        <CustomButton :button="button" />
-        <button class="bg-aqua text-white text-shadow-pink text-3xl uppercase font-bold italic p-2 rounded py-1">
-          Trabaja Con Nosotros
-        </button>
+        <CustomButton :button="button"
+        class="bg-aqua text-white text-shadow-pink text-3xl font-bold italic p-2 rounded py-1" />
       </div>
     </div>
     <NewsletterSubscription :newsletter-info="newsletterSubscription" class="-mb-8" />
@@ -92,7 +90,7 @@
 
 <script>
 import BlockContent from 'sanity-blocks-vue-component'
-
+import CustomButton from '~/components/blocks/CustomButton'
 import groq from 'groq'
 import sanityClient from '~/sanityClient'
 import Hero from '~/components/blocks/Hero'
@@ -108,6 +106,7 @@ const query = groq`
 export default {
   components: {
     BlockContent,
+    CustomButton,
     Hero,
     NewsletterSubscription
   },

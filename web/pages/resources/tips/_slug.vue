@@ -1,7 +1,7 @@
 /* eslint-disable vue/no-parsing-error */
 <template>
   <div class="pt-8 w-full">
-    <h1 class="font-MissionGothicBlack text-6xl uppercase text-center mb-0">
+    <h1 class="font-bold text-6xl text-center mb-0">
       {{title[locale]}}
     </h1>
     <!-- Carousel -->

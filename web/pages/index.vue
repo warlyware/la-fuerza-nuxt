@@ -1,43 +1,45 @@
 <template>
   <div class="mx-auto justify-between pt-4 w-full">
     <div class="w-full flex flex-wrap">
-      <div class="w-full md:w-2/3 my-1/2">
+      <div class="w-full lg:w-2/3 my-1/2">
         <youtube player-width="100%" player-height="100%"
         :player-vars="playerVars"
         class="video-responsive flex-grow"
         :video-id="getYoutubeId(video1Url)"
         @ready="topVideoReady" />
       </div>
-      <div class="w-full md:w-1/3 bg-pink text-white flex justify-center items-center leading-tight p-8">
-        <span class="uppercase text-4xl font-bold italic">
+      <div class="w-full lg:w-1/3 bg-pink text-white flex justify-center items-center leading-tight p-8">
+        <span class=" text-4xl font-bold italic">
           {{block1Text[locale]}}
         </span>
       </div>
     </div>
 
     <div class="font-bold italic">
-      <h1 class="text-aqua text-3xl uppercase w-full text-center pt-8">
+      <h1 class="text-aqua text-3xl w-full text-center pt-8">
         {{block2Title[locale]}}
       </h1>
       <div class="flex w-full flex-wrap items-center justify-around pb-12">
         <CustomButton :button="block2Button1"
-        class="w-full md:w-auto bg-pink text-white text-shadow-aqua text-2xl rounded px-2 uppercase mx-4 mb-2" />
+        class="w-full md:w-auto bg-pink text-white text-shadow-aqua text-2xl rounded px-2 mx-4 mb-2" />
         <CustomButton :button="block2Button2"
-        class="w-full md:w-auto bg-aqua text-white text-shadow-pink text-2xl rounded px-2 uppercase mx-4 mb-2" />
+        class="w-full md:w-auto bg-aqua text-white text-shadow-pink text-2xl rounded px-2 mx-4 mb-2" />
         <CustomButton :button="block2Button3"
-        class="w-full md:w-auto bg-pink text-white text-shadow-aqua text-2xl rounded px-2 uppercase mx-4 mb-2" />
+        class="w-full md:w-auto bg-pink text-white text-shadow-aqua text-2xl rounded px-2 mx-4 mb-2" />
         <CustomButton :button="block2Button4"
-        class="w-full md:w-auto bg-aqua text-white text-shadow-pink text-2xl rounded px-2 uppercase mx-4 mb-2" />
+        class="w-full md:w-auto bg-aqua text-white text-shadow-pink text-2xl rounded px-2 mx-4 mb-2" />
       </div>
     </div>
 
     <div class="w-full flex flex-wrap pb-8">
       <div class="w-full order-1 md:w-1/3 bg-blue text-white flex flex-col justify-center items-center leading-tight p-8 italic">
-        <div class="uppercase text-4xl font-bold italic text-aqua pb-4">
+        <div class="text-4xl font-bold italic text-aqua pb-4">
           {{block3Text[locale]}}
         </div>
-        <CustomButton :button="block3Button"
-        class="w-full md:w-auto bg-aqua text-white text-shadow-pink text-2xl rounded px-2 uppercase mx-4 mb-2p mt-4" />
+        <div class="flex justify-center w-full mb-2">
+          <CustomButton :button="block3Button"
+          class="bg-aqua text-white text-shadow-pink text-2xl rounded px-2 mx-4 mb-2p mt-4" />
+        </div>
       </div>
       <div class="w-full order-first md:order-last md:w-2/3 my-1/2">
         <youtube player-width="100%" player-height="100%"

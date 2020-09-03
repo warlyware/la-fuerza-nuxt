@@ -21,7 +21,7 @@
           {{banner1LinkText[locale]}}</nuxt-link>.
       </p>
     </div>
-    <div class="max-w-3xl m-auto flex flex-wrap px-8 md:px-16 text-xl uppercase mb-12 tracking-wide">
+    <div class="max-w-3xl m-auto flex flex-wrap px-8 md:px-16 text-xl mb-12 tracking-wide">
       <div class="p-4 w-full md:w-1/2">
         <div class="border border-blue text-blue rounded-lg w-full flex justify-center items-center h-auto p-8 font-bold italic shadow-blue">
           <BlockContent :blocks="this[`${locale}Block2Text`]" />
@@ -36,14 +36,14 @@
 
     <div v-for="(block, i) in collaboratorBlocks" :key="block._id"
     class="px-8 md:px-0 md:mb-0">
-      <h2 v-if="i === 0" class="text-5xl uppercase font-bold italic text-center mb-2 md:mb-0 text-blue">
+      <h2 v-if="i === 0" class="text-5xl font-bold italic text-center mb-2 md:mb-0 text-blue">
         {{collaboratorsSectionTitle[locale]}}
       </h2>
       <div
       class="max-w-4xl m-auto flex flex-col flex-wrap md:flex-no-wrap w-full justify-center mb-4">
         <div class="w-full md:w-1/2 px-4 text-blue"
         :class="i % 2 !== 1 ? collabBlockOddStyle : collabBlockEvenStyle">
-          <h3 class="text-5xl mb-0 uppercase font-bold"
+          <h3 class="text-5xl mb-0 font-bold"
           :class="i % 2 !== 1 ? 'text-pink' : 'text-aqua'">
             {{block.title[locale]}}
           </h3>
@@ -56,7 +56,7 @@
     </div>
 
     <div class="max-w-3xl m-auto flex flex-wrap my-12">
-      <div class="w-full mx-4 md:mx-0 md:w-1/3 bg-blue flex items-center rounded-lg uppercase tracking-wider">
+      <div class="w-full mx-4 md:mx-0 md:w-1/3 bg-blue flex items-center rounded-lg tracking-wider">
         <h2 class="font-bold italic text-white text-4xl mb-0 leading-tight p-4">
           {{block4Text[locale]}}
         </h2>
@@ -67,7 +67,7 @@
         </p>
         <div class="w-full flex justify-center mb-8">
           <CustomButton :button="block5Button"
-          class="p-2 py-1 font-bold italic text-3xl text-white bg-pink rounded-lg tracking-wide uppercase" />
+          class="p-2 py-1 font-bold italic text-3xl text-white bg-pink rounded-lg tracking-wide" />
         </div>
       </div>
     </div>
@@ -76,14 +76,14 @@
         <BlockContent :blocks="this[`${locale}Block6Text`]" />
         <div class="w-full flex justify-center">
           <CustomButton :button="block6Button"
-          class="mt-2 p-2 py-3 font-bold italic text-2xl text-white bg-aqua rounded-lg tracking-wide uppercase text-shadow-pink" />
+          class="mt-2 p-2 py-3 font-bold italic text-2xl text-white bg-aqua rounded-lg tracking-wide text-shadow-pink" />
         </div>
       </div>
       <div class="w-full md:w-1/2 p-4 px-8 bg-aqua text-blue text-center leading-relaxed flex flex-col justify-between">
         <BlockContent :blocks="this[`${locale}Block7Text`]" />
         <div class="w-full flex justify-center">
           <CustomButton :button="block7Button"
-          class="mt-2 p-2 py-1 font-bold italic text-2xl text-white bg-blue rounded-lg tracking-wide uppercase text-shadow-pink" />
+          class="mt-2 p-2 py-1 font-bold italic text-2xl text-white bg-blue rounded-lg tracking-wide text-shadow-pink" />
         </div>
       </div>
     </div>

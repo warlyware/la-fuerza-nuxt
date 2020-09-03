@@ -7,7 +7,8 @@
       :height="400"
       fit="crop" />
     </nuxt-link>
-    <div class="flex flex-col h-full p-2 justify-start">
+    <nuxt-link :to="`/resources/books/${book.slug.current}`"
+    class="flex flex-col h-full p-2 justify-start">
       <h2 class="text-2xl font-bold mb-2 line-clamp overflow-hidden">
         {{book.title[locale]}}
       </h2>
@@ -15,11 +16,12 @@
         by {{book.author}}
       </div>
       <div class="w-full">
-        <button class="bg-aqua text-white text-shadow-pink px-2 py-0 rounded uppercase text-sm italic">
+        <button class="bg-aqua text-white text-shadow-pink px-2 py-0 rounded uppercase text-sm italic"
+        @click="$router.push('')">
           {{readMore}}
         </button>
       </div>
-    </div>
+    </nuxt-link>
   </div>
 </template>
 

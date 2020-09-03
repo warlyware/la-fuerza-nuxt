@@ -1,6 +1,6 @@
 <template>
   <div class="w-full max-w-3xl mx-auto justify-between p-4 md:p-0">
-    <div class="flex flex-wrap w-full uppercase mb-8">
+    <div class="flex flex-wrap w-full mb-8">
       <h2 class="w-full mb-0 font-bold leading-tight">
         {{bookSectionTitle[locale]}}
       </h2>
@@ -25,7 +25,7 @@
         </li>
       </ul>
     </div>
-    <div class="flex flex-wrap w-full uppercase mb-8">
+    <div class="flex flex-wrap w-full mb-8">
       <h2 class="w-full mb-0 font-bold leading-tight">
         {{tipSectionTitle[locale]}}
       </h2>

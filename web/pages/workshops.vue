@@ -23,7 +23,7 @@
         <BlockContent :blocks="this[`${locale}Banner1Text`]" />
       </div>
     </div>
-    <div class="max-w-3xl m-auto flex flex-wrap px-8 md:px-16 text-xl uppercase mb-12 tracking-wide">
+    <div class="max-w-3xl m-auto flex flex-wrap px-8 md:px-16 text-xl mb-12 tracking-wide">
       <div class="p-4 w-full md:w-1/2 text-3xl text-center flex flex-1">
         <div class="border rounded-lg w-full flex justify-center items-center h-auto p-8 font-bold italic shadow-black bg-blue text-white">
           <BlockContent :blocks="this[`${locale}Block2Text`]" />
@@ -36,13 +36,13 @@
       </div>
     </div>
 
-    <div class="max-w-4xl m-auto flex flex-wrap mb-8 p-4 rounded-lg text-xl uppercase bg-pink text-white">
+    <div class="max-w-4xl m-auto flex flex-wrap mb-8 p-4 rounded-lg text-xl bg-pink text-white">
       <div class="w-full text-center text-3xl font-bold mb-0">
         <BlockContent :blocks="this[`${locale}Banner2Text`]" />
       </div>
       <div class="w-full flex justify-center">
         <CustomButton :button="banner3Button"
-        class="bg-aqua text-blue rounded-lg p-2 py-1 text-2xl uppercase font-bold italic tracking-wide text-shadow-white-side"
+        class="bg-aqua text-blue rounded-lg p-2 py-1 text-2xl font-bold italic tracking-wide text-shadow-white-side"
         />
       </div>
     </div>
@@ -64,7 +64,7 @@
     </div>
 
     <div class="max-w-4xl m-auto flex flex-wrap mb-12">
-      <div class="w-full mx-4 md:mx-0 md:w-2/3 bg-blue flex items-center rounded-lg uppercase tracking-wider">
+      <div class="w-full mx-4 md:mx-0 md:w-2/3 bg-blue flex items-center rounded-lg tracking-wider">
         <div class="text-white text-xl mb-0 leading-tight p-4">
           <BlockContent :blocks="this[`${locale}Block4Text`]" />
         </div>
@@ -85,13 +85,13 @@
         </div>
       </div>
     </div>
-    <div class="max-w-4xl m-auto flex flex-wrap p-4 rounded-lg text-xl uppercase bg-pink text-white mb-8">
+    <div class="max-w-4xl m-auto flex flex-wrap p-4 rounded-lg text-xl bg-pink text-white mb-8">
       <div class="w-full text-center text-3xl font-bold mb-0 leading-8">
         <BlockContent :blocks="this[`${locale}Banner3Text`]" />
       </div>
       <div class="w-full flex justify-center">
         <CustomButton :button="banner3Button"
-        class="bg-aqua text-blue rounded-lg p-2 py-1 text-2xl uppercase font-bold italic tracking-wide text-shadow-white-side" />
+        class="bg-aqua text-blue rounded-lg p-2 py-1 text-2xl font-bold italic tracking-wide text-shadow-white-side" />
       </div>
     </div>
     <div class="w-full bg-aqua p-8 mb-8">

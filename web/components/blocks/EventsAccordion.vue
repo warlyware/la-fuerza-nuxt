@@ -10,9 +10,9 @@
           <div v-for="event in events" :key="event._id"
           class="text-xl leading-7 w-full lg:w-1/2 my-2 lg:my-0">
             <div class="flex flex-col border border-blue rounded p-4 mx-2 h-full text-blue">
-              <h1 class="font-normal uppercase not-italic mb-2">
+              <div class="font-normal not-italic mb-2">
                 {{event.name[locale]}}
-              </h1>
+              </div>
               <div>
                 {{ $moment(event.startDate).format('MMMM Do') }} -
                 {{ $moment(event.endDate).format('MMMM Do') }}
