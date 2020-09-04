@@ -19,14 +19,14 @@
         <BlockContent :blocks="this[`${locale}Banner1Text`]" />
       </div>
     </div>
-    <div class="max-w-3xl m-auto flex flex-wrap px-8 md:px-16 text-xl mb-12 tracking-wide">
+    <div class="max-w-5xl m-auto flex flex-wrap px-8 md:px-16 text-xl mb-12 tracking-wide">
       <div class="p-4 w-full md:w-1/2">
-        <div class="border border-blue text-blue rounded-lg w-full flex justify-center items-center h-auto p-8 font-bold italic shadow-blue">
+        <div class="border border-blue text-blue rounded-lg w-full flex justify-center items-center h-full p-8 font-bold italic shadow-blue">
           <BlockContent :blocks="this[`${locale}Block2Text`]" />
         </div>
       </div>
       <div class="p-4 w-full md:w-1/2">
-        <div class="border border-blue text-blue rounded-lg w-full flex justify-center items-center h-auto p-8 font-bold italic shadow-blue">
+        <div class="border border-blue text-blue rounded-lg w-full flex justify-center items-center h-full p-8 font-bold italic shadow-blue">
           <BlockContent :blocks="this[`${locale}Block3Text`]" />
         </div>
       </div>
@@ -90,9 +90,11 @@
       {{banner2Text[locale]}}
     </div>
 
-    <div class="max-w-5xl m-auto flex flex-wrap px-4">
-      <div v-for="(events, location, i) in formattedEvents" :key="i" class="mb-2 w-full">
-        <EventsAccordion :location="location" :events="events" />
+    <div class="max-w-5xl m-auto">
+      <div class="flex flex-wrap px-4 w-full">
+        <div v-for="(events, location, i) in formattedEvents" :key="i" class="mb-2 w-full  flex-1">
+          <EventsAccordion :location="location" :events="events" />
+        </div>
       </div>
     </div>
 

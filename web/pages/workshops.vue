@@ -3,13 +3,9 @@
     <Hero :image="hero.image" :full-height="hero.fullHeight" :title="title[locale]" :bg-color="hero.bgColor"
     x-axis-location="start" class="mb-8" :class="hero.fullHeight ? '' : 'h-24 overflow-hidden'" />
     <div v-if="shareMenu"
-    class="h-screen fixed items-center top-0 left-0 -mt-16 z-10 pointer-events-none hidden md:flex">
+    class="h-screen fixed items-center top-0 left-0 -mt-16 z-10 pointer-events-none flex">
       <ShareMenu class="pointer-events-auto" :share-menu="shareMenu" :scroll-distance="400" />
     </div>
-    <!-- <div v-if="shareMenu"
-    class="h-screen fixed flex items-center top-0 left-0 -mt-16 z-10 pointer-events-none md:hidden">
-      <ShareMenu class="pointer-events-auto" :share-menu="shareMenu" />
-    </div> -->
     <div class="w-full flex flex-wrap mb-8">
       <div class="w-full lg:w-1/2 text-white leading-tight lg:pr-2 mb-2 lg:mb-0">
         <div id="block1" class="text-lg xl:text-2xl font-bold p-8 bg-blue h-full flex justify-center items-center">
@@ -23,25 +19,25 @@
       </div>
     </div>
     <div class="w-full border border-blue p-8 mb-8">
-      <div id="block2" class="w-full text-center text-2xl font-bold mb-0">
+      <div id="block2" class="w-full text-center text-2xl font-bold mb-0 px-4 lg:px-0">
         <BlockContent :blocks="this[`${locale}Banner1Text`]" />
       </div>
     </div>
-    <div class="max-w-3xl m-auto flex flex-wrap px-8 md:px-16 text-xl mb-12 tracking-wide">
-      <div class="p-4 w-full md:w-1/2 text-3xl text-center flex flex-1">
-        <div class="border rounded-lg w-full flex justify-center items-center h-auto p-8 font-bold italic shadow-black bg-blue text-white">
+    <div class="max-w-5xl m-auto flex flex-wrap px-8 lg:px-16 text-xl mb-12 tracking-wide">
+      <div class="p-4 w-full lg:w-1/2 text-3xl text-center flex flex-1">
+        <div class="border rounded-lg w-full flex justify-center items-center h-full p-8 font-bold italic shadow-black bg-blue text-white">
           <BlockContent :blocks="this[`${locale}Block2Text`]" />
         </div>
       </div>
-      <div class="p-4 w-full md:w-1/2 text-3xl text-center flex flex-1">
-        <div class="border rounded-lg w-full flex justify-center items-center h-auto p-8 font-bold italic shadow-black bg-blue text-white">
+      <div class="p-4 w-full lg:w-1/2 text-3xl text-center flex flex-1">
+        <div class="border rounded-lg w-full flex justify-center items-center h-full p-8 font-bold italic shadow-black bg-blue text-white">
           <BlockContent :blocks="this[`${locale}Block3Text`]" />
         </div>
       </div>
     </div>
 
     <div class="max-w-4xl m-auto flex flex-wrap mb-8 p-4 rounded-lg text-xl bg-pink text-white">
-      <div class="w-full text-center text-3xl font-bold mb-0">
+      <div class="w-full text-center text-3xl font-bold mb-0 px-8 lg:px-0">
         <BlockContent :blocks="this[`${locale}Banner2Text`]" />
       </div>
       <div class="w-full flex justify-center">
@@ -51,30 +47,30 @@
       </div>
     </div>
 
-    <div class="max-w-5xl m-auto mb-12 px-8 md:px-0">
+    <div class="max-w-5xl m-auto mb-12 px-8 lg:px-0">
       <div v-for="block in workshopImageBlocks" :key="block._id"
-      class="flex flex-wrap md:flex-no-wrap w-full justify-center md:justify-start mb-8 md:mb-4">
-        <div class="h-64 w-64 flex items-center justify-center border-2 rounded-full flex-shrink-0 mx-8 mb-4 md:mb-0 overflow-hidden"
+      class="flex flex-wrap lg:flex-no-wrap w-full justify-center lg:justify-start mb-8 lg:mb-4 px-4 lg:px-0">
+        <div class="h-64 w-64 flex items-center justify-center border-2 rounded-full flex-shrink-0 mx-8 mb-4 lg:mb-0 overflow-hidden"
         :class="getImageWrapperClass(block)">
           <SanityImage :image="block.image"
           class="h-full bg-blue text-white flex justify-center items-center"
           :height="500"
           fit="crop" />
         </div>
-        <div :class="`text-2xl font-bold leading-7 flex items-center mb-0 text-${block.borderColor} text-center md:text-left`">
+        <div :class="`text-2xl font-bold leading-7 flex items-center mb-0 text-${block.borderColor} text-center lg:text-left`">
           <BlockContent :blocks="block[`${locale}Text`]" />
         </div>
       </div>
     </div>
 
     <div class="max-w-4xl m-auto flex flex-wrap mb-12">
-      <div class="w-full mx-4 md:mx-0 md:w-2/3 bg-blue flex items-center rounded-lg tracking-wider">
+      <div class="w-full mx-8 lg:mx-0 lg:w-2/3 bg-blue flex items-center rounded-lg tracking-wider">
         <div class="text-white text-xl mb-0 leading-tight p-4">
           <BlockContent :blocks="this[`${locale}Block4Text`]" />
         </div>
       </div>
-      <div class="w-full md:w-1/3 mx-4 md:mx-0 border border-blue rounded flex-shrink-0">
-        <div class="text-5xl justify-center items-center flex flex-col h-full italic text-blue">
+      <div class="w-full lg:w-1/3 px-8 lg:px-0 flex-shrink-0">
+        <div class="text-5xl justify-center items-center flex flex-col h-full italic text-blue border border-blue rounded">
           <div>
             {{block5Word1[locale]}}
           </div>
@@ -104,7 +100,7 @@
       </div>
     </div>
 
-    <div class="max-w-5xl m-auto flex flex-wrap px-4 mb-6">
+    <div class="max-w-5xl m-auto flex flex-wrap px-12 lg:px-4 mb-6">
       <div v-for="(events, location, i) in formattedEvents" :key="i" class="mb-2 w-full">
         <EventsAccordion :location="location" :events="events" />
       </div>
@@ -148,9 +144,9 @@ export default {
   data() {
     return {
       collabBlockTitleOddStyle: 'border-pink shadow-pink-side',
-      collabBlockTitleEvenStyle: 'border-aqua shadow-aqua-side order-first md:order-last',
+      collabBlockTitleEvenStyle: 'border-aqua shadow-aqua-side order-first lg:order-last',
       collabBlockTextOddStyle: 'text-pink',
-      collabBlockTextEvenStyle: 'text-aqua md:text-right',
+      collabBlockTextEvenStyle: 'text-aqua lg:text-right',
     }
   },
   computed: {

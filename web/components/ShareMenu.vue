@@ -51,12 +51,6 @@ export default {
       display: false
     }
   },
-  mounted() {
-    window.addEventListener('scroll', debounce(this.onScroll, 200, { 'maxWait': 300 }))
-  },
-  beforeDestroy() {
-    window.removeEventListener('scroll', this.onScroll);
-  },
   computed: {
     locale() { return this.$i18n.locale },
     baseUrl() { return process.env.BASE_URL },
@@ -66,7 +60,13 @@ export default {
     hashtags() { return this.shareMenu[`${this.locale}Hashtags`] && this.shareMenu[`${this.locale}Hashtags`].length
       ? this.shareMenu[`${this.locale}Hashtags`].join(',')
       : ''
-    },
+    }
+  },
+  mounted() {
+    window.addEventListener('scroll', debounce(this.onScroll, 200, { 'maxWait': 300 }))
+  },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.onScroll);
   },
   methods: {
     onScroll() {

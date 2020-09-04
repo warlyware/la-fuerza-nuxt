@@ -74,6 +74,9 @@ export default {
 </script>
 
 <style lang="scss">
+.vsa-heading {
+ @apply truncate;
+}
 .vsa-list {
   @apply max-w-full rounded border-pink;
 }
@@ -82,7 +85,13 @@ export default {
   @apply p-2 leading-5 text-blue;
 }
 .vsa-item__trigger__content {
-  @apply text-5xl uppercase;
+  @apply text-2xl uppercase truncate block;
 }
+@media (min-width: 1024px) {
+  .vsa-item__trigger__content {
+    @apply text-5xl py-3 uppercase truncate block;
+  }
+}
+
 
 </style>
