@@ -2,6 +2,10 @@
   <div class="w-full">
     <Hero :image="hero.image" :full-height="hero.fullHeight" :title="title[locale]"
     x-axis-location="start" class="mb-8" />
+    <div v-if="shareMenu"
+    class="h-screen fixed items-center top-0 left-0 -mt-16 z-10 pointer-events-none flex">
+      <SideShareMenu class="pointer-events-auto" :share-menu="shareMenu" :scroll-distance="600" />
+    </div>
     <div class="w-full flex flex-wrap mb-8">
       <div class="w-full md:w-1/2 my-1/2 md:pr-2">
         <youtube player-width="100%" player-height="100%"
@@ -14,7 +18,7 @@
         </div>
       </div>
     </div>
-    <div class="w-full bg-blue p-8 mb-8">
+    <div class="w-full bg-blue p-8 px-12 lg:px-8 mb-8">
       <div id="banner-1-text" class="w-full text-center text-2xl text-white font-bold mb-0">
         <BlockContent :blocks="this[`${locale}Banner1Text`]" />
       </div>
@@ -70,14 +74,14 @@
       </div>
     </div>
     <div class="max-w-5xl flex flex-wrap m-auto mb-12">
-      <div class="w-full md:w-1/2 p-4 px-8 bg-pink text-white text-center leading-5 flex flex-col justify-between">
+      <div class="w-full md:w-1/2 p-4 px-12 lg:px-8 bg-pink text-white text-center leading-5 flex flex-col justify-between">
         <BlockContent :blocks="this[`${locale}Block6Text`]" />
         <div class="w-full flex justify-center">
           <CustomButton :button="block6Button"
           class="mt-2 p-2 py-3 font-bold italic text-2xl text-white bg-aqua rounded-lg tracking-wide text-shadow-pink" />
         </div>
       </div>
-      <div class="w-full md:w-1/2 p-4 px-8 bg-aqua text-blue text-center leading-relaxed flex flex-col justify-between">
+      <div class="w-full md:w-1/2 p-4 px-12 lg:px-8 bg-aqua text-blue text-center leading-relaxed flex flex-col justify-between">
         <BlockContent :blocks="this[`${locale}Block7Text`]" />
         <div class="w-full flex justify-center">
           <CustomButton :button="block7Button"
@@ -86,7 +90,7 @@
       </div>
     </div>
 
-    <div class="w-full bg-blue p-8 mb-8 font-bold italic text-white text-center text-2xl tracking-wider">
+    <div class="w-full bg-blue p-8 px-12 lg:px-8 mb-8 font-bold italic text-white text-center text-2xl tracking-wider">
       {{banner2Text[locale]}}
     </div>
 
@@ -106,6 +110,7 @@ import CustomButton from '~/components/blocks/CustomButton'
 import BlockContent from 'sanity-blocks-vue-component'
 import groq from 'groq'
 import sanityClient from '~/sanityClient'
+import SideShareMenu from '~/components/SideShareMenu'
 import getYoutubeId from 'get-youtube-id'
 import Hero from '~/components/blocks/Hero'
 import Divider from '~/components/blocks/Divider'
@@ -126,7 +131,8 @@ export default {
     CustomButton,
     Divider,
     EventsAccordion,
-    Hero
+    Hero,
+    SideShareMenu
   },
   data() {
     return {

@@ -1,18 +1,16 @@
 <template>
   <div class="pt-8 mx-auto md:pt-32 mb-8 content w-full">
-    <div class="h-screen fixed flex items-center top-0 left-0 -mt-16 z-10 pointer-events-none">
-      <ShareMenu class="pointer-events-auto" :share-menu="shareMenu" />
-    </div>
     <LightBox ref="lightbox" :show-thumbs="false"
     :media="lightboxImages" :show-light-box="false" />
     <h1 class="font-bold text-4xl text-center max-w-2xl m-auto leading-10 mb-4">
       {{title[locale]}}
     </h1>
-    <div class="flex max-w-5xl m-auto px-8 lg:px-0 justify-center mb-4">
-      <p class="p-6 text-center w-full">
+    <div class="flex flex-wrap max-w-5xl m-auto px-8 lg:px-0 justify-center mb-4">
+      <p class="py-2 text-center w-full">
         <BlockContent v-if="this[`${locale}Description`]" :blocks="this[`${locale}Description`]" />
         {{author}} / {{illustrator}} / {{publisher}}
       </p>
+      <ShareMenu class="w-full flex justify-center" :share-menu="shareMenu" />
     </div>
     <div class="w-full max-w-5xl m-auto mb-8">
       <youtube player-width="100%" player-height="100%"

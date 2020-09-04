@@ -133,6 +133,11 @@ export default {
         type: 'reference',
         to: [{ type: 'event' }]
       }]
+    },
+    {
+      name: 'shareMenu',
+      type: 'shareMenu',
+      title: 'Social Media Share Menu'
     }
   ],
   preview: {

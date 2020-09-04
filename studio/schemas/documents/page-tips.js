@@ -18,6 +18,11 @@ export default {
       name: 'esBannerText',
       type: 'bodyPortableText',
       title: 'Banner Text [Spanish]'
+    },
+    {
+      name: 'shareMenu',
+      type: 'shareMenu',
+      title: 'Social Media Share Menu'
     }
   ],
   preview: {

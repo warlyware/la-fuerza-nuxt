@@ -4,7 +4,7 @@
     x-axis-location="start" class="mb-8" :class="hero.fullHeight ? '' : 'h-24 overflow-hidden'" />
     <div v-if="shareMenu"
     class="h-screen fixed items-center top-0 left-0 -mt-16 z-10 pointer-events-none flex">
-      <ShareMenu class="pointer-events-auto" :share-menu="shareMenu" :scroll-distance="400" />
+      <SideShareMenu class="pointer-events-auto" :share-menu="shareMenu" :scroll-distance="400" />
     </div>
     <div class="w-full flex flex-wrap mb-8">
       <div class="w-full lg:w-1/2 text-white leading-tight lg:pr-2 mb-2 lg:mb-0">
@@ -112,7 +112,7 @@
 
 <script>
 import CustomButton from '~/components/blocks/CustomButton'
-import ShareMenu from '~/components/ShareMenu'
+import SideShareMenu from '~/components/SideShareMenu'
 import BlockContent from 'sanity-blocks-vue-component'
 import SanityImage from '~/components/SanityImage'
 import groq from 'groq'
@@ -139,7 +139,7 @@ export default {
     NewsletterSubscription,
     EventsAccordion,
     SanityImage,
-    ShareMenu
+    SideShareMenu
   },
   data() {
     return {

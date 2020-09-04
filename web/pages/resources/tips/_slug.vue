@@ -4,6 +4,7 @@
     <h1 class="font-bold text-6xl text-center mb-0">
       {{title[locale]}}
     </h1>
+    <ShareMenu class="w-full flex justify-center" :share-menu="shareMenu" />
     <!-- Carousel -->
     <!-- <div class="w-full border border-blue flex items-center mb-16">
       <div class="w-1/4">
@@ -51,6 +52,8 @@ import imageUrlBuilder from '@sanity/image-url'
 import sanityClient from '~/sanityClient'
 const builder = imageUrlBuilder(sanityClient)
 import LightBox from 'vue-image-lightbox'
+import ShareMenu from '~/components/ShareMenu'
+
 
 const query1 = groq`
   *[_id == "page-resources"][0] {
@@ -79,7 +82,7 @@ const query2 = groq`
 `
 
 export default {
-  components: { BlockContent, LightBox },
+  components: { BlockContent, LightBox, ShareMenu },
   data() {
     return {
       currentImageIndex: 0,
