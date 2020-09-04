@@ -5,7 +5,7 @@
       class="px-4 mb-2 flex cursor-pointer"
       :class="i === currentIndex ? 'bg-gray' : 'bg-white'"
       @click="setCurrentIndex(i)">
-        <div class="flex flex-col justify-center w-4 flex-shrink-0 text-xs">
+        <div class="text-blue flex flex-col justify-center w-4 flex-shrink-0 text-xs">
           <span>
             {{ i + 1 }}
           </span>

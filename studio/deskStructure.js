@@ -54,6 +54,14 @@ export default () =>
         .schemaType('tip')
         .child(S.documentTypeList('tip').title('Tips')),
       S.listItem()
+        .title('Component: Navigation')
+        .child(
+          S.editor()
+            .id('navigation')
+            .schemaType('navigation')
+            .documentId('navigation')
+        ),
+      S.listItem()
         .title('Page: About')
         .child(
           S.editor()

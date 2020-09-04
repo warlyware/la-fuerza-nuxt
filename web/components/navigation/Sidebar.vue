@@ -13,41 +13,25 @@
 import { mapState } from 'vuex'
 
 export default {
+  props: {
+    navigation:{
+      type: Array,
+      required: true
+    }
+  },
   computed: {
-    menu() { return [
-      {
-        href: '/',
-        title: this.locale === 'en' ? 'HOME' : 'INCIO',
-        hiddenOnCollapse: true
-      },
-      {
-        href: '/videos',
-        title: this.locale === 'en' ? 'VIDEOS' : 'VIDEOS',
-        hiddenOnCollapse: true
-      },
-      {
-        href: '/resources',
-        title: this.locale === 'en' ? 'RESOURCES' : 'RECURSOS',
-        hiddenOnCollapse: true
-      },
-      {
-        href: '/workshops',
-        title: this.locale === 'en' ? 'WORKSHOPS' : 'TALLERES',
-        hiddenOnCollapse: true
-      },
-      {
-        href: '/collaborators',
-        title: this.locale === 'en' ? 'COLLABORATORS' : 'COLABORADORES',
-        hiddenOnCollapse: true
-      },
-      {
-        href: '/join',
-        title: this.locale === 'en' ? 'JOIN US' : 'ÚNETE',
-        hiddenOnCollapse: true
-      }
-    ]},
-    ...mapState([ 'navIsOpen' ]),
-    locale() { return this.$i18n.locale }
+    locale() { return this.$i18n.locale },
+    menu() {
+      return this.navigation.map(link => {
+        console.log({ link })
+        return {
+          href: link.internalLink,
+          title: link.text[this.locale],
+          hiddenOnCollapse: true
+        }
+      })
+    },
+    ...mapState([ 'navIsOpen' ])
   },
   methods: {
     handleToggleCollapse() {

@@ -3,17 +3,9 @@
     <div class="flex flex-wrap px-4 mx-auto justify-center">
       <div class="flex flex-wrap text-white justify-between w-full text-3xl">
         <div class="flex flex-col w-full md:w-auto px-4 italic mb-8 md:mb-0 font-italic text-4xl leading-tight">
-          <nuxt-link class="block self-start" to="/join">
-            {{ $t('join.title') }}
-          </nuxt-link>
-          <nuxt-link class="block self-start" to="/workshops">
-            {{ $t('workshops.title') }}
-          </nuxt-link>
-          <nuxt-link class="block self-start" to="/contact">
-            {{ $t('contact.title') }}
-          </nuxt-link>
-          <nuxt-link class="block self-start" to="/about">
-            {{ $t('about.title') }}
+          <nuxt-link v-for="navItem in navigation" :key="navItem.internalLink"
+          class="block self-start" :to="navItem.internalLink">
+            {{ navItem.text[locale] }}
           </nuxt-link>
         </div>
         <div class="flex flex-col w-full md:w-auto items-end justify-center md:justify-between px-4">
@@ -64,10 +56,23 @@
 <script>
 export default {
   props: {
-    title: {
-      type: String,
-      default: 'No title set'
+    navigation: {
+      type: Array,
+      required: true
     }
+  },
+  computed: {
+    locale() { return this.$i18n.locale },
+    menu() {
+      return this.navigation.map(link => {
+        console.log({ link })
+        return {
+          href: link.internalLink,
+          title: link.text[this.locale],
+          hiddenOnCollapse: true
+        }
+      })
+    },
   }
 }
 </script>

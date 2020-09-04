@@ -1,6 +1,6 @@
 export default {
-  name: 'button',
-  title: 'Button',
+  name: 'navigationItem',
+  title: 'Navigation Item',
   type: 'object',
   fields: [
     {
@@ -26,18 +26,6 @@ export default {
           { value: '/about', title: 'About' }
         ]
       }
-    },
-    {
-      name: 'externalLink',
-      type: 'string',
-      title: 'External Link',
-      description: 'Ignored if an Internal Page Link is selected'
-    },
-    {
-      name: 'newWindow',
-      type: 'boolean',
-      title: 'Open in New Window?',
-      description: 'Ignored if an Internal Page Link is selected'
     }
   ],
   preview: {

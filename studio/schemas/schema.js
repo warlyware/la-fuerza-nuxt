@@ -1,7 +1,4 @@
-// First, we must import the schema creator
 import createSchema from 'part:@sanity/base/schema-creator'
-
-// Then import schema types from any plugins that might expose them
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // document types
@@ -23,6 +20,7 @@ import playlist from './documents/playlist'
 import book from './documents/book'
 import event from './documents/event'
 import tip from './documents/tip'
+import navigation from './documents/navigation'
 
 // Object types
 import newsletterSubscription from './objects/newsletterSubscription'
@@ -36,6 +34,7 @@ import hero from './objects/hero'
 import ally from './objects/ally'
 import contact from './objects/contact'
 import button from './objects/button'
+import navigationItem from './objects/navigationItem'
 import joinBlock from './objects/joinBlock'
 import collaboratorBlock from './objects/collaboratorBlock'
 import workshopImageBlock from './objects/workshopImageBlock'
@@ -68,7 +67,7 @@ export default createSchema({
     tips,
     videos,
     workshops,
-    // navigation,
+    navigation,
 
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
@@ -95,6 +94,7 @@ export default createSchema({
     collaboratorBlock,
     workshopImageBlock,
     newsletterSubscription,
-    shareMenu
+    shareMenu,
+    navigationItem
   ])
 })

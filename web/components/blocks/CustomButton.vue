@@ -12,6 +12,8 @@
 </template>
 
 <script>
+import sanitizeLink from '~/lib/sanitizeLink'
+
 export default {
   props: {
     button: {
@@ -24,7 +26,7 @@ export default {
   },
   methods: {
     sanitizeLink(link) {
-      return `//${link.replace(/^(?:https?:\/\/)?(?:www\.)?/i, "").split('/')[0]}`;
+      return sanitizeLink(link)
     }
   }
 }
