@@ -9,7 +9,8 @@
       </p>
       <ul class="w-full flex flex-wrap m-auto">
         <li v-for="book in first4Books" :key="book._id"
-        class="flex w-full md:w-1/5" @click="$router.push(`/resources/books/${book.slug.current}`)">
+        class="flex w-full md:w-1/5"
+        @click="$router.push(localeRoute(`/resources/books/${book.slug.current}`))">
           <div class="list-content items-center my-2">
             <div :style="`background-image: url(${ getImageUrl(book[`${locale}Cover`]) })`"
             class="cursor-pointer bg-contain bg-no-repeat bg-center w-full h-96 md:h-48" />
@@ -17,7 +18,7 @@
         </li>
         <li class="w-full md:w-1/5 flex items-center justify-center md:justify-start flex-shrink">
           <div class="mt-4 md:mt-0 m-0 py-0 md:ml-4">
-            <nuxt-link to="/resources/books"
+            <nuxt-link :to="localePath('/resources/books')"
             class="bg-aqua text-white text-shadow-pink px-4 rounded-lg italic uppercase text-2xl md:text-lg">
               {{viewMore}}
             </nuxt-link>
@@ -39,38 +40,18 @@
           <div class="list-content items-center my-2">
             <div :style="`background-image: url(${ getImageUrl(tip.image) })`"
             class="cursor-pointer bg-contain bg-no-repeat bg-center w-full h-96 md:h-48"
-            @click="$router.push(`/resources/tips/${i}`)" />
+            @click="$router.push(localeRoute(`/resources/tips/${i}`))" />
           </div>
         </li>
         <li class="w-full md:w-1/5 flex items-center justify-center md:justify-start flex-shrink">
           <div class="mt-4 md:mt-0 m-0 py-0 md:ml-4">
-            <nuxt-link to="/resources/tips"
+            <nuxt-link :to="localePath('/resources/tips')"
             class="bg-aqua text-white text-shadow-pink px-4 rounded-lg italic uppercase text-2xl md:text-lg">
               {{viewMore}}
             </nuxt-link>
           </div>
         </li>
       </ul>
-
-      <div class="w-full flex flex-wrap">
-        <!-- <nuxt-link v-for="tip in first4Tips" :key="tip._id"
-        :to="`/resources/tips`"
-        class="p-2 w-full md:w-1/5 square-box">
-          <SanityImage
-          :image="tip.image"
-          :height="300"
-          fit="crop" class="square-content" />
-        </nuxt-link> -->
-        <!-- <div class="w-1/2 md:w-1/5">
-          <img class="p-2 cursor-pointer" src="//placehold.it/300" alt="">
-        </div>
-        <div class="w-1/2 md:w-1/5">
-          <img class="p-2 cursor-pointer" src="//placehold.it/300" alt="">
-        </div>
-        <div class="w-1/2 md:w-1/5">
-          <img class="p-2 cursor-pointer" src="//placehold.it/300" alt="">
-        </div> -->
-      </div>
     </div>
   </div>
 </template>

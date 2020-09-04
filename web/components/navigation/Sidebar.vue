@@ -26,7 +26,7 @@ export default {
       return this.navigation.map(link => {
         console.log({ link })
         return {
-          href: link.internalLink,
+          href: this.localePath(link.internalLink),
           title: link.text[this.locale],
           hiddenOnCollapse: true
         }

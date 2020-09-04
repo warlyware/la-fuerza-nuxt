@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link to="/">
+  <nuxt-link :to="localePath('/')">
     <b>{{ eventName }}</b>
   </nuxt-link>
 </template>

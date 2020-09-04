@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link :to="`/videos/${video.slug.current}`" class="h-full w-full px-4">
+  <nuxt-link :to="localePath(`/videos/${video.slug.current}`)" class="h-full w-full px-4">
     <div class="bg-contain bg-center bg-no-repeat h-90 mb-4 min-h-150 max-w-sm"
     :style="`background-image: url(${getVideoImage(video.url)})`" />
     <div class="text-lg text-center">

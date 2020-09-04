@@ -4,7 +4,7 @@
       <div class="flex flex-wrap text-white justify-between w-full text-3xl">
         <div class="flex flex-col w-full md:w-auto px-4 italic mb-8 md:mb-0 font-italic text-4xl leading-tight uppercase">
           <nuxt-link v-for="navItem in navigation" :key="navItem.internalLink"
-          class="block self-start" :to="navItem.internalLink">
+          class="block self-start" :to="localePath(navItem.internalLink)">
             {{ navItem.text[locale] }}
           </nuxt-link>
         </div>
@@ -42,8 +42,8 @@
           </div>
         </div>
         <div class="flex flex-wrap justify-center w-full text-sm text-white pt-6 italic">
-          <nuxt-link class="px-2 inline-block" to="/privacy">PRIVACY POLICY</nuxt-link>
-          <nuxt-link class="px-2 inline-block" to="/disclaimer">DISCLAIMER</nuxt-link>
+          <nuxt-link class="px-2 inline-block" :to="localePath('/privacy')">PRIVACY POLICY</nuxt-link>
+          <nuxt-link class="px-2 inline-block" :to="localePath('/disclaimer')">DISCLAIMER</nuxt-link>
           <span class="inline-block px-2 uppercase">
             © 2020. All rights reserved.
           </span>

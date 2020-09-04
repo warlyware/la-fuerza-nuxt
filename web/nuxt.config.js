@@ -65,7 +65,12 @@ export default {
       'nuxt-i18n',
       {
         locale: 'es',
-        fallbackLocale: 'es',
+        beforeLanguageSwitch: (oldLocale, newLocale) => {
+          console.log({ oldLocale, newLocale })
+        },
+        vueI18n: {
+          fallbackLocale: 'es'
+        },
         locales: [
           {
             code: 'en',
@@ -80,7 +85,7 @@ export default {
             name: 'Spanish'
           }
         ],
-        strategy: 'no_prefix',
+        strategy: 'prefix_except_default',
         defaultLocale: 'es',
         lazy: true,
         langDir: 'lang/',

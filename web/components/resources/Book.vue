@@ -1,13 +1,13 @@
 <template>
   <div class="w-full lg:w-1/2 flex cursor-pointer">
-    <nuxt-link :to="`/resources/books/${book.slug.current}`"
+    <nuxt-link :to="localePath(`/resources/books/${book.slug.current}`)"
     class="p-2 w-32 flex-shrink-0">
       <SanityImage
       :image="book[`${locale}Cover`]"
       :height="400"
       fit="crop" />
     </nuxt-link>
-    <nuxt-link :to="`/resources/books/${book.slug.current}`"
+    <nuxt-link :to="localePath(`/resources/books/${book.slug.current}`)"
     class="flex flex-col h-full p-2 justify-start">
       <h2 class="text-2xl font-bold mb-2 line-clamp overflow-hidden">
         {{book.title[locale]}}
@@ -16,8 +16,7 @@
         by {{book.author}}
       </div>
       <div class="w-full">
-        <button class="bg-aqua text-white text-shadow-pink px-2 py-0 rounded uppercase text-sm italic"
-        @click="$router.push('')">
+        <button class="bg-aqua text-white text-shadow-pink px-2 py-0 rounded uppercase text-sm italic">
           {{readMore}}
         </button>
       </div>

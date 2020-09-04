@@ -1,7 +1,7 @@
 <template>
   <div class="uppercase">
     <nuxt-link v-if="button.internalLink && button.internalLink.length"
-    :to="button.internalLink">
+    :to="localePath(button.internalLink)">
       {{button.text[locale]}}
     </nuxt-link>
     <a v-else :href="sanitizeLink(button.externalLink)"
