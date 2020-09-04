@@ -3,7 +3,7 @@
     <Header />
     <Sidebar :navigation="mainNavigation" />
     <nuxt class="pt-24 md:pt-32 mb-8" />
-    <Footer :navigation="footerNavigation" />
+    <Footer :navigation="footerNavigation" :social-media-links="socialMediaLinks" />
   </div>
 </template>
 
@@ -15,7 +15,7 @@ import groq from 'groq'
 import sanityClient from '~/sanityClient'
 
 const query = groq`
-  *[_id == "navigation"][0] {
+  *[_id == "settings"][0] {
     ...
   }
 `
@@ -29,17 +29,31 @@ export default {
   data() {
     return {
       mainNavigation: [],
-      footerNavigation: []
+      footerNavigation: [],
+      facebookUrl: '',
+      instagramUrl: '',
+      twitterUrl: '',
+      youtubeUrl: '',
     }
   },
   computed: {
     locale() { return this.$i18n.locale },
+    socialMediaLinks() { return {
+      facebookUrl: this.facebookUrl,
+      instagramUrl: this.instagramUrl,
+      twitterUrl: this.twitterUrl,
+      youtubeUrl: this.youtubeUrl,
+    }}
   },
   async fetch() {
-    const { mainNavigation, footerNavigation } = await sanityClient.fetch(query)
-    console.log({  mainNavigation, footerNavigation  })
-    this.mainNavigation = mainNavigation
-    this.footerNavigation = footerNavigation
+    const data = await sanityClient.fetch(query)
+    console.log(this)
+    this.mainNavigation = data.mainNavigation
+    this.footerNavigation = data.footerNavigation
+    this.facebookUrl = data.facebookUrl
+    this.instagramUrl = data.instagramUrl
+    this.twitterUrl = data.twitterUrl
+    this.youtubeUrl = data.youtubeUrl
   }
 }
 </script>

@@ -42,7 +42,7 @@ export default {
       name: 'venue',
       type: 'string',
       title: 'Venue',
-      description: 'Enter the venue. Not required if event is online only.'
+      description: 'If online write Online'
     },
     {
       name: 'enDescription',

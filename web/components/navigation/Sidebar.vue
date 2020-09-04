@@ -1,6 +1,7 @@
 <template>
   <sidebar-menu :menu="menu" width="300px" theme="white-theme"
   width-collapsed="0" :collapsed="!navIsOpen" :rtl="true"
+  class="uppercase"
   :disable-hover="true" :class="navIsOpen ? '' : '-mr-4'"
   @toggle-collapse="handleToggleCollapse"
   @item-click="handleItemClicked">

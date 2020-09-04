@@ -15,11 +15,9 @@
       </div>
     </div>
     <div class="w-full bg-blue p-8 mb-8">
-      <p class="w-full text-center text-2xl text-white font-bold mb-0">
-        {{banner1Text[locale]}}
-        <nuxt-link to="/workshops" class="">
-          {{banner1LinkText[locale]}}</nuxt-link>.
-      </p>
+      <div id="banner-1-text" class="w-full text-center text-2xl text-white font-bold mb-0">
+        <BlockContent :blocks="this[`${locale}Banner1Text`]" />
+      </div>
     </div>
     <div class="max-w-3xl m-auto flex flex-wrap px-8 md:px-16 text-xl mb-12 tracking-wide">
       <div class="p-4 w-full md:w-1/2">
@@ -180,7 +178,11 @@ export default {
 a {
   @apply text-pink italic;
 }
-.font-bold .italic p {
-  @apply font-bold italic;
+#banner-1-text .font-bold, #banner-1-text .italic {
+  @apply text-pink font-bold italic;
+}
+
+#banner-1-text a {
+  @apply text-pink italic;
 }
 </style>

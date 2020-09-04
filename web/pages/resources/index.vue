@@ -4,7 +4,7 @@
       <h2 class="w-full mb-0 font-bold leading-tight">
         {{bookSectionTitle[locale]}}
       </h2>
-      <p class="italic">
+      <p class="italic -mb-4">
         {{bookSectionDescription[locale]}}
       </p>
       <ul class="w-full flex flex-wrap m-auto">
@@ -25,11 +25,11 @@
         </li>
       </ul>
     </div>
-    <div class="flex flex-wrap w-full mb-8">
+    <div class="flex flex-wrap w-full">
       <h2 class="w-full mb-0 font-bold leading-tight">
         {{tipSectionTitle[locale]}}
       </h2>
-      <p class="italic">
+      <p class="italic -mb-4">
         {{tipSectionDescription[locale]}}
       </p>
 

@@ -20,7 +20,7 @@ import playlist from './documents/playlist'
 import book from './documents/book'
 import event from './documents/event'
 import tip from './documents/tip'
-import navigation from './documents/navigation'
+import settings from './documents/settings'
 
 // Object types
 import newsletterSubscription from './objects/newsletterSubscription'
@@ -67,7 +67,7 @@ export default createSchema({
     tips,
     videos,
     workshops,
-    navigation,
+    settings,
 
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas

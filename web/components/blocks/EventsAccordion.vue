@@ -10,18 +10,27 @@
           <div v-for="event in events" :key="event._id"
           class="text-xl leading-7 w-full lg:w-1/2 my-2 lg:my-0">
             <div class="flex flex-col border border-blue rounded p-4 mx-2 h-full text-blue">
-              <div class="font-normal not-italic mb-2">
+              <div class="font-bold not-italic mb-2">
                 {{event.name[locale]}}
               </div>
-              <div>
+              <div class="mb-2">
                 {{ $moment(event.startDate).format('MMMM Do') }} -
                 {{ $moment(event.endDate).format('MMMM Do') }}
               </div>
               <div class="text-base">
-                {{event.venue}}
+                <span class="font-bold">
+                  Partner:
+                </span> {{event.partnerName}}
+              </div>
+              <div class="text-base">
+                <span class="font-bold">
+                  Location:
+                </span> {{event.venue}}
               </div>
               <div class="mb-2 text-base">
-                Price: {{ event.price === '0' ? 'Free' : `$${event.price}`}}
+                <span class="font-bold">
+                  Price:
+                </span> {{ event.price === 0 ? 'FREE' : `$${event.price}`}}
               </div>
               <hr class="inline-block mb-2" />
               <div class="font-normal text-base flex-1 mb-2">

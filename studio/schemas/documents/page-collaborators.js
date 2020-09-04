@@ -29,15 +29,16 @@ export default {
       type: 'bodyPortableText',
       title: 'Block 1 Text [Spanish]'
     },
+
     {
-      name: 'banner1Text',
-      type: 'localeString',
-      title: 'Banner 1 Text'
+      name: 'enBanner1Text',
+      type: 'bodyPortableText',
+      title: 'Banner 1 Text [English]'
     },
     {
-      name: 'banner1LinkText',
-      type: 'localeString',
-      title: 'Banner 1 Link Text'
+      name: 'esBanner1Text',
+      type: 'bodyPortableText',
+      title: 'Banner 1 Text [Spanish]'
     },
     {
       name: 'enBlock2Text',

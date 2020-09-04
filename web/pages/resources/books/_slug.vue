@@ -1,7 +1,6 @@
 <template>
   <div class="pt-8 mx-auto md:pt-32 mb-8 content w-full">
     <div class="h-screen fixed flex items-center top-0 left-0 -mt-16 z-10 pointer-events-none">
-      <!-- {{shareMenu}} -->
       <ShareMenu class="pointer-events-auto" :share-menu="shareMenu" />
     </div>
     <LightBox ref="lightbox" :show-thumbs="false"
@@ -10,33 +9,23 @@
       {{title[locale]}}
     </h1>
     <div class="flex max-w-5xl m-auto px-8 lg:px-0 justify-center mb-4">
-      <p class="p-6 text-center w-full text-sm">
+      <p class="p-6 text-center w-full">
         <BlockContent v-if="this[`${locale}Description`]" :blocks="this[`${locale}Description`]" />
         {{author}} / {{illustrator}} / {{publisher}}
       </p>
     </div>
-    <div class="w-full max-w-5xl m-auto mb-4">
+    <div class="w-full max-w-5xl m-auto mb-8">
       <youtube player-width="100%" player-height="100%"
       class="video-responsive flex-grow"
       :video-id="getYoutubeId(videoUrl)"  />
     </div>
-    <div class="w-full max-w-5xl m-auto flex flex-wrap mb-8">
-      <div class="w-full md:w-1/2 flex justify-center md:justify-start h-64 mb-2 mb:mb-0 md:h-image cursor-pointer"
-      @click="showImage(0)">
-        <SanityImageResponsive
-        class="w-full bg-blue flex justify-center items-center md:mr-2"
-        :image="image1"
-        :width="400"
-        fit="crop" />
-      </div>
-      <div class="w-full md:w-1/2 flex justify-center md:justify-start h-64 md:h-image cursor-pointer"
-      @click="showImage(1)">
-        <SanityImageResponsive
-        class="w-full bg-blue flex justify-center items-center md:ml-2"
-        :image="image2"
-        :width="400"
-        fit="crop" />
-      </div>
+    <div class="w-full max-w-xl m-auto flex flex-wrap mb-8 cursor-pointer"
+    @click="showImage(0)">
+      <SanityImage
+      class="w-full bg-blue flex-shrink-0 justify-center items-center"
+      :image="image1"
+      :width="400"
+      fit="crop" />
     </div>
     <div class="w-full max-w-3xl m-auto flex flex-wrap justify-center px-8 md:px-4 lg:px-0">
       <BlockContent v-if="this[`${locale}Excerpt`]" :blocks="this[`${locale}Excerpt`]" />
@@ -50,7 +39,7 @@ import sanityClient from '~/sanityClient'
 const builder = imageUrlBuilder(sanityClient)
 import LightBox from 'vue-image-lightbox'
 import ShareMenu from '~/components/ShareMenu'
-import SanityImageResponsive from '~/components/SanityImageResponsive'
+import SanityImage from '~/components/SanityImage'
 import getYoutubeId from 'get-youtube-id'
 import BlockContent from 'sanity-blocks-vue-component'
 import groq from 'groq'
@@ -63,7 +52,7 @@ export default {
   components: {
     BlockContent,
     LightBox,
-    SanityImageResponsive,
+    SanityImage,
     ShareMenu
   },
   computed: {

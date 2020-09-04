@@ -3,6 +3,7 @@ import MdBook from 'react-icons/lib/md/book'
 import MdTip from 'react-icons/lib/md/thumb-up'
 import MdPlaylist from 'react-icons/lib/md/playlist-play'
 import MdEvent from 'react-icons/lib/md/event-note'
+import MdGear from 'react-icons/lib/md/settings'
 // import MdWarning from 'react-icons/lib/md/warning'
 // import MdInfo from 'react-icons/lib/md/info-outline'
 
@@ -26,7 +27,7 @@ const hiddenDocTypes = listItem =>
     'page-tips',
     'page-videos',
     'page-workshops',
-    'navigation'
+    'settings'
   ].includes(listItem.getId())
 
 export default () =>
@@ -54,12 +55,13 @@ export default () =>
         .schemaType('tip')
         .child(S.documentTypeList('tip').title('Tips')),
       S.listItem()
-        .title('Component: Navigation')
+        .title('Settings')
+        .icon(MdGear)
         .child(
           S.editor()
-            .id('navigation')
-            .schemaType('navigation')
-            .documentId('navigation')
+            .id('settings')
+            .schemaType('settings')
+            .documentId('settings')
         ),
       S.listItem()
         .title('Page: About')
