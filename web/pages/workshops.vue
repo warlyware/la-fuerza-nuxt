@@ -3,9 +3,13 @@
     <Hero :image="hero.image" :full-height="hero.fullHeight" :title="title[locale]" :bg-color="hero.bgColor"
     x-axis-location="start" class="mb-8" :class="hero.fullHeight ? '' : 'h-24 overflow-hidden'" />
     <div v-if="shareMenu"
-    class="h-screen fixed flex items-center top-0 left-0 -mt-16 z-10 pointer-events-none">
-      <ShareMenu class="pointer-events-auto" :share-menu="shareMenu" />
+    class="h-screen fixed items-center top-0 left-0 -mt-16 z-10 pointer-events-none hidden md:flex">
+      <ShareMenu class="pointer-events-auto" :share-menu="shareMenu" :scroll-distance="400" />
     </div>
+    <!-- <div v-if="shareMenu"
+    class="h-screen fixed flex items-center top-0 left-0 -mt-16 z-10 pointer-events-none md:hidden">
+      <ShareMenu class="pointer-events-auto" :share-menu="shareMenu" />
+    </div> -->
     <div class="w-full flex flex-wrap mb-8">
       <div class="w-full lg:w-1/2 text-white leading-tight lg:pr-2 mb-2 lg:mb-0">
         <div id="block1" class="text-lg xl:text-2xl font-bold p-8 bg-blue h-full flex justify-center items-center">

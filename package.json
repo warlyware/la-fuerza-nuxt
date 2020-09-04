@@ -24,6 +24,7 @@
     "base-64": "^0.1.0",
     "concurrently": "^5.3.0",
     "dot-prop": "^5.1.1",
+    "lodash.debounce": "^4.0.8",
     "node-constantcontact": "^1.0.0",
     "nuxt-i18n": "^6.13.9",
     "oauth": "^0.9.15",
@@ -32,6 +33,7 @@
     "vue-screen-size": "^1.0.1",
     "vue-simple-accordion": "0.0.5",
     "vue-template-compiler": "^2.6.11",
+    "vue2-scrollspy": "^2.3.1",
     "youtube-playlist": "^1.0.4"
   }
 }

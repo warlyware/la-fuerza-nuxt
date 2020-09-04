@@ -1,5 +1,6 @@
 <template>
-  <div>
+<transition name="fade">
+  <div v-if="display">
     <ShareNetwork network="facebook" :url="`${baseUrl}${this.$route.fullPath}`"
     :title="title"
     :description="description"
@@ -28,15 +29,33 @@
       </div>
     </ShareNetwork>
   </div>
+</transition>
 </template>
 
 <script>
+import debounce from 'lodash.debounce'
+
 export default {
   props: {
     shareMenu: {
       required: true,
       type: Object
+    },
+    scrollDistance: {
+      type: Number,
+      default: 0
     }
+  },
+  data() {
+    return {
+      display: false
+    }
+  },
+  mounted() {
+    window.addEventListener('scroll', debounce(this.onScroll, 200, { 'maxWait': 300 }))
+  },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.onScroll);
   },
   computed: {
     locale() { return this.$i18n.locale },
@@ -48,6 +67,15 @@ export default {
       ? this.shareMenu[`${this.locale}Hashtags`].join(',')
       : ''
     },
+  },
+  methods: {
+    onScroll() {
+      if(window.scrollY > this.scrollDistance) {
+        this.display = true
+      } else {
+        this.display = false
+      }
+    }
   }
 }
 </script>
@@ -56,5 +84,11 @@ export default {
   .top-50 {
     top: 50%;
     left: 50%;
+  }
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .3s;
+  }
+  .fade-enter, .fade-leave-to {
+    opacity: 0;
   }
 </style>
