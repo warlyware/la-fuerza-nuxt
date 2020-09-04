@@ -1,35 +1,35 @@
 <template>
-<transition name="fade">
-  <div v-if="display">
-    <ShareNetwork network="facebook" :url="`${baseUrl}${this.$route.fullPath}`"
-    :title="title"
-    :description="description"
-    :quote="quote"
-    :hashtags="hashtags">
-      <div class="cursor-pointer p-2 bg-blue">
-        <img src="/images/facebook-logo.svg" alt="" class="h-8 w-8">
-      </div>
-    </ShareNetwork>
-    <ShareNetwork network="twitter" :url="`${baseUrl}${this.$route.fullPath}`"
-    :title="title"
-    :description="description"
-    :quote="quote"
-    :hashtags="hashtags">
-      <div class="cursor-pointer p-2 bg-blue">
-        <img src="/images/twitter-logo.svg" alt="" class="h-8 w-8">
-      </div>
-    </ShareNetwork>
-    <ShareNetwork network="whatsapp" :url="`${baseUrl}${this.$route.fullPath}`"
-    :title="title"
-    :description="description"
-    :quote="quote"
-    :hashtags="hashtags">
-      <div class="cursor-pointer p-2 bg-blue">
-        <img src="/images/whatsapp-logo-bw.svg" alt="" class="h-8 w-8">
-      </div>
-    </ShareNetwork>
-  </div>
-</transition>
+  <transition name="fade">
+    <div v-if="display">
+      <ShareNetwork network="facebook" :url="`${baseUrl}${this.$route.fullPath}`"
+      :title="title"
+      :description="description"
+      :quote="quote"
+      :hashtags="hashtags">
+        <div class="cursor-pointer p-2 bg-blue">
+          <img src="/images/facebook-logo.svg" alt="" class="h-8 w-8">
+        </div>
+      </ShareNetwork>
+      <ShareNetwork network="twitter" :url="`${baseUrl}${this.$route.fullPath}`"
+      :title="title"
+      :description="description"
+      :quote="quote"
+      :hashtags="hashtags">
+        <div class="cursor-pointer p-2 bg-blue">
+          <img src="/images/twitter-logo.svg" alt="" class="h-8 w-8">
+        </div>
+      </ShareNetwork>
+      <ShareNetwork network="whatsapp" :url="`${baseUrl}${this.$route.fullPath}`"
+      :title="title"
+      :description="description"
+      :quote="quote"
+      :hashtags="hashtags">
+        <div class="cursor-pointer p-2 bg-blue">
+          <img src="/images/whatsapp-logo-bw.svg" alt="" class="h-8 w-8">
+        </div>
+      </ShareNetwork>
+    </div>
+  </transition>
 </template>
 
 <script>
