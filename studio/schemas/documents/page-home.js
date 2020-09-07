@@ -14,8 +14,8 @@ export default {
       name: 'block1Text',
       type: 'localeString',
       title: 'Block 1 Text',
-      validation: Rule => Rule.custom(({ en, es }) => {
-        if (en && en.length && es && es.length) {
+      validation: Rule => Rule.custom(text => {
+        if (text.en && text.en.length && text.es && text.es.length) {
           return true
         }
         return 'English and Spanish translations required.'
@@ -25,8 +25,8 @@ export default {
       name: 'block2Title',
       type: 'localeString',
       title: 'Block 2: Title',
-      validation: Rule => Rule.custom(({ en, es }) => {
-        if (en && en.length && es && es.length) {
+      validation: Rule => Rule.custom(text => {
+        if (text.en && text.en.length && text.es && text.es.length) {
           return true
         }
         return 'English and Spanish translations required.'
@@ -60,8 +60,8 @@ export default {
       name: 'block2Button1Text',
       type: 'localeString',
       title: 'Block 2: Button 1 text',
-      validation: Rule => Rule.custom(({ en, es }) => {
-        if (en && en.length && es && es.length) {
+      validation: Rule => Rule.custom(text => {
+        if (text.en && text.en.length && text.es && text.es.length) {
           return true
         }
         return 'English and Spanish translations required.'
@@ -71,8 +71,8 @@ export default {
       name: 'block2Button2Text',
       type: 'localeString',
       title: 'Block 2: Button 2 text',
-      validation: Rule => Rule.custom(({ en, es }) => {
-        if (en && en.length && es && es.length) {
+      validation: Rule => Rule.custom(text => {
+        if (text.en && text.en.length && text.es && text.es.length) {
           return true
         }
         return 'English and Spanish translations required.'
@@ -82,8 +82,8 @@ export default {
       name: 'block2Button3Text',
       type: 'localeString',
       title: 'Block 2: Button 3 text',
-      validation: Rule => Rule.custom(({ en, es }) => {
-        if (en && en.length && es && es.length) {
+      validation: Rule => Rule.custom(text => {
+        if (text.en && text.en.length && text.es && text.es.length) {
           return true
         }
         return 'English and Spanish translations required.'
@@ -93,8 +93,8 @@ export default {
       name: 'block2Button4Text',
       type: 'localeString',
       title: 'Block 2: Button 4 text',
-      validation: Rule => Rule.custom(({ en, es }) => {
-        if (en && en.length && es && es.length) {
+      validation: Rule => Rule.custom(text => {
+        if (text.en && text.en.length && text.es && text.es.length) {
           return true
         }
         return 'English and Spanish translations required.'
@@ -104,8 +104,8 @@ export default {
       name: 'block3Text',
       type: 'localeString',
       title: 'Block 3: Text',
-      validation: Rule => Rule.custom(({ en, es }) => {
-        if (en && en.length && es && es.length) {
+      validation: Rule => Rule.custom(text => {
+        if (text.en && text.en.length && text.es && text.es.length) {
           return true
         }
         return 'English and Spanish translations required.'

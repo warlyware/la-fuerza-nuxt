@@ -8,8 +8,8 @@ export default {
       name: 'title',
       type: 'localeString',
       title: 'Title',
-      validation: Rule => Rule.custom(({ en, es }) => {
-        if (en && en.length && es && es.length) {
+      validation: Rule => Rule.custom(text => {
+        if (text.en && text.en.length && text.es && text.es.length) {
           return true
         }
         return 'English and Spanish translations required.'
@@ -39,8 +39,8 @@ export default {
       name: 'ourAlliesTitle',
       type: 'localeString',
       title: 'Title: Our Allies section',
-      validation: Rule => Rule.custom(({ en, es }) => {
-        if (en && en.length && es && es.length) {
+      validation: Rule => Rule.custom(text => {
+        if (text.en && text.en.length && text.es && text.es.length) {
           return true
         }
         return 'English and Spanish translations required.'
@@ -64,8 +64,8 @@ export default {
       name: 'block1Text',
       type: 'localeString',
       title: 'Block 1 text',
-      validation: Rule => Rule.custom(({ en, es }) => {
-        if (en && en.length && es && es.length) {
+      validation: Rule => Rule.custom(text => {
+        if (text.en && text.en.length && text.es && text.es.length) {
           return true
         }
         return 'English and Spanish translations required.'

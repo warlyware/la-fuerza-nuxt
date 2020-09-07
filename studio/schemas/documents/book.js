@@ -10,8 +10,8 @@ export default {
       name: 'title',
       type: 'localeString',
       title: 'Title',
-      validation: Rule => Rule.custom(({ en, es }) => {
-        if (en && en.length && es && es.length) {
+      validation: Rule => Rule.custom(text => {
+        if (text.en && text.en.length && text.es && text.es.length) {
           return true
         }
         return 'English and Spanish translations required.'
@@ -62,8 +62,7 @@ export default {
       name: 'image2',
       type: 'image',
       title: 'Image 2',
-      options: { hotspot: true },
-      validation: Rule => Rule.required()
+      options: { hotspot: true }
     },
     {
       name: 'enDescription',

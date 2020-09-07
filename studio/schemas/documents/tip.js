@@ -23,8 +23,8 @@ export default {
       name: 'caption',
       type: 'localeString',
       title: 'Caption',
-      validation: Rule => Rule.custom(({ en, es }) => {
-        if (en && en.length && es && es.length) {
+      validation: Rule => Rule.custom(text => {
+        if (text.en && text.en.length && text.es && text.es.length) {
           return true
         }
         return 'English and Spanish translations required.'

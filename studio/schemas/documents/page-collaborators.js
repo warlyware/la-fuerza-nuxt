@@ -8,8 +8,8 @@ export default {
       name: 'title',
       type: 'localeString',
       title: 'Title',
-      validation: Rule => Rule.custom(({ en, es }) => {
-        if (en && en.length && es && es.length) {
+      validation: Rule => Rule.custom(text => {
+        if (text.en && text.en.length && text.es && text.es.length) {
           return true
         }
         return 'English and Spanish translations required.'
@@ -79,8 +79,8 @@ export default {
       name: 'collaboratorsSectionTitle',
       type: 'localeString',
       title: 'How To Collaborate Section Title',
-      validation: Rule => Rule.custom(({ en, es }) => {
-        if (en && en.length && es && es.length) {
+      validation: Rule => Rule.custom(text => {
+        if (text.en && text.en.length && text.es && text.es.length) {
           return true
         }
         return 'English and Spanish translations required.'
@@ -95,8 +95,8 @@ export default {
       name: 'block4Text',
       type: 'localeString',
       title: 'Block 4 Text',
-      validation: Rule => Rule.custom(({ en, es }) => {
-        if (en && en.length && es && es.length) {
+      validation: Rule => Rule.custom(text => {
+        if (text.en && text.en.length && text.es && text.es.length) {
           return true
         }
         return 'English and Spanish translations required.'
@@ -160,8 +160,8 @@ export default {
       name: 'banner2Text',
       type: 'localeString',
       title: 'Banner 2 Text',
-      validation: Rule => Rule.custom(({ en, es }) => {
-        if (en && en.length && es && es.length) {
+      validation: Rule => Rule.custom(text => {
+        if (text.en && text.en.length && text.es && text.es.length) {
           return true
         }
         return 'English and Spanish translations required.'

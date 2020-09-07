@@ -23,7 +23,8 @@
       class="video-responsive flex-grow"
       :video-id="getYoutubeId(videoUrl)"  />
     </div>
-    <div class="w-full max-w-xl m-auto flex flex-wrap mb-8 cursor-pointer"
+    <div v-if="image1"
+    class="w-full max-w-xl m-auto flex flex-wrap mb-8 cursor-pointer"
     @click="showImage(0)">
       <SanityImage
       class="w-full bg-blue flex-shrink-0 justify-center items-center"

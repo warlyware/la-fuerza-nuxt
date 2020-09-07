@@ -8,8 +8,8 @@ export default {
       name: 'title',
       type: 'localeString',
       title: 'Title',
-      validation: Rule => Rule.custom(({ en, es }) => {
-        if (en && en.length && es && es.length) {
+      validation: Rule => Rule.custom(text => {
+        if (text.en && text.en.length && text.es && text.es.length) {
           return true
         }
         return 'English and Spanish translations required.'
@@ -19,13 +19,13 @@ export default {
       name: 'enBannerText',
       type: 'bodyPortableText',
       title: 'Banner Text [English]',
-      validation: Rule => Rule.required()
+      description: 'Leave blank to hide banner.'
     },
     {
       name: 'esBannerText',
       type: 'bodyPortableText',
       title: 'Banner Text [Spanish]',
-      validation: Rule => Rule.required()
+      description: 'Leave blank to hide banner.'
     },
     {
       name: 'shareMenu',

@@ -8,8 +8,8 @@ export default {
       name: 'bookSectionTitle',
       type: 'localeString',
       title: 'Book Section title',
-      validation: Rule => Rule.custom(({ en, es }) => {
-        if (en && en.length && es && es.length) {
+      validation: Rule => Rule.custom(text => {
+        if (text.en && text.en.length && text.es && text.es.length) {
           return true
         }
         return 'English and Spanish translations required.'
@@ -19,8 +19,8 @@ export default {
       name: 'bookSectionDescription',
       type: 'localeString',
       title: 'Book Section description',
-      validation: Rule => Rule.custom(({ en, es }) => {
-        if (en && en.length && es && es.length) {
+      validation: Rule => Rule.custom(text => {
+        if (text.en && text.en.length && text.es && text.es.length) {
           return true
         }
         return 'English and Spanish translations required.'
@@ -39,8 +39,8 @@ export default {
       name: 'tipSectionTitle',
       type: 'localeString',
       title: 'Tip Section title',
-      validation: Rule => Rule.custom(({ en, es }) => {
-        if (en && en.length && es && es.length) {
+      validation: Rule => Rule.custom(text => {
+        if (text.en && text.en.length && text.es && text.es.length) {
           return true
         }
         return 'English and Spanish translations required.'
@@ -50,8 +50,8 @@ export default {
       name: 'tipSectionDescription',
       type: 'localeString',
       title: 'Tip Section description',
-      validation: Rule => Rule.custom(({ en, es }) => {
-        if (en && en.length && es && es.length) {
+      validation: Rule => Rule.custom(text => {
+        if (text.en && text.en.length && text.es && text.es.length) {
           return true
         }
         return 'English and Spanish translations required.'
