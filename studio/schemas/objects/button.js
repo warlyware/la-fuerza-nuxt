@@ -6,7 +6,13 @@ export default {
     {
       name: 'text',
       type: 'localeString',
-      title: 'Button Text'
+      title: 'Button Text',
+      validation: Rule => Rule.custom(({ en, es }) => {
+        if (en && en.length && es && es.length) {
+          return true
+        }
+        return 'English and Spanish translations required.'
+      })
     },
     {
       name: 'internalLink',

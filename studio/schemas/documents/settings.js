@@ -6,32 +6,38 @@ export default {
     {
       name: 'mainNavigation',
       type: 'array',
-      of: [{ type: 'navigationItem' }]
+      of: [{ type: 'navigationItem' }],
+      validation: Rule => Rule.required()
     },
     {
       name: 'footerNavigation',
       type: 'array',
-      of: [{ type: 'navigationItem' }]
+      of: [{ type: 'navigationItem' }],
+      validation: Rule => Rule.required()
     },
     {
       title: 'Social Media Link: Facebook',
       name: 'facebookUrl',
-      type: 'string'
+      type: 'string',
+      validation: Rule => Rule.required()
     },
     {
       title: 'Social Media Link: Instagram',
       name: 'instagramUrl',
-      type: 'string'
+      type: 'string',
+      validation: Rule => Rule.required()
     },
     {
       title: 'Social Media Link: Twitter',
       name: 'twitterUrl',
-      type: 'string'
+      type: 'string',
+      validation: Rule => Rule.required()
     },
     {
       title: 'Social Media Link: Youtube',
       name: 'youtubeUrl',
-      type: 'string'
+      type: 'string',
+      validation: Rule => Rule.required()
     }
   ],
   preview: {

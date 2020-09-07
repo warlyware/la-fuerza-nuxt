@@ -9,18 +9,26 @@ export default {
     {
       title: 'Name',
       name: 'name',
-      type: 'string'
+      type: 'string',
+      validation: Rule => Rule.required()
     },
     {
       title: 'Image',
       name: 'image',
       type: 'image',
-      options: { hotspot: true }
+      options: { hotspot: true },
+      validation: Rule => Rule.required()
     },
     {
       name: 'caption',
       type: 'localeString',
-      title: 'Caption'
+      title: 'Caption',
+      validation: Rule => Rule.custom(({ en, es }) => {
+        if (en && en.length && es && es.length) {
+          return true
+        }
+        return 'English and Spanish translations required.'
+      })
     }
   ],
   preview: {

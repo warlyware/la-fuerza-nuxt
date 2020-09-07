@@ -7,12 +7,24 @@ export default {
     {
       name: 'bookSectionTitle',
       type: 'localeString',
-      title: 'Book Section title'
+      title: 'Book Section title',
+      validation: Rule => Rule.custom(({ en, es }) => {
+        if (en && en.length && es && es.length) {
+          return true
+        }
+        return 'English and Spanish translations required.'
+      })
     },
     {
       name: 'bookSectionDescription',
       type: 'localeString',
-      title: 'Book Section description'
+      title: 'Book Section description',
+      validation: Rule => Rule.custom(({ en, es }) => {
+        if (en && en.length && es && es.length) {
+          return true
+        }
+        return 'English and Spanish translations required.'
+      })
     },
     {
       name: 'books',
@@ -26,12 +38,24 @@ export default {
     {
       name: 'tipSectionTitle',
       type: 'localeString',
-      title: 'Tip Section title'
+      title: 'Tip Section title',
+      validation: Rule => Rule.custom(({ en, es }) => {
+        if (en && en.length && es && es.length) {
+          return true
+        }
+        return 'English and Spanish translations required.'
+      })
     },
     {
       name: 'tipSectionDescription',
       type: 'localeString',
-      title: 'Tip Section description'
+      title: 'Tip Section description',
+      validation: Rule => Rule.custom(({ en, es }) => {
+        if (en && en.length && es && es.length) {
+          return true
+        }
+        return 'English and Spanish translations required.'
+      })
     },
     {
       name: 'tips',

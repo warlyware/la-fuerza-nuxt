@@ -7,27 +7,32 @@ export default {
       title: 'Name',
       name: 'name',
       type: 'string',
-      description: '(Not displayed)'
+      description: '(Not displayed)',
+      validation: Rule => Rule.required()
     },
     {
       title: 'Icon',
       name: 'icon',
-      type: 'image'
+      type: 'image',
+      validation: Rule => Rule.required()
     },
     {
       name: 'enText',
       type: 'bodyPortableText',
-      title: 'Text [English]'
+      title: 'Text [English]',
+      validation: Rule => Rule.required()
     },
     {
       name: 'esText',
       type: 'bodyPortableText',
-      title: 'Text [Spanish]'
+      title: 'Text [Spanish]',
+      validation: Rule => Rule.required()
     },
     {
       name: 'button',
       type: 'button',
-      title: 'Button'
+      title: 'Button',
+      validation: Rule => Rule.required()
     }
   ],
   preview: {

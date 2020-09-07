@@ -7,7 +7,13 @@ export default {
     {
       name: 'title',
       type: 'localeString',
-      title: 'Title'
+      title: 'Title',
+      validation: Rule => Rule.custom(({ en, es }) => {
+        if (en && en.length && es && es.length) {
+          return true
+        }
+        return 'English and Spanish translations required.'
+      })
     },
     {
       name: 'hero',
@@ -17,53 +23,68 @@ export default {
     {
       name: 'videoUrl',
       type: 'string',
-      title: 'Video Url'
+      title: 'Video Url',
+      validation: Rule => Rule.required()
     },
     {
       name: 'enBlock1Text',
       type: 'bodyPortableText',
-      title: 'Block 1 Text [English]'
+      title: 'Block 1 Text [English]',
+      validation: Rule => Rule.required()
     },
     {
       name: 'esBlock1Text',
       type: 'bodyPortableText',
-      title: 'Block 1 Text [Spanish]'
+      title: 'Block 1 Text [Spanish]',
+      validation: Rule => Rule.required()
     },
 
     {
       name: 'enBanner1Text',
       type: 'bodyPortableText',
-      title: 'Banner 1 Text [English]'
+      title: 'Banner 1 Text [English]',
+      validation: Rule => Rule.required()
     },
     {
       name: 'esBanner1Text',
       type: 'bodyPortableText',
-      title: 'Banner 1 Text [Spanish]'
+      title: 'Banner 1 Text [Spanish]',
+      validation: Rule => Rule.required()
     },
     {
       name: 'enBlock2Text',
       type: 'bodyPortableText',
-      title: 'Block 2 Text [English]'
+      title: 'Block 2 Text [English]',
+      validation: Rule => Rule.required()
     },
     {
       name: 'esBlock2Text',
       type: 'bodyPortableText',
-      title: 'Block 2 Text [Spanish]'
+      title: 'Block 2 Text [Spanish]',
+      validation: Rule => Rule.required()
     },
     {
       name: 'enBlock3Text',
       type: 'bodyPortableText',
-      title: 'Block 3 Text [English]'
+      title: 'Block 3 Text [English]',
+      validation: Rule => Rule.required()
     },
     {
       name: 'esBlock3Text',
       type: 'bodyPortableText',
-      title: 'Block 3 Text [Spanish]'
+      title: 'Block 3 Text [Spanish]',
+      validation: Rule => Rule.required()
     },
     {
       name: 'collaboratorsSectionTitle',
       type: 'localeString',
-      title: 'How To Collaborate Section Title'
+      title: 'How To Collaborate Section Title',
+      validation: Rule => Rule.custom(({ en, es }) => {
+        if (en && en.length && es && es.length) {
+          return true
+        }
+        return 'English and Spanish translations required.'
+      })
     },
     {
       name: 'collaboratorBlocks',
@@ -73,57 +94,78 @@ export default {
     {
       name: 'block4Text',
       type: 'localeString',
-      title: 'Block 4 Text'
+      title: 'Block 4 Text',
+      validation: Rule => Rule.custom(({ en, es }) => {
+        if (en && en.length && es && es.length) {
+          return true
+        }
+        return 'English and Spanish translations required.'
+      })
     },
     {
       name: 'enBlock5Text',
       type: 'bodyPortableText',
-      title: 'Block 5 Text [English]'
+      title: 'Block 5 Text [English]',
+      validation: Rule => Rule.required()
     },
     {
       name: 'esBlock5Text',
       type: 'bodyPortableText',
-      title: 'Block 5 Text [Spanish]'
+      title: 'Block 5 Text [Spanish]',
+      validation: Rule => Rule.required()
     },
     {
       name: 'block5Button',
       type: 'button',
-      title: 'Block 5 Button'
+      title: 'Block 5 Button',
+      validation: Rule => Rule.required()
     },
     {
       name: 'enBlock6Text',
       type: 'bodyPortableText',
-      title: 'Block 6 Text [English]'
+      title: 'Block 6 Text [English]',
+      validation: Rule => Rule.required()
     },
     {
       name: 'esBlock6Text',
       type: 'bodyPortableText',
-      title: 'Block 6 Text [Spanish]'
+      title: 'Block 6 Text [Spanish]',
+      validation: Rule => Rule.required()
     },
     {
       name: 'block6Button',
       type: 'button',
-      title: 'Block 6 Button'
+      title: 'Block 6 Button',
+      validation: Rule => Rule.required()
     },
     {
       name: 'block7Button',
       type: 'button',
-      title: 'Block 7 Button'
+      title: 'Block 7 Button',
+      validation: Rule => Rule.required()
     },
     {
       name: 'enBlock7Text',
       type: 'bodyPortableText',
-      title: 'Block 7 Text [English]'
+      title: 'Block 7 Text [English]',
+      validation: Rule => Rule.required()
     },
     {
       name: 'esBlock7Text',
       type: 'bodyPortableText',
-      title: 'Block 7 Text [Spanish]'
+      title: 'Block 7 Text [Spanish]',
+      validation: Rule => Rule.required()
     },
     {
       name: 'banner2Text',
       type: 'localeString',
-      title: 'Banner 2 Text'
+      title: 'Banner 2 Text',
+      validation: Rule => Rule.custom(({ en, es }) => {
+        if (en && en.length && es && es.length) {
+          return true
+        }
+        return 'English and Spanish translations required.'
+      })
     },
     {
       name: 'events',

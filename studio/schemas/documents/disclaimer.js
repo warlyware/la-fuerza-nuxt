@@ -9,7 +9,8 @@ export default {
       description:
         'The Disclaimer text to be displayed at /disclaimer',
       type: 'bodyPortableText',
-      title: 'Disclaimer'
+      title: 'Disclaimer',
+      validation: Rule => Rule.required()
     }
   ],
   preview: {

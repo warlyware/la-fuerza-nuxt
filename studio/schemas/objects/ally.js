@@ -6,12 +6,14 @@ export default {
     {
       title: 'Name',
       name: 'name',
-      type: 'string'
+      type: 'string',
+      validation: Rule => Rule.required()
     },
     {
       title: 'Logo Image',
       name: 'image',
-      type: 'image'
+      type: 'image',
+      validation: Rule => Rule.required()
     }
   ],
   preview: {

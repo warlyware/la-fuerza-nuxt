@@ -7,29 +7,44 @@ export default {
     {
       name: 'title',
       type: 'localeString',
-      title: 'Title'
+      title: 'Title',
+      validation: Rule => Rule.custom(({ en, es }) => {
+        if (en && en.length && es && es.length) {
+          return true
+        }
+        return 'English and Spanish translations required.'
+      })
     },
     {
       name: 'hero',
       type: 'hero',
-      title: 'Hero'
+      title: 'Hero',
+      validation: Rule => Rule.required()
     },
     {
       name: 'enAboutText',
       type: 'bodyPortableText',
       title: 'Description [English]',
-      description: 'About text'
+      description: 'About text',
+      validation: Rule => Rule.required()
     },
     {
       name: 'esAboutText',
       type: 'bodyPortableText',
       title: 'Description [Spanish]',
-      description: 'About text'
+      description: 'About text',
+      validation: Rule => Rule.required()
     },
     {
       name: 'ourAlliesTitle',
       type: 'localeString',
-      title: 'Title: Our Allies section'
+      title: 'Title: Our Allies section',
+      validation: Rule => Rule.custom(({ en, es }) => {
+        if (en && en.length && es && es.length) {
+          return true
+        }
+        return 'English and Spanish translations required.'
+      })
     },
     {
       name: 'allies',
@@ -42,17 +57,25 @@ export default {
       title: 'Image 1',
       options: {
         hotspot: true
-      }
+      },
+      validation: Rule => Rule.required()
     },
     {
       name: 'block1Text',
       type: 'localeString',
-      title: 'Block 1 text'
+      title: 'Block 1 text',
+      validation: Rule => Rule.custom(({ en, es }) => {
+        if (en && en.length && es && es.length) {
+          return true
+        }
+        return 'English and Spanish translations required.'
+      })
     },
     {
       name: 'block1Button',
       type: 'button',
-      title: 'Block 1 Button'
+      title: 'Block 1 Button',
+      validation: Rule => Rule.required()
     },
     {
       name: 'image2',
@@ -60,7 +83,8 @@ export default {
       title: 'Image 2',
       options: {
         hotspot: true
-      }
+      },
+      validation: Rule => Rule.required()
     }
   ],
   preview: {

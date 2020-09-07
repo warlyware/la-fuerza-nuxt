@@ -6,17 +6,25 @@ export default {
     {
       title: 'Title',
       name: 'title',
-      type: 'localeString'
+      type: 'localeString',
+      validation: Rule => Rule.custom(({ en, es }) => {
+        if (en && en.length && es && es.length) {
+          return true
+        }
+        return 'English and Spanish translations required.'
+      })
     },
     {
       name: 'enText',
       type: 'bodyPortableText',
-      title: 'Text [English]'
+      title: 'Text [English]',
+      validation: Rule => Rule.required()
     },
     {
       name: 'esText',
       type: 'bodyPortableText',
-      title: 'Text [Spanish]'
+      title: 'Text [Spanish]',
+      validation: Rule => Rule.required()
     }
   ],
   preview: {

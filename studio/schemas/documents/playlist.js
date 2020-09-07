@@ -9,27 +9,37 @@ export default {
     {
       name: 'title',
       type: 'localeString',
-      title: 'Title'
+      title: 'Title',
+      validation: Rule => Rule.custom(({ en, es }) => {
+        if (en && en.length && es && es.length) {
+          return true
+        }
+        return 'English and Spanish translations required.'
+      })
     },
     {
       name: 'enPlaylistUrl',
       type: 'string',
-      title: 'Playlist URL [English]'
+      title: 'Playlist URL [English]',
+      validation: Rule => Rule.required()
     },
     {
       name: 'esPlaylistUrl',
       type: 'string',
-      title: 'Playlist URL [Spanish]'
+      title: 'Playlist URL [Spanish]',
+      validation: Rule => Rule.required()
     },
     {
       name: 'enDescription',
       type: 'bodyPortableText',
-      title: 'Description [English]'
+      title: 'Description [English]',
+      validation: Rule => Rule.required()
     },
     {
       name: 'esDescription',
       type: 'bodyPortableText',
-      title: 'Description [Spanish]'
+      title: 'Description [Spanish]',
+      validation: Rule => Rule.required()
     }
   ],
   preview: {

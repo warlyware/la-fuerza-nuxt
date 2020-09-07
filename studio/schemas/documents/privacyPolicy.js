@@ -9,7 +9,8 @@ export default {
       description:
         'The privacy policy text to be displayed at /privacy',
       type: 'bodyPortableText',
-      title: 'Privacy Policy'
+      title: 'Privacy Policy',
+      validation: Rule => Rule.required()
     }
   ],
   preview: {

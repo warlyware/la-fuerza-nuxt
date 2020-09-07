@@ -9,12 +9,19 @@ export default {
     {
       name: 'title',
       type: 'localeString',
-      title: 'Title'
+      title: 'Title',
+      validation: Rule => Rule.custom(({ en, es }) => {
+        if (en && en.length && es && es.length) {
+          return true
+        }
+        return 'English and Spanish translations required.'
+      })
     },
     {
       name: 'author',
       type: 'string',
-      title: 'Author'
+      title: 'Author',
+      validation: Rule => Rule.required()
     },
     {
       name: 'illustrator',
@@ -29,49 +36,58 @@ export default {
     {
       name: 'enCover',
       type: 'image',
-      title: 'Cover [English]'
+      title: 'Cover [English]',
+      validation: Rule => Rule.required()
     },
     {
       name: 'esCover',
       type: 'image',
-      title: 'Cover [Spanish]'
+      title: 'Cover [Spanish]',
+      validation: Rule => Rule.required()
     },
     {
       name: 'videoUrl',
       type: 'string',
-      title: 'Read Along Video URL'
+      title: 'Read Along Video URL',
+      validation: Rule => Rule.required().min(1)
     },
     {
       name: 'image1',
       type: 'image',
       title: 'Image 1',
-      options: { hotspot: true }
+      options: { hotspot: true },
+      validation: Rule => Rule.required()
     },
     {
       name: 'image2',
       type: 'image',
       title: 'Image 2',
-      options: { hotspot: true }
+      options: { hotspot: true },
+      validation: Rule => Rule.required()
     },
     {
       name: 'enDescription',
       type: 'bodyPortableText',
-      title: 'Description [English]'
+      title: 'Description [English]',
+      validation: Rule => Rule.required()
     },
     {
       name: 'esDescription',
       type: 'bodyPortableText',
-      title: 'Description [Spanish]'
+      title: 'Description [Spanish]',
+      validation: Rule => Rule.required()
     },
     {
       name: 'enExcerpt',
       type: 'bodyPortableText',
-      title: 'Excerpt [English]'
+      title: 'Excerpt [English]',
+      validation: Rule => Rule.required()
     },
     {
       name: 'esExcerpt',
       type: 'bodyPortableText',
-      title: 'Excerpt [Spanish]'
+      title: 'Excerpt [Spanish]',
+      validation: Rule => Rule.required()
     },
     {
       name: 'slug',
@@ -81,7 +97,7 @@ export default {
         source: 'title.en',
         maxLength: 96
       },
-      validation: Rule => Rule.error('You must add a slug.').required()
+      validation: Rule => Rule.required()
     },
     {
       name: 'shareMenu',

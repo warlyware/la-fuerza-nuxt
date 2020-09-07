@@ -8,7 +8,13 @@
     <div class="flex flex-wrap max-w-5xl m-auto px-8 lg:px-0 justify-center mb-4">
       <p class="py-2 text-center w-full">
         <BlockContent v-if="this[`${locale}Description`]" :blocks="this[`${locale}Description`]" />
-        {{author}} / {{illustrator}} / {{publisher}}
+        {{author}}
+        <span v-if="illustrator && illustrator.length">
+          &nbsp;/ {{illustrator}}
+        </span>
+        <span v-if="publisher && publisher.length">
+          &nbsp;/ {{publisher}}
+        </span>
       </p>
       <ShareMenu class="w-full flex justify-center" :share-menu="shareMenu" />
     </div>

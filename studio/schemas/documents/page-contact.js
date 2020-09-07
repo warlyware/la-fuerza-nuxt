@@ -7,7 +7,13 @@ export default {
     {
       name: 'title',
       type: 'localeString',
-      title: 'Title'
+      title: 'Title',
+      validation: Rule => Rule.custom(({ en, es }) => {
+        if (en && en.length && es && es.length) {
+          return true
+        }
+        return 'English and Spanish translations required.'
+      })
     },
     {
       name: 'hero',
@@ -22,12 +28,14 @@ export default {
     {
       name: 'button',
       type: 'button',
-      title: 'Button'
+      title: 'Button',
+      validation: Rule => Rule.required()
     },
     {
       name: 'newsletterSubscription',
       type: 'newsletterSubscription',
-      title: 'Newsletter Subscription'
+      title: 'Newsletter Subscription',
+      validation: Rule => Rule.required()
     }
   ],
   preview: {

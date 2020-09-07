@@ -6,7 +6,13 @@ export default {
     {
       name: 'name',
       type: 'localeString',
-      title: 'Name'
+      title: 'Name',
+      validation: Rule => Rule.custom(({ en, es }) => {
+        if (en && en.length && es && es.length) {
+          return true
+        }
+        return 'English and Spanish translations required.'
+      })
     },
     {
       name: 'address',

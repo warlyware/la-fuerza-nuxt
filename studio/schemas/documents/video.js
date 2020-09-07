@@ -9,17 +9,20 @@ export default {
     {
       name: 'name',
       title: 'Name',
-      type: 'string'
+      type: 'string',
+      validation: Rule => Rule.required()
     },
     {
       name: 'creator',
       title: 'Creator',
-      type: 'string'
+      type: 'string',
+      validation: Rule => Rule.required()
     },
     {
       name: 'url',
       title: 'Youtube Url',
-      type: 'url'
+      type: 'url',
+      validation: Rule => Rule.required()
     },
     {
       name: 'category',
@@ -70,7 +73,13 @@ export default {
     {
       name: 'shortDescription',
       type: 'localeString',
-      title: 'Short Description'
+      title: 'Short Description',
+      validation: Rule => Rule.custom(({ en, es }) => {
+        if (en && en.length && es && es.length) {
+          return true
+        }
+        return 'English and Spanish translations required.'
+      })
     },
     {
       name: 'descriptionEnglish',

@@ -9,13 +9,20 @@ export default {
     {
       name: 'name',
       type: 'localeString',
-      title: 'Name'
+      title: 'Name',
+      validation: Rule => Rule.custom(({ en, es }) => {
+        if (en && en.length && es && es.length) {
+          return true
+        }
+        return 'English and Spanish translations required.'
+      })
     },
     {
       name: 'location',
       type: 'string',
       title: 'Location',
-      description: 'Enter the City and State, or Online if online only.'
+      description: 'Enter the City and State, or Online if online only.',
+      validation: Rule => Rule.required()
     },
     {
       name: 'startDate',
@@ -23,7 +30,8 @@ export default {
       title: 'Start Date',
       options: {
         dateFormat: 'MMMM Do YYYY'
-      }
+      },
+      validation: Rule => Rule.required()
     },
     {
       name: 'endDate',
@@ -31,7 +39,8 @@ export default {
       title: 'End Date',
       options: {
         dateFormat: 'MMMM Do YYYY'
-      }
+      },
+      validation: Rule => Rule.required()
     },
     {
       name: 'partnerName',
@@ -42,29 +51,34 @@ export default {
       name: 'venue',
       type: 'string',
       title: 'Venue',
-      description: 'If online write Online'
+      description: 'If online write Online',
+      validation: Rule => Rule.required()
     },
     {
       name: 'enDescription',
       type: 'bodyPortableText',
-      title: 'Description [English]'
+      title: 'Description [English]',
+      validation: Rule => Rule.required()
     },
     {
       name: 'esDescription',
       type: 'bodyPortableText',
-      title: 'Description [Spanish]'
+      title: 'Description [Spanish]',
+      validation: Rule => Rule.required()
     },
     {
       name: 'link',
       type: 'string',
       title: 'Registration Link',
-      description: 'URL to the event registration page'
+      description: 'URL to the event registration page',
+      validation: Rule => Rule.required()
     },
     {
       name: 'price',
       type: 'number',
       title: 'Price',
-      description: 'If the event is free, enter 0'
+      description: 'If the event is free, enter 0',
+      validation: Rule => Rule.required()
     }
   ],
   preview: {

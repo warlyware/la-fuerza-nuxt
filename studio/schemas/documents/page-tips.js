@@ -7,17 +7,25 @@ export default {
     {
       name: 'title',
       type: 'localeString',
-      title: 'Title'
+      title: 'Title',
+      validation: Rule => Rule.custom(({ en, es }) => {
+        if (en && en.length && es && es.length) {
+          return true
+        }
+        return 'English and Spanish translations required.'
+      })
     },
     {
       name: 'enBannerText',
       type: 'bodyPortableText',
-      title: 'Banner Text [English]'
+      title: 'Banner Text [English]',
+      validation: Rule => Rule.required()
     },
     {
       name: 'esBannerText',
       type: 'bodyPortableText',
-      title: 'Banner Text [Spanish]'
+      title: 'Banner Text [Spanish]',
+      validation: Rule => Rule.required()
     },
     {
       name: 'shareMenu',
