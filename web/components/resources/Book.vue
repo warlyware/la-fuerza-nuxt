@@ -8,7 +8,7 @@
       fit="crop" />
     </nuxt-link>
     <nuxt-link :to="localePath(`/resources/books/${book.slug.current}`)"
-    class="flex flex-col h-full p-2 justify-start">
+    class="flex flex-col h-full p-2 justify-start text-blue">
       <h2 class="text-2xl font-bold mb-2 line-clamp overflow-hidden">
         {{book.title[locale]}}
       </h2>

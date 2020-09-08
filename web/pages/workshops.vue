@@ -19,7 +19,7 @@
       </div>
     </div>
     <div class="w-full border border-blue p-8 mb-8">
-      <div id="block2" class="w-full text-center text-2xl font-bold mb-0 px-4 lg:px-0">
+      <div id="block2" class="w-full text-center text-2xl font-bold mb-0 px-4 lg:px-0 text-blue">
         <BlockContent :blocks="this[`${locale}Banner1Text`]" />
       </div>
     </div>
@@ -71,15 +71,15 @@
       </div>
       <div class="w-full lg:w-1/3 px-8 lg:px-0 flex-shrink-0">
         <div class="text-5xl justify-center items-center flex flex-col h-full italic text-blue border border-blue rounded">
-          <div>
+          <div class="text-blue">
             {{block5Word1[locale]}}
           </div>
           <div class="h-12 bg-pink w-1" />
-          <div>
+          <div class="text-blue">
             {{block5Word2[locale]}}
           </div>
           <div class="h-12 bg-aqua w-1" />
-          <div>
+          <div class="text-blue">
             {{block5Word3[locale]}}
           </div>
         </div>

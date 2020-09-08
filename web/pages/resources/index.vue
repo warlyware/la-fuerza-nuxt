@@ -9,7 +9,7 @@
       </p>
       <ul class="w-full flex flex-wrap m-auto">
         <li v-for="book in first4Books" :key="book._id"
-        class="flex w-full md:w-1/5"
+        class="flex w-full md:w-1/5 text-blue"
         @click="$router.push(localeRoute(`/resources/books/${book.slug.current}`))">
           <div class="list-content items-center my-2">
             <div :style="`background-image: url(${ getImageUrl(book[`${locale}Cover`]) })`"
@@ -36,7 +36,7 @@
 
       <ul class="w-full flex flex-wrap m-auto">
         <li v-for="(tip, i) in first4Tips" :key="tip._id"
-        class="flex w-full md:w-1/5">
+        class="flex w-full md:w-1/5 text-blue">
           <div class="list-content items-center my-2">
             <div :style="`background-image: url(${ getImageUrl(tip.image) })`"
             class="cursor-pointer bg-contain bg-no-repeat bg-center w-full h-96 md:h-48"
