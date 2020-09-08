@@ -23,7 +23,7 @@
         <BlockContent :blocks="this[`${locale}Banner1Text`]" />
       </div>
     </div>
-    <div class="max-w-5xl m-auto flex flex-wrap px-8 lg:px-16 text-xl mb-12 tracking-wide">
+    <div class="max-w-6xl m-auto flex flex-wrap px-8 lg:px-16 text-xl mb-12 tracking-wide">
       <div class="p-4 w-full lg:w-1/2 text-3xl text-center flex flex-1">
         <div class="border rounded-lg w-full flex justify-center items-center h-full p-8 font-bold italic shadow-black bg-blue text-white">
           <BlockContent :blocks="this[`${locale}Block2Text`]" />

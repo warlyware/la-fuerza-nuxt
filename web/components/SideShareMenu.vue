@@ -24,8 +24,8 @@
     :description="description"
     :quote="quote"
     :hashtags="hashtags">
-      <div class="cursor-pointer p-2 bg-blue">
-        <img src="/images/whatsapp-logo-bw.svg" alt="" class="h-8 w-8">
+      <div class="cursor-pointer p-1 bg-blue">
+        <img src="/images/whatsapp-logo-bw.svg" alt="" class="h-8-wa w-8-wa rounded-full">
       </div>
     </ShareNetwork>
   </div>
@@ -90,5 +90,11 @@ export default {
   }
   .fade-enter, .fade-leave-to {
     opacity: 0;
+  }
+  .h-8-wa {
+    height: 2.4rem;
+  }
+  .w-8-wa  {
+    width: 2.4rem;
   }
 </style>

@@ -24,7 +24,7 @@
     :quote="quote"
     :hashtags="hashtags">
       <div class="cursor-pointer p-2 bg-blue rounded-full mx-1">
-        <img src="/images/whatsapp-logo-bw.svg" alt="" class="h-8 w-8">
+        <img src="/images/whatsapp-logo-bw.jpg" alt="" class="h-8.5 w-8.5">
       </div>
     </ShareNetwork>
   </div>
@@ -57,4 +57,11 @@ export default {
   .top-50 {
     top: 50%;
     left: 50%;
-  }</style>
+  }
+  .h-8.5 {
+    height: 4rem;
+  }
+  .w-8.5  {
+    width: 4rem;
+  }
+</style>
