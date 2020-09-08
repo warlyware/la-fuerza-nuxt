@@ -1,4 +1,3 @@
-import pkg from './package'
 import sanityClient from './sanityClient'
 
 export default {
@@ -23,7 +22,7 @@ export default {
       },
       {
         'property': 'og:image',
-        'content': '/images/la-fuerza-logo.svg'
+        'content': '~/static/images/la-fuerza-logo.svg'
       }
     ]
     //link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]

@@ -145,6 +145,17 @@ export default {
       validation: Rule => Rule.required()
     },
     {
+      name: 'block6Block7Title',
+      type: 'localeString',
+      title: 'Block 6 & 7 Title',
+      validation: Rule => Rule.custom(text => {
+        if (text.en && text.en.length && text.es && text.es.length) {
+          return true
+        }
+        return 'English and Spanish translations required.'
+      })
+    },
+    {
       name: 'enBlock7Text',
       type: 'bodyPortableText',
       title: 'Block 7 Text [English]',
