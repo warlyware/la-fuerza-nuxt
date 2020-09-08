@@ -20,9 +20,7 @@
     :playlist="playlist"
     @set-current-index="(i) => setCurrentIndex(i)" />
 
-    <div class="w-full py-4 break-words">
-      {{currentVideo.description}}
-    </div>
+    <div class="w-full py-4 break-words px-8 whitespace-pre-wrap">{{currentVideo.description}}</div>
   </div>
 </template>
 
