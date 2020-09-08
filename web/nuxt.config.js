@@ -12,7 +12,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description },
+      { hid: 'description', name: 'description', content: 'La Fuerza de Familias Latinas' },
       {
         'property': 'og:title',
         'content': `La Fuerza de Familias Latinas`,
