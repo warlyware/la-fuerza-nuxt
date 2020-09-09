@@ -73,7 +73,7 @@
       </div>
     </div>
     <div class="max-w-5xl flex flex-wrap m-auto mb-12">
-      <div class="w-full p-2 px-12 bg-blue text-white text-center text-4xl uppercase italic font-bold tracking-wide">
+      <div class="w-full p-2 px-12 bg-blue text-white text-center text-4xl uppercase italic font-bold tracking-wide leading-8">
         {{block6Block7Title[locale]}}
       </div>
       <div class="w-full md:w-1/2 p-4 px-12 lg:px-8 bg-pink text-white text-center leading-5 flex flex-col justify-between">
