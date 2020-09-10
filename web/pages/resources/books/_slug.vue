@@ -6,7 +6,7 @@
       {{title[locale]}}
     </h1>
     <div class="flex flex-wrap max-w-5xl m-auto px-8 lg:px-0 justify-center mb-4">
-      <p class="py-2 text-center w-full">
+      <p class="py-2 text-center w-full text-blue">
         <BlockContent v-if="this[`${locale}Description`]" :blocks="this[`${locale}Description`]" />
         {{author}}
         <span v-if="illustrator && illustrator.length">
@@ -23,17 +23,17 @@
       class="video-responsive flex-grow"
       :video-id="getYoutubeId(videoUrl)"  />
     </div>
+    <div class="w-full max-w-3xl m-auto flex flex-wrap justify-center px-8 md:px-4 lg:px-0 text-blue mb-8">
+      <BlockContent v-if="this[`${locale}Excerpt`]" :blocks="this[`${locale}Excerpt`]" />
+    </div>
     <div v-if="image1"
-    class="w-full max-w-xl m-auto flex flex-wrap mb-8 cursor-pointer"
+    class="w-full max-w-xl m-auto flex flex-wrap cursor-pointer"
     @click="showImage(0)">
       <SanityImage
       class="w-full bg-blue flex-shrink-0 justify-center items-center"
       :image="image1"
       :width="400"
       fit="crop" />
-    </div>
-    <div class="w-full max-w-3xl m-auto flex flex-wrap justify-center px-8 md:px-4 lg:px-0">
-      <BlockContent v-if="this[`${locale}Excerpt`]" :blocks="this[`${locale}Excerpt`]" />
     </div>
   </div>
 </template>

@@ -9,6 +9,15 @@
         <img src="/images/facebook-logo.svg" alt="" class="h-8 w-8">
       </div>
     </ShareNetwork>
+    <ShareNetwork network="linkedin" :url="`${baseUrl}${this.$route.fullPath}`"
+    :title="title"
+    :description="description"
+    :quote="quote"
+    :hashtags="hashtags">
+      <div class="cursor-pointer p-2 bg-blue rounded-full mx-1">
+        <img src="/images/linked-in-logo.svg" alt="" class="h-8 w-8 bg-white rounded-full">
+      </div>
+    </ShareNetwork>
     <ShareNetwork network="twitter" :url="`${baseUrl}${this.$route.fullPath}`"
     :title="title"
     :description="description"
@@ -24,7 +33,7 @@
     :quote="quote"
     :hashtags="hashtags">
       <div class="cursor-pointer p-2 bg-blue rounded-full mx-1">
-        <img src="/images/whatsapp-logo-bw.jpg" alt="" class="h-8.5 w-8.5">
+        <img src="/images/whatsapp-logo-bw.svg" alt="" class="h-8 w-8">
       </div>
     </ShareNetwork>
   </div>
@@ -57,11 +66,5 @@ export default {
   .top-50 {
     top: 50%;
     left: 50%;
-  }
-  .h-8.5 {
-    height: 4rem;
-  }
-  .w-8.5  {
-    width: 4rem;
   }
 </style>

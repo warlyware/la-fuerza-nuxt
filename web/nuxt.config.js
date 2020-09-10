@@ -31,7 +31,8 @@ export default {
   env: {
     MAPQUEST_KEY: process.env.MAPQUEST_KEY,
     API_BASE_URL: process.env.API_BASE_URL,
-    BASE_URL: process.env.BASE_URL
+    BASE_URL: process.env.BASE_URL,
+    GOOGLE_ANALYTICS_ID: process.env.GOOGLE_ANALYTICS_ID,
   },
 
   /*
@@ -65,7 +66,14 @@ export default {
    ** Nuxt.js modules
    */
   buildModules: [
-    '@nuxtjs/moment'
+    '@nuxtjs/moment',
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-177598743-1',
+      debug: {
+        enabled: true,
+        sendHitTask: true
+      }
+    }]
   ],
   modules: [
     '@nuxtjs/pwa',
