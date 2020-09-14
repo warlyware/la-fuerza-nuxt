@@ -17,7 +17,7 @@
                 {{ $moment(event.startDate).format('MMMM Do') }} -
                 {{ $moment(event.endDate).format('MMMM Do') }}
               </div>
-              <div v-if="partner" class="text-base" >
+              <div v-if="event.partnerName" class="text-base" >
                 <span class="font-bold">
                   Partner:
                 </span> {{event.partnerName}}

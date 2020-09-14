@@ -77,7 +77,7 @@ export default {
       name: 'price',
       type: 'number',
       title: 'Price',
-      description: 'If the event is free, enter 0',
+      description: 'If the event is free, enter 0. This will display "FREE."',
       validation: Rule => Rule.required()
     }
   ],
