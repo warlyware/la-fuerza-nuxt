@@ -18,7 +18,7 @@
         </li>
         <li class="w-full md:w-1/5 flex items-center justify-center md:justify-start flex-shrink">
           <div class="mt-4 md:mt-0 m-0 py-0 md:ml-4">
-            <nuxt-link :to="localePath('/resources/books')"
+            <nuxt-link v-if="books.length > 4" :to="localePath('/resources/books')"
             class="bg-aqua text-white text-shadow-pink px-4 rounded-lg italic uppercase text-2xl md:text-lg">
               {{viewMore}}
             </nuxt-link>
@@ -45,7 +45,7 @@
         </li>
         <li class="w-full md:w-1/5 flex items-center justify-center md:justify-start flex-shrink">
           <div class="mt-4 md:mt-0 m-0 py-0 md:ml-4">
-            <nuxt-link :to="localePath('/resources/tips')"
+            <nuxt-link v-if="tips.length > 4" :to="localePath('/resources/tips')"
             class="bg-aqua text-white text-shadow-pink px-4 rounded-lg italic uppercase text-2xl md:text-lg">
               {{viewMore}}
             </nuxt-link>

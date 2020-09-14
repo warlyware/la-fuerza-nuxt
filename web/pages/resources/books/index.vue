@@ -1,6 +1,6 @@
 <template>
   <div class="pt-8 max-w-5xl mx-auto md:pt-32 mb-8 content px-8 lg:px-0 w-full">
-    <h1 class="font-bold text-6xl">
+    <h1 class="font-bold text-6xl text-center">
       {{bookSectionTitle[locale]}}
     </h1>
     <div class="max-w-5xl flex flex-wrap w-full -mx-4">
