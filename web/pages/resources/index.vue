@@ -4,7 +4,7 @@
       <h2 class="w-full mb-0 font-bold leading-tight">
         {{bookSectionTitle[locale]}}
       </h2>
-      <p class="italic -mb-4 text-blue">
+      <p class="italic text-blue">
         {{bookSectionDescription[locale]}}
       </p>
       <ul class="w-full flex flex-wrap m-auto">
@@ -18,7 +18,7 @@
         </li>
         <li class="w-full md:w-1/5 flex items-center justify-center md:justify-start flex-shrink">
           <div class="mt-4 md:mt-0 m-0 py-0 md:ml-4">
-            <nuxt-link :to="localePath('/resources/books')"
+            <nuxt-link v-if="books.length > 4" :to="localePath('/resources/books')"
             class="bg-aqua text-white text-shadow-pink px-4 rounded-lg italic uppercase text-2xl md:text-lg">
               {{viewMore}}
             </nuxt-link>
@@ -30,7 +30,7 @@
       <h2 class="w-full mb-0 font-bold leading-tight">
         {{tipSectionTitle[locale]}}
       </h2>
-      <p class="italic -mb-4 text-blue">
+      <p class="italic text-blue">
         {{tipSectionDescription[locale]}}
       </p>
 
@@ -45,7 +45,7 @@
         </li>
         <li class="w-full md:w-1/5 flex items-center justify-center md:justify-start flex-shrink">
           <div class="mt-4 md:mt-0 m-0 py-0 md:ml-4">
-            <nuxt-link :to="localePath('/resources/tips')"
+            <nuxt-link v-if="tips.length > 4" :to="localePath('/resources/tips')"
             class="bg-aqua text-white text-shadow-pink px-4 rounded-lg italic uppercase text-2xl md:text-lg">
               {{viewMore}}
             </nuxt-link>

@@ -102,7 +102,9 @@ export default {
   methods: {
     getYoutubeId,
     topVideoReady({ target }) {
-      target.mute()
+      this.$nextTick(() => {
+        target.mute()
+      })
     }
   },
 }

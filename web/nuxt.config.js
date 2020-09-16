@@ -83,6 +83,16 @@ export default {
     [
       'nuxt-i18n',
       {
+        detectBrowserLanguage: {
+          alwaysRedirect: false,
+          fallbackLocale: 'es',
+          onlyOnRoot: false,
+          useCookie: true,
+          cookieCrossOrigin: false,
+          cookieDomain: null,
+          cookieKey: 'i18n_redirected',
+          cookieSecure: false
+        },
         locale: 'es',
         beforeLanguageSwitch: (oldLocale, newLocale) => {
           console.log({ oldLocale, newLocale })
@@ -104,7 +114,7 @@ export default {
             name: 'Spanish'
           }
         ],
-        strategy: 'prefix_except_default',
+        strategy: 'no_prefix',
         defaultLocale: 'es',
         lazy: true,
         langDir: 'lang/',
