@@ -36,11 +36,14 @@
               <div class="font-normal text-base flex-1 mb-2">
                 <BlockContent :blocks="event[`${locale}Description`]" />
               </div>
-              <div class="w-full flex justify-center items-end">
+              <div class="w-full flex justify-center items-end mb-2">
                 <a class="p-4 py-2 inline-block bg-pink rounded-lg text-white" :href="event.link"
                 target="_blank">
                   {{ locale === 'en' ? 'Register' : 'Registrarse'}}
                 </a>
+              </div>
+              <div class="w-full flex justify-center">
+                <ShareMenu v-if="event.shareMenu" :share-menu="event.shareMenu" />
               </div>
             </div>
           </div>
@@ -52,10 +55,12 @@
 
 <script>
 import BlockContent from 'sanity-blocks-vue-component'
+import ShareMenu from '~/components/ShareMenu'
 
 export default {
   components: {
-    BlockContent
+    BlockContent,
+    ShareMenu
   },
   props: {
     events: {
