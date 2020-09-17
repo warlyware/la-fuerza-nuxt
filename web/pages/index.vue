@@ -1,14 +1,14 @@
 <template>
   <div class="mx-auto justify-between pt-4 w-full">
     <div class="w-full flex flex-wrap">
-      <div class="w-full lg:w-2/3 my-1/2">
+      <div class="w-full lg:w-1/2 my-1/2">
         <youtube player-width="100%" player-height="100%"
         :player-vars="playerVars"
         class="video-responsive flex-grow"
         :video-id="getYoutubeId(video1Url)"
         @ready="topVideoReady" />
       </div>
-      <div class="w-full lg:w-1/3 bg-pink text-white flex justify-center items-center leading-tight p-8">
+      <div class="w-full lg:w-1/2 bg-pink text-white flex justify-center items-center leading-tight p-8">
         <span class=" text-4xl font-bold italic">
           {{block1Text[locale]}}
         </span>
