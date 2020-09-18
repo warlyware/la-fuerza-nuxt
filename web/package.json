@@ -21,7 +21,7 @@
     "get-youtube-id": "^1.0.1",
     "groq": "^0.140.0",
     "normalize.css": "^8.0.1",
-    "nuxt": "^2.6.2",
+    "nuxt": "^2.14.5",
     "sanity-blocks-vue-component": "^0.1.0",
     "vue-date-fns": "^1.0.0",
     "vue-fragment": "^1.5.1",

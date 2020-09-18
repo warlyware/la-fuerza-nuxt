@@ -15,9 +15,14 @@ const url = `${SANITY_API_URL}query=${qs}`
 
 let dynamicRoutes = async () => {
   const { data } = await axios.get(url)
-  const books = data.results.books.map(book => `/books/${book.slug.current}`)
-  const tips = data.results.tips.map((_, i) => `/tips/${i}`)
+  console.log({
+    books: data.result.books,
+    tips: data.result.tips,
+  })
+  const books = data.result.books.map(book => `/books/${book.slug.current}`)
+  const tips = data.result.tips.map((_, i) => `/tips/${i}`)
 
+  // return []
   return [...books, ...tips]
 }
 
