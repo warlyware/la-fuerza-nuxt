@@ -9,7 +9,7 @@ export default {
       type: 'localeString',
       title: 'Title',
       validation: Rule => Rule.custom(text => {
-        if (text.en && text.en.length && text.es && text.es.length) {
+        if (text && text.en && text.en.length && text.es && text.es.length) {
           return true
         }
         return 'English and Spanish translations required.'
@@ -80,7 +80,7 @@ export default {
       type: 'localeString',
       title: 'How To Collaborate Section Title',
       validation: Rule => Rule.custom(text => {
-        if (text.en && text.en.length && text.es && text.es.length) {
+        if (text && text.en && text.en.length && text.es && text.es.length) {
           return true
         }
         return 'English and Spanish translations required.'
@@ -96,7 +96,7 @@ export default {
       type: 'localeString',
       title: 'Block 4 Text',
       validation: Rule => Rule.custom(text => {
-        if (text.en && text.en.length && text.es && text.es.length) {
+        if (text && text.en && text.en.length && text.es && text.es.length) {
           return true
         }
         return 'English and Spanish translations required.'
@@ -149,7 +149,7 @@ export default {
       type: 'localeString',
       title: 'Block 6 & 7 Title',
       validation: Rule => Rule.custom(text => {
-        if (text.en && text.en.length && text.es && text.es.length) {
+        if (text && text.en && text.en.length && text.es && text.es.length) {
           return true
         }
         return 'English and Spanish translations required.'
@@ -172,7 +172,7 @@ export default {
       type: 'localeString',
       title: 'Banner 2 Text',
       validation: Rule => Rule.custom(text => {
-        if (text.en && text.en.length && text.es && text.es.length) {
+        if (text && text.en && text.en.length && text.es && text.es.length) {
           return true
         }
         return 'English and Spanish translations required.'

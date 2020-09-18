@@ -9,7 +9,7 @@ export default {
       type: 'localeString',
       title: 'Title',
       validation: Rule => Rule.custom(text => {
-        if (text.en && text.en.length && text.es && text.es.length) {
+        if (text && text.en && text.en.length && text.es && text.es.length) {
           return true
         }
         return 'English and Spanish translations required.'
@@ -115,7 +115,7 @@ export default {
       type: 'localeString',
       title: 'Block 5: Word 1',
       validation: Rule => Rule.custom(text => {
-        if (text.en && text.en.length && text.es && text.es.length) {
+        if (text && text.en && text.en.length && text.es && text.es.length) {
           return true
         }
         return 'English and Spanish translations required.'
@@ -126,7 +126,7 @@ export default {
       type: 'localeString',
       title: 'Block 5: Word 2',
       validation: Rule => Rule.custom(text => {
-        if (text.en && text.en.length && text.es && text.es.length) {
+        if (text && text.en && text.en.length && text.es && text.es.length) {
           return true
         }
         return 'English and Spanish translations required.'
@@ -137,7 +137,7 @@ export default {
       type: 'localeString',
       title: 'Block 5: Word 3',
       validation: Rule => Rule.custom(text => {
-        if (text.en && text.en.length && text.es && text.es.length) {
+        if (text && text.en && text.en.length && text.es && text.es.length) {
           return true
         }
         return 'English and Spanish translations required.'

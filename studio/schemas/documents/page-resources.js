@@ -9,7 +9,7 @@ export default {
       type: 'localeString',
       title: 'Book Section title',
       validation: Rule => Rule.custom(text => {
-        if (text.en && text.en.length && text.es && text.es.length) {
+        if (text && text.en && text.en.length && text.es && text.es.length) {
           return true
         }
         return 'English and Spanish translations required.'
@@ -20,7 +20,7 @@ export default {
       type: 'localeString',
       title: 'Book Section description',
       validation: Rule => Rule.custom(text => {
-        if (text.en && text.en.length && text.es && text.es.length) {
+        if (text && text.en && text.en.length && text.es && text.es.length) {
           return true
         }
         return 'English and Spanish translations required.'
@@ -40,7 +40,7 @@ export default {
       type: 'localeString',
       title: 'Tip Section title',
       validation: Rule => Rule.custom(text => {
-        if (text.en && text.en.length && text.es && text.es.length) {
+        if (text && text.en && text.en.length && text.es && text.es.length) {
           return true
         }
         return 'English and Spanish translations required.'
@@ -51,7 +51,7 @@ export default {
       type: 'localeString',
       title: 'Tip Section description',
       validation: Rule => Rule.custom(text => {
-        if (text.en && text.en.length && text.es && text.es.length) {
+        if (text && text.en && text.en.length && text.es && text.es.length) {
           return true
         }
         return 'English and Spanish translations required.'

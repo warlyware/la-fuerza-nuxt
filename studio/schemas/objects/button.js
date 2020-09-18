@@ -8,7 +8,7 @@ export default {
       type: 'localeString',
       title: 'Button Text',
       validation: Rule => Rule.custom(text => {
-        if (text.en && text.en.length && text.es && text.es.length) {
+        if (text && text.en && text.en.length && text.es && text.es.length) {
           return true
         }
         return 'English and Spanish translations required.'
