@@ -51,13 +51,9 @@ export default {
       default: 'vertical'
     }
   },
-  mounted() {
-    console.log(this.playlist[0])
-  },
   methods: {
     setCurrentIndex(i) {
       this.$emit('set-current-index', i)
-      console.log(i)
     }
   },
 }

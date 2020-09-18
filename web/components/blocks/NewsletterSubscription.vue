@@ -31,9 +31,6 @@ export default {
   computed: {
     locale() { return this.$i18n.locale },
     secondaryContacts() { return this.contacts.slice(2, this.contacts.length) }
-  },
-  mounted() {
-    console.log(this)
   }
 }
 </script>

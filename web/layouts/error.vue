@@ -22,7 +22,7 @@ export default {
   mounted() {
     setTimeout(() => {
       this.$router.push('/')
-    }, 2000)
+    }, 3000)
   },
 }
 </script>

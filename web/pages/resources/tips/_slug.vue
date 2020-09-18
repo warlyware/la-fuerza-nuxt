@@ -116,7 +116,6 @@ export default {
     this.$nextTick(() => {
       window.addEventListener('resize', this.onResize);
     })
-    console.log({route: this.$route})
     const { slug } = this.$route.params
     if (slug && this.formattedTips[slug]) {
       try {

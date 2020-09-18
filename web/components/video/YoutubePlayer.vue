@@ -57,10 +57,7 @@ export default {
     getYoutubeId,
     setCurrentIndex(i) {
       this.currentIndex = i
-      // if (this.ytPlayer) { this.ytPlayer.playVideo() }
       this.$nextTick(() => this.ytPlayer.playVideo())
-      // this.ytPlayer.playVideo()
-      console.log(this.ytPlayer)
     }
   }
 }

@@ -24,7 +24,6 @@ export default {
     locale() { return this.$i18n.locale },
     menu() {
       return this.navigation.map(link => {
-        console.log({ link })
         return {
           href: this.localePath(link.internalLink),
           title: link.text[this.locale],

@@ -71,9 +71,6 @@ export default {
   },
   async asyncData() {
     return await sanityClient.fetch(query)
-  },
-  mounted() {
-    console.log(this)
   }
 }
 </script>

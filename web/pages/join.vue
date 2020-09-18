@@ -30,6 +30,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import groq from 'groq'
 import sanityClient from '~/sanityClient'
 import Hero from '~/components/blocks/Hero'
@@ -60,8 +61,24 @@ export default {
   async asyncData() {
     return await sanityClient.fetch(query)
   },
-  mounted() {
-    console.log(this)
+  async mounted() {
+    const SANITY_API_URL = 'https://pb0hrpvr.api.sanity.io/v1/data/query/production?'
+    const query = `*[_id == "page-resources"][0] {
+        books[]->{
+          slug
+        },
+        tips[]->{
+          ...
+        }
+      }`
+    const qs = encodeURIComponent(query)
+    // const qs = '*%5B_id%20%3D%3D%20%22page-resources%22%5D%5B0%5D%20%7B%0A%20%20%20%20books%5B%5D-%3E%7B%0A%20%20%20%20%20%20slug%0A%20%20%20%20%7D%0A%20%20%7D'
+    // const url = `${SANITY_API_URL}?query=${qs}"`
+    const url = `${SANITY_API_URL}query=${qs}`
+    const { data } = await axios.get(url)
+    console.log({ data })
+    console.log(data.result.books.map(book => book.slug.current))
+    console.log(data.result.tips.map((tip, i) => i))
   }
 }
 </script>
