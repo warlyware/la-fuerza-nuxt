@@ -47,7 +47,6 @@ export default {
   },
   async fetch() {
     const data = await sanityClient.fetch(query)
-    console.log(this)
     this.mainNavigation = data.mainNavigation
     this.footerNavigation = data.footerNavigation
     this.facebookUrl = data.facebookUrl

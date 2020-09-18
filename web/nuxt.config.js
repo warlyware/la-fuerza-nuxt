@@ -1,7 +1,31 @@
 import sanityClient from './sanityClient'
+import axios from 'axios'
+
+const SANITY_API_URL = 'https://pb0hrpvr.api.sanity.io/v1/data/query/production?'
+const query = `*[_id == "page-resources"][0] {
+        books[]->{
+          slug
+        },
+        tips[]->{
+          ...
+        }
+      }`
+const qs = encodeURIComponent(query)
+const url = `${SANITY_API_URL}query=${qs}`
+
+let dynamicRoutes = async () => {
+  const { data } = await axios.get(url)
+  const books = data.results.books.map(book => `/books/${book.slug.current}`)
+  const tips = data.results.tips.map((_, i) => `/tips/${i}`)
+
+  return [...books, ...tips]
+}
 
 export default {
   mode: 'spa',
+  generate: {
+    routes: dynamicRoutes
+  },
 
   /*
    ** Headers of the page
