@@ -25,7 +25,8 @@ let dynamicRoutes = async () => {
 export default {
   mode: 'spa',
   generate: {
-    routes: dynamicRoutes
+    routes: dynamicRoutes,
+    fallback: true
   },
 
   /*
