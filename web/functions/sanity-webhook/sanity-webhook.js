@@ -1,4 +1,4 @@
-import axios from 'axios'
+const axios = require('axios')
 const SANITY_API_URL = 'https://pb0hrpvr.api.sanity.io/v1/data/query/production?'
 
 const headers = process.env.IS_LOCAL_DEV ? {
