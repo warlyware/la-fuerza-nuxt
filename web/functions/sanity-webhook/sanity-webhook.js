@@ -6,7 +6,7 @@ const headers = process.env.IS_LOCAL_DEV ? {
 
 
 exports.handler = async event => {
-  const { payload } = event.body
+  const payload = event.body
   console.log({ event, payload })
 
   return {
