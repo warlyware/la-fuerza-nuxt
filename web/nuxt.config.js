@@ -2,14 +2,16 @@ import sanityClient from './sanityClient'
 import axios from 'axios'
 
 const SANITY_API_URL = 'https://pb0hrpvr.api.sanity.io/v1/data/query/production?'
-const query = `*[_id == "page-resources"][0] {
-        books[]->{
-          slug
-        },
-        tips[]->{
-          ...
-        }
-      }`
+const query = `
+*[_id == "page-resources"][0] {
+  books[]->{
+    slug
+  },
+  tips[]->{
+    ...
+  }
+}
+`
 const qs = encodeURIComponent(query)
 const url = `${SANITY_API_URL}query=${qs}`
 
