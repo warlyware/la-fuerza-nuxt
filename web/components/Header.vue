@@ -3,30 +3,14 @@
     <div class="flex justify-center mx-auto">
       <div class="w-full justify-center">
         <div class="flex w-full justify-between items-end h-half border-l-4 border-pink">
-          <button class="bg-aqua rounded-full self-center p-4 py-0 ml-1 mb-2 md:w-32 text-sm md:text-2xl font-bold italic"
-          @click="toggleLanguage">
-            <span v-if="language === 'es'" class="text-shadow-pink text-white">
-              ENGLISH
-            </span>
-            <span v-if="language === 'en'" class="text-shadow-pink text-white">
-              ESPAÑOL
-            </span>
-          </button>
-          <img src="/images/la-fuerza-logo-top.png" class="h-6 md:h-8 -ml-16 md:-ml-24 mb-1 cursor-pointer"
+          <TranslationButton />
+          <img src="/images/la-fuerza-logo-top.png" class="h-4 md:h-8 -ml-8 md:-ml-24 mb-1 cursor-pointer"
           @click="$router.push(localeRoute('/'))" />
-          <button class="self-center text-lg md:text-3xl text-blue mb-2 font-bold"
-          @click="toggleNav">
-            <span v-if="language === 'es'">
-              MENÚ
-            </span>
-            <span v-if="language === 'en'">
-              MENU
-            </span>
-          </button>
+          <SideNavToggleButton />
         </div>
         <div class="bg-pink h-1 w-full"></div>
         <div class="flex w-full justify-center h-half border-r-4 border-pink">
-          <img src="/images/la-fuerza-logo-bottom.png" class="h-4 md:h-6 -mr-16 mt-1 cursor-pointer"
+          <img src="/images/la-fuerza-logo-bottom.png" class="h-3 md:h-6 -mr-16 mt-1 cursor-pointer"
           @click="$router.push(localeRoute('/'))" />
         </div>
       </div>
@@ -35,18 +19,21 @@
 </template>
 
 <script>
-// import { mapGetters } from 'vuex'
+
+import SideNavToggleButton from '~/components/blocks/SideNavToggleButton'
+import TranslationButton from '~/components/blocks/TranslationButton'
 
 export default {
+  components: {
+    SideNavToggleButton,
+    TranslationButton
+  },
   computed: {
-    language() { return this.$i18n.locale }
+    locale() { return this.$i18n.locale }
   },
   methods: {
     toggleNav() {
       this.$store.commit('toggleNav')
-    },
-    toggleLanguage() {
-      this.$i18n.setLocale(this.language === 'en' ? 'es' : 'en')
     }
   }
 }
