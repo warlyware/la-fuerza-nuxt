@@ -19,25 +19,25 @@
       </div>
     </div>
     <div class="w-full border border-blue p-8 mb-8">
-      <div id="block2" class="w-full text-center text-2xl mb-0 px-4 lg:px-0 text-blue">
+      <div class="w-full text-center text-2xl mb-0 px-4 lg:px-0 text-blue">
         <BlockContent :blocks="this[`${locale}Banner1Text`]" />
       </div>
     </div>
     <div class="max-w-6xl m-auto flex flex-wrap px-8 lg:px-16 text-xl mb-12 tracking-wide">
-      <div class="p-4 w-full lg:w-1/2 text-3xl text-center flex flex-1">
-        <div class="border rounded-lg w-full flex justify-center items-center h-full p-8 shadow-black bg-blue text-white">
+      <div class="p-4 w-full lg:w-1/2 flex flex-1">
+        <div class="border rounded-lg w-full flex items-center h-full p-8 shadow-black bg-blue text-white">
           <BlockContent :blocks="this[`${locale}Block2Text`]" />
         </div>
       </div>
-      <div class="p-4 w-full lg:w-1/2 text-3xl text-center flex flex-1">
-        <div class="border rounded-lg w-full flex justify-center items-center h-full p-8 shadow-black bg-blue text-white">
+      <div class="p-4 w-full lg:w-1/2 flex flex-1">
+        <div class="border rounded-lg w-full flex items-center h-full p-8 shadow-black bg-blue text-white">
           <BlockContent :blocks="this[`${locale}Block3Text`]" />
         </div>
       </div>
     </div>
 
     <div class="max-w-4xl m-auto flex flex-wrap mb-8 p-4 rounded-lg text-xl bg-pink text-white">
-      <div class="w-full text-center text-3xl mb-0 px-8 lg:px-0">
+      <div class="w-full text-center mb-0 px-8 lg:px-0">
         <BlockContent :blocks="this[`${locale}Banner2Text`]" />
       </div>
       <div class="w-full flex justify-center">
@@ -86,7 +86,7 @@
       </div>
     </div>
     <div class="max-w-4xl m-auto flex flex-wrap p-4 rounded-lg text-xl bg-pink text-white mb-8">
-      <div class="w-full text-center text-3xl mb-0 leading-8">
+      <div class="w-full text-center mb-0 leading-8">
         <BlockContent :blocks="this[`${locale}Banner3Text`]" />
       </div>
       <div class="w-full flex justify-center">
@@ -95,7 +95,7 @@
       </div>
     </div>
     <div class="w-full bg-aqua p-8 mb-8">
-      <div id="block2" class="w-full text-center text-2xl mb-0 text-white">
+      <div class="w-full text-center text-2xl mb-0 text-white">
         <BlockContent :blocks="this[`${locale}Banner4Text`]" />
       </div>
     </div>
