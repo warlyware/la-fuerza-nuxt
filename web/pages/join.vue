@@ -30,7 +30,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 import groq from 'groq'
 import sanityClient from '~/sanityClient'
 import Hero from '~/components/blocks/Hero'

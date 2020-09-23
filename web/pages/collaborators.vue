@@ -14,7 +14,8 @@
       </div>
       <div class="w-full md:w-1/2 text-white leading-tight md:pl-2">
         <div class="text-2xl font-bold p-8 bg-blue h-full flex justify-center items-center">
-          <BlockContent :blocks="this[`${locale}Block1Text`]" />
+          <BlockContent :blocks="this[`${locale}Block1Text`]"
+          :serializers="serializers" />
         </div>
       </div>
     </div>
@@ -109,6 +110,7 @@
 
 <script>
 import CustomButton from '~/components/blocks/CustomButton'
+import TextStyle from '~/components/blocks/TextStyle'
 import BlockContent from 'sanity-blocks-vue-component'
 import groq from 'groq'
 import sanityClient from '~/sanityClient'
@@ -140,6 +142,11 @@ export default {
     return {
       collabBlockOddStyle: '',
       collabBlockEvenStyle: 'self-end',
+      serializers: {
+        types: {
+          h4: TextStyle
+        }
+      }
     }
   },
   computed: {
@@ -158,7 +165,7 @@ export default {
     },
     eventLocations() {
       return Object.keys(this.formattedEvents).length
-    }
+    },
   },
   async asyncData() {
     return await sanityClient.fetch(query)
