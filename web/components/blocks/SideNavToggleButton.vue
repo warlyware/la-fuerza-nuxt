@@ -1,12 +1,19 @@
 <template>
-  <button class="self-center text-lg md:text-3xl text-blue font-bold"
+  <button class="self-center text-sm md:text-3xl text-blue font-bold"
   @click="toggleNav">
-    <span v-if="locale === 'es'">
-      MENÚ
-    </span>
-    <span v-if="locale === 'en'">
-      MENU
-    </span>
+    <div class="hidden md:block">
+      <span v-if="locale === 'es'">
+        MENÚ
+      </span>
+      <span v-if="locale === 'en'">
+        MENU
+      </span>
+    </div>
+    <div class="md:hidden mb-1">
+      <div class="hamburger-line" />
+      <div class="hamburger-line" />
+      <div class="hamburger-line" />
+    </div>
   </button>
 </template>
 
@@ -24,6 +31,11 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-
+<style scoped>
+  .hamburger-line {
+    width: 20px;
+    height: 3px;
+    background-color: #19105e;
+    margin: 2px 0;
+  }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <button class="bg-aqua rounded-full self-center p-2 py-0 ml-1 md:w-32 text-sm md:text-2xl font-bold italic"
+  <button class="bg-aqua rounded-full self-center p-2 py-0 ml-1 md:w-32 text-xs md:text-2xl font-bold italic"
   @click="toggleLanguage">
     <span v-if="locale === 'es'" class="text-shadow-pink text-white">
       ENGLISH
