@@ -14,7 +14,8 @@
       </div>
       <div class="w-full md:w-1/2 text-white leading-tight md:pl-2">
         <div class="text-2xl font-bold p-8 bg-blue h-full flex justify-center items-center">
-          <BlockContent :blocks="this[`${locale}Block1Text`]" />
+          <BlockContent :blocks="this[`${locale}Block1Text`]"
+          :serializers="serializers" />
         </div>
       </div>
     </div>
@@ -38,7 +39,7 @@
 
     <div v-for="(block, i) in collaboratorBlocks" :key="block._id"
     class="px-8 md:px-0 md:mb-0">
-      <h2 v-if="i === 0" class="text-5xl font-bold italic text-center mb-2 md:mb-0 text-blue">
+      <h2 v-if="i === 0" class="text-5xl font-bold italic text-center mb-2 md:mb-0 text-blue uppercase">
         {{collaboratorsSectionTitle[locale]}}
       </h2>
       <div
@@ -58,7 +59,7 @@
     </div>
     <div class="max-w-3xl m-auto flex flex-wrap my-12">
       <div class="w-full mx-4 md:mx-0 md:w-1/3 bg-blue flex items-center rounded-lg tracking-wider">
-        <h2 class="font-bold italic text-white text-4xl mb-0 leading-tight p-4">
+        <h2 class="font-bold italic text-white text-4xl mb-0 leading-tight p-4 uppercase">
           {{block4Text[locale]}}
         </h2>
       </div>
@@ -139,7 +140,7 @@ export default {
   data() {
     return {
       collabBlockOddStyle: '',
-      collabBlockEvenStyle: 'self-end',
+      collabBlockEvenStyle: 'self-end'
     }
   },
   computed: {
@@ -158,7 +159,7 @@ export default {
     },
     eventLocations() {
       return Object.keys(this.formattedEvents).length
-    }
+    },
   },
   async asyncData() {
     return await sanityClient.fetch(query)

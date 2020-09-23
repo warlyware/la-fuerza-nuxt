@@ -4,7 +4,7 @@
     x-axis-location="start" class="mb-8" />
     <div class="p-4">
       <div class="flex flex-col items-center w-full p-4 text-xl leading-tight text-blue">
-        <h2 class="text-2xl text-aqua font-bold italic mb-2">
+        <h2 class="text-2xl text-aqua font-bold italic mb-2 uppercase">
           {{contacts[0].name[locale]}}
         </h2>
         <div v-if="contacts[0].address" class="address">
@@ -28,7 +28,7 @@
       </div>
 
       <div class="flex flex-col items-center w-full p-4 text-xl leading-tight text-blue">
-        <h2 class="text-2xl text-pink font-bold italic mb-2">
+        <h2 class="text-2xl text-pink font-bold italic mb-2 uppercase">
           {{contacts[1].name[locale]}}
         </h2>
         <div v-if="contacts[1].address" class="address mb-1">
@@ -55,7 +55,7 @@
       class="flex flex-wrap md:justify-between w-full pb-8 max-w-6xl mx-auto text-blue">
         <div v-for="contact in secondaryContacts" :key="contact._id"
         class="flex flex-col items-center w-full md:w-1/3 flex-grow p-4 text-xl leading-tight">
-          <h2 class="text-2xl font-bold italic">
+          <h2 class="text-2xl font-bold italic uppercase">
             {{contact.name[locale]}}
           </h2>
           <div v-if="contact.address" class="address">

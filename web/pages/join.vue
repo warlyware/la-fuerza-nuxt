@@ -12,7 +12,7 @@
           :width="100"
           :height="100" fit="crop"
           class="mb-4" />
-          <div class="w-full text-lg mb-4 text-center font-bold text-blue">
+          <div class="w-full text-lg mb-4 text-center text-blue">
             <BlockContent :blocks="block[`${locale}Text`]" />
           </div>
           <div class="w-full flex justify-center">
@@ -30,7 +30,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 import groq from 'groq'
 import sanityClient from '~/sanityClient'
 import Hero from '~/components/blocks/Hero'
@@ -59,7 +58,9 @@ export default {
     locale() { return this.$i18n.locale }
   },
   async asyncData() {
-    return await sanityClient.fetch(query)
+    const data = await sanityClient.fetch(query)
+    console.log(data.joinBlocks[4][`enText`])
+    return data
   }
 }
 </script>

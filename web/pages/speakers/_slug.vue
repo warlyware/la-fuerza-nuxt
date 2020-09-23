@@ -23,7 +23,7 @@
       </ul>
     </div>
     <div v-if="scheduleItems" class="sessions">
-      <h2>Sessions</h2>
+      <h2 class="uppercase">Sessions</h2>
       <SessionItem
         v-for="scheduleItem in scheduleItems"
         :key="scheduleItem._key"
