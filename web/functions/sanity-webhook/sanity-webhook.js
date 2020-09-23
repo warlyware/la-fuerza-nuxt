@@ -35,7 +35,12 @@ exports.handler = async event => {
   // const { data } = await axios.get(url)
   if (deleted.length || created.length) {
     console.log('Kicking off rebuild!')
-    axios.post('https://api.netlify.com/build_hooks/5f18aaba5cb587849eac43a1')
+    try {
+      const res = await axios.post('https://api.netlify.com/build_hooks/5f18aaba5cb587849eac43a1')
+      console.log({ res })
+    } catch (error) {
+      console.log({ error })
+    }
   }
   console.log({ payload })
 
