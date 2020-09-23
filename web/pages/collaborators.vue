@@ -76,14 +76,14 @@
       <div class="w-full p-2 px-12 bg-blue text-white text-center text-4xl font-bold tracking-wide leading-8">
         {{block6Block7Title[locale]}}
       </div>
-      <div class="w-full md:w-1/2 p-4 px-12 lg:px-8 bg-pink text-white text-center leading-5 flex flex-col justify-between">
+      <div class="w-full md:w-1/2 p-4 px-12 lg:px-8 bg-pink text-white leading-5 flex flex-col justify-between">
         <BlockContent :blocks="this[`${locale}Block6Text`]" />
         <div class="w-full flex justify-center">
           <CustomButton :button="block6Button"
           class="mt-2 p-2 py-3 font-bold italic text-2xl text-white bg-aqua rounded-lg tracking-wide text-shadow-pink" />
         </div>
       </div>
-      <div class="w-full md:w-1/2 p-4 px-12 lg:px-8 bg-aqua text-blue text-center leading-relaxed flex flex-col justify-between">
+      <div class="w-full md:w-1/2 p-4 px-12 lg:px-8 bg-aqua text-blue leading-relaxed flex flex-col justify-between">
         <BlockContent :blocks="this[`${locale}Block7Text`]" />
         <div class="w-full flex justify-center">
           <CustomButton :button="block7Button"
