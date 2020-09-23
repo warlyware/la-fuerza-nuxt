@@ -217,8 +217,8 @@ a {
 #block1 p {
   @apply my-4;
 }
-#block2 strong, #block2 a {
-  @apply text-aqua;
-}
+// #block2 strong, #block2 a {
+//   @apply text-aqua;
+// }
 
 </style>

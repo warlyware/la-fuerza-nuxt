@@ -55,7 +55,7 @@
       class="flex flex-wrap md:justify-between w-full pb-8 max-w-6xl mx-auto text-blue">
         <div v-for="contact in secondaryContacts" :key="contact._id"
         class="flex flex-col items-center w-full md:w-1/3 flex-grow p-4 text-xl leading-tight">
-          <h2 class="text-2xl font-bold italic uppercase">
+          <h2 class="text-2xl font-bold italic uppercase mb-2">
             {{contact.name[locale]}}
           </h2>
           <div v-if="contact.address" class="address">
