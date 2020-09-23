@@ -46,7 +46,7 @@
       </div>
     </div>
 
-    <div class="w-full flex flex-wrap">
+    <div class="w-full flex flex-wrap mb-2">
       <div class="w-full md:w-1/2 md:pr-2 mb-2">
         <youtube player-width="100%" player-height="100%"
         class="video-responsive flex-grow"
@@ -56,6 +56,25 @@
         <youtube player-width="100%" player-height="100%"
         class="video-responsive flex-grow"
         :video-id="getYoutubeId(video4Url)" />
+      </div>
+    </div>
+
+    <div class="bg-blue w-full -mb-6">
+      <div class="p-4 flex flex-wrap w-full">
+        <div class="flex justify-center w-full text-white italic">
+          <h2>{{ sponsorsBlockTitle[locale] }}</h2>
+        </div>
+        <div class="flex flex-wrap justify-center lg:justify-between m-auto w-full">
+          <div class="flex justify-center w-full lg:w-1/3 my-2">
+            <img class="h-24 w-auto bg-white" src="/images/lp-logo.svg">
+          </div>
+          <div class="flex justify-center w-full lg:w-1/3 my-2">
+            <img class="h-24 w-auto bg-white" src="/images/univision-logo.svg">
+          </div>
+          <div class="flex justify-center w-full lg:w-1/3 my-2">
+            <img class="h-24 w-auto bg-white" src="/images/too-small-logo.png">
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -78,8 +97,6 @@ export default {
   components: {
     BlockContent,
     CustomButton
-    // VideoThumbnail
-    // SanityImage
   },
   data() {
     return {

@@ -4,8 +4,8 @@
       <div class="w-full justify-center">
         <div class="flex w-full justify-between items-end h-half border-l-4 border-pink">
           <div class="flex w-1/4">
-            <img class="h-4 w-auto px-1" src="/images/lp-logo.svg">
-            <img class="h-5 w-auto px-1" src="/images/univision-logo.svg">
+            <img class="h-4 md:h-12 w-auto px-1 md:p-1" src="/images/lp-logo.svg">
+            <img class="h-5 md:h-12 w-auto px-1 md:p-1" src="/images/univision-logo.svg">
           </div>
           <!-- <TranslationButton class="block md:hidden" /> -->
           <img src="/images/la-fuerza-logo-top.png" class="h-3 md:h-8 -ml-8 md:-ml-24 mb-1 cursor-pointer"
