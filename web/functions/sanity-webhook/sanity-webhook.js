@@ -22,18 +22,19 @@ exports.handler = async event => {
         _type
       }
     `
-  } else if (deleted.length) {
-    query = `
-      *[_id == "${deleted[0]}"][0] {
-        _type
-      }
-    `
+  // } else if (deleted.length) {
+  //   query = `
+  //     *[_id == "${deleted[0]}"][0] {
+  //       _type
+  //     }
+  //   `
   }
 
   const qs = encodeURIComponent(query)
   const url = `${SANITY_API_URL}query=${qs}`
   const { data } = await axios.get(url)
-  if (data.result && (data.result._type === 'tip' || data.result._type === 'book')) {
+  if (deleted.length || data.result && (data.result._type === 'tip' || data.result._type === 'book')) {
+    console.log('Kicking off rebuild!')
     axios.post('https://api.netlify.com/build_hooks/5f18aaba5cb587849eac43a1')
   }
   console.log({ payload, data })
