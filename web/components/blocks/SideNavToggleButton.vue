@@ -1,5 +1,5 @@
 <template>
-  <button class="self-center text-lg md:text-3xl text-blue mb-2 font-bold"
+  <button class="self-center text-lg md:text-3xl text-blue font-bold"
   @click="toggleNav">
     <span v-if="locale === 'es'">
       MENÚ
