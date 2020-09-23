@@ -1,7 +1,7 @@
 /* eslint-disable vue/no-parsing-error */
 <template>
   <div class="pt-8 w-full">
-    <h1 class="font-bold text-6xl text-center mb-0">
+    <h1 class="text-blue font-bold italic uppercase text-6xl text-center mb-0">
       {{title[locale]}}
     </h1>
     <ShareMenu class="w-full flex justify-center" :share-menu="shareMenu" />

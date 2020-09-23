@@ -14,7 +14,7 @@
     </div>
 
     <div class="font-bold italic">
-      <h1 class="text-aqua text-3xl w-full text-center pt-8">
+      <h1 class="text-aqua font-bold italic uppercase w-full text-center pt-8">
         {{block2Title[locale]}}
       </h1>
       <div class="flex w-full flex-wrap items-center justify-around pb-12">

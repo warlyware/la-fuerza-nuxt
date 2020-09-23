@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col w-full h-screen justify-center items-center">
+  <div class="flex flex-col w-full h-screen justify-center items-center text-blue font-bold italic uppercase">
     <h1 v-if="error.statusCode === 404">
       {{ pageNotFound }}
     </h1>

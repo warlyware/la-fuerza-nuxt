@@ -1,6 +1,6 @@
 <template>
   <section class="pt-8">
-    <h1 class="text-5xl text-center italic">
+    <h1 class="text-5xl text-center text-blue font-bold italic uppercase">
       {{ title[locale] }}
     </h1>
     <div v-if="shareMenu"
@@ -10,7 +10,7 @@
     <template v-if="formattedPlaylists.length">
       <div v-for="{ playlist, title, description } in formattedPlaylists" :key="playlist.id"
       class="max-w-video-player m-auto mb-8 px-12 md:px-0 text-blue">
-        <h2 class="mb-0 text-4xl md:mx-8 xl:mx-0 uppercase">
+        <h2 class="mb-0 text-4xl md:mx-8 xl:mx-0 uppercase font-bold">
           {{title}}
         </h2>
         <p class="mb-8 md:mx-8 xl:mx-0">

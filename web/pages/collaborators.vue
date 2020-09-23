@@ -59,9 +59,9 @@
     </div>
     <div class="max-w-3xl m-auto flex flex-wrap my-12">
       <div class="w-full mx-4 md:mx-0 md:w-1/3 bg-blue flex items-center rounded-lg tracking-wider">
-        <h2 class="text-white text-4xl mb-0 leading-tight p-4">
+        <div class="text-white text-4xl mb-0 leading-tight p-4">
           {{block4Text[locale]}}
-        </h2>
+        </div>
       </div>
       <div class="w-full md:w-2/3 mx-4 md:mx-0 border border-blue text-blue rounded p-8">
         <p class="p-4 text-lg text-center mb-0">

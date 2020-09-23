@@ -2,7 +2,7 @@
   <div class="pt-8 mx-auto md:pt-32 mb-8 content w-full">
     <LightBox ref="lightbox" :show-thumbs="false"
     :media="lightboxImages" :show-light-box="false" />
-    <h1 class="font-bold text-4xl text-center max-w-2xl m-auto leading-10 mb-4">
+    <h1 class="font-bold text-4xl text-blue italic uppercase text-center max-w-2xl m-auto leading-10 mb-4">
       {{title[locale]}}
     </h1>
     <div class="flex flex-wrap max-w-5xl m-auto px-8 lg:px-0 justify-center mb-4">
