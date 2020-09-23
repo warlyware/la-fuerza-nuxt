@@ -8,7 +8,7 @@
     </div>
     <div class="w-full flex flex-wrap mb-8">
       <div class="w-full lg:w-1/2 text-white leading-tight lg:pr-2 mb-2 lg:mb-0">
-        <div id="block1" class="text-lg xl:text-2xl font-bold p-8 bg-blue h-full flex justify-center items-center">
+        <div id="block1" class="text-lg xl:text-2xl p-8 bg-blue h-full flex justify-center items-center">
           <BlockContent :blocks="this[`${locale}Block1Text`]" />
         </div>
       </div>
@@ -19,25 +19,25 @@
       </div>
     </div>
     <div class="w-full border border-blue p-8 mb-8">
-      <div id="block2" class="w-full text-center text-2xl font-bold mb-0 px-4 lg:px-0 text-blue">
+      <div id="block2" class="w-full text-center text-2xl mb-0 px-4 lg:px-0 text-blue">
         <BlockContent :blocks="this[`${locale}Banner1Text`]" />
       </div>
     </div>
     <div class="max-w-6xl m-auto flex flex-wrap px-8 lg:px-16 text-xl mb-12 tracking-wide">
       <div class="p-4 w-full lg:w-1/2 text-3xl text-center flex flex-1">
-        <div class="border rounded-lg w-full flex justify-center items-center h-full p-8 font-bold italic shadow-black bg-blue text-white">
+        <div class="border rounded-lg w-full flex justify-center items-center h-full p-8 shadow-black bg-blue text-white">
           <BlockContent :blocks="this[`${locale}Block2Text`]" />
         </div>
       </div>
       <div class="p-4 w-full lg:w-1/2 text-3xl text-center flex flex-1">
-        <div class="border rounded-lg w-full flex justify-center items-center h-full p-8 font-bold italic shadow-black bg-blue text-white">
+        <div class="border rounded-lg w-full flex justify-center items-center h-full p-8 shadow-black bg-blue text-white">
           <BlockContent :blocks="this[`${locale}Block3Text`]" />
         </div>
       </div>
     </div>
 
     <div class="max-w-4xl m-auto flex flex-wrap mb-8 p-4 rounded-lg text-xl bg-pink text-white">
-      <div class="w-full text-center text-3xl font-bold mb-0 px-8 lg:px-0">
+      <div class="w-full text-center text-3xl mb-0 px-8 lg:px-0">
         <BlockContent :blocks="this[`${locale}Banner2Text`]" />
       </div>
       <div class="w-full flex justify-center">
@@ -57,7 +57,7 @@
           :height="500"
           fit="crop" />
         </div>
-        <div :class="`text-2xl font-bold leading-7 flex items-center mb-0 text-${block.borderColor} text-center lg:text-left`">
+        <div :class="`text-2xl leading-7 flex items-center mb-0 text-${block.borderColor} text-center lg:text-left`">
           <BlockContent :blocks="block[`${locale}Text`]" />
         </div>
       </div>
@@ -86,7 +86,7 @@
       </div>
     </div>
     <div class="max-w-4xl m-auto flex flex-wrap p-4 rounded-lg text-xl bg-pink text-white mb-8">
-      <div class="w-full text-center text-3xl font-bold mb-0 leading-8">
+      <div class="w-full text-center text-3xl mb-0 leading-8">
         <BlockContent :blocks="this[`${locale}Banner3Text`]" />
       </div>
       <div class="w-full flex justify-center">
@@ -95,7 +95,7 @@
       </div>
     </div>
     <div class="w-full bg-aqua p-8 mb-8">
-      <div id="block2" class="w-full text-center text-2xl font-bold mb-0 text-white">
+      <div id="block2" class="w-full text-center text-2xl mb-0 text-white">
         <BlockContent :blocks="this[`${locale}Banner4Text`]" />
       </div>
     </div>

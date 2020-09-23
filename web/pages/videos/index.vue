@@ -13,7 +13,7 @@
         <h2 class="mb-0 text-4xl md:mx-8 xl:mx-0 uppercase">
           {{title}}
         </h2>
-        <p class="mb-8 font-bold md:mx-8 xl:mx-0">
+        <p class="mb-8 md:mx-8 xl:mx-0">
           <BlockContent :blocks="description" />
         </p>
         <YoutubePlayer

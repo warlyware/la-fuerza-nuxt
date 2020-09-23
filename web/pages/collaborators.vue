@@ -13,25 +13,25 @@
         :video-id="getYoutubeId(videoUrl)"  />
       </div>
       <div class="w-full md:w-1/2 text-white leading-tight md:pl-2">
-        <div class="text-2xl font-bold p-8 bg-blue h-full flex justify-center items-center">
+        <div class="text-2xl p-8 bg-blue h-full flex justify-center items-center">
           <BlockContent :blocks="this[`${locale}Block1Text`]"
           :serializers="serializers" />
         </div>
       </div>
     </div>
     <div class="w-full bg-blue p-8 px-12 lg:px-8 mb-8">
-      <div id="banner-1-text" class="w-full text-center text-2xl text-white font-bold mb-0">
+      <div id="banner-1-text" class="w-full text-center text-2xl text-white mb-0">
         <BlockContent :blocks="this[`${locale}Banner1Text`]" />
       </div>
     </div>
     <div class="max-w-6xl m-auto flex flex-wrap px-8 md:px-16 text-xl mb-12 tracking-wide">
       <div class="p-4 w-full md:w-1/2">
-        <div class="border border-blue text-blue rounded-lg w-full flex justify-center items-center h-full p-8 font-bold italic shadow-blue">
+        <div class="border border-blue text-blue rounded-lg w-full flex justify-center items-center h-full p-8 shadow-blue">
           <BlockContent :blocks="this[`${locale}Block2Text`]" />
         </div>
       </div>
       <div class="p-4 w-full md:w-1/2">
-        <div class="border border-blue text-blue rounded-lg w-full flex justify-center items-center h-full p-8 font-bold italic shadow-blue">
+        <div class="border border-blue text-blue rounded-lg w-full flex justify-center items-center h-full p-8 shadow-blue">
           <BlockContent :blocks="this[`${locale}Block3Text`]" />
         </div>
       </div>
@@ -50,7 +50,7 @@
           :class="i % 2 !== 1 ? 'text-pink' : 'text-aqua'">
             {{block.title[locale]}}
           </h3>
-          <div class="text-lg font-bold leading-5 flex items-center mb-0">
+          <div class="text-lg leading-5 flex items-center mb-0">
             <BlockContent :blocks="block[`${locale}Text`]" />
           </div>
         </div>
@@ -59,7 +59,7 @@
     </div>
     <div class="max-w-3xl m-auto flex flex-wrap my-12">
       <div class="w-full mx-4 md:mx-0 md:w-1/3 bg-blue flex items-center rounded-lg tracking-wider">
-        <h2 class="font-bold italic text-white text-4xl mb-0 leading-tight p-4 uppercase">
+        <h2 class="text-white text-4xl mb-0 leading-tight p-4">
           {{block4Text[locale]}}
         </h2>
       </div>
@@ -74,7 +74,7 @@
       </div>
     </div>
     <div class="max-w-5xl flex flex-wrap m-auto mb-12">
-      <div class="w-full p-2 px-12 bg-blue text-white text-center text-4xl uppercase italic font-bold tracking-wide leading-8">
+      <div class="w-full p-2 px-12 bg-blue text-white text-center text-4xl font-bold tracking-wide leading-8">
         {{block6Block7Title[locale]}}
       </div>
       <div class="w-full md:w-1/2 p-4 px-12 lg:px-8 bg-pink text-white text-center leading-5 flex flex-col justify-between">
@@ -93,7 +93,7 @@
       </div>
     </div>
 
-    <div class="w-full bg-blue p-8 px-12 lg:px-8 mb-8 font-bold italic text-white text-center text-2xl tracking-wider">
+    <div class="w-full bg-blue p-8 px-12 lg:px-8 mb-8 text-white text-center text-2xl tracking-wider">
       {{banner2Text[locale]}}
     </div>
 
@@ -189,6 +189,7 @@ export default {
 a {
   @apply text-pink italic;
 }
+
 #banner-1-text .font-bold, #banner-1-text .italic {
   @apply text-pink font-bold italic;
 }

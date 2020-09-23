@@ -9,9 +9,7 @@
         @ready="topVideoReady" />
       </div>
       <div class="w-full lg:w-1/2 bg-pink text-white flex justify-center items-center leading-tight p-8">
-        <span class=" text-4xl font-bold italic">
-          {{block1Text[locale]}}
-        </span>
+        {{block1Text[locale]}}
       </div>
     </div>
 
@@ -32,8 +30,8 @@
     </div>
 
     <div class="w-full flex flex-wrap pb-8">
-      <div class="w-full order-1 md:w-1/3 bg-blue text-white flex flex-col justify-center items-center leading-tight p-8 italic">
-        <div class="text-4xl font-bold italic text-aqua pb-4">
+      <div class="w-full order-1 md:w-1/3 bg-blue text-white flex flex-col justify-center items-center leading-tight p-8">
+        <div class="text-4xl text-aqua pb-4">
           {{block3Text[locale]}}
         </div>
         <div class="flex justify-center w-full mb-2">
