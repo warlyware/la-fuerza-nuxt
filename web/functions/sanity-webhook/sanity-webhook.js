@@ -14,34 +14,34 @@ exports.handler = async event => {
   const deleted = payload.ids ? payload.ids.deleted : []
   console.log({ payload, ids: payload.ids, created, deleted })
 
-  let query
+  // let query
 
-  if (created.length) {
-    query = `
-      *[_id == "${created[0]}"][0] {
-        _type
-      }
-    `
+  // if (created.length) {
+  //   query = `
+  //     *[_id == "${created[0]}"][0] {
+  //       _type
+  //     }
+  //   `
   // } else if (deleted.length) {
   //   query = `
   //     *[_id == "${deleted[0]}"][0] {
   //       _type
   //     }
   //   `
-  }
+  // }
 
-  const qs = encodeURIComponent(query)
-  const url = `${SANITY_API_URL}query=${qs}`
-  const { data } = await axios.get(url)
-  if (deleted.length || data.result && (data.result._type === 'tip' || data.result._type === 'book')) {
+  // const qs = encodeURIComponent(query)
+  // const url = `${SANITY_API_URL}query=${qs}`
+  // const { data } = await axios.get(url)
+  if (deleted.length || created.length) {
     console.log('Kicking off rebuild!')
     axios.post('https://api.netlify.com/build_hooks/5f18aaba5cb587849eac43a1')
   }
-  console.log({ payload, data })
+  console.log({ payload })
 
   return {
     statusCode: 200,
     headers,
-    body: JSON.stringify({ payload, data })
+    body: JSON.stringify({ payload })
   }
 }
