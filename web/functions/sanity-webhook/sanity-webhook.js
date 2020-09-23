@@ -33,6 +33,9 @@ exports.handler = async event => {
   const qs = encodeURIComponent(query)
   const url = `${SANITY_API_URL}query=${qs}`
   const { data } = await axios.get(url)
+  if (data.result && (data.result._type === 'tip' || data.result._type === 'book')) {
+    axios.post('https://api.netlify.com/build_hooks/5f18aaba5cb587849eac43a1')
+  }
   console.log({ payload, data })
 
   return {

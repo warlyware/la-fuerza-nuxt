@@ -39,7 +39,7 @@
 
     <div v-for="(block, i) in collaboratorBlocks" :key="block._id"
     class="px-8 md:px-0 md:mb-0">
-      <h2 v-if="i === 0" class="text-5xl font-bold italic text-center mb-2 md:mb-0 text-blue">
+      <h2 v-if="i === 0" class="text-5xl font-bold italic text-center mb-2 md:mb-0 text-blue uppercase">
         {{collaboratorsSectionTitle[locale]}}
       </h2>
       <div
@@ -59,7 +59,7 @@
     </div>
     <div class="max-w-3xl m-auto flex flex-wrap my-12">
       <div class="w-full mx-4 md:mx-0 md:w-1/3 bg-blue flex items-center rounded-lg tracking-wider">
-        <h2 class="font-bold italic text-white text-4xl mb-0 leading-tight p-4">
+        <h2 class="font-bold italic text-white text-4xl mb-0 leading-tight p-4 uppercase">
           {{block4Text[locale]}}
         </h2>
       </div>
@@ -110,7 +110,6 @@
 
 <script>
 import CustomButton from '~/components/blocks/CustomButton'
-import TextStyle from '~/components/blocks/TextStyle'
 import BlockContent from 'sanity-blocks-vue-component'
 import groq from 'groq'
 import sanityClient from '~/sanityClient'
@@ -141,12 +140,7 @@ export default {
   data() {
     return {
       collabBlockOddStyle: '',
-      collabBlockEvenStyle: 'self-end',
-      serializers: {
-        types: {
-          h4: TextStyle
-        }
-      }
+      collabBlockEvenStyle: 'self-end'
     }
   },
   computed: {

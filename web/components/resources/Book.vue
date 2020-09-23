@@ -9,7 +9,7 @@
     </nuxt-link>
     <nuxt-link :to="localePath(`/resources/books/${book.slug.current}`)"
     class="flex flex-col h-full p-2 justify-start text-blue">
-      <h2 class="text-2xl font-bold mb-2 line-clamp overflow-hidden">
+      <h2 class="text-2xl font-bold mb-2 line-clamp overflow-hidden uppercase">
         {{book.title[locale]}}
       </h2>
       <div class="text-sm leading-3 font-bold mb-8">

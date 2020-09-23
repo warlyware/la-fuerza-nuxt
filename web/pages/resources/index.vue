@@ -27,7 +27,7 @@
       </ul>
     </div>
     <div class="flex flex-wrap w-full">
-      <h2 class="w-full mb-0 font-bold leading-tight">
+      <h2 class="w-full mb-0 font-bold leading-tight uppercase">
         {{tipSectionTitle[locale]}}
       </h2>
       <p class="italic text-blue">
