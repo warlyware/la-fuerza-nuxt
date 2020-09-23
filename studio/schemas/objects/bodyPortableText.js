@@ -1,3 +1,18 @@
+import React from 'react'
+
+const XxlTextStyle = props => (
+  <span style={{ fontSize: '1.875rem', fontWeight: 'normal' }}>{props.children}</span>
+)
+const XlTextStyle = props => (
+  <span style={{ fontSize: '1.5rem', fontWeight: 'normal' }}>{props.children}</span>
+)
+const LargeTextStyle = props => (
+  <span style={{ fontSize: '1.25rem', fontWeight: 'normal' }}>{props.children}</span>
+)
+const MediumlTextStyle = props => (
+  <span style={{ fontSize: '1.125rem', fontWeight: 'normal' }}>{props.children}</span>
+)
+
 export default {
   name: 'bodyPortableText',
   type: 'array',
@@ -12,10 +27,34 @@ export default {
       // use your content.
       styles: [
         { title: 'Normal', value: 'normal' },
-        { title: 'Title', value: 'h1' },
-        { title: 'Extra Large', value: 'h2' },
-        { title: 'Large', value: 'h3' },
-        { title: 'Medium', value: 'h4' }
+        {
+          title: 'XXL',
+          value: 'h1',
+          blockEditor: {
+            render: XxlTextStyle
+          }
+        },
+        {
+          title: 'XL',
+          value: 'h2',
+          blockEditor: {
+            render: XlTextStyle
+          }
+        },
+        {
+          title: 'Large',
+          value: 'h3',
+          blockEditor: {
+            render: LargeTextStyle
+          }
+        },
+        {
+          title: 'Medium',
+          value: 'h4',
+          blockEditor: {
+            render: MediumlTextStyle
+          }
+        }
       ],
       lists: [{ title: 'Bullet', value: 'bullet' }, { title: 'Number', value: 'number' }],
       // Marks let you mark up inline text in the block editor.

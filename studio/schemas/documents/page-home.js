@@ -10,16 +10,28 @@ export default {
       title: 'Video 1 URL',
       validation: Rule => Rule.required()
     },
+    // {
+    //   name: 'block1Text',
+    //   type: 'localeString',
+    //   title: 'Block 1 Text',
+    //   validation: Rule => Rule.custom(text => {
+    //     if (text && text.en && text.en.length && text.es && text.es.length) {
+    //       return true
+    //     }
+    //     return 'English and Spanish translations required.'
+    //   })
+    // },
     {
-      name: 'block1Text',
-      type: 'localeString',
-      title: 'Block 1 Text',
-      validation: Rule => Rule.custom(text => {
-        if (text && text.en && text.en.length && text.es && text.es.length) {
-          return true
-        }
-        return 'English and Spanish translations required.'
-      })
+      name: 'enBlock1Text',
+      type: 'bodyPortableText',
+      title: 'Block 1 Text [English]',
+      validation: Rule => Rule.required()
+    },
+    {
+      name: 'esBlock1Text',
+      type: 'bodyPortableText',
+      title: 'Block 1 Text [Spanish]',
+      validation: Rule => Rule.required()
     },
     {
       name: 'block2Title',
@@ -100,16 +112,28 @@ export default {
         return 'English and Spanish translations required.'
       })
     },
+    // {
+    //   name: 'block3Text',
+    //   type: 'localeString',
+    //   title: 'Block 3: Text',
+    //   validation: Rule => Rule.custom(text => {
+    //     if (text && text.en && text.en.length && text.es && text.es.length) {
+    //       return true
+    //     }
+    //     return 'English and Spanish translations required.'
+    //   })
+    // },
     {
-      name: 'block3Text',
-      type: 'localeString',
-      title: 'Block 3: Text',
-      validation: Rule => Rule.custom(text => {
-        if (text && text.en && text.en.length && text.es && text.es.length) {
-          return true
-        }
-        return 'English and Spanish translations required.'
-      })
+      name: 'enBlock3Text',
+      type: 'bodyPortableText',
+      title: 'Block 3 Text [English]',
+      validation: Rule => Rule.required()
+    },
+    {
+      name: 'esBlock3Text',
+      type: 'bodyPortableText',
+      title: 'Block 3 Text [Spanish]',
+      validation: Rule => Rule.required()
     },
     {
       name: 'block3Button',

@@ -15,16 +15,28 @@ export default {
         return 'English and Spanish translations required.'
       })
     },
+    // {
+    //   name: 'bookSectionDescription',
+    //   type: 'localeString',
+    //   title: 'Book Section description',
+    //   validation: Rule => Rule.custom(text => {
+    //     if (text && text.en && text.en.length && text.es && text.es.length) {
+    //       return true
+    //     }
+    //     return 'English and Spanish translations required.'
+    //   })
+    // },
     {
-      name: 'bookSectionDescription',
-      type: 'localeString',
-      title: 'Book Section description',
-      validation: Rule => Rule.custom(text => {
-        if (text && text.en && text.en.length && text.es && text.es.length) {
-          return true
-        }
-        return 'English and Spanish translations required.'
-      })
+      name: 'enBookSectionDescription',
+      type: 'bodyPortableText',
+      title: 'Book Section Description [English]',
+      validation: Rule => Rule.required()
+    },
+    {
+      name: 'esBookSectionDescription',
+      type: 'bodyPortableText',
+      title: 'Book Section Description [Spanish]',
+      validation: Rule => Rule.required()
     },
     {
       name: 'books',
@@ -47,16 +59,28 @@ export default {
       })
     },
     {
-      name: 'tipSectionDescription',
-      type: 'localeString',
-      title: 'Tip Section description',
-      validation: Rule => Rule.custom(text => {
-        if (text && text.en && text.en.length && text.es && text.es.length) {
-          return true
-        }
-        return 'English and Spanish translations required.'
-      })
+      name: 'enTipSectionDescription',
+      type: 'bodyPortableText',
+      title: 'Tip Section Description [English]',
+      validation: Rule => Rule.required()
     },
+    {
+      name: 'esTipSectionDescription',
+      type: 'bodyPortableText',
+      title: 'Tip Section Description [Spanish]',
+      validation: Rule => Rule.required()
+    },
+    // {
+    //   name: 'tipSectionDescription',
+    //   type: 'localeString',
+    //   title: 'Tip Section description',
+    //   validation: Rule => Rule.custom(text => {
+    //     if (text && text.en && text.en.length && text.es && text.es.length) {
+    //       return true
+    //     }
+    //     return 'English and Spanish translations required.'
+    //   })
+    // },
     {
       name: 'tips',
       type: 'array',

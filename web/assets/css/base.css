@@ -14,7 +14,7 @@ ul {
   list-style-position: inside;
 }
 h1 {
-  @apply mb-4 text-3xl;
+  @apply text-3xl;
 }
 h2 {
   @apply mb-2 text-2xl leading-snug;

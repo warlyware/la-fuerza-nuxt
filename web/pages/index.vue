@@ -9,12 +9,12 @@
         @ready="topVideoReady" />
       </div>
       <div class="w-full lg:w-1/2 bg-pink text-white flex justify-center items-center leading-tight p-8">
-        {{block1Text[locale]}}
+        <BlockContent :blocks="this[`${locale}Block1Text`]" />
       </div>
     </div>
 
     <div class="font-bold italic">
-      <h1 class="text-aqua font-bold italic uppercase w-full text-center pt-8">
+      <h1 class="text-aqua font-bold italic uppercase w-full text-center pt-8 mb-4">
         {{block2Title[locale]}}
       </h1>
       <div class="flex w-full flex-wrap items-center justify-around pb-12">
@@ -31,8 +31,8 @@
 
     <div class="w-full flex flex-wrap pb-8">
       <div class="w-full order-1 md:w-1/3 bg-blue text-white flex flex-col justify-center items-center leading-tight p-8">
-        <div class="text-4xl text-aqua pb-4">
-          {{block3Text[locale]}}
+        <div class="text-4xl text-aqua pb-4 text-center">
+          <BlockContent :blocks="this[`${locale}Block3Text`]" />
         </div>
         <div class="flex justify-center w-full mb-2">
           <CustomButton :button="block3Button"
@@ -64,6 +64,7 @@
 <script>
 import getYoutubeId from 'get-youtube-id'
 import groq from 'groq'
+import BlockContent from 'sanity-blocks-vue-component'
 import sanityClient from '~/sanityClient'
 import CustomButton from '~/components/blocks/CustomButton'
 
@@ -75,6 +76,7 @@ const query = groq`
 
 export default {
   components: {
+    BlockContent,
     CustomButton
     // VideoThumbnail
     // SanityImage

@@ -5,7 +5,7 @@
         {{bookSectionTitle[locale]}}
       </h2>
       <p class="text-blue">
-        {{bookSectionDescription[locale]}}
+        <BlockContent :blocks="this[`${locale}BookSectionDescription`]" />
       </p>
       <ul class="w-full flex flex-wrap m-auto">
         <li v-for="book in first4Books" :key="book._id"
@@ -31,7 +31,7 @@
         {{tipSectionTitle[locale]}}
       </h2>
       <p class="text-blue">
-        {{tipSectionDescription[locale]}}
+        <BlockContent :blocks="this[`${locale}TipSectionDescription`]" />
       </p>
 
       <ul class="w-full flex flex-wrap m-auto">
@@ -60,6 +60,7 @@
 import groq from 'groq'
 import sanityClient from '~/sanityClient'
 import imageUrlBuilder from '@sanity/image-url'
+import BlockContent from 'sanity-blocks-vue-component'
 const builder = imageUrlBuilder(sanityClient)
 
 const query = groq`
@@ -75,6 +76,9 @@ const query = groq`
 `
 
 export default {
+  components: {
+    BlockContent
+  },
   computed: {
     locale() { return this.$i18n.locale },
     first4Books() { return this.books.length <= 4 ? this.books : this.books.slice(0, 4)},

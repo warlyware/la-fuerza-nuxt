@@ -38,7 +38,6 @@ export default {
       title: 'Block 1 Text [Spanish]',
       validation: Rule => Rule.required()
     },
-
     {
       name: 'enBanner1Text',
       type: 'bodyPortableText',
@@ -92,15 +91,16 @@ export default {
       of: [{ type: 'collaboratorBlock' }]
     },
     {
-      name: 'block4Text',
-      type: 'localeString',
-      title: 'Block 4 Text',
-      validation: Rule => Rule.custom(text => {
-        if (text && text.en && text.en.length && text.es && text.es.length) {
-          return true
-        }
-        return 'English and Spanish translations required.'
-      })
+      name: 'enBlock4Text',
+      type: 'bodyPortableText',
+      title: 'Block 4 Text [English]',
+      validation: Rule => Rule.required()
+    },
+    {
+      name: 'esBlock4Text',
+      type: 'bodyPortableText',
+      title: 'Block 4 Text [Spanish]',
+      validation: Rule => Rule.required()
     },
     {
       name: 'enBlock5Text',
@@ -168,15 +168,16 @@ export default {
       validation: Rule => Rule.required()
     },
     {
-      name: 'banner2Text',
-      type: 'localeString',
-      title: 'Banner 2 Text',
-      validation: Rule => Rule.custom(text => {
-        if (text && text.en && text.en.length && text.es && text.es.length) {
-          return true
-        }
-        return 'English and Spanish translations required.'
-      })
+      name: 'enBanner2Text',
+      type: 'bodyPortableText',
+      title: 'Banner 2 Text [English]',
+      validation: Rule => Rule.required()
+    },
+    {
+      name: 'esBanner2Text',
+      type: 'bodyPortableText',
+      title: 'Banner 2 Text [Spanish]',
+      validation: Rule => Rule.required()
     },
     {
       name: 'events',
