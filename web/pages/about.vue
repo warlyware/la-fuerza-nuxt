@@ -15,7 +15,7 @@
       fit="crop" />
       <div class="w-full md:w-1/3 h-64 text-blue border border-blue flex flex-col justify-center items-center p-8 md:p-12">
         <div class="leading-tight text-center mb-2">
-          {{block1Text[locale]}}
+          <BlockContent :blocks="this[`${locale}Block1Text`]" />
         </div>
         <div>
           <CustomButton :button="block1Button"

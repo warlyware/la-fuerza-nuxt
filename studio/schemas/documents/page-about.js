@@ -60,16 +60,28 @@ export default {
       },
       validation: Rule => Rule.required()
     },
+    // {
+    //   name: 'block1Text',
+    //   type: 'localeString',
+    //   title: 'Block 1 text',
+    //   validation: Rule => Rule.custom(text => {
+    //     if (text && text.en && text.en.length && text.es && text.es.length) {
+    //       return true
+    //     }
+    //     return 'English and Spanish translations required.'
+    //   })
+    // },
     {
-      name: 'block1Text',
-      type: 'localeString',
-      title: 'Block 1 text',
-      validation: Rule => Rule.custom(text => {
-        if (text && text.en && text.en.length && text.es && text.es.length) {
-          return true
-        }
-        return 'English and Spanish translations required.'
-      })
+      name: 'enBlock1Text',
+      type: 'bodyPortableText',
+      title: 'Block 1 Text [English]',
+      validation: Rule => Rule.required()
+    },
+    {
+      name: 'esBlock1Text',
+      type: 'bodyPortableText',
+      title: 'Block 1 Text [Spanish]',
+      validation: Rule => Rule.required()
     },
     {
       name: 'block1Button',
