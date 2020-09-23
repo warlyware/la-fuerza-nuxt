@@ -9,7 +9,7 @@ const headers = process.env.IS_LOCAL_DEV ? {
 
 
 exports.handler = async event => {
-  const payload = event.body
+  const payload = JSON.parse(event.body)
   const created = payload.ids ? payload.ids.created : []
   const deleted = payload.ids ? payload.ids.deleted : []
   console.log({ payload, ids: payload.ids, created, deleted })
