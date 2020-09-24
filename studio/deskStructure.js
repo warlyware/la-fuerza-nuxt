@@ -4,6 +4,7 @@ import MdTip from 'react-icons/lib/md/thumb-up'
 import MdPlaylist from 'react-icons/lib/md/playlist-play'
 import MdEvent from 'react-icons/lib/md/event-note'
 import MdGear from 'react-icons/lib/md/settings'
+import MdFace from 'react-icons/lib/md/face'
 // import MdWarning from 'react-icons/lib/md/warning'
 // import MdInfo from 'react-icons/lib/md/info-outline'
 
@@ -11,6 +12,7 @@ const hiddenDocTypes = listItem =>
   ![
     'event',
     'book',
+    'partner',
     'tip',
     'playlist',
     'session',
@@ -39,6 +41,11 @@ export default () =>
         .icon(MdBook)
         .schemaType('book')
         .child(S.documentTypeList('book').title('Books')),
+      S.listItem()
+        .title('Partners')
+        .icon(MdFace)
+        .schemaType('partner')
+        .child(S.documentTypeList('partner').title('Partners')),
       S.listItem()
         .title('Events')
         .icon(MdEvent)

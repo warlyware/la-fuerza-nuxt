@@ -18,6 +18,7 @@ import privacyPolicy from './documents/privacyPolicy'
 import codeOfConduct from './documents/codeOfConduct'
 import playlist from './documents/playlist'
 import book from './documents/book'
+import partner from './documents/partner'
 import event from './documents/event'
 import tip from './documents/tip'
 import settings from './documents/settings'
@@ -86,6 +87,7 @@ export default createSchema({
     hero,
     ally,
     book,
+    partner,
     event,
     tip,
     contact,

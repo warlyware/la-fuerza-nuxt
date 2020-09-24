@@ -70,23 +70,43 @@ export default {
       title: 'Tip Section Description [Spanish]',
       validation: Rule => Rule.required()
     },
-    // {
-    //   name: 'tipSectionDescription',
-    //   type: 'localeString',
-    //   title: 'Tip Section description',
-    //   validation: Rule => Rule.custom(text => {
-    //     if (text && text.en && text.en.length && text.es && text.es.length) {
-    //       return true
-    //     }
-    //     return 'English and Spanish translations required.'
-    //   })
-    // },
     {
       name: 'tips',
       type: 'array',
       of: [{
         type: 'reference',
         to: [{ type: 'tip' }]
+      }]
+    },
+    {
+      name: 'partnersSectionTitle',
+      type: 'localeString',
+      title: 'Partners Section title',
+      validation: Rule => Rule.custom(text => {
+        if (text && text.en && text.en.length && text.es && text.es.length) {
+          return true
+        }
+        return 'English and Spanish translations required.'
+      })
+    },
+    {
+      name: 'enPartnersSectionDescription',
+      type: 'bodyPortableText',
+      title: 'Partners Section Description [English]',
+      validation: Rule => Rule.required()
+    },
+    {
+      name: 'esPartnersSectionDescription',
+      type: 'bodyPortableText',
+      title: 'Partners Section Description [Spanish]',
+      validation: Rule => Rule.required()
+    },
+    {
+      name: 'partners',
+      type: 'array',
+      of: [{
+        type: 'reference',
+        to: [{ type: 'partner' }]
       }]
     }
   ],

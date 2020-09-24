@@ -1,7 +1,7 @@
 <template>
   <div class="w-full max-w-3xl mx-auto justify-between p-4 md:p-0">
     <div class="flex flex-wrap w-full mb-8">
-      <h2 class="w-full mb-0 font-bold leading-tight">
+      <h2 class="w-full mb-0 font-bold leading-tight text-blue">
         {{bookSectionTitle[locale]}}
       </h2>
       <p class="text-blue">
@@ -26,8 +26,8 @@
         </li>
       </ul>
     </div>
-    <div class="flex flex-wrap w-full">
-      <h2 class="w-full mb-0 font-bold leading-tight uppercase">
+    <div class="flex flex-wrap w-full mb-8">
+      <h2 class="w-full mb-0 font-bold leading-tight uppercase text-blue">
         {{tipSectionTitle[locale]}}
       </h2>
       <p class="text-blue">
@@ -53,6 +53,33 @@
         </li>
       </ul>
     </div>
+    <div v-if="partners.length" class="flex flex-wrap w-full">
+      <h2 class="w-full mb-0 font-bold leading-tight uppercase">
+        {{partnersSectionTitle[locale]}}
+      </h2>
+      <p class="text-blue">
+        <BlockContent :blocks="this[`${locale}PartnersSectionDescription`]" />
+      </p>
+
+      <ul class="w-full flex flex-wrap m-auto">
+        <li v-for="(partner, i) in first4Partners" :key="partner._id"
+        class="flex w-full md:w-1/5 px-2">
+          <div class="list-content items-center my-2 bg-blue px-2">
+            <div :style="`background-image: url(${ getImageUrl(partner.logo) })`"
+            class="cursor-pointer bg-contain bg-no-repeat bg-center w-full h-96 md:h-48"
+            @click="$router.push(localeRoute(`/resources/partners/${i}`))" />
+          </div>
+        </li>
+        <li class="w-full md:w-1/5 flex items-center justify-center md:justify-start flex-shrink">
+          <div class="mt-4 md:mt-0 m-0 py-0 md:ml-4">
+            <nuxt-link v-if="partners.length > 4" :to="localePath('/resources/partners')"
+            class="bg-aqua text-white text-shadow-pink px-4 rounded-lg italic uppercase text-2xl md:text-lg">
+              {{viewMore}}
+            </nuxt-link>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -71,6 +98,9 @@ const query = groq`
     },
     tips[]->{
       ...
+    },
+    partners[]->{
+      ...
     }
   }
 `
@@ -83,6 +113,7 @@ export default {
     locale() { return this.$i18n.locale },
     first4Books() { return this.books.length <= 4 ? this.books : this.books.slice(0, 4)},
     first4Tips() { return this.tips.length <= 4 ? this.tips : this.tips.slice(0, 4)},
+    first4Partners() { return this.partners.length <= 4 ? this.partners : this.partners.slice(0, 4)},
     viewMore() { return this.locale === 'en' ? 'View More' : 'Ver Más' },
   },
   async asyncData() {
