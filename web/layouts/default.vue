@@ -3,7 +3,9 @@
     <Header />
     <Sidebar :navigation="mainNavigation" />
     <nuxt class="pt-24 md:pt-32 mb-8" />
-    <Footer :navigation="footerNavigation" :social-media-links="socialMediaLinks" />
+    <Footer :navigation="footerNavigation"
+    :social-media-links="socialMediaLinks"
+    :sponsors-block-title="sponsorsBlockTitle" />
   </div>
 </template>
 
@@ -34,6 +36,7 @@ export default {
       instagramUrl: '',
       twitterUrl: '',
       youtubeUrl: '',
+      sponsorsBlockTitle: ''
     }
   },
   computed: {
@@ -45,9 +48,14 @@ export default {
       youtubeUrl: this.youtubeUrl,
     }}
   },
+  // mounted() {
+  //   console.log(this)
+  // },
   async fetch() {
     const data = await sanityClient.fetch(query)
+
     this.mainNavigation = data.mainNavigation
+    this.sponsorsBlockTitle = data.sponsorsBlockTitle
     this.footerNavigation = data.footerNavigation
     this.facebookUrl = data.facebookUrl
     this.instagramUrl = data.instagramUrl

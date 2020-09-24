@@ -3,11 +3,29 @@
     <div class="flex flex-wrap px-4 mx-auto justify-center">
       <div class="flex flex-wrap text-white justify-between w-full text-3xl">
 
-        <div class="flex justify-around w-full px-4 italic mb-8 font-italic text-4xl leading-tight uppercase">
+        <!-- <div class="flex justify-around w-full px-4 italic mb-8 font-italic text-4xl leading-tight uppercase">
           <nuxt-link v-for="navItem in navigation" :key="navItem.internalLink"
           class="block self-start" :to="localePath(navItem.internalLink)">
             {{ navItem.text[locale] }}
           </nuxt-link>
+        </div> -->
+        <div class="w-full">
+          <div class="px-4 flex flex-wrap w-full mb-4">
+            <div class="flex justify-center w-full text-white font-bold tracking-wide italic -mb-2">
+              <h2>{{ sponsorsBlockTitle[locale] }}</h2>
+            </div>
+            <div class="flex flex-wrap justify-center lg:justify-between m-auto w-full">
+              <div class="flex justify-center w-full lg:w-1/3 my-4 opacity-75">
+                <img class="h-16 md:h-20 w-auto" src="/images/lp-logo-white.png">
+              </div>
+              <div class="flex justify-center w-full lg:w-1/3 my-4 opacity-75">
+                <img class="h-16 md:h-20 w-auto" src="/images/univision-logo-white.png">
+              </div>
+              <div class="flex justify-center w-full lg:w-1/3 my-4 opacity-75">
+                <img class="h-16 md:h-20 w-auto" src="/images/too-small-logo-white.png">
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="flex w-full justify-center px-4">
@@ -53,6 +71,10 @@ export default {
       required: true
     },
     socialMediaLinks: {
+      type: Object,
+      required: true
+    },
+    sponsorsBlockTitle: {
       type: Object,
       required: true
     }

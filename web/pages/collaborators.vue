@@ -184,9 +184,6 @@ export default {
   box-shadow: 14px 0px 0px -1px #1bcfc9;
 }
 
-a {
-  @apply text-pink italic;
-}
 
 #banner-1-text .font-bold, #banner-1-text .italic {
   @apply text-pink font-bold italic;

@@ -6,7 +6,8 @@
         :player-vars="playerVars"
         class="video-responsive flex-grow"
         :video-id="getYoutubeId(video1Url)"
-        @ready="topVideoReady" />
+        @ready="topVideoReady"
+        @ended="topVideoEnded"/>
       </div>
       <div class="w-full lg:w-1/2 bg-pink text-white flex justify-center items-center leading-tight p-8">
         <BlockContent :blocks="this[`${locale}Block1Text`]" />
@@ -46,7 +47,7 @@
       </div>
     </div>
 
-    <div class="w-full flex flex-wrap mb-2">
+    <div class="w-full flex flex-wrap">
       <div class="w-full md:w-1/2 md:pr-2 mb-2">
         <youtube player-width="100%" player-height="100%"
         class="video-responsive flex-grow"
@@ -56,25 +57,6 @@
         <youtube player-width="100%" player-height="100%"
         class="video-responsive flex-grow"
         :video-id="getYoutubeId(video4Url)" />
-      </div>
-    </div>
-
-    <div class="bg-blue w-full -mb-6">
-      <div class="p-4 flex flex-wrap w-full">
-        <div class="flex justify-center w-full text-white italic mb-2">
-          <h2>{{ sponsorsBlockTitle[locale] }}</h2>
-        </div>
-        <div class="flex flex-wrap justify-center lg:justify-between m-auto w-full">
-          <div class="flex justify-center w-full lg:w-1/3 my-2 opacity-50">
-            <img class="h-24 w-auto" src="/images/lp-logo-white.png">
-          </div>
-          <div class="flex justify-center w-full lg:w-1/3 my-2 opacity-50">
-            <img class="h-24 w-auto" src="/images/univision-logo-white.png">
-          </div>
-          <div class="flex justify-center w-full lg:w-1/3 my-2 opacity-50">
-            <img class="h-24 w-auto" src="/images/too-small-logo-white.png">
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -100,7 +82,9 @@ export default {
   },
   data() {
     return {
+      replays: 0,
       playerVars: {
+        loop: 1,
         muted: 1,
         autoplay: 1,
         controls: 1,
@@ -122,6 +106,15 @@ export default {
       this.$nextTick(() => {
         target.mute()
       })
+    },
+    topVideoEnded({ target }) {
+      if (this.replays <= 20) {
+        this.$nextTick(() => {
+          this.replays += 1
+          target.seekTo(0)
+          target.playVideo()
+        })
+      }
     }
   },
 }

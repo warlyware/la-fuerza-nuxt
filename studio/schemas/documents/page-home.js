@@ -158,17 +158,6 @@ export default {
       type: 'string',
       title: 'Video 4 URL',
       validation: Rule => Rule.required()
-    },
-    {
-      name: 'sponsorsBlockTitle',
-      type: 'localeString',
-      title: 'Sponsors Block Title',
-      validation: Rule => Rule.custom(text => {
-        if (text && text.en && text.en.length && text.es && text.es.length) {
-          return true
-        }
-        return 'English and Spanish translations required.'
-      })
     }
   ],
   preview: {
