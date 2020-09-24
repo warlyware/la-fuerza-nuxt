@@ -58,6 +58,11 @@ export default {
         maxLength: 96
       },
       validation: Rule => Rule.required()
+    },
+    {
+      name: 'shareMenu',
+      type: 'shareMenu',
+      title: 'Social Media Share Menu'
     }
   ],
   preview: {

@@ -61,18 +61,18 @@
 
     <div class="bg-blue w-full -mb-6">
       <div class="p-4 flex flex-wrap w-full">
-        <div class="flex justify-center w-full text-white italic">
+        <div class="flex justify-center w-full text-white italic mb-2">
           <h2>{{ sponsorsBlockTitle[locale] }}</h2>
         </div>
         <div class="flex flex-wrap justify-center lg:justify-between m-auto w-full">
-          <div class="flex justify-center w-full lg:w-1/3 my-2">
-            <img class="h-24 w-auto bg-white" src="/images/lp-logo.svg">
+          <div class="flex justify-center w-full lg:w-1/3 my-2 opacity-50">
+            <img class="h-24 w-auto" src="/images/lp-logo-white.png">
           </div>
-          <div class="flex justify-center w-full lg:w-1/3 my-2">
-            <img class="h-24 w-auto bg-white" src="/images/univision-logo.svg">
+          <div class="flex justify-center w-full lg:w-1/3 my-2 opacity-50">
+            <img class="h-24 w-auto" src="/images/univision-logo-white.png">
           </div>
-          <div class="flex justify-center w-full lg:w-1/3 my-2">
-            <img class="h-24 w-auto bg-white" src="/images/too-small-logo.png">
+          <div class="flex justify-center w-full lg:w-1/3 my-2 opacity-50">
+            <img class="h-24 w-auto" src="/images/too-small-logo-white.png">
           </div>
         </div>
       </div>
