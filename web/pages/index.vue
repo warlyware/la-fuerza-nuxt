@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-auto justify-between pt-4 w-full">
+  <div class="mx-auto justify-between pt-4 w-full px-4">
     <div class="w-full flex flex-wrap">
       <div class="w-full lg:w-1/2 my-1/2">
         <youtube player-width="100%" player-height="100%"

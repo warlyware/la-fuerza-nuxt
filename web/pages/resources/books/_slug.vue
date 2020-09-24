@@ -8,11 +8,15 @@
     <div class="flex flex-wrap max-w-5xl m-auto px-8 lg:px-0 justify-center mb-4">
       <p class="py-2 w-full text-blue">
         <BlockContent v-if="this[`${locale}Description`]" :blocks="this[`${locale}Description`]" />
-        {{author}}
-        <span v-if="illustrator && illustrator.length">
+        <span class="font-bold">
+          {{author}}
+        </span>
+        <span v-if="illustrator && illustrator.length"
+        class="font-bold">
           &nbsp;/ {{illustrator}}
         </span>
-        <span v-if="publisher && publisher.length">
+        <span v-if="publisher && publisher.length"
+        class="font-bold">
           &nbsp;/ {{publisher}}
         </span>
       </p>
