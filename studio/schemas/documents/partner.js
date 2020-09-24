@@ -48,6 +48,16 @@ export default {
       type: 'image',
       title: 'Image 2',
       options: { hotspot: true }
+    },
+    {
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'name',
+        maxLength: 96
+      },
+      validation: Rule => Rule.required()
     }
   ],
   preview: {

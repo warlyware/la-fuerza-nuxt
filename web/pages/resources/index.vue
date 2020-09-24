@@ -62,12 +62,12 @@
       </p>
 
       <ul class="w-full flex flex-wrap m-auto">
-        <li v-for="(partner, i) in first4Partners" :key="partner._id"
+        <li v-for="partner in first4Partners" :key="partner._id"
         class="flex w-full md:w-1/5 px-2">
           <div class="list-content items-center my-2 bg-blue px-2">
             <div :style="`background-image: url(${ getImageUrl(partner.logo) })`"
             class="cursor-pointer bg-contain bg-no-repeat bg-center w-full h-96 md:h-48"
-            @click="$router.push(localeRoute(`/resources/partners/${i}`))" />
+            @click="$router.push(localeRoute(`/resources/partners/${partner.slug.current}`))" />
           </div>
         </li>
         <li class="w-full md:w-1/5 flex items-center justify-center md:justify-start flex-shrink">
