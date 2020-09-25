@@ -53,6 +53,18 @@ export default {
       of: [{ type: 'resourceDownload' }]
     },
     {
+      name: 'enResourceDownloadsRichText',
+      type: 'bodyPortableText',
+      title: 'Resource Downloads [English]',
+      validation: Rule => Rule.required()
+    },
+    {
+      name: 'esResourceDownloadsRichText',
+      type: 'bodyPortableText',
+      title: 'Resource Downloads [Spanish]',
+      validation: Rule => Rule.required()
+    },
+    {
       name: 'slug',
       title: 'Slug',
       type: 'slug',

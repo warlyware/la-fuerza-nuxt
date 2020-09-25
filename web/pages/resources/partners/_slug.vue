@@ -31,17 +31,20 @@
       </div>
       <div class="w-full lg:w-1/2 text-blue">
         <div class="flex flex-col lg:ml-4 uppercase border border-blue rounded flex-grow h-full">
-          <div class="border-b border-blue text-center italic text-4xl">
+          <div class="border-b border-blue text-center italic text-3xl md:text-4xl leading-10">
             {{ downloadResourcesText }}
           </div>
-          <ul class="text-xl my-2 px-8 text-center">
+          <div class="p-4 px-8">
+            <BlockContent :blocks="this[`${locale}ResourceDownloadsRichText`]" />
+          </div>
+          <!-- <ul class="text-xl my-2 px-8 text-center">
             <li v-for="download in resourceDownloads" :key="download._id"
             class="my-1">
               <a :href="processLink(download.resourceLink)" target="_blank">
                 {{ download.name[locale] }}
               </a>
             </li>
-          </ul>
+          </ul> -->
         </div>
       </div>
     </div>
@@ -96,6 +99,9 @@ export default {
 </script>
 
 <style>
+  a {
+    @apply font-bold text-blue underline;
+  }
   .h-image {
     /* height: 20rem; */
     position: absolute;
