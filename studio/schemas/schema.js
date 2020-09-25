@@ -35,6 +35,7 @@ import hero from './objects/hero'
 import ally from './objects/ally'
 import contact from './objects/contact'
 import button from './objects/button'
+import resourceDownload from './objects/resourceDownload'
 import navigationItem from './objects/navigationItem'
 import joinBlock from './objects/joinBlock'
 import collaboratorBlock from './objects/collaboratorBlock'
@@ -92,6 +93,7 @@ export default createSchema({
     tip,
     contact,
     button,
+    resourceDownload,
     joinBlock,
     collaboratorBlock,
     workshopImageBlock,

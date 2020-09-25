@@ -1,16 +1,16 @@
 <template>
   <div class="pt-8 mx-auto md:pt-32 mb-8 content w-full">
-    <div class="flex w-full justify-center items-center h-64 bg-blue mb-8">
+    <div class="flex w-full justify-center items-center h-64 bg-blue mb-8 px-4">
       <SanityImage :image="logo"
-      class="h-48 opacity-50"
+      class="h-28 md:h-48 opacity-50"
       :class="wrapperClass" />
     </div>
 
     <!-- <ShareMenu class="w-full flex justify-center py-8" :share-menu="shareMenu" /> -->
 
-    <div class="flex flex-wrap max-w-6xl m-auto px-8 lg:px-0 justify-center mb-4">
+    <div class="flex flex-wrap max-w-6xl m-auto px-8 justify-center mb-4">
       <div class="w-full md:w-1/2">
-        <div class="md:pr-2 text-blue mb-4">
+        <div class="md:pr-2 text-blue mb-4 px-4">
           <BlockContent v-if="this[`${locale}Description`]"
           :blocks="this[`${locale}Description`]" />
         </div>
@@ -24,7 +24,7 @@
       </div>
     </div>
 
-    <div class="flex flex-wrap max-w-6xl m-auto px-8 lg:px-0 justify-center mb-4">
+    <div class="flex flex-wrap max-w-6xl m-auto px-8 justify-center mb-4">
       <div v-if="image2"
       class="w-full md:w-1/2 md:pr-2 max-w-xl m-auto flex flex-wrap">
         <SanityImage class="w-full bg-blue flex-shrink-0 justify-center items-center"
@@ -32,10 +32,18 @@
         fit="crop" />
       </div>
       <div class="w-full md:w-1/2 text-blue">
-        <div class="flex flex-col md:ml-2 text-4xl uppercase text-center border border-blue rounded flex-grow h-full">
-          <div class="border-b border-blue italic">
+        <div class="flex flex-col md:ml-2 uppercase border border-blue rounded flex-grow h-full">
+          <div class="border-b border-blue text-center italic text-4xl">
             {{ downloadResourcesText }}
           </div>
+          <ul class="text-xl my-2 px-8 text-center">
+            <li v-for="download in resourceDownloads" :key="download._id"
+            class="my-1">
+              <a :href="processLink(download.resourceLink)" target="_blank">
+                {{ download.name[locale] }}
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -47,8 +55,8 @@ import imageUrlBuilder from '@sanity/image-url'
 import sanityClient from '~/sanityClient'
 const builder = imageUrlBuilder(sanityClient)
 // import ShareMenu from '~/components/ShareMenu'
-import SanityImage from '~/components/SanityImage'
 // import SanityImageResponsive from '~/components/SanityImageResponsive'
+import SanityImage from '~/components/SanityImage'
 import BlockContent from 'sanity-blocks-vue-component'
 import groq from 'groq'
 
@@ -70,13 +78,20 @@ export default {
     downloadResourcesText() { return this.locale === 'en' ? 'Download Resources' : 'Descargar Recursos' }
   },
   async asyncData({ params }) {
-    const data =  await sanityClient.fetch(query, params)
-    console.log({ data })
-    return data
+    return await sanityClient.fetch(query, params)
   },
   methods: {
     getImageUrl(image) {
       return builder.image(image)
+    },
+    processLink(link) {
+      if (
+        link.includes('docs.google.com/document/d') &&
+        link.includes('edit?usp=sharing')
+      ) {
+        return link.replace('edit?usp=sharing', 'export?format=pdf')
+      }
+      return link
     }
   }
 }

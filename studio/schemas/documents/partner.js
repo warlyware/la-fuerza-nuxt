@@ -50,6 +50,11 @@ export default {
       options: { hotspot: true }
     },
     {
+      name: 'resourceDownloads',
+      type: 'array',
+      of: [{ type: 'resourceDownload' }]
+    },
+    {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
