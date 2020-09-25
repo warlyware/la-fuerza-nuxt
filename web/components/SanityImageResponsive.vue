@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-cover bg-center"
+  <div :class="`bg-cover bg-${alignment} bg-no-repeat`"
   :style="`background-image: url(${imageUrl})`" />
 </template>
 
@@ -27,6 +27,10 @@ export default {
     },
     fit: {
       default: 'max',
+      type: String
+    },
+    alignment: {
+      default: 'center',
       type: String
     }
   },

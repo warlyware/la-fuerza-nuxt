@@ -1,19 +1,18 @@
 <template>
-  <section class="pt-8 px-6">
+  <section class="pt-8 md:px-6">
     <h1 class="text-5xl text-center text-blue font-bold italic uppercase">
       {{ title[locale] }}
     </h1>
-    <div v-if="shareMenu"
-    class="h-screen fixed flex items-center top-0 left-0 -mt-16 z-10 pointer-events-none">
-      <SideShareMenu class="pointer-events-auto" :share-menu="shareMenu" :scroll-distance="200" />
+    <div v-if="shareMenu" class="mb-4 flex w-full justify-center">
+      <ShareMenu class="pointer-events-auto" :share-menu="shareMenu" />
     </div>
     <template v-if="formattedPlaylists.length">
       <div v-for="{ playlist, title, description } in formattedPlaylists" :key="playlist.id"
-      class="max-w-video-player m-auto mb-8 px-12 md:px-0 text-blue">
-        <h2 class="mb-0 text-4xl md:mx-8 xl:mx-0 uppercase font-bold">
+      class="max-w-video-player m-auto mb-8 text-blue">
+        <h2 class="mb-0 text-4xl mx-4 uppercase font-bold">
           {{title}}
         </h2>
-        <p class="mb-8 md:mx-8 xl:mx-0">
+        <p class="mb-8 mx-4">
           <BlockContent :blocks="description" />
         </p>
         <YoutubePlayer
@@ -26,7 +25,7 @@
 </template>
 
 <script>
-import SideShareMenu from '~/components/SideShareMenu'
+import ShareMenu from '~/components/ShareMenu'
 import BlockContent from 'sanity-blocks-vue-component'
 import qs from 'query-string'
 import groq from 'groq'
@@ -46,7 +45,7 @@ const query = groq`
 export default {
   components: {
     BlockContent,
-    SideShareMenu,
+    ShareMenu,
     YoutubePlayer
   },
   data() {

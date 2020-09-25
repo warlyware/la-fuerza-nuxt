@@ -36,7 +36,7 @@ export default {
       instagramUrl: '',
       twitterUrl: '',
       youtubeUrl: '',
-      sponsorsBlockTitle: ''
+      sponsorsBlockTitle: {}
     }
   },
   computed: {

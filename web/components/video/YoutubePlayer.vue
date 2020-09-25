@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-8">
+  <div>
     <div class="flex flex-wrap items-center player-container">
       <div class="flex items-center w-full md:w-2/3 my-1/2">
         <youtube v-if="currentVideo" player-width="100%" player-height="100%"
@@ -21,7 +21,7 @@
     :playlist="playlist"
     @set-current-index="(i) => setCurrentIndex(i)" />
 
-    <div class="w-full py-4 break-words whitespace-pre-wrap">{{currentVideo.description}}</div>
+    <div class="w-full px-4 md:px-0 py-4 break-words whitespace-pre-wrap">{{currentVideo.description}}</div>
   </div>
 </template>
 
