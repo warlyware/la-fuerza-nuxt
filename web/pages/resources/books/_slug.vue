@@ -17,7 +17,7 @@
 
     <ShareMenu class="w-full flex justify-center mt-4" :share-menu="shareMenu" />
 
-    <div class="flex flex-wrap max-w-5xl m-auto px-8 lg:px-0 justify-center mb-4">
+    <div class="flex flex-wrap max-w-5xl m-auto px-8 lg:px-0 justify-center mb-6">
       <p class="py-2 w-full text-blue">
         <BlockContent v-if="this[`${locale}Description`]" :blocks="this[`${locale}Description`]" />
         <span class="font-bold">
@@ -34,7 +34,7 @@
       </p>
     </div>
     <Divider class="max-w-6xl m-auto -my-8 px-4 md:px-0" />
-    <div class="w-full max-w-3xl m-auto flex flex-wrap justify-center px-8 md:px-4 lg:px-0 text-blue my-8">
+    <div class="w-full max-w-3xl m-auto flex flex-wrap justify-center px-8 md:px-4 lg:px-0 text-blue mb-8 mt-12">
       <BlockContent v-if="this[`${locale}Excerpt`]" :blocks="this[`${locale}Excerpt`]" />
     </div>
     <div v-if="image1"
@@ -77,22 +77,27 @@ export default {
     locale() { return this.$i18n.locale },
     image1Src() { return this.getImageUrl(this.image1) },
     image2Src() { return this.getImageUrl(this.image2) },
-    // lightboxImages() { return [
-    //   { src: this.image1Src },
-    //   { src: this.image2Src },
-    // ]}
-    lightboxImages() { return [
-        {
+    lightboxImages() {
+      let images = []
+
+      if (this.image1) {
+        images.push({
           image: this.image1,
           src: builder.image(this.image1).url(),
           thumb: builder.image(this.image1).width(200).url()
-        },
-        {
+        })
+      }
+
+      if (this.image2) {
+        images.push({
           image: this.image2,
           src: builder.image(this.image2).url(),
           thumb: builder.image(this.image2).width(200).url()
-        },
-    ]}
+        })
+      }
+
+      return images
+    }
   },
   async asyncData({ params }) {
     return await sanityClient.fetch(query, params)
