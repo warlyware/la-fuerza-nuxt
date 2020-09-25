@@ -5,14 +5,14 @@ export default {
   fields: [
     {
       name: 'name',
-      type: 'localeString',
-      title: 'Resource Name',
-      validation: Rule => Rule.custom(text => {
-        if (text && text.en && text.en.length && text.es && text.es.length) {
-          return true
-        }
-        return 'English and Spanish translations required.'
-      })
+      type: 'string',
+      title: 'Resource Name'
+    },
+    {
+      name: 'linkText',
+      type: 'string',
+      title: 'Link Text',
+      validation: Rule => Rule.required()
     },
     {
       name: 'resourceLink',
@@ -24,8 +24,9 @@ export default {
   ],
   preview: {
     select: {
-      title: 'name'
+      name: 'name',
+      linkText: 'linkText'
     },
-    prepare: ({ title }) => ({ title: title.en })
+    prepare: ({ name, linkText }) => ({ title: name || linkText })
   }
 }

@@ -48,7 +48,14 @@ export default {
       title: 'Image 2'
     },
     {
-      name: 'resourceDownloads',
+      title: 'Resource Downloads [English Translation]',
+      name: 'resourceDownloadsEn',
+      type: 'array',
+      of: [{ type: 'resourceDownload' }]
+    },
+    {
+      title: 'Resource Downloads [Spanish Translation]',
+      name: 'resourceDownloadsEs',
       type: 'array',
       of: [{ type: 'resourceDownload' }]
     },
