@@ -21,6 +21,11 @@
     <div class="w-full border border-blue p-8 mb-8">
       <div class="w-full text-center text-2xl mb-0 px-4 lg:px-0 text-blue">
         <BlockContent :blocks="this[`${locale}Banner1Text`]" />
+        <div class="flex justify-center w-full mt-2">
+          <a href="#events" class="text-white text-center bg-blue p-2 py-1 rounded mt-4">
+            {{eventsLinkButtonText[locale]}}
+          </a>
+        </div>
       </div>
     </div>
     <div class="max-w-6xl m-auto flex flex-wrap px-8 lg:px-16 text-xl mb-12 tracking-wide">
@@ -94,7 +99,8 @@
         class="bg-aqua text-blue rounded-lg p-2 py-1 text-2xl font-bold italic tracking-wide text-shadow-white-side" />
       </div>
     </div>
-    <div class="w-full bg-aqua p-8 mb-8">
+
+    <div id="events" class="w-full bg-aqua p-8 mb-8">
       <div class="w-full text-center text-2xl mb-0 text-white">
         <BlockContent :blocks="this[`${locale}Banner4Text`]" />
       </div>

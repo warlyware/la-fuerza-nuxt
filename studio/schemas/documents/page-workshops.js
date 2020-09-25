@@ -51,6 +51,16 @@ export default {
       validation: Rule => Rule.required()
     },
     {
+      name: 'eventsLinkButtonText',
+      type: 'localeString',
+      validation: Rule => Rule.custom(text => {
+        if (text && text.en && text.en.length && text.es && text.es.length) {
+          return true
+        }
+        return 'English and Spanish translations required.'
+      })
+    },
+    {
       name: 'enBlock2Text',
       type: 'bodyPortableText',
       title: 'Block 2 Text [English]',
