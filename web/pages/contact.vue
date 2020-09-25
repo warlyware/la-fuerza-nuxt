@@ -3,56 +3,56 @@
     <Hero :image="hero.image" :full-height="hero.fullHeight" :title="title[locale]" :bg-color="hero.bgColor"
     x-axis-location="start" class="mb-2 md:mb-8" :class="hero.fullHeight ? '' : 'h-24 overflow-hidden'" />
     <div class="p-4">
-      <div class="flex flex-col items-center w-full p-4 text-xl leading-tight text-blue">
+      <div class="flex flex-col items-center w-full p-4 text-xl leading-tight text-blue text-center">
         <h2 class="text-2xl text-aqua font-bold italic mb-2 uppercase">
           {{contacts[0].name[locale]}}
         </h2>
         <div v-if="contacts[0].address" class="address">
           <BlockContent :blocks="contacts[0].address" />
         </div>
-        <div v-if="contacts[0].email">
-          <span class="font-bold">
-            Email:
-          </span> {{ contacts[0].email }}
+        <div v-if="contacts[0].email" class="mb-2 break-all">
+          <span class="font-bold uppercase">
+            {{emailLabel}}:
+          </span><br> {{ contacts[0].email }}
         </div>
-        <div v-if="contacts[0].phone">
-          <span class="font-bold">
-            Call:
-          </span> {{ contacts[0].phone }}
+        <div v-if="contacts[0].phone" class="mb-2">
+          <span class="font-bold uppercase">
+            {{callLabel}}:
+          </span><br> {{ contacts[0].phone }}
         </div>
         <div v-if="contacts[0].fax">
-          <span class="font-bold">
-            Fax:
-          </span> {{ contacts[0].fax }}
+          <span class="font-bold uppercase">
+            {{faxLabel}}:
+          </span><br> {{ contacts[0].fax }}
         </div>
       </div>
 
-      <div class="flex flex-col items-center w-full p-4 text-xl leading-tight text-blue">
+      <div class="flex flex-col items-center w-full p-4 text-xl leading-tight text-blue text-center">
         <h2 class="text-2xl text-pink font-bold italic mb-2 uppercase">
           {{contacts[1].name[locale]}}
         </h2>
         <div v-if="contacts[1].address" class="address mb-1">
           <BlockContent :blocks="contacts[1].address" />
         </div>
-        <div v-if="contacts[1].email">
-          <span class="font-bold">
-            Email:
-          </span> {{ contacts[1].email }}
+        <div v-if="contacts[1].email" class="mb-2 break-all">
+          <span class="font-bold uppercase">
+            {{emailLabel}}:
+          </span><br> {{ contacts[1].email }}
         </div>
-        <div v-if="contacts[1].phone">
-          <span class="font-bold">
-            Call:
-          </span> {{ contacts[1].phone }}
+        <div v-if="contacts[1].phone" class="mb-2">
+          <span class="font-bold uppercase">
+            {{callLabel}}:
+          </span><br> {{ contacts[1].phone }}
         </div>
         <div v-if="contacts[1].fax">
-          <span class="font-bold">
-            Fax:
-          </span> {{ contacts[1].fax }}
+          <span class="font-bold uppercase">
+            {{faxLabel}}:
+          </span><br> {{ contacts[1].fax }}
         </div>
       </div>
 
       <div v-if="secondaryContacts.length"
-      class="flex flex-wrap md:justify-between w-full pb-8 max-w-6xl mx-auto text-blue">
+      class="flex flex-wrap md:justify-between w-full pb-8 max-w-6xl mx-auto text-blue text-center">
         <div v-for="contact in secondaryContacts" :key="contact._id"
         class="flex flex-col items-center w-full md:w-1/3 flex-grow p-4 text-xl leading-tight">
           <h2 class="text-2xl font-bold italic uppercase mb-2">
@@ -61,20 +61,20 @@
           <div v-if="contact.address" class="address">
             <BlockContent :blocks="contact.address" />
           </div>
-          <div v-if="contact.email">
-            <span class="font-bold">
-              Email:
-            </span> {{ contact.email }}
+          <div v-if="contact.email" class="mb-2 break-all">
+            <span class="font-bold uppercase">
+              {{emailLabel}}:
+            </span><br> {{ contact.email }}
           </div>
-          <div v-if="contact.phone">
-            <span class="font-bold">
-              Call:
-            </span> {{ contact.phone }}
+          <div v-if="contact.phone" class="mb-2">
+            <span class="font-bold uppercase">
+              {{callLabel}}:
+            </span><br> {{ contact.phone }}
           </div>
           <div v-if="contact.fax">
-            <span class="font-bold">
-              Fax:
-            </span> {{ contact.fax }}
+            <span class="font-bold uppercase">
+              {{faxLabel}}:
+            </span><br> {{ contact.fax }}
           </div>
         </div>
       </div>
@@ -112,7 +112,10 @@ export default {
   },
   computed: {
     locale() { return this.$i18n.locale },
-    secondaryContacts() { return this.contacts.slice(2, this.contacts.length) }
+    secondaryContacts() { return this.contacts.slice(2, this.contacts.length) },
+    callLabel() { return this.locale === 'en' ? 'Call' : 'Teléphono' },
+    emailLabel() { return this.locale === 'en' ? 'Email' : 'Correo Electrónico' },
+    faxLabel() { return 'Fax' }
   },
   async asyncData() {
     return await sanityClient.fetch(query)

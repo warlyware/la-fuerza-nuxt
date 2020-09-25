@@ -1,5 +1,5 @@
 <template>
-  <div class="uppercase">
+  <div class="uppercase text-center">
     <nuxt-link v-if="button.internalLink && button.internalLink.length"
     :to="localePath(button.internalLink)">
       {{button.text[locale]}}

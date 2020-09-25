@@ -45,7 +45,7 @@
       class="max-w-4xl m-auto flex flex-col flex-wrap md:flex-no-wrap w-full justify-center mb-4">
         <div class="w-full md:w-1/2 px-4 text-blue"
         :class="i % 2 !== 1 ? collabBlockOddStyle : collabBlockEvenStyle">
-          <h3 class="text-5xl mb-0 font-bold"
+          <h3 class="text-3xl mt-4 md:text-5xl mb-0 font-bold"
           :class="i % 2 !== 1 ? 'text-pink' : 'text-aqua'">
             {{block.title[locale]}}
           </h3>
@@ -80,14 +80,14 @@
         <BlockContent :blocks="this[`${locale}Block6Text`]" />
         <div class="w-full flex justify-center">
           <CustomButton :button="block6Button"
-          class="mt-2 p-2 py-3 font-bold italic text-2xl text-white bg-aqua rounded-lg tracking-wide text-shadow-pink" />
+          class="mt-2 mb-2 p-2 py-3 font-bold italic text-2xl text-white bg-aqua rounded-lg tracking-wide text-shadow-pink" />
         </div>
       </div>
       <div class="w-full md:w-1/2 p-4 px-12 lg:px-8 bg-aqua text-blue leading-relaxed flex flex-col justify-between">
         <BlockContent :blocks="this[`${locale}Block7Text`]" />
         <div class="w-full flex justify-center">
           <CustomButton :button="block7Button"
-          class="mt-2 p-2 py-1 font-bold italic text-2xl text-white bg-blue rounded-lg tracking-wide text-shadow-pink" />
+          class="mt-2 mb-2 p-2 py-1 font-bold italic text-2xl text-white bg-blue rounded-lg tracking-wide text-shadow-pink" />
         </div>
       </div>
     </div>
