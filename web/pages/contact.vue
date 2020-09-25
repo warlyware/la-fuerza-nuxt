@@ -1,7 +1,7 @@
 <template>
   <div>
-    <Hero :image="hero.image" :full-height="hero.fullHeight" :title="title[locale]"
-    x-axis-location="start" class="mb-2 md:mb-8" />
+    <Hero :image="hero.image" :full-height="hero.fullHeight" :title="title[locale]" :bg-color="hero.bgColor"
+    x-axis-location="start" class="mb-2 md:mb-8" :class="hero.fullHeight ? '' : 'h-24 overflow-hidden'" />
     <div class="p-4">
       <div class="flex flex-col items-center w-full p-4 text-xl leading-tight text-blue">
         <h2 class="text-2xl text-aqua font-bold italic mb-2 uppercase">

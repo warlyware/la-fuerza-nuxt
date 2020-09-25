@@ -1,7 +1,7 @@
 <template>
   <div class="w-full">
-    <Hero :image="hero.image" :full-height="hero.fullHeight" :title="title[locale]"
-    x-axis-location="start" class="mb-2 md:mb-8" />
+    <Hero :image="hero.image" :full-height="hero.fullHeight" :title="title[locale]" :bg-color="hero.bgColor"
+    x-axis-location="start" class="mb-2 md:mb-8" :class="hero.fullHeight ? '' : 'h-24 overflow-hidden'" />
     <div class="max-w-4xl mx-auto justify-between p-4 mb-4 text-blue">
       <BlockContent :blocks="aboutText" />
     </div>

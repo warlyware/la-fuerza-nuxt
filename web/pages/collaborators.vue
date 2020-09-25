@@ -1,7 +1,7 @@
 <template>
   <div class="w-full">
-    <Hero :image="hero.image" :full-height="hero.fullHeight" :title="title[locale]"
-    x-axis-location="start" class="mb-2 md:mb-8" />
+    <Hero :image="hero.image" :full-height="hero.fullHeight" :title="title[locale]" :bg-color="hero.bgColor"
+    x-axis-location="start" class="mb-2 md:mb-8" :class="hero.fullHeight ? '' : 'h-24 overflow-hidden'" />
     <div v-if="shareMenu"
     class="h-screen fixed items-center top-0 left-0 -mt-16 z-10 pointer-events-none flex">
       <SideShareMenu class="pointer-events-auto" :share-menu="shareMenu" :scroll-distance="600" />

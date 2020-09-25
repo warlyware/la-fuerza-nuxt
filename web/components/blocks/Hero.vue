@@ -4,7 +4,7 @@
       <SanityImageResponsive :image="image"
       class="w-full min-w-screen top-0 flex-shrink-0 absolute"
       :class="wrapperClass" />
-      <div class="text-white text-5xl uppercase px-8 font-bold italic tracking-wider absolute"
+      <div class="text-white text-5xl uppercase px-8 md:px-16 font-bold italic tracking-wider absolute"
       :class="(bgColor === 'aqua' || bgColor === 'pink') ? 'text-shadow-blue-side' : ''">
         {{ title }}
       </div>
