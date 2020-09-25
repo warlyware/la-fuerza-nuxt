@@ -1,14 +1,14 @@
 <template>
   <div class="w-full">
     <Hero :image="hero.image" :full-height="hero.fullHeight" :title="title[locale]" :bg-color="hero.bgColor"
-    x-axis-location="start" class="mb-8" :class="hero.fullHeight ? '' : 'h-24 overflow-hidden'" />
+    x-axis-location="start" class="mb-2 md:mb-8" :class="hero.fullHeight ? '' : 'h-24 overflow-hidden'" />
     <div v-if="shareMenu"
     class="h-screen fixed items-center top-0 left-0 -mt-16 z-10 pointer-events-none flex">
       <SideShareMenu class="pointer-events-auto" :share-menu="shareMenu" :scroll-distance="400" />
     </div>
     <div class="w-full flex flex-wrap mb-8">
       <div class="w-full lg:w-1/2 text-white leading-tight lg:pr-2 mb-2 lg:mb-0">
-        <div id="block1" class="text-lg xl:text-2xl p-8 bg-blue h-full flex justify-center items-center">
+        <div id="block1" class="text-lg xl:text-2xl p-8 md:px-16 bg-blue h-full flex justify-center items-center">
           <BlockContent :blocks="this[`${locale}Block1Text`]" />
         </div>
       </div>
@@ -205,9 +205,6 @@ export default {
   box-shadow: 14px 0px 0px -1px #19105e;
 }
 
-a {
-  @apply text-pink italic;
-}
 .font-bold .italic p {
   @apply font-bold italic;
 }

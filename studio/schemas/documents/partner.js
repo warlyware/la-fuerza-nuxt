@@ -40,14 +40,12 @@ export default {
       name: 'image1',
       type: 'image',
       title: 'Image 1',
-      options: { hotspot: true },
       validation: Rule => Rule.required()
     },
     {
       name: 'image2',
       type: 'image',
-      title: 'Image 2',
-      options: { hotspot: true }
+      title: 'Image 2'
     },
     {
       name: 'resourceDownloads',

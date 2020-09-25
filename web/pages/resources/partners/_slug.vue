@@ -20,16 +20,13 @@
         :image="image1"
         fit="min"/>
       </div>
-      <!-- <div v-if="image1"
-      class="w-full md:w-1/2 md:pl-2 max-w-xl m-auto  flex-wrap">
-      </div> -->
     </div>
 
     <div class="flex flex-wrap max-w-6xl m-auto px-8 justify-center mb-4">
-      <div v-if="image1" class="flex items-center justify-center w-full lg:w-1/2 my-1/2">
+      <div v-if="image2" class="flex items-center justify-center w-full lg:w-1/2 my-1/2">
         <SanityImageResponsive alignment="contain"
         class="video-responsive flex-grow"
-        :image="image1"
+        :image="image2"
         fit="min"/>
       </div>
       <div class="w-full lg:w-1/2 text-blue">
@@ -76,7 +73,7 @@ export default {
     locale() { return this.$i18n.locale },
     image1Src() { return this.getImageUrl(this.image1) },
     image2Src() { return this.getImageUrl(this.image2) },
-    downloadResourcesText() { return this.locale === 'en' ? 'Download Resources' : 'Descargar Recursos' }
+    downloadResourcesText() { return this.locale === 'en' ? 'Partner Resources' : 'Recursos de Colaboradores' }
   },
   async asyncData({ params }) {
     return await sanityClient.fetch(query, params)

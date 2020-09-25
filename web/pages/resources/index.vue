@@ -54,7 +54,7 @@
       </ul>
     </div>
     <div v-if="partners.length" class="flex flex-wrap w-full">
-      <h2 class="w-full mb-0 font-bold leading-tight uppercase">
+      <h2 class="w-full mb-0 font-bold leading-tight uppercase text-blue">
         {{partnersSectionTitle[locale]}}
       </h2>
       <p class="text-blue">

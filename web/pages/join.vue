@@ -1,7 +1,7 @@
 <template>
   <div class="w-full">
     <Hero :image="hero.image" :full-height="hero.fullHeight" :title="title[locale]"
-    x-axis-location="start" class="mb-8" />
+    x-axis-location="start" class="mb-2 md:mb-8" />
     <div class="flex flex-wrap px-4 max-w-5xl m-auto mb-4">
 
       <template v-for="(block, i) in joinBlocks">

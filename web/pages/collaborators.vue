@@ -1,7 +1,7 @@
 <template>
   <div class="w-full">
     <Hero :image="hero.image" :full-height="hero.fullHeight" :title="title[locale]"
-    x-axis-location="start" class="mb-8" />
+    x-axis-location="start" class="mb-2 md:mb-8" />
     <div v-if="shareMenu"
     class="h-screen fixed items-center top-0 left-0 -mt-16 z-10 pointer-events-none flex">
       <SideShareMenu class="pointer-events-auto" :share-menu="shareMenu" :scroll-distance="600" />
@@ -13,7 +13,7 @@
         :video-id="getYoutubeId(videoUrl)"  />
       </div>
       <div class="w-full md:w-1/2 text-white leading-tight md:pl-2">
-        <div class="text-2xl p-8 bg-blue h-full flex justify-center items-center">
+        <div id="block1" class="text-2xl p-8 md:px-16 bg-blue h-full flex justify-center items-center">
           <BlockContent :blocks="this[`${locale}Block1Text`]" />
         </div>
       </div>
@@ -184,6 +184,9 @@ export default {
   box-shadow: 14px 0px 0px -1px #1bcfc9;
 }
 
+#block1 strong, #block1 a {
+  @apply text-pink;
+}
 
 #banner-1-text .font-bold, #banner-1-text .italic {
   @apply text-pink font-bold italic;

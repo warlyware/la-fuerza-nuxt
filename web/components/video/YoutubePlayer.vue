@@ -84,7 +84,7 @@ export default {
   margin-top: -2px;
   margin-bottom: -2px;
   position: relative;
-  padding-bottom: calc(var(--aspect-ratio, .5625) * 100%);
+  // padding-bottom: calc(var(--aspect-ratio, .5625) * 100%);
   height: 0;
 }
 .video-responsive iframe {
@@ -94,7 +94,7 @@ export default {
   bottom:0;
   right:0;
   left: 0;
-  width: 100% !important;
-  height: 100% !important;
+  // width: 100% !important;
+  // height: 100% !important;
 }
 </style>
