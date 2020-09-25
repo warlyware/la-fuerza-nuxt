@@ -1,11 +1,12 @@
 <template>
-  <div>
+  <div class="mx-8">
     <div class="flex flex-wrap items-center player-container">
       <div class="flex items-center w-full md:w-2/3 my-1/2">
         <youtube v-if="currentVideo" player-width="100%" player-height="100%"
         class="video-responsive flex-grow"
         :video-id="currentVideo.id"
-        @ready="playerReady" />
+        @ready="playerReady"
+        @ended="videoEnded" />
       </div>
 
       <YoutubePlaylist v-if="$vssWidth >= 768 "
@@ -20,7 +21,7 @@
     :playlist="playlist"
     @set-current-index="(i) => setCurrentIndex(i)" />
 
-    <div class="w-full py-4 break-words md:px-8 xl:px-0 whitespace-pre-wrap">{{currentVideo.description}}</div>
+    <div class="w-full py-4 break-words whitespace-pre-wrap">{{currentVideo.description}}</div>
   </div>
 </template>
 
@@ -53,6 +54,10 @@ export default {
   methods: {
     playerReady({ target }) {
       this.ytPlayer = target
+    },
+    videoEnded() {
+      this.currentIndex += 1
+      this.$nextTick(() => this.ytPlayer.playVideo())
     },
     getYoutubeId,
     setCurrentIndex(i) {

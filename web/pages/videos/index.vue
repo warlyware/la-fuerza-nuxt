@@ -1,5 +1,5 @@
 <template>
-  <section class="pt-8">
+  <section class="pt-8 px-6">
     <h1 class="text-5xl text-center text-blue font-bold italic uppercase">
       {{ title[locale] }}
     </h1>
