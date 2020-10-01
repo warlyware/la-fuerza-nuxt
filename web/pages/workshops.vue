@@ -28,14 +28,15 @@
         </div>
       </div>
     </div>
+
     <div class="max-w-6xl m-auto flex flex-wrap px-8 lg:px-16 text-xl mb-12 tracking-wide">
-      <div class="p-4 w-full lg:w-1/2 flex flex-1">
-        <div class="border rounded-lg w-full flex items-center h-full p-8 shadow-black bg-blue text-white">
+      <div class="p-4 w-full lg:w-1/2 lg:flex lg:flex-1">
+        <div class="border rounded-lg w-full flex items-start h-full p-8 shadow-black bg-blue text-white">
           <BlockContent :blocks="this[`${locale}Block2Text`]" />
         </div>
       </div>
-      <div class="p-4 w-full lg:w-1/2 flex flex-1">
-        <div class="border rounded-lg w-full flex items-center h-full p-8 shadow-black bg-blue text-white">
+      <div class="p-4 w-full lg:w-1/2 lg:flex lg:flex-1">
+        <div class="border rounded-lg w-full flex items-start h-full p-8 shadow-black bg-blue text-white">
           <BlockContent :blocks="this[`${locale}Block3Text`]" />
         </div>
       </div>
