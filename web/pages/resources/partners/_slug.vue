@@ -19,16 +19,15 @@
     <div v-if="resourceDownloads.length"
     class="flex flex-wrap max-w-6xl m-auto justify-center mb-8">
       <div class="w-full text-blue">
-        <div class="lg:ml-4 border border-blue rounded flex-grow h-full">
-          <div class="border-b uppercase border-blue text-center italic text-4xl text-blue leading-tight">
+        <div class="lg:ml-4 border border-pink rounded flex-grow h-full">
+          <div class="border-b uppercase border-pink text-center italic text-4xl text-blue leading-tight">
             {{ downloadResourcesText }}
           </div>
           <div class="text-xl my-2 px-2 text-center rounded flex flex-wrap">
             <div v-for="download in resourceDownloads" :key="download._id"
             class="p-4 w-full md:w-1/3 flex items-center">
-              <a class="p-4 flex flex-col flex-grow h-full justify-center hover:shadow-lg"
-              :href="processLink(download.resourceLink)" target="_blank" download="file.pdf"
-              :class="download.image ? 'border border-blue rounded' : 'border border-blue rounded'">
+              <a class="p-4 flex flex-col flex-grow h-full justify-center hover:shadow-lg border border-aqua rounded"
+              :href="processLink(download.resourceLink)" target="_blank" download>
                 <!-- <img v-if="download.image" :src="getImageUrl(download.image)" class="mb-2"> -->
                 <SanityImage v-if="download.image"
                 class="w-full bg-blue flex-shrink-0 justify-center items-center mb-2"
@@ -55,18 +54,6 @@
         {{image1Caption[locale]}}
       </p>
     </div>
-
-    <!-- <div class="flex flex-wrap max-w-6xl m-auto px-8 justify-center mb-4">
-      <div v-if="image1" class="flex items-center justify-center w-full lg:w-1/2 my-1/2">
-        <SanityImageResponsive :image="image1"
-        class="w-full bg-blue text-white flex justify-center items-center h-64 md:h-auto"
-        :height="500"
-        fit="crop" />
-        <p v-if="image1Caption && image1Caption.en && image1Caption.en.length">
-          {{image1Caption}}
-        </p>
-      </div>
-    </div> -->
   </div>
 </template>
 

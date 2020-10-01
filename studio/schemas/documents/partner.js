@@ -42,8 +42,7 @@ export default {
       title: 'Image 1',
       options: {
         hotspot: true
-      },
-      validation: Rule => Rule.required()
+      }
     },
     {
       name: 'image1Caption',

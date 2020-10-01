@@ -46,8 +46,8 @@
       <div class="w-full text-center mb-0 px-8 lg:px-0">
         <BlockContent :blocks="this[`${locale}Banner2Text`]" />
       </div>
-      <div class="w-full flex justify-center">
-        <CustomButton :button="banner3Button"
+      <div class="w-full flex justify-center mt-2">
+        <CustomButton :button="banner2Button"
         class="bg-aqua text-blue rounded-lg p-2 py-1 text-2xl font-bold italic tracking-wide text-shadow-white-side"
         />
       </div>

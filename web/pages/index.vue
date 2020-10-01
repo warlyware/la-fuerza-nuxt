@@ -27,6 +27,8 @@
         class="w-full md:w-auto bg-pink text-white text-shadow-aqua text-2xl rounded px-2 mx-4 mb-2" />
         <CustomButton :button="block2Button4"
         class="w-full md:w-auto bg-aqua text-white text-shadow-pink text-2xl rounded px-2 mx-4 mb-2" />
+        <CustomButton :button="block2Button5"
+        class="w-full md:w-auto bg-pink text-white text-shadow-aqua text-2xl rounded px-2 mx-4 mb-2" />
       </div>
     </div>
 

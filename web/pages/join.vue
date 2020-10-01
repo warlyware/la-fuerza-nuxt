@@ -58,9 +58,7 @@ export default {
     locale() { return this.$i18n.locale }
   },
   async asyncData() {
-    const data = await sanityClient.fetch(query)
-    console.log(data.joinBlocks[4][`enText`])
-    return data
+    return await sanityClient.fetch(query)
   }
 }
 </script>

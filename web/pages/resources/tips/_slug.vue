@@ -26,7 +26,7 @@
     :media="formattedTips"
     :show-light-box="false" />
 
-    <ul class="flex flex-wrap max-w-3xl m-auto">
+    <ul class="flex flex-wrap max-w-3xl m-auto mb-4">
       <li v-for="(tip, i) in formattedTips" :key="tip._id"
       class="flex w-full md:w-1/3 lg:w-1/4">
         <div class="list-content items-center">
@@ -38,8 +38,10 @@
     </ul>
 
     <div v-if="bannerText && bannerText.length"
-    class="mt-8 py-8 -mb-8 flex justify-center w-full bg-blue text-white text-4xl">
-      <BlockContent :blocks="bannerText" />
+    class="w-full bg-aqua text-4xl p-4 -mb-8">
+      <div class="w-full rounded-lg bg-blue text-pink text-center p-4">
+        <BlockContent :blocks="bannerText" />
+      </div>
     </div>
   </div>
 </template>
@@ -168,5 +170,8 @@ export default {
   }
   .list-content div {
     flex: 1 0 auto;
+  }
+  p {
+    @apply mb-0;
   }
 </style>
