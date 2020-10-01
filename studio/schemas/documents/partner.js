@@ -40,12 +40,21 @@ export default {
       name: 'image1',
       type: 'image',
       title: 'Image 1',
+      options: {
+        hotspot: true
+      },
       validation: Rule => Rule.required()
     },
     {
-      name: 'image2',
-      type: 'image',
-      title: 'Image 2'
+      name: 'image1Caption',
+      type: 'localeString',
+      title: 'Image 1 Caption',
+      validation: Rule => Rule.custom(text => {
+        if (text && text.en && text.en.length && text.es && text.es.length) {
+          return true
+        }
+        return 'English and Spanish translations required.'
+      })
     },
     {
       name: 'resourceDownloads',

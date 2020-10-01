@@ -10,12 +10,6 @@ export default {
       validation: Rule => Rule.required()
     },
     {
-      name: 'footerNavigation',
-      type: 'array',
-      of: [{ type: 'navigationItem' }],
-      validation: Rule => Rule.required()
-    },
-    {
       title: 'Social Media Link: Facebook',
       name: 'facebookUrl',
       type: 'string',
@@ -42,7 +36,7 @@ export default {
     {
       name: 'sponsorsBlockTitle',
       type: 'localeString',
-      title: 'Sponsors Block Title',
+      title: 'Footer Sponsors Text',
       validation: Rule => Rule.custom(text => {
         if (text && text.en && text.en.length && text.es && text.es.length) {
           return true

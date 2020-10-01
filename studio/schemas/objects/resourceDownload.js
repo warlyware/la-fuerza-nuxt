@@ -15,6 +15,11 @@ export default {
       })
     },
     {
+      name: 'image',
+      type: 'image',
+      title: 'Image'
+    },
+    {
       name: 'resourceLink',
       type: 'string',
       title: 'Resource Link',

@@ -53,7 +53,7 @@
 
         <div class="flex flex-wrap justify-center w-full text-sm text-white italic">
           <nuxt-link class="px-2 inline-block" :to="localePath('/privacy')">PRIVACY POLICY</nuxt-link>
-          <nuxt-link class="px-2 inline-block" :to="localePath('/disclaimer')">DISCLAIMER</nuxt-link>
+          <!-- <nuxt-link class="px-2 inline-block" :to="localePath('/disclaimer')">DISCLAIMER</nuxt-link> -->
           <span class="inline-block px-2 uppercase">
             © 2020. All rights reserved.
           </span>

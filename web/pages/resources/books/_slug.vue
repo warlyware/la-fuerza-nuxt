@@ -42,6 +42,7 @@
     @click="showImage(0)">
       <SanityImage
       class="w-full bg-blue flex-shrink-0 justify-center items-center"
+      alt="Image from book"
       :image="image1"
       :width="400"
       fit="crop" />

@@ -7,44 +7,62 @@
 
     <!-- <ShareMenu class="w-full flex justify-center py-8" :share-menu="shareMenu" /> -->
 
-    <div class="flex flex-wrap max-w-6xl m-auto px-8 justify-center mb-4">
-      <div class="w-full lg:w-1/2 px-4">
+    <div class="flex flex-wrap max-w-5xl m-auto justify-center mb-4">
+      <div class="w-full px-4">
         <div class="text-blue mb-4">
           <BlockContent v-if="this[`${locale}Description`]"
           :blocks="this[`${locale}Description`]" />
         </div>
       </div>
-      <div v-if="image1" class="flex items-center justify-center w-full lg:w-1/2 my-1/2">
-        <SanityImageResponsive alignment="contain"
-        class="video-responsive flex-grow"
-        :image="image1"
-        fit="min"/>
-      </div>
     </div>
 
-    <div class="flex flex-wrap max-w-6xl m-auto px-8 justify-center mb-4">
-      <div v-if="image2" class="flex items-center justify-center w-full lg:w-1/2 my-1/2">
-        <SanityImageResponsive alignment="contain"
-        class="video-responsive flex-grow"
-        :image="image2"
-        fit="min"/>
-      </div>
-      <div class="w-full lg:w-1/2 text-blue">
-        <div class="flex flex-col lg:ml-4 uppercase border border-blue rounded flex-grow h-full">
-          <div class="border-b border-blue text-center italic text-4xl">
+    <div v-if="resourceDownloads.length"
+    class="flex flex-wrap max-w-6xl m-auto justify-center mb-8">
+      <div class="w-full text-blue">
+        <div class="lg:ml-4 border border-blue rounded flex-grow h-full">
+          <div class="border-b uppercase border-blue text-center italic text-4xl text-blue leading-tight">
             {{ downloadResourcesText }}
           </div>
-          <ul class="text-xl my-2 px-8 text-center">
-            <li v-for="download in resourceDownloads" :key="download._id"
-            class="my-1">
-              <a :href="processLink(download.resourceLink)" target="_blank">
+          <div class="text-xl my-2 px-2 text-center rounded flex flex-wrap">
+            <div v-for="download in resourceDownloads" :key="download._id"
+            class="p-4 w-full md:w-1/3 flex items-center">
+              <a class="p-4 flex flex-col flex-grow h-full justify-center hover:shadow-lg"
+              :href="processLink(download.resourceLink)" target="_blank" download="file.pdf"
+              :class="download.image ? 'border border-blue rounded' : 'border border-blue rounded'">
+                <!-- <img v-if="download.image" :src="getImageUrl(download.image)" class="mb-2"> -->
+                <SanityImage v-if="download.image"
+                class="w-full bg-blue flex-shrink-0 justify-center items-center mb-2"
+                alt="Resource image from partner"
+                :image="download.image"
+                fit="crop" />
                 {{ download.name[locale] }}
               </a>
-            </li>
-          </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
+    <div v-if="image1"
+    class="w-full max-w-xl m-auto flex flex-wrap">
+      <SanityImage
+      class="w-full bg-blue flex-shrink-0 justify-center items-center"
+      alt="Image from partner"
+      :image="image1"
+      fit="crop" />
+    </div>
+
+    <!-- <div class="flex flex-wrap max-w-6xl m-auto px-8 justify-center mb-4">
+      <div v-if="image1" class="flex items-center justify-center w-full lg:w-1/2 my-1/2">
+        <SanityImageResponsive :image="image1"
+        class="w-full bg-blue text-white flex justify-center items-center h-64 md:h-auto"
+        :height="500"
+        fit="crop" />
+        <p v-if="image1Caption && image1Caption.en && image1Caption.en.length">
+          {{image1Caption}}
+        </p>
+      </div>
+    </div> -->
   </div>
 </template>
 
@@ -53,7 +71,6 @@ import imageUrlBuilder from '@sanity/image-url'
 import sanityClient from '~/sanityClient'
 const builder = imageUrlBuilder(sanityClient)
 // import ShareMenu from '~/components/ShareMenu'
-import SanityImageResponsive from '~/components/SanityImageResponsive'
 import SanityImage from '~/components/SanityImage'
 import BlockContent from 'sanity-blocks-vue-component'
 import groq from 'groq'
@@ -66,14 +83,18 @@ export default {
   components: {
     BlockContent,
     SanityImage,
-    SanityImageResponsive
     // ShareMenu
+  },
+  data() {
+    return {
+      resourceDownloads: []
+    }
   },
   computed: {
     locale() { return this.$i18n.locale },
     image1Src() { return this.getImageUrl(this.image1) },
     image2Src() { return this.getImageUrl(this.image2) },
-    downloadResourcesText() { return this.locale === 'en' ? 'Partner Resources' : 'Recursos de Colaboradores' }
+    downloadResourcesText() { return this.locale === 'en' ? 'SPANISH RESOURCES FROM OUR PARTNER' : 'RECURSOS EN ESPAÑOL DE NUESTRO COLABORADOR' }
   },
   async asyncData({ params }) {
     return await sanityClient.fetch(query, params)
