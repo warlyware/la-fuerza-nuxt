@@ -50,6 +50,10 @@
       alt="Image from partner"
       :image="image1"
       fit="crop" />
+      <p v-if="image1Caption && image1Caption.en && image1Caption.en.length"
+      class="w-full text-center text-xl mt-2">
+        {{image1Caption[locale]}}
+      </p>
     </div>
 
     <!-- <div class="flex flex-wrap max-w-6xl m-auto px-8 justify-center mb-4">
