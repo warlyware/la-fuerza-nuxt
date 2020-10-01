@@ -16,13 +16,19 @@
             </div>
             <div class="flex flex-wrap justify-center lg:justify-between m-auto w-full">
               <div class="flex justify-center w-full lg:w-1/3 my-4 opacity-75">
-                <img class="h-16 md:h-20 w-auto" src="/images/lp-logo-white.png">
+                <a href="//literacypartners.org/" target="_blank">
+                  <img class="h-16 md:h-20 w-auto" src="/images/lp-logo-white.png">
+                </a>
               </div>
               <div class="flex justify-center w-full lg:w-1/3 my-4 opacity-75">
-                <img class="h-16 md:h-20 w-auto" src="/images/univision-logo-white.png">
+                <a href="//corporate.univision.com/our-company/csr/" target="_blank">
+                  <img class="h-16 md:h-20 w-auto" src="/images/univision-logo-white.png">
+                </a>
               </div>
               <div class="flex justify-center w-full lg:w-1/3 my-4 opacity-75">
-                <img class="h-16 md:h-20 w-auto" src="/images/too-small-logo-white.png">
+                <a href="//toosmall.org/en-espanol" target="_blank">
+                  <img class="h-16 md:h-20 w-auto" src="/images/too-small-logo-white.png">
+                </a>
               </div>
             </div>
           </div>
