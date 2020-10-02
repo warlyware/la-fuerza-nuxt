@@ -54,7 +54,7 @@ export default {
   computed: {
     locale() { return this.$i18n.locale },
     previousBookText() { return this.locale === 'en' ? 'Previous' : 'Anterior' },
-    nextBookText() { return this.locale === 'en' ? 'Next' : 'Siguientes' },
+    nextBookText() { return this.locale === 'en' ? 'Next' : 'Siguiente' },
   },
   async created() {
     this.books = await this.getBooks()
