@@ -4,7 +4,7 @@
     :media="lightboxImages" :show-light-box="false" />
 
 
-    <div class="w-full flex flex-wrap">
+    <div class="w-full flex flex-wrap px-4">
       <div class="w-full lg:w-1/2 my-1/2 order-last md:order-none">
         <youtube player-width="100%" player-height="100%"
         class="video-responsive flex-grow"
@@ -33,12 +33,12 @@
         </span>
       </p>
     </div>
-    <Divider class="max-w-6xl m-auto -my-8 px-4 md:px-0" />
+    <Divider class="max-w-6xl m-auto -my-8 px-4" />
     <div class="w-full max-w-3xl m-auto flex flex-wrap justify-center px-8 md:px-4 lg:px-0 text-blue mb-8 mt-12">
       <BlockContent v-if="this[`${locale}Excerpt`]" :blocks="this[`${locale}Excerpt`]" />
     </div>
     <div v-if="image1"
-    class="w-full max-w-xl m-auto flex flex-wrap cursor-pointer"
+    class="w-full max-w-xl m-auto flex flex-wrap cursor-pointer mb-8"
     @click="showImage(0)">
       <SanityImage
       class="w-full bg-blue flex-shrink-0 justify-center items-center"
@@ -47,6 +47,12 @@
       :width="400"
       fit="crop" />
     </div>
+    <Divider class="max-w-6xl m-auto px-4 mb-4" />
+    <h2 class="w-full text-center uppercase text-4xl">
+      {{ moreBooksTitleText }}
+    </h2>
+    <BookGallery
+    :current-book-id="id" />
   </div>
 </template>
 
@@ -57,6 +63,7 @@ const builder = imageUrlBuilder(sanityClient)
 import LightBox from 'vue-image-lightbox'
 import ShareMenu from '~/components/ShareMenu'
 import Divider from '~/components/blocks/Divider'
+import BookGallery from '~/components/resources/BookGallery'
 import SanityImage from '~/components/SanityImage'
 import getYoutubeId from 'get-youtube-id'
 import BlockContent from 'sanity-blocks-vue-component'
@@ -70,6 +77,7 @@ export default {
   components: {
     BlockContent,
     Divider,
+    BookGallery,
     LightBox,
     SanityImage,
     ShareMenu
@@ -78,6 +86,7 @@ export default {
     locale() { return this.$i18n.locale },
     image1Src() { return this.getImageUrl(this.image1) },
     image2Src() { return this.getImageUrl(this.image2) },
+    moreBooksTitleText() { return this.locale === 'en' ? 'More Books' : 'Más Libros' },
     lightboxImages() {
       let images = []
 
