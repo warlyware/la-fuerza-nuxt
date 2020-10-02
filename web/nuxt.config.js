@@ -122,6 +122,7 @@ export default {
           cookieSecure: false
         },
         locale: 'es',
+        seo: false,
         beforeLanguageSwitch: (oldLocale, newLocale) => {
           console.log({ oldLocale, newLocale })
         },
