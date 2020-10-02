@@ -113,9 +113,9 @@ export default {
   computed: {
     locale() { return this.$i18n.locale },
     secondaryContacts() { return this.contacts.slice(2, this.contacts.length) },
-    callLabel() { return this.locale === 'en' ? 'Call' : 'Teléphono' },
+    callLabel() { return this.locale === 'en' ? 'Call' : 'Telephono' },
     emailLabel() { return this.locale === 'en' ? 'Email' : 'Correo Electrónico' },
-    faxLabel() { return 'Fax' }
+    faxLabel() { return this.locale === 'en' ? 'Text' : 'Mensaje de Texto' }
   },
   async asyncData() {
     return await sanityClient.fetch(query)
