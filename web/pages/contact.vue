@@ -113,7 +113,7 @@ export default {
   computed: {
     locale() { return this.$i18n.locale },
     secondaryContacts() { return this.contacts.slice(2, this.contacts.length) },
-    callLabel() { return this.locale === 'en' ? 'Call' : 'Telephono' },
+    callLabel() { return this.locale === 'en' ? 'Call' : 'Teléphono' },
     emailLabel() { return this.locale === 'en' ? 'Email' : 'Correo Electrónico' },
     faxLabel() { return this.locale === 'en' ? 'Text' : 'Mensaje de Texto' }
   },

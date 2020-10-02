@@ -63,7 +63,7 @@
 
       <ul class="w-full flex flex-wrap m-auto">
         <li v-for="partner in first4Partners" :key="partner._id"
-        class="flex w-full md:w-1/5 px-2">
+        class="flex w-full md:w-1/5 px-2 mx-16 md:mx-0">
           <div class="list-content items-center my-2 bg-blue px-2">
             <div :style="`background-image: url(${ getImageUrl(partner.logo) })`"
             class="cursor-pointer bg-contain bg-no-repeat bg-center w-full h-96 md:h-48"
