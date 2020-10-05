@@ -50,7 +50,7 @@
       :image="image1"
       fit="crop" />
       <p v-if="image1Caption && image1Caption.en && image1Caption.en.length"
-      class="w-full text-center text-xl mt-2">
+      class="w-full text-center text-xl mt-2 text-blue">
         {{image1Caption[locale]}}
       </p>
     </div>

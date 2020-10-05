@@ -48,7 +48,7 @@
       fit="crop" />
     </div>
     <Divider class="max-w-6xl m-auto px-4 mb-4" />
-    <h2 class="w-full text-center uppercase text-4xl">
+    <h2 class="w-full text-center uppercase text-4xl text-blue">
       {{ moreBooksTitleText }}
     </h2>
     <BookGallery
