@@ -39,18 +39,10 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'La Fuerza de Familias Latinas' },
-      {
-        'property': 'og:title',
-        'content': `La Fuerza de Familias Latinas`,
-      },
-      {
-        'property': 'og:description',
-        'content': 'La Fuerza de Familias Latinas',
-      },
+      // { hid: 'description', name: 'description', content: 'La Fuerza de Familias Latinas' },
       {
         'property': 'og:image',
-        'content': '~/static/images/la-fuerza-logo.svg'
+        'content': '/images/la-fuerza-logo.svg'
       }
     ]
     //link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
@@ -114,9 +106,11 @@ export default {
         // Module options
         baseUrl: 'https://www.lafuerzadefamilias.org',
         name: 'La Fuerza de Familias Latinas',
+
         // title: '',
         templateTitle: '%name%',
-        description: 'La Fuerza de Familias Latinas'
+        description: 'La Fuerza de Familias Latinas',
+        image: '/images/la-fuerza-logo.svg'
         //...
       }
     ],

@@ -109,21 +109,22 @@ export default {
       return images
     }
   },
-  async asyncData({ params, seo }) {
-    this.setupSEO(seo)
-    return await sanityClient.fetch(query, params)
+  async asyncData({ params, seo, app }) {
+    const locale = app.i18n.locale || 'es'
+    const data = await sanityClient.fetch(query, params)
+    const bookTitle = data.title[locale]
+    const description = data.author ? `by ${data.author}` : null
+    const image = builder.image(data[`${locale}Cover`]).url()
+    seo({
+      name: 'La Fuerza de Familias Latinas',
+      title: bookTitle,
+      templateTitle: bookTitle ? '%name% - %title%' : '%name%',
+      image,
+      description
+    })
+    return data
   },
   methods: {
-    setupSEO(seo) {
-      const bookTitle = this.title[this.locale] ? this.title[this.locale] : null
-      const description = this.author ? this.author : null
-      seo({
-        name: 'La Fuerza de Familias Latinas',
-				title: bookTitle,
-				templateTitle: bookTitle ? '%name% - %title%' : '%name%',
-				description
-      })
-    },
     getImageUrl(image) {
       return builder.image(image)
     },
