@@ -24,7 +24,7 @@ export default {
           { value: '/videos', title: 'Videos' },
           { value: '/workshops', title: 'Workshops' },
           { value: '/resources', title: 'Resources' },
-          { value: '/resources/books', title: 'Resources: Books' },
+          { value: '/resources/read-alouds', title: 'Resources: Read-Alouds' },
           { value: '/resources/tips', title: 'Resources: Tips' },
           { value: '/partners', title: 'Partners' },
           { value: '/join', title: 'Join' },

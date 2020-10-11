@@ -3,7 +3,7 @@
     <div class="w-full md:w-1/4 flex justify-center">
       <nuxt-link class="p-2 py-1 font-bold italic text-2xl uppercase text-white rounded-lg tracking-wide my-2"
       :class="previousBookLink ? ' bg-pink': 'bg-gray cursor-not-allowed'"
-      :to="localePath(`/resources/books/${previousBookLink}`)">
+      :to="localePath(`/resources/read-alouds/${previousBookLink}`)">
         {{ previousBookText }}
       </nuxt-link>
     </div>
@@ -15,7 +15,7 @@
     <div class="w-full md:w-1/4 flex justify-center">
       <nuxt-link class="p-2 py-1 font-bold italic text-2xl uppercase text-white rounded-lg tracking-wide my-2"
       :class="nextBookLink ? ' bg-pink': 'bg-gray cursor-not-allowed'"
-      :to="nextBookLink ? localePath(`/resources/books/${nextBookLink}`) : ''"
+      :to="nextBookLink ? localePath(`/resources/read-alouds/${nextBookLink}`) : ''"
       >
         {{ nextBookText }}
       </nuxt-link>

@@ -1,6 +1,6 @@
 <template>
   <div class="w-full lg:w-1/2 flex justify-center">
-    <nuxt-link :to="localePath(`/resources/books/${book.slug.current}`)"
+    <nuxt-link :to="localePath(`/resources/read-alouds/${book.slug.current}`)"
     class="p-2 w-32 flex-shrink-0">
       <SanityImage
       :image="book[`${locale}Cover`]"

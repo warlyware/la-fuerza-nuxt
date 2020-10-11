@@ -15,17 +15,6 @@ export default {
         return 'English and Spanish translations required.'
       })
     },
-    // {
-    //   name: 'bookSectionDescription',
-    //   type: 'localeString',
-    //   title: 'Book Section description',
-    //   validation: Rule => Rule.custom(text => {
-    //     if (text && text.en && text.en.length && text.es && text.es.length) {
-    //       return true
-    //     }
-    //     return 'English and Spanish translations required.'
-    //   })
-    // },
     {
       name: 'enBookSectionDescription',
       type: 'bodyPortableText',

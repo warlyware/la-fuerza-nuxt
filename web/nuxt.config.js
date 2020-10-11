@@ -18,7 +18,7 @@ const url = `${SANITY_API_URL}query=${qs}`
 let dynamicRoutes = async () => {
   const { data } = await axios.get(url)
 
-  const books = data.result.books.map(book => `/resources/books/${book.slug.current}`)
+  const books = data.result.books.map(book => `/resources/read-alouds/${book.slug.current}`)
   const tips = data.result.tips.map((_, i) => `/resources/tips/${i}`)
 
   return [...books, ...tips]
@@ -152,7 +152,7 @@ export default {
             name: 'Spanish'
           }
         ],
-        strategy: 'no_prefix',
+        strategy: 'prefix_and_default',
         defaultLocale: 'es',
         lazy: true,
         langDir: 'lang/',

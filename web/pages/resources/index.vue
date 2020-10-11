@@ -10,7 +10,7 @@
       <ul class="w-full flex flex-wrap m-auto">
         <li v-for="book in first4Books" :key="book._id"
         class="flex w-full md:w-1/5 text-blue"
-        @click="$router.push(localeRoute(`/resources/books/${book.slug.current}`))">
+        @click="$router.push(localeRoute(`/resources/read-alouds/${book.slug.current}`))">
           <div class="list-content items-center my-2">
             <div :style="`background-image: url(${ getImageUrl(book[`${locale}Cover`]) })`"
             class="cursor-pointer bg-contain bg-no-repeat bg-center w-full h-96 md:h-48" />
@@ -18,7 +18,7 @@
         </li>
         <li class="w-full md:w-1/5 flex items-center justify-center md:justify-start flex-shrink">
           <div class="mt-4 md:mt-0 m-0 py-0 md:ml-4">
-            <nuxt-link v-if="books.length > 4" :to="localePath('/resources/books')"
+            <nuxt-link v-if="books.length > 4" :to="localePath('/resources/read-alouds')"
             class="bg-aqua text-white text-shadow-pink px-4 rounded-lg italic uppercase text-2xl md:text-lg">
               {{viewMore}}
             </nuxt-link>
