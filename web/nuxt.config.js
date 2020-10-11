@@ -44,11 +44,11 @@ export default {
       { hid: 'apple-mobile-web-app-title', name: 'apple-mobile-web-app-title', content: 'La Fuerza de Familias Latinas' },
       { hid: 'author', name: 'author', content: 'Literacy Partners' },
 
-      { property: 'og:image', content: 'https://www.lafuerzadefamilias.org/images/la-fuerza-logo-seo.png' },
+      { property: 'og:image', content: 'https://www.lafuerzadefamilias.org/images/la-fuerza-logo-square.png' },
       { property: 'og:title', content: 'La Fuerza de Familias Latinas' },
       { property: 'og:description', content: 'La Fuerza de Familias Latinas' },
       { property: 'og:site_name', content: 'La Fuerza de Familias Latinas' },
-      { property: 'twitter:image', content: 'https://www.lafuerzadefamilias.org/images/la-fuerza-logo-seo.png' }
+      { property: 'twitter:image', content: 'https://www.lafuerzadefamilias.org/images/la-fuerza-logo-square.png' }
     ],
     // link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],}
   },
@@ -113,7 +113,7 @@ export default {
         title: 'La Fuerza de Familias Latinas',
         templateTitle: '%title%',
         description: 'La Fuerza de Familias Latinas',
-        image: 'https://www.lafuerzadefamilias.org/images/la-fuerza-logo-seo.png'
+        image: 'https://www.lafuerzadefamilias.org/images/la-fuerza-logo-square.png'
         //...
       }
     ],

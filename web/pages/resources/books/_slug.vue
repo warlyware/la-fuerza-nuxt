@@ -36,7 +36,14 @@
     <div class="w-full max-w-3xl m-auto flex flex-wrap justify-center px-8 md:px-4 lg:px-0 text-blue mb-8 mt-12">
       <BlockContent v-if="this[`${locale}Excerpt`]" :blocks="this[`${locale}Excerpt`]" />
     </div>
+
     <div v-if="image1"
+    class="flex w-full items-center my-2 px-4 md:px-2"
+    @click="showImage(0)">
+      <div :style="`background-image: url(${ getImageUrl(image1) })`"
+      class="cursor-pointer bg-contain bg-no-repeat bg-center w-full h-image" />
+    </div>
+    <!-- <div v-if="image1"
     class="w-full max-w-xl m-auto flex flex-wrap cursor-pointer mb-8"
     @click="showImage(0)">
       <SanityImage
@@ -45,7 +52,7 @@
       :image="image1"
       :width="400"
       fit="crop" />
-    </div>
+    </div> -->
     <Divider class="max-w-6xl m-auto px-4 mb-4" />
     <h2 class="w-full text-center uppercase text-4xl text-blue">
       {{ moreBooksTitleText }}
@@ -63,7 +70,7 @@ import LightBox from 'vue-image-lightbox'
 import ShareMenu from '~/components/ShareMenu'
 import Divider from '~/components/blocks/Divider'
 import BookGallery from '~/components/resources/BookGallery'
-import SanityImage from '~/components/SanityImage'
+// import SanityImage from '~/components/SanityImage'
 import getYoutubeId from 'get-youtube-id'
 import BlockContent from 'sanity-blocks-vue-component'
 import groq from 'groq'
@@ -78,7 +85,7 @@ export default {
     Divider,
     BookGallery,
     LightBox,
-    SanityImage,
+    // SanityImage,
     ShareMenu
   },
   computed: {
