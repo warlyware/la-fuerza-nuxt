@@ -109,6 +109,18 @@ export default {
     '@nuxtjs/tailwindcss',
     'vue-social-sharing/nuxt',
     [
+      'nuxt-seo',
+      {
+        // Module options
+        baseUrl: 'https://www.lafuerzadefamilias.org',
+        name: 'La Fuerza de Familias Latinas',
+        // title: '',
+        templateTitle: '%name%',
+        description: 'La Fuerza de Familias Latinas'
+        //...
+      }
+    ],
+    [
       'nuxt-i18n',
       {
         detectBrowserLanguage: {

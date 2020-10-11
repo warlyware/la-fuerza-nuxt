@@ -28,6 +28,7 @@
     "lodash.debounce": "^4.0.8",
     "node-constantcontact": "^1.0.0",
     "nuxt-i18n": "^6.13.9",
+    "nuxt-seo": "^1.4.2",
     "oauth": "^0.9.15",
     "query-string": "^6.13.1",
     "randomcolor": "^0.6.2",
