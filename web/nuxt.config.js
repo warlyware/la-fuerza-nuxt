@@ -39,19 +39,16 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'La Fuerza de Familias Latinas' },
-      {
-        property: 'og:image', content: 'https://www.lafuerzadefamilias.org/images/la-fuerza-logo.png'
-      },
-      {
-        property: 'og:title', content: 'La Fuerza de Familias Latinas'
-      },
-      {
-        property: 'og:description', content: 'La Fuerza de Familias Latinas'
-      },
-      {
-        property: 'twitter:image', content: 'https://www.lafuerzadefamilias.org/images/la-fuerza-logo.png'
-      }
+      { hid: 'apple-mobile-web-app-title', name: 'apple-mobile-web-app-title', content: 'La Fuerza de Familias Latinas' },
+      { hid: 'author', name: 'author', content: 'Literacy Partners' },
+
+      { property: 'og:image', content: 'https://www.lafuerzadefamilias.org/images/la-fuerza-logo.png' },
+      { property: 'og:title', content: 'La Fuerza de Familias Latinas' },
+      { property: 'og:description', content: 'La Fuerza de Familias Latinas' },
+      { property: 'og:site_name', content: 'La Fuerza de Familias Latinas' },
+      { property: 'twitter:image', content: 'https://www.lafuerzadefamilias.org/images/la-fuerza-logo.png' }
     ],
     // link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],}
   },
