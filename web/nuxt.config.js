@@ -40,10 +40,6 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       // { hid: 'description', name: 'description', content: 'La Fuerza de Familias Latinas' },
-      {
-        'property': 'og:image',
-        'content': '/images/la-fuerza-logo.png'
-      }
     ]
     //link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
@@ -110,7 +106,7 @@ export default {
         // title: '',
         templateTitle: '%name%',
         description: 'La Fuerza de Familias Latinas',
-        image: '/images/la-fuerza-logo.png'
+        image: 'https://www.lafuerzadefamilias.org/images/la-fuerza-logo.png'
         //...
       }
     ],
