@@ -3,7 +3,6 @@
     <LightBox ref="lightbox" :show-thumbs="false"
     :media="lightboxImages" :show-light-box="false" />
 
-
     <div class="w-full flex flex-wrap px-4">
       <div class="w-full lg:w-1/2 my-1/2 order-last md:order-none">
         <youtube player-width="100%" player-height="100%"
