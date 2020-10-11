@@ -109,10 +109,21 @@ export default {
       return images
     }
   },
-  async asyncData({ params }) {
+  async asyncData({ params, seo }) {
+    this.setupSEO(seo)
     return await sanityClient.fetch(query, params)
   },
   methods: {
+    setupSEO(seo) {
+      const bookTitle = this.title[this.locale] ? this.title[this.locale] : null
+      const description = this.author ? this.author : null
+      seo({
+        name: 'La Fuerza de Familias Latinas',
+				title: bookTitle,
+				templateTitle: bookTitle ? '%name% - %title%' : '%name%',
+				description
+      })
+    },
     getImageUrl(image) {
       return builder.image(image)
     },
