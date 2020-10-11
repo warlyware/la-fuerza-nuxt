@@ -99,12 +99,10 @@ export default {
     [
       'nuxt-seo',
       {
-        // Module options
         baseUrl: 'https://www.lafuerzadefamilias.org',
         name: 'La Fuerza de Familias Latinas',
-
-        // title: '',
-        templateTitle: '%name%',
+        title: 'La Fuerza de Familias Latinas',
+        templateTitle: '%title%',
         description: 'La Fuerza de Familias Latinas',
         image: 'https://www.lafuerzadefamilias.org/images/la-fuerza-logo.png'
         //...
