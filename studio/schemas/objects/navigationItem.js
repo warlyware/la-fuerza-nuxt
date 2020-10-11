@@ -26,7 +26,7 @@ export default {
           { value: '/resources', title: 'Resources' },
           { value: '/resources/books', title: 'Resources: Books' },
           { value: '/resources/tips', title: 'Resources: Tips' },
-          { value: '/collaborators', title: 'Collaborators' },
+          { value: '/partners', title: 'Partners' },
           { value: '/join', title: 'Join' },
           { value: '/contact', title: 'Contact' },
           { value: '/about', title: 'About' }

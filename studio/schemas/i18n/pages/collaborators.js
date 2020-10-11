@@ -1,7 +1,7 @@
 
 export default {
   name: 'translation-collaborators',
-  title: 'Page: Collaborators',
+  title: 'Page: Partners',
   type: 'document',
   fields: [
     {

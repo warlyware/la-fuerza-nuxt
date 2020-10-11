@@ -79,7 +79,7 @@ export default () =>
             .documentId('page-about')
         ),
       S.listItem()
-        .title('Page: Collaborators')
+        .title('Page: Partners')
         .child(
           S.editor()
             .id('page-collaborators')

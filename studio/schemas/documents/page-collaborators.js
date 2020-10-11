@@ -1,7 +1,7 @@
 export default {
   name: 'page-collaborators',
   type: 'document',
-  title: 'Page: Collaborators',
+  title: 'Page: Partners',
   __experimental_actions: ['update', /* 'create', 'delete', */ 'publish'],
   fields: [
     {
@@ -205,6 +205,6 @@ export default {
     }
   ],
   preview: {
-    prepare: () => ({ title: 'Page: Collaborators' })
+    prepare: () => ({ title: 'Page: Partners' })
   }
 }
