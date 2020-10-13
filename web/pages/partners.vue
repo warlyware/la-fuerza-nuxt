@@ -105,11 +105,17 @@
       <BlockContent :blocks="this[`${locale}Banner2Text`]" />
     </div>
 
-    <div class="max-w-5xl m-auto">
+    <!-- <div class="max-w-5xl m-auto">
       <div class="flex flex-wrap px-4 w-full">
         <div v-for="(events, location, i) in formattedEvents" :key="i" class="mb-2 w-full  flex-1">
           <EventsAccordion :location="location" :events="events" />
         </div>
+      </div>
+    </div> -->
+
+    <div class="max-w-5xl m-auto flex flex-wrap px-12 lg:px-4 mb-6">
+      <div v-for="(events, location, i) in formattedEvents" :key="i" class="mb-2 w-full">
+        <EventsAccordion :location="location" :events="events" />
       </div>
     </div>
 
