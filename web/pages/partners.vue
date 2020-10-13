@@ -63,7 +63,8 @@
       </div>
       <Divider v-if="i < collaboratorBlocks.length - 1" class="max-w-5xl m-auto -my-8" />
     </div>
-    <div class="max-w-3xl m-auto flex flex-wrap my-12">
+
+    <!-- <div class="max-w-3xl m-auto flex flex-wrap my-12">
       <div class="w-full mx-4 md:mx-0 md:w-1/3 bg-blue flex items-center rounded-lg tracking-wider">
         <div class="text-white mb-0 leading-tight p-4">
           <BlockContent :blocks="this[`${locale}Block4Text`]" />
@@ -78,7 +79,8 @@
           class="p-2 py-1 font-bold italic text-3xl text-white bg-pink rounded-lg tracking-wide" />
         </div>
       </div>
-    </div>
+    </div> -->
+
     <div class="max-w-5xl flex flex-wrap m-auto mb-12">
       <div class="w-full p-2 px-12 bg-blue text-white text-center text-4xl font-bold tracking-wide leading-8">
         {{block6Block7Title[locale]}}

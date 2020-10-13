@@ -69,7 +69,7 @@
       </div>
     </div>
 
-    <div class="max-w-4xl m-auto flex flex-wrap mb-12">
+    <!-- <div class="max-w-4xl m-auto flex flex-wrap mb-12">
       <div class="w-full mx-8 lg:mx-0 lg:w-2/3 bg-blue flex items-center rounded-lg tracking-wider">
         <div class="text-white text-xl mb-0 leading-tight p-4">
           <BlockContent :blocks="this[`${locale}Block4Text`]" />
@@ -90,7 +90,8 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
+
     <div class="max-w-4xl m-auto flex flex-wrap p-4 rounded-lg text-xl bg-pink text-white mb-8">
       <div class="w-full text-center mb-0 leading-8">
         <BlockContent :blocks="this[`${locale}Banner3Text`]" />
