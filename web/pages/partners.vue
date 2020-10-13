@@ -87,17 +87,17 @@
       </div>
       <div class="w-full md:w-1/2 p-4 px-12 lg:px-8 bg-pink text-white leading-5 flex flex-col justify-between">
         <BlockContent :blocks="this[`${locale}Block6Text`]" />
-        <div class="w-full flex justify-center">
+        <!-- <div class="w-full flex justify-center">
           <CustomButton :button="block6Button"
           class="mt-2 mb-2 p-2 py-3 font-bold italic text-2xl text-white bg-aqua rounded-lg tracking-wide text-shadow-pink" />
-        </div>
+        </div> -->
       </div>
       <div class="w-full md:w-1/2 p-4 px-12 lg:px-8 bg-aqua text-blue leading-relaxed flex flex-col justify-between">
         <BlockContent :blocks="this[`${locale}Block7Text`]" />
-        <div class="w-full flex justify-center">
+        <!-- <div class="w-full flex justify-center">
           <CustomButton :button="block7Button"
           class="mt-2 mb-2 p-2 py-1 font-bold italic text-2xl text-white bg-blue rounded-lg tracking-wide text-shadow-pink" />
-        </div>
+        </div> -->
       </div>
     </div>
 
@@ -117,7 +117,7 @@
 </template>
 
 <script>
-import CustomButton from '~/components/blocks/CustomButton'
+// import CustomButton from '~/components/blocks/CustomButton'
 import BlockContent from 'sanity-blocks-vue-component'
 import groq from 'groq'
 import sanityClient from '~/sanityClient'
@@ -139,7 +139,7 @@ const query = groq`
 export default {
   components: {
     BlockContent,
-    CustomButton,
+    // CustomButton,
     Divider,
     EventsAccordion,
     Hero,
