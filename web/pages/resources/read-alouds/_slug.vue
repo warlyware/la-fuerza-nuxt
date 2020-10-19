@@ -1,7 +1,7 @@
 <template>
   <div class="pt-8 mx-auto md:pt-32 mb-8 content w-full">
     <LightBox ref="lightbox" :show-thumbs="false"
-    :media="lightboxImages" :show-light-box="false" />
+    :media="lightboxImages" :show-light-box="showLightBox" />
 
     <div class="w-full flex flex-wrap px-4">
       <div class="w-full lg:w-1/2 my-1/2 order-last md:order-none">
@@ -88,6 +88,11 @@ export default {
     // SanityImage,
     ShareMenu
   },
+  data() {
+    return {
+      showLightBox: false
+    }
+  },
   computed: {
     locale() { return this.$i18n.locale },
     image1Src() { return this.getImageUrl(this.image1) },
@@ -130,12 +135,16 @@ export default {
     })
     return data
   },
+  created() {
+    this.showLightBox = false
+  },
   methods: {
     getImageUrl(image) {
       return builder.image(image)
     },
     getYoutubeId,
     showImage(i) {
+      this.showLightBox = true
       this.$refs.lightbox.showImage(i)
     }
   }
