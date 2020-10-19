@@ -43,7 +43,7 @@
     </div>
 
     <div v-if="image1"
-    class="w-full max-w-xl m-auto flex flex-wrap">
+    class="w-full max-w-6xl m-auto flex flex-wrap">
       <SanityImage
       class="w-full bg-blue flex-shrink-0 justify-center items-center"
       alt="Image from partner"
