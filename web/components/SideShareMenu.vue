@@ -10,7 +10,7 @@
         <img src="/images/facebook-logo.svg" alt="" class="h-8 w-8">
       </div>
     </ShareNetwork>
-    <ShareNetwork network="linkedin" :url="`${baseUrl}${this.$route.fullPath}`"
+    <!-- <ShareNetwork network="linkedin" :url="`${baseUrl}${this.$route.fullPath}`"
     :title="title"
     :description="description"
     :quote="quote"
@@ -18,7 +18,7 @@
       <div class="cursor-pointer p-2 bg-blue">
         <img src="/images/linked-in-logo.svg" alt="" class="h-8 w-8 bg-white rounded-full">
       </div>
-    </ShareNetwork>
+    </ShareNetwork> -->
     <ShareNetwork network="twitter" :url="`${baseUrl}${this.$route.fullPath}`"
     :title="title"
     :description="description"
