@@ -23,6 +23,15 @@ let dynamicRoutes = async () => {
 
   return [...books, ...tips]
 }
+  /*
+   ** tell Nuxt.js to import Google Analytics in our main application
+   */
+export default {
+  plugins: [{ src: '~plugins/ga.js', mode: 'client' }]
+}
+ /*
+   ** end of code
+ */
 
 export default {
   mode: 'spa',
