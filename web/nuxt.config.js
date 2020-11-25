@@ -93,11 +93,11 @@ export default {
   buildModules: [
     '@nuxtjs/moment',
     ['@nuxtjs/google-analytics', {
-      id: 'UA-177598743-1',
-      debug: {
-        enabled: true,
-        sendHitTask: true
-      }
+      id: 'UA-177883867-2',
+      // debug: {
+      //   enabled: true,
+      //   sendHitTask: true
+      // }
     }]
   ],
   modules: [
